@@ -360,7 +360,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.csipsimple.ui.prefs.AudioTester" destination="com.csipsimple.ui.prefs.Codecs" method="">
+  <OracleEdge source="com.csipsimple.ui.prefs.AudioTester" destination="com.csipsimple.service.SipService" method="">
     <comment>*AudioTester.onResume() -&gt; bindService()</comment>
     <callLines>
       <line src="/src/com/csipsimple/ui/prefs/AudioTester.java" start="102" end="102"/>
