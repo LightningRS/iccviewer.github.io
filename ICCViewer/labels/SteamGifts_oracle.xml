@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <root srcCodeBase="/SteamGifts/SteamGifts-1.5.11">
-  <OracleEdge source=" net.mabako.steamgifts.receivers.CheckForNewMessages" destination="net.mabako.steamgifts.receivers.CheckForWonGiveaways" method="">
+  <OracleEdge source="net.mabako.steamgifts.receivers.CheckForNewMessages" destination="net.mabako.steamgifts.receivers.CheckForWonGiveaways" method="">
     <comment>*CheckForNewMessages.onReceive() -&gt; new LoadMessagesTask() -&gt; new Check() -&gt; LoadMessagesTask.execute() -&gt; onPostExecute() -&gt; ILoadItemsListener.addItems() -&gt; Check implements ILoadItemsListener -&gt; Check.addItems() -&gt; Context.sendBroadcast()</comment>
     <callLines>
       <line src="/core/src/main/java/net/mabako/steamgifts/receivers/CheckForNewMessages.java" start="49" end="49"/>
