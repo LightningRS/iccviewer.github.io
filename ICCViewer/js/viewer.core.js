@@ -1221,6 +1221,7 @@ $.extend(window.ICCTagViewer, {
             const $option = $(this).find('option:selected');
             const xmlUrl = $option.attr('xml-url');
             const appName = $option.attr('app-name');
+            if (val !== 'CUSTOM' && !xmlUrl) return;
             if (val === 'CUSTOM') $('.app-customRoot-container').show();
             else {
                 $('.app-customRoot-container').hide();
@@ -1281,11 +1282,11 @@ $.extend(window.ICCTagViewer, {
                 $btn.removeClass('j-collapse-show')
                     .removeClass('btn-danger')
                     .addClass('btn-primary')
-                    .html(_this._T('Collapse All'));
+                    .html(_this._T('Expand All'));
                 $parent.find('.j-collapse').removeClass('j-collapse-show')
                     .removeClass('btn-danger')
                     .addClass('btn-primary')
-                    .html(_this._T('Collapse All'));
+                    .html(_this._T('Expand All'));
             }
         })
     },

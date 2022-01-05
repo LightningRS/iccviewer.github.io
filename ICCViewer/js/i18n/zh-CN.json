@@ -160,5 +160,6 @@
     "Failed to load source code file": "加载源代码文件失败",
     "Failed to get label name for path: {0}": "根据标签路径 {0} 获取标签名称失败",
     "* You are using the local storage of the browser": "* 您正在使用浏览器本地存储",
-    "All the changes are stored in the local storage of the browser so that the server-side is not affected. If you want to modify the data, please export the modified version and import it for use next time.": "所有修改均保存在本地浏览器，不影响服务器数据。如需修改，清手动导入和导出数据。"
+    "All the changes are stored in the local storage of the browser so that the server-side is not affected. If you want to modify the data, please export the modified version and import it for use next time.": "所有修改均保存在本地浏览器，不影响服务器数据。如需修改，清手动导入和导出数据。",
+    "========== Open-source Apps ==========": "========== 开源项目 =========="
 }

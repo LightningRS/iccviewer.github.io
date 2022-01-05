@@ -5,6 +5,14 @@
 window.ICCTagViewer = window.ICCTagViewer ? window.ICCTagViewer : {};
 $.extend(window.ICCTagViewer, {
     preDefinedApps: [
+        { name: '============= Benchmarks =============' },
+        { name: 'DroidBench', path: '/benchmarks/DroidBench', xmlUrl: 'labels/bm_DroidBench_oracle.xml' },
+        { name: 'ICCBench', path: '/benchmarks/ICCBench', xmlUrl: 'labels/bm_ICCBench_oracle.xml' },
+        { name: 'ICCBotBench', path: '/benchmarks/ICCBotBench', xmlUrl: 'labels/bm_ICCBotBench_oracle.xml' },
+        { name: 'RAICC', path: '/benchmarks/RAICC', xmlUrl: 'labels/bm_RAICC_oracle.xml' },
+        { name: 'storyBoard', path: '/benchmarks/storyBoard', xmlUrl: 'labels/bm_storyBoard_oracle.xml' },
+
+        { name: '========== Open-source Apps ==========' },
         { name: '1Sheeld', path: '/1Sheeld/1Sheeld-Android-App-1.9.0', xmlUrl: 'labels/1Sheeld_oracle.xml' },
         { name: 'AFWall+', path: '/AFWall+/afwall-3.1.0/', xmlUrl: 'labels/AFWall+_oracle.xml' },
         { name: 'AnkiDroid', path: '/AnkiDroid/Anki-Android-2.8.4', xmlUrl: 'labels/AnkiDroid_oracle.xml' },
