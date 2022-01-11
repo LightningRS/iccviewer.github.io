@@ -85,7 +85,7 @@ $.extend(window.ICCTagViewer, {
             const tagPath = 'entryMethod.isDynamicCallBack';
             const sel = ICCTagViewer.tagSelect(flowId, tagPath);
             const patterns = [
-                /(add|set|with|reg|regist|register)[^\.\(]*(listener|callback)/i,
+                /(add|set|with|reg|regist|register)[^.(]*(listener|callback)/i,
                 /listener.on/i,
                 /[.| ]onPositive\(/i,
                 /[.| ]set(Positive|Negative)Button\(/i
@@ -233,10 +233,45 @@ $.extend(window.ICCTagViewer, {
             return {
                 autoFix: true,
                 ignorable: false,
+                error: chk ? !sel : false,
                 errorTags: [tagPath],
                 type: 'Polymorphic usage'
             }
         },
+
+        (flowId, comment) => {
+            const tagPath = 'intentMatch.isImplicit';
+            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+            let chk = false;
+            const callLines = $('#icc-flow-{0}'.format(flowId)).find('.call-line');
+            callLines.toArray().some(function(elem, i){
+                const fp = $(elem).find('input').val();
+                if (/(AndroidManifest.xml)/i.test(fp)) {
+                    chk = true;
+                    return true;
+                }
+            });
+            return {
+                autoFix: false,
+                ignorable: true,
+                msgPrefix: 'The file AndroidManifest.xml should include in call line when tag',
+                msgSuffix: 'has been selected.',
+                error: sel ? !chk : false,
+                errorTags: [tagPath]
+            }
+        },
+        (flowId, comment) => {
+            const tagPath = 'analyzeScope.methodScope.isListenerInvocation';
+            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+            const chk = /(add|set|with|reg|regist|register)[^.(]*(listener)/i.test(comment);
+            return {
+                autoFix: true,
+                ignorable: true,
+                error: chk ? !sel : false,
+                errorTags: [tagPath]
+            }
+        },
+
         (flowId, comment) => {
             const tagPath1 = 'exitMethod.isNormalSendICC';
             const tagPath2 = 'exitMethod.isAtypicalSendICC';

@@ -177,12 +177,14 @@ $.extend(window.ICCTagViewer.config, {
                         {
                             "id": "flow",
                             "name": "Flow Sensitive",
-                            "desc": "The analysis precision needs to be flow-sensitive"
+                            "desc": "The analysis precision needs to be flow-sensitive",
+                            "isShow": false,
                         },
                         {
                             "id": "path",
                             "name": "Path Sensitive",
-                            "desc": "The analysis precision needs to be path-sensitive"
+                            "desc": "The analysis precision needs to be path-sensitive",
+                            "isShow": false,
                         },
                         {
                             "id": "context",
@@ -192,12 +194,14 @@ $.extend(window.ICCTagViewer.config, {
                         {
                             "id": "object",
                             "name": "Object Sensitive",
-                            "desc": "The analysis precision needs to be object-sensitive"
+                            "desc": "The analysis precision needs to be object-sensitive",
+                            "isShow": false,
                         },
                         {
                             "id": "field",
                             "name": "Field Sensitive",
-                            "desc": "The analysis precision needs to be field-sensitive"
+                            "desc": "The analysis precision needs to be field-sensitive",
+                            "isShow": false,
                         }
                     ]
                 }

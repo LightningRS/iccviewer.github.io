@@ -5,6 +5,7 @@
  * @property {String} id ID of tag
  * @property {String} name Name of tag
  * @property {String} desc Description of tag
+ * @property {Boolean} isShow Whether show the tag or not
  * @property {null|Array<ICCTagViewer.BaseTag>} subTags Array of sub tags
  */
 
@@ -220,6 +221,7 @@ $.extend(window.ICCTagViewer, {
         $label.attr('title', '{0}: {1}'.format(tag.id, this._T(tag.desc)));
         $label.append($checkBox).append(this._T(tag.name));
         $div.append($label);
+        if (tag.isShow === false) $div.hide();
         return $div;
     },
 
@@ -638,6 +640,22 @@ $.extend(window.ICCTagViewer, {
         $sourceCol2.append($sourceInput);
         const $sourceSpan = $('<span class="display-name icc-source-show" />').html(flowObj.source);
         $sourceCol3.append($sourceSpan);
+
+        const $sourceCopyBtn = $('<button class="btn btn-sm btn-primary ms-1" type="button"></button>');
+        const $sourceCopyBtnI = $('<i class="bi bi-file-earmark-text" />');
+        $sourceCopyBtn.attr('title', this._T('Copy source class name'));
+        $sourceCopyBtn.append($sourceCopyBtnI);
+        $sourceCopyBtn.on('click', function() {
+            const ipt = $sourceInput[0];
+            ipt.textContent = flowObj.source;
+            $sourceCol2.show();
+            ipt.select();
+            document.execCommand('copy');
+            $sourceCol2.hide();
+            _this.makeToast(_this._T('Class name copied'));
+        });
+        $sourceCol3.append($sourceCopyBtn);
+
         $sourceDiv.append($sourceCol1).append($sourceCol2).append($sourceCol3);
         $basicInfo.append($sourceDiv);
 
@@ -652,6 +670,22 @@ $.extend(window.ICCTagViewer, {
         $destCol2.append($destInput);
         const $destSpan = $('<span class="display-name icc-dest-show" />').html(flowObj.dest);
         $destCol3.append($destSpan);
+
+        const $destCopyBtn = $('<button class="btn btn-sm btn-primary ms-1" type="button"></button>');
+        const $destCopyBtnI = $('<i class="bi bi-file-earmark-text" />');
+        $destCopyBtn.attr('title', this._T('Copy destination class name'));
+        $destCopyBtn.append($destCopyBtnI);
+        $destCopyBtn.on('click', function() {
+            const ipt = $destInput[0];
+            ipt.textContent = flowObj.source;
+            $destCol2.show();
+            ipt.select();
+            document.execCommand('copy');
+            $destCol2.hide();
+            _this.makeToast(_this._T('Class name copied'));
+        });
+        $destCol3.append($destCopyBtn);
+
         $destDiv.append($destCol1).append($destCol2).append($destCol3);
         $basicInfo.append($destDiv);
 
@@ -842,7 +876,7 @@ $.extend(window.ICCTagViewer, {
      * @param tag {ICCTagViewer.BaseTag} Tag object
      */
     countTags: function(tag) {
-        if (!tag.hasOwnProperty('subTags')) this.tagsCnt++;
+        if (!tag.hasOwnProperty('subTags') && tag.isShow !== false) this.tagsCnt++;
         else {
             for (const i in tag.subTags) {
                 if (!tag.subTags.hasOwnProperty(i)) continue;
@@ -1212,7 +1246,7 @@ $.extend(window.ICCTagViewer, {
                 $option.attr('value', appItem.path)
                     .attr('xml-url', appItem.xmlUrl)
                     .attr('app-name', appItem.name)
-                    .html(appItem.name)
+                    .html(_this._T(appItem.name))
                     .insertBefore($custom);
             });
         }
@@ -1232,7 +1266,7 @@ $.extend(window.ICCTagViewer, {
                     -1, 'bg-primary', 'bi-hourglass-split'
                 );
                 $.ajax({
-                    url: xmlUrl,
+                    url: xmlUrl + '?r=' + Math.random(),
                     type: 'get',
                     dataType: 'text',
                     success: function(data) {

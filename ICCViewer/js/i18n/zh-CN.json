@@ -84,6 +84,9 @@
     "Cannot select more than {0} of these labels": "以下标签应至多选择{0}个",
     "Cannot select less than {0} of these labels": "以下标签应至少选择{0}个",
 
+    "The file AndroidManifest.xml should include in call line when tag": "当选择 TAG",
+    "has been selected.": "时，调用代码行中应当包含 AndroidManifest.xml 文件",
+
     ", ": "、",
     "Cancel": "取消",
     "OK": "确定",
@@ -104,6 +107,10 @@
     "Please select an application...": "请选择一个应用...",
     "-- Custom --": "-- 自定义应用 --",
     "SourceRoot:": "源码路径：",
+
+    "Copy source class name": "复制源类名",
+    "Copy destination class name": "复制目标类名",
+    "Class name copied": "类名已复制",
 
     "#labels: ": "#标签: ",
     "#callLines: ": "#调用行: ",
