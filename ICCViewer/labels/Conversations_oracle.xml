@@ -2,7 +2,7 @@
 
 <root srcCodeBase="/Conversations/Conversations-2.5.1">
   <OracleEdge source="eu.siacs.conversations.services.ContactChooserTargetService" destination="eu.siacs.conversations.services.XmppConnectionService" method="">
-    <comment>*ContactChooserTargetService.onGetChooserTargets() -&gt; ContactChooserTargetService.onGetChooserTargets() -&gt; ContactChooserTargetService.startService() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
+    <comment>*ContactChooserTargetService.onGetChooserTargets() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/services/ContactChooserTargetService.java" start="45" end="47"/>
       <line src="/src/main/java/eu/siacs/conversations/utils/Compatibility.java" start="127" end="127"/>
@@ -14,14 +14,14 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.services.EventReceiver" destination="eu.siacs.conversations.services.XmppConnectionService" method="">
-    <comment>*EventReceiver.onReceive() -&gt; EventReceiver.startService() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
+    <comment>*EventReceiver.onReceive() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/services/EventReceiver.java" start="21" end="21"/>
       <line src="/src/main/java/eu/siacs/conversations/services/EventReceiver.java" start="33" end="33"/>
@@ -34,7 +34,7 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -61,7 +61,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.services.MaintenanceReceiver" destination="eu.siacs.conversations.services.XmppConnectionService" method="">
-    <comment>*MaintenanceReceiver.onReceive() -&gt; MaintenanceReceiver.renewInstanceToken() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
+    <comment>*MaintenanceReceiver.onReceive() -&gt; renewInstanceToken() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/src/playstore/java/eu/siacs/conversations/services/MaintenanceReceiver.java" start="21" end="21"/>
       <line src="/src/playstore/java/eu/siacs/conversations/services/MaintenanceReceiver.java" start="30" end="32"/>
@@ -74,7 +74,7 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -94,7 +94,7 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -616,7 +616,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.EditAccountActivity" destination="eu.siacs.conversations.ui.ChangePasswordActivity" method="">
-    <comment>*EditAccountActivity.onOptionsItemSelected() -&gt; EditAccountActivity.gotoChangePassword() -&gt; startActivity()</comment>
+    <comment>*EditAccountActivity.onOptionsItemSelected() -&gt; gotoChangePassword() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/EditAccountActivity.java" start="831" end="831"/>
       <line src="/src/main/java/eu/siacs/conversations/ui/EditAccountActivity.java" start="863" end="868"/>
@@ -628,7 +628,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -647,7 +647,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -843,7 +843,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -862,7 +862,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -941,7 +941,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1006,7 +1006,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.UriHandlerActivity" destination="eu.siacs.conversations.ui.EditAccountActivity" method="">
-    <comment>*UriHandlerActivity.onStart()-&gt; handleIntent()-&gt; handleUri()-&gt; startActivity()</comment>
+    <comment>*UriHandlerActivity.onStart() -&gt; handleIntent() -&gt; handleUri() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="67" end="67"/>
       <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="165" end="165"/>

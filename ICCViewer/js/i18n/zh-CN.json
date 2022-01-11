@@ -84,8 +84,8 @@
     "Cannot select more than {0} of these labels": "以下标签应至多选择{0}个",
     "Cannot select less than {0} of these labels": "以下标签应至少选择{0}个",
 
-    "The file AndroidManifest.xml should include in call line when tag": "当选择 TAG",
-    "has been selected.": "时，调用代码行中应当包含 AndroidManifest.xml 文件",
+    "Please check whether IntentFilter is defined in AndroidManifest.xml or not when tag": "当选择 TAG",
+    "has been selected.": "时，请确认 IntentFilter 是否定义在 AndroidManifest.xml 文件中",
 
     ", ": "、",
     "Cancel": "取消",

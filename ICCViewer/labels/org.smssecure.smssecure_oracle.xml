@@ -20,7 +20,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -45,7 +45,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -70,7 +70,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -298,7 +298,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.smssecure.smssecure.ConversationListActivity" destination="org.smssecure.smssecure.DatabaseUpgradeActivity" method="">
-    <comment>ConversationListActivity.onCreate() -&gt; ConversationListActivity extends PassphraseRequiredActionBarActivity -&gt; PassphraseRequiredActionBarActivity.onCreate() -&gt; routeApplicationState() -&gt; getIntentForState() -&gt; getUpgradeDatabaseIntent() -&gt; getRoutedIntent() -&gt; startActivity()</comment>
+    <comment>*ConversationListActivity.onCreate() -&gt; ConversationListActivity extends PassphraseRequiredActionBarActivity -&gt; PassphraseRequiredActionBarActivity.onCreate() -&gt; routeApplicationState() -&gt; getIntentForState() -&gt; getUpgradeDatabaseIntent() -&gt; getRoutedIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/smssecure/smssecure/ConversationListActivity.java" start="43" end="43"/>
       <line src="/src/org/smssecure/smssecure/PassphraseRequiredActionBarActivity.java" start="42" end="42"/>
@@ -406,7 +406,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.smssecure.smssecure.ConversationListActivity" destination="org.smssecure.smssecure.PassphraseCreateActivity" method="">
-    <comment>ConversationListActivity.onCreate() -&gt; ConversationListActivity extends PassphraseRequiredActionBarActivity -&gt; PassphraseRequiredActionBarActivity.onCreate() -&gt; routeApplicationState() -&gt; getIntentForState() -&gt; getCreatePassphraseIntent() -&gt; getRoutedIntent() -&gt; startActivity()</comment>
+    <comment>*ConversationListActivity.onCreate() -&gt; ConversationListActivity extends PassphraseRequiredActionBarActivity -&gt; PassphraseRequiredActionBarActivity.onCreate() -&gt; routeApplicationState() -&gt; getIntentForState() -&gt; getCreatePassphraseIntent() -&gt; getRoutedIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/smssecure/smssecure/ConversationListActivity.java" start="43" end="43"/>
       <line src="/src/org/smssecure/smssecure/PassphraseRequiredActionBarActivity.java" start="42" end="42"/>
@@ -430,7 +430,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.smssecure.smssecure.ConversationListActivity" destination="org.smssecure.smssecure.PassphrasePromptActivity" method="">
-    <comment>ConversationListActivity.onCreate() -&gt; ConversationListActivity extends PassphraseRequiredActionBarActivity -&gt; PassphraseRequiredActionBarActivity.onCreate() -&gt; routeApplicationState() -&gt; getIntentForState() -&gt; getPromptPassphraseIntent() -&gt; getRoutedIntent() -&gt; startActivity()</comment>
+    <comment>*ConversationListActivity.onCreate() -&gt; ConversationListActivity extends PassphraseRequiredActionBarActivity -&gt; PassphraseRequiredActionBarActivity.onCreate() -&gt; routeApplicationState() -&gt; getIntentForState() -&gt; getPromptPassphraseIntent() -&gt; getRoutedIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/smssecure/smssecure/ConversationListActivity.java" start="43" end="43"/>
       <line src="/src/org/smssecure/smssecure/PassphraseRequiredActionBarActivity.java" start="42" end="42"/>
@@ -492,7 +492,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.smssecure.smssecure.ConversationListArchiveActivity" destination="org.smssecure.smssecure.ConversationActivity" method="">
-    <comment>ConversationListArchiveActivity.onCreate() -&gt; new ConversationListFragment() -&gt; ConversationListArchiveActivity extends PassphraseRequiredActionBarActivity -&gt; PassphraseRequiredActionBarActivity.initFragment() -&gt; FragmentTransaction.commit() -&gt; ConversationListFragment.onActivityCreated() -&gt; initializeListAdapter() -&gt; new ConversationListAdapter() -&gt; ListView.setAdapter() -&gt; ConversationListAdapter.onCreateItemViewHolder() -&gt; View.OnClickListener.onClick() -&gt; ConversationListAdapter.ItemClickListener.onItemClick() -&gt; ConversationListFragment implements ConversationListAdapter.ItemClickListener -&gt; *ConversationListFragment.onItemClick() -&gt; handleCreateConversation() -&gt; ConversationListFragment.ConversationSelectedListener.onCreateConversation() -&gt; ConversationListArchiveActivity implements ConversationListFragment.ConversationSelectedListener --&gt; ConversationListArchiveActivity.onCreateConversation() -&gt; startActivity()</comment>
+    <comment>ConversationListArchiveActivity.onCreate() -&gt; new ConversationListFragment() -&gt; ConversationListArchiveActivity extends PassphraseRequiredActionBarActivity -&gt; PassphraseRequiredActionBarActivity.initFragment() -&gt; FragmentTransaction.commit() -&gt; ConversationListFragment.onActivityCreated() -&gt; initializeListAdapter() -&gt; new ConversationListAdapter() -&gt; ListView.setAdapter() -&gt; ConversationListAdapter.onCreateItemViewHolder() -&gt; View.OnClickListener.onClick() -&gt; ConversationListAdapter.ItemClickListener.onItemClick() -&gt; ConversationListFragment implements ConversationListAdapter.ItemClickListener -&gt; *ConversationListFragment.onItemClick() -&gt; handleCreateConversation() -&gt; ConversationListFragment.ConversationSelectedListener.onCreateConversation() -&gt; ConversationListArchiveActivity implements ConversationListFragment.ConversationSelectedListener -&gt; ConversationListArchiveActivity.onCreateConversation() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/smssecure/smssecure/ConversationListArchiveActivity.java" start="34" end="35"/>
       <line src="/src/org/smssecure/smssecure/ConversationListArchiveActivity.java" start="13" end="13"/>
@@ -533,14 +533,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.smssecure.smssecure.DatabaseMigrationActivity" destination="org.smssecure.smssecure.service.ApplicationMigrationService" method="">
-    <comment>DatabaseMigrationActivity.onCreate() -&gt; initializeServiceBinding() -&gt; bindService()</comment>
+    <comment>*DatabaseMigrationActivity.onCreate() -&gt; initializeServiceBinding() -&gt; bindService()</comment>
     <callLines>
       <line src="/src/org/smssecure/smssecure/DatabaseMigrationActivity.java" start="46" end="46"/>
       <line src="/src/org/smssecure/smssecure/DatabaseMigrationActivity.java" start="75" end="76"/>
@@ -712,7 +712,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>

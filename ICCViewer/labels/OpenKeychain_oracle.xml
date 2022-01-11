@@ -37,7 +37,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -81,7 +81,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -191,16 +191,17 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; ManageSecurityTokenFragment.finishAndShowKey()  -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; *FragmentManager.executePendingTransactions() -&gt; ManageSecurityTokenFragment.finishAndShowKey()  -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="114" end="115"/>
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="189" end="189"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="158" end="160"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="193" end="193"/>
@@ -234,7 +235,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -256,7 +257,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -278,7 +279,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -300,7 +301,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -322,7 +323,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -344,7 +345,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -366,14 +367,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DecryptActivity" destination="org.sufficientlysecure.keychain.ui.DisplayTextActivity" method="">
-    <comment>DecryptActivity.onCreate() -&gt; DecryptActivity.handleActions() -&gt; DecryptActivity.displayListFragment() -&gt; DecryptListFragment.onBindViewHolder()  -&gt; DecryptListFragment.displayWithViewIntent() -&gt; startActivity()</comment>
+    <comment>DecryptActivity.onCreate() -&gt; DecryptActivity.handleActions() -&gt; DecryptActivity.displayListFragment() -&gt; *FragmentTransaction.commit() -&gt; DecryptListFragment.onBindViewHolder()  -&gt; DecryptListFragment.displayWithViewIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="57" end="57"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="195" end="195"/>
@@ -397,7 +398,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DecryptActivity" destination="org.sufficientlysecure.keychain.ui.LogDisplayActivity" method="">
-    <comment>DecryptActivity.onCreate() -&gt; DecryptActivity.handleActions() -&gt; DecryptActivity.displayListFragment() -&gt; DecryptListFragment.onMenuItemClick() -&gt; Activity.startActivity()</comment>
+    <comment>DecryptActivity.onCreate() -&gt; DecryptActivity.handleActions() -&gt; DecryptActivity.displayListFragment() -&gt; *FragmentTransaction.commit() -&gt; DecryptListFragment.onMenuItemClick() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="57" end="57"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="195" end="195"/>
@@ -433,14 +434,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DisplayTextActivity" destination="org.sufficientlysecure.keychain.ui.LogDisplayActivity" method="">
-    <comment>DisplayTextActivity.onCreate() -&gt; DisplayTextActivity.handleActions() -&gt; DisplayTextActivity.loadFragment() -&gt; DisplayTextFragment.onOptionsItemSelected() -&gt; DisplayTextFragment extends DecryptFragment -&gt; DecryptFragment.startDisplayLogActivity() -&gt; Activity.startActivity()</comment>
+    <comment>DisplayTextActivity.onCreate() -&gt; DisplayTextActivity.handleActions() -&gt; DisplayTextActivity.loadFragment() -&gt; *FragmentManager.executePendingTransactions() -&gt; DisplayTextFragment.onOptionsItemSelected() -&gt; DisplayTextFragment extends DecryptFragment -&gt; DecryptFragment.startDisplayLogActivity() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DisplayTextActivity.java" start="50" end="50"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DisplayTextActivity.java" start="83" end="83"/>
@@ -464,7 +465,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DisplayTextActivity" destination="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" method="">
-    <comment>DisplayTextActivity.onCreate() -&gt; DisplayTextActivity.loadFragment() -&gt; DecryptFragment.onViewStateRestored()  -&gt; DecryptFragment.loadSignerKeyData() -&gt; DecryptFragment.setOnClickListener() -&gt; DecryptFragment.showKey() -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; DecryptFragment.startActivity()</comment>
+    <comment>DisplayTextActivity.onCreate() -&gt; DisplayTextActivity.loadFragment() -&gt; *FragmentManager.executePendingTransactions() -&gt; DecryptFragment.onViewStateRestored()  -&gt; DecryptFragment.loadSignerKeyData() -&gt; DecryptFragment.setOnClickListener() -&gt; DecryptFragment.showKey() -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; DecryptFragment.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DisplayTextActivity.java" start="50" end="50"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DisplayTextActivity.java" start="83" end="83"/>
@@ -485,7 +486,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -506,7 +507,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -534,7 +535,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.ImportKeysActivity" destination="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" method="">
-    <comment>ImportKeysActivity.onResumeFragments() -&gt; ImportKeysActivity.startListFragment() -&gt; ImportKeysListFragment.onCreateView()  -&gt; ImportKeysAdapter.setOnClickListener()  -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
+    <comment>ImportKeysActivity.onResumeFragments() -&gt; ImportKeysActivity.startListFragment() -&gt; FragmentTransaction.commit() -&gt; ImportKeysListFragment.onCreateView()  -&gt; ImportKeysAdapter.setOnClickListener()  -&gt; *ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/ImportKeysActivity.java" start="112" end="112"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/ImportKeysActivity.java" start="161" end="161"/>
@@ -551,7 +552,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -612,7 +613,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -665,7 +666,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.CreateKeyActivity" method="">
-    <comment>MainActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*MainActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="145" end="147"/>
     </callLines>
@@ -741,7 +742,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -760,7 +761,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -843,7 +844,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -871,7 +872,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.PanicResponderActivity" destination="org.sufficientlysecure.keychain.ui.PanicExitActivity" method="">
-    <comment>PanicResponderActivity.onCreate() -&gt; PanicExitActivity.exitAndRemoveFromRecentApps() -&gt; Activty.startActivity()</comment>
+    <comment>*PanicResponderActivity.onCreate() -&gt; PanicExitActivity.exitAndRemoveFromRecentApps() -&gt; Activty.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/PanicResponderActivity.java" start="42" end="42"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/PanicExitActivity.java" start="45" end="52"/>
@@ -943,7 +944,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -963,7 +964,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -984,7 +985,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1005,7 +1006,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1025,7 +1026,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1067,7 +1068,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1090,7 +1091,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1109,7 +1110,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1135,7 +1136,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" destination="org.sufficientlysecure.keychain.ui.CertifyKeyActivity" method="">
-    <comment>*ViewKeyActivity.onActivityResult() -&gt;certifyImmediate() -&gt; startActivityForResult()</comment>
+    <comment>*ViewKeyActivity.onActivityResult() -&gt; certifyImmediate() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="559" end="559"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="451" end="454"/>
@@ -1147,7 +1148,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1186,7 +1187,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1206,7 +1207,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1251,7 +1252,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" destination="org.sufficientlysecure.keychain.ui.PassphraseDialogActivity" method="">
-    <comment>ViewKeyActivity.onOptionsItemSelected() -&gt; startPassphraseActivity() -&gt; startActivityForResult()</comment>
+    <comment>*ViewKeyActivity.onOptionsItemSelected() -&gt; startPassphraseActivity() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="322" end="322"/>
       <line src="//OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="476" end="482"/>
@@ -1282,7 +1283,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1302,7 +1303,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1327,7 +1328,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" destination="org.sufficientlysecure.keychain.ui.linked.LinkedIdWizard" method="">
-    <comment>ViewKeyActivity.onCreate() -&gt;ViewKeyFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; ViewKeyFragment.onActivityCreated() -&gt; LiveData&lt;UnifiedKeyInfo&gt;.observe() -&gt; *ViewKeyFragment.onLoadUnifiedKeyInfo() -&gt; *View.setIdentitiesCardListener() -&gt; ViewKeyFragment.addLinkedIdentity() -&gt; startActivity()</comment>
+    <comment>ViewKeyActivity.onCreate() -&gt; ViewKeyFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; ViewKeyFragment.onActivityCreated() -&gt; LiveData&lt;UnifiedKeyInfo&gt;.observe() -&gt; *ViewKeyFragment.onLoadUnifiedKeyInfo() -&gt; *View.setIdentitiesCardListener() -&gt; ViewKeyFragment.addLinkedIdentity() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="286" end="287"/>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyFragment.java" start="127" end="127"/>
@@ -1341,7 +1342,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>

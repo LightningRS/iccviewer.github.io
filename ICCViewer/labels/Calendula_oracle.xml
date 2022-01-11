@@ -108,7 +108,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -226,7 +226,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -252,7 +252,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.HomePagerActivity" destination="es.usc.citius.servando.calendula.settings.CalendulaSettingsActivity" method="">
-    <comment>HomePagerActivity.onCreate() -&gt; checkDatabaseUpdateNeeded() -&gt; MaterialStyledDialogBuilder.onPositive() -&gt; *MaterialDialog.SingleButtonCallback.onClick() -&gt; startActivity()</comment>
+    <comment>HomePagerActivity.onCreate() -&gt; checkDatabaseUpdateNeeded() -&gt; MaterialStyledDialog.Builder.onPositive() -&gt; *MaterialDialog.SingleButtonCallback.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/HomePagerActivity.java" start="491" end="491"/>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/HomePagerActivity.java" start="369" end="371"/>
@@ -264,7 +264,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -302,7 +302,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -402,7 +402,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -512,7 +512,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.activities.StartActivity" destination="es.usc.citius.servando.calendula.pinlock.PinLockActivity" method="">
-    <comment>StartActivity.onCreate() -&gt; verifyUnlockAndLaunch() -&gt; startActivityForResult()</comment>
+    <comment>*StartActivity.onCreate() -&gt; verifyUnlockAndLaunch() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/StartActivity.kt" start="40" end="40"/>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/StartActivity.kt" start="45" end="47"/>

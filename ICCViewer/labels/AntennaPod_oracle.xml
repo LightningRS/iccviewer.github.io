@@ -22,7 +22,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="true"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -46,7 +46,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -69,7 +69,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -91,7 +91,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -116,7 +116,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="true"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -139,14 +139,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.DownloadAuthenticationActivity" destination="de.danoeh.antennapod.core.service.download.DownloadService" method="">
-    <comment>DownloadAuthenticationActivity.onCreate() -&gt; DownloadRequester.download() -&gt; ContextCompat.startForegroundService()</comment>
+    <comment>*DownloadAuthenticationActivity.onCreate() -&gt; DownloadRequester.download() -&gt; ContextCompat.startForegroundService()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/DownloadAuthenticationActivity.java" start="80" end="80"/>
       <line src="/core/src/main/java/de/danoeh/antennapod/core/storage/DownloadRequester.java" start="84" end="86"/>
@@ -158,14 +158,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.FlattrAuthActivity" destination="de.danoeh.antennapod.activity.MainActivity" method="">
-    <comment>FlattrAuthActivity.onCreate() -&gt; *Button.setOnClickListener() -&gt; startActivity()</comment>
+    <comment>FlattrAuthActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/FlattrAuthActivity.java" start="48" end="48"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/FlattrAuthActivity.java" start="49" end="51"/>
@@ -177,7 +177,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -201,7 +201,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -225,15 +225,18 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.MainActivity" destination="de.danoeh.antennapod.activity.OnlineFeedViewActivity" method="">
-    <comment>MainActivity.onCreate()-&gt; MainActivity.loadFragment() -&gt; AddFeedFragment.onCreateView() -&gt; *Button.setOnClickListener() -&gt; AddFeedFragment.startActivity()</comment>
+    <comment>MainActivity.onCreate() -&gt; loadFragment() -&gt; AddFeedFragment.onCreateView() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AddFeedFragment.startActivity()</comment>
     <callLines>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="188" end="188"/>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="105" end="105"/>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="189" end="189"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="305" end="305"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/fragment/AddFeedFragment.java" start="60" end="65"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/fragment/AddFeedFragment.java" start="64" end="64"/>
@@ -245,15 +248,18 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.MainActivity" destination="de.danoeh.antennapod.activity.OpmlImportFromPathActivity" method="">
-    <comment>MainActivity.onCreate()-&gt;MainActivity.loadFragment() -&gt; AddFeedFragment.onCreateView() -&gt; *Button.setOnClickListener() -&gt; AddFeedFragment.startActivity()</comment>
+    <comment>MainActivity.onCreate() -&gt; loadFragment() -&gt; AddFeedFragment.onCreateView() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AddFeedFragment.startActivity()</comment>
     <callLines>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="188" end="188"/>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="105" end="105"/>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="189" end="189"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="305" end="305"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/fragment/AddFeedFragment.java" start="57" end="58"/>
     </callLines>
@@ -264,14 +270,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.MainActivity" destination="de.danoeh.antennapod.activity.PreferenceActivity" method="">
-    <comment>MainActivity.onCreate() -&gt; *LinearLayout.setOnClickListener() -&gt; MainActivity.startActivity()</comment>
+    <comment>MainActivity.onCreate() -&gt; LinearLayout.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MainActivity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="176" end="179"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="178" end="178"/>
@@ -283,7 +289,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -303,14 +309,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.MainActivity" destination="de.danoeh.antennapod.core.receiver.FeedUpdateReceiver" method="">
-    <comment>*MainActivity.onCreate() -&gt; checkFirstLaunch() -&gt; UserPreferences.setUpdateInterval() -&gt; restartUpdateAlarm() -&gt; AutoUpdateManager.restartUpdateIntervalAlarm() -&gt; restartAlarmManagerInterval() -&gt; AlarmManager.set()</comment>
+    <comment>MainActivity.onCreate() -&gt; checkFirstLaunch() -&gt; UserPreferences.setUpdateInterval() -&gt; restartUpdateAlarm() -&gt; AutoUpdateManager.restartUpdateIntervalAlarm() -&gt; restartAlarmManagerInterval() -&gt; *AlarmManager.set()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="205" end="205"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/MainActivity.java" start="235" end="235"/>
@@ -325,14 +331,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.OnlineFeedViewActivity" destination="de.danoeh.antennapod.activity.MainActivity" method="">
-    <comment>OnlineFeedViewActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
+    <comment>*OnlineFeedViewActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/OnlineFeedViewActivity.java" start="245" end="247"/>
     </callLines>
@@ -363,7 +369,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -383,7 +389,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -403,7 +409,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -426,14 +432,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.PreferenceActivity" destination="de.danoeh.antennapod.activity.ImportExportActivity" method="">
-    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupStorageScreen() -&gt; *Preference.setOnPreferenceClickListener() -&gt; Activity.startActivity()</comment>
+    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupStorageScreen() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.Activity.OnPreferenceClickListener.onClick() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="85" end="85"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="91" end="101"/>
@@ -449,14 +455,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.PreferenceActivity" destination="de.danoeh.antennapod.activity.MainActivity" method="">
-    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; FragmentTransaction.replace() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupInterfaceScreen() -&gt; *Preference.setOnPreferenceChangeListener() -&gt; Activity.startActivity()</comment>
+    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; FragmentTransaction.replace() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupInterfaceScreen() -&gt; Preference.setOnPreferenceChangeListener() -&gt; *Preference.OnPreferenceChangeListener.onChange() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="87" end="87"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="97" end="98"/>
@@ -472,14 +478,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.PreferenceActivity" destination="de.danoeh.antennapod.activity.OpmlImportFromPathActivity" method="">
-    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; FragmentTransaction.replace() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupStorageScreen() -&gt; *Preference.setOnPreferenceClickListener() -&gt; Activity.startActivity()</comment>
+    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; FragmentTransaction.replace() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupStorageScreen() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onClick() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="87" end="87"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="97" end="98"/>
@@ -495,14 +501,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.PreferenceActivity" destination="de.danoeh.antennapod.activity.StatisticsActivity" method="">
-    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; FragmentTransaction.replace() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupMainScreen() -&gt; *Preference.setOnPreferenceClickListener() -&gt; Activity.startActivity()</comment>
+    <comment>PreferenceActivity.onCreate() -&gt; showPreferenceScreen() -&gt; FragmentTransaction.replace() -&gt; PreferenceActivity.MainFragment.onCreatePreferences() -&gt; PreferenceController.onCreate() -&gt; setupMainScreen() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onClick() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="87" end="87"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/PreferenceActivity.java" start="97" end="98"/>
@@ -518,7 +524,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -549,14 +555,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.SplashActivity" destination="de.danoeh.antennapod.activity.MainActivity" method="">
-    <comment>SplashActivity.onCreate() -&gt; *Completable.subscribe() -&gt; startActivity()</comment>
+    <comment>*SplashActivity.onCreate() -&gt; Completable.subscribe() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/SplashActivity.java" start="37" end="49"/>
     </callLines>
@@ -576,6 +582,7 @@
   <OracleEdge source="de.danoeh.antennapod.activity.StorageErrorActivity" destination="de.danoeh.antennapod.activity.DirectoryChooserActivity" method="">
     <comment>StorageErrorActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StorageErrorActivity.openDirectoryChooser() -&gt; startActivityForResult()</comment>
     <callLines>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/StorageErrorActivity.java" start="46" end="46"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/StorageErrorActivity.java" start="51" end="51"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/StorageErrorActivity.java" start="72" end="73"/>
     </callLines>
@@ -586,7 +593,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -605,7 +612,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -630,7 +637,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="true"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -655,7 +662,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="true"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -677,7 +684,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -698,7 +705,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -719,14 +726,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.gpoddernet.GpodnetAuthenticationActivity" destination="de.danoeh.antennapod.activity.MainActivity" method="">
-    <comment>GpodnetAuthenticationActivity.onCreate() -&gt; advance() -&gt; setupFinishView() -&gt; *Button.setOnClickListener() -&gt; GpodnetAuthenticationActivity.startActivity()</comment>
+    <comment>GpodnetAuthenticationActivity.onCreate() -&gt; advance() -&gt; setupFinishView() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; GpodnetAuthenticationActivity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/gpoddernet/GpodnetAuthenticationActivity.java" start="84" end="84"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/gpoddernet/GpodnetAuthenticationActivity.java" start="387" end="387"/>
@@ -740,14 +747,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.activity.gpoddernet.GpodnetAuthenticationActivity" destination="de.danoeh.antennapod.core.service.GpodnetSyncService" method="">
-    <comment>GpodnetAuthenticationActivity.onCreate() -&gt; advance() -&gt; setupFinishView() -&gt; *Button.setOnClickListener() -&gt; GpodnetSyncService.sendSyncIntent() -&gt; SafeJobIntentService.enqueueWork()</comment>
+    <comment>GpodnetAuthenticationActivity.onCreate() -&gt; advance() -&gt; setupFinishView() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; GpodnetSyncService.sendSyncIntent() -&gt; SafeJobIntentService.enqueueWork()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/gpoddernet/GpodnetAuthenticationActivity.java" start="84" end="84"/>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/gpoddernet/GpodnetAuthenticationActivity.java" start="387" end="387"/>
@@ -762,7 +769,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -785,7 +792,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -808,7 +815,7 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -827,7 +834,7 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -846,8 +853,8 @@
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>

@@ -16,6 +16,7 @@
  * @property {String} method Method name of OracleEdge
  * @property {String} comment Comment of OracleEdge
  * @property {null|HTMLElement} metaData Extra node(s) under OracleEdge
+ * @property {String} checkIgnore Ignored checkers' name
  */
 
 /**
@@ -143,6 +144,13 @@ $.extend(window.ICCTagViewer, {
             const comment = $commentInput.val();
             const result = elem(flowId, comment);
             if (result.error) {
+                if (result.type) {
+                    const checkIgnore = _this.data.flows[flowId].checkIgnore;
+                    if (checkIgnore && checkIgnore.indexOf(result.type + ',') !== -1) {
+                        console.log("Ignored checker: {0}".format(result.type));
+                        return;
+                    }
+                }
                 let tips = _this._T('Label: {0} [{1}] {2}');
                 let tagShortNames = [];
                 if (result.errorTags) {
@@ -151,13 +159,13 @@ $.extend(window.ICCTagViewer, {
                     });
                 }
                 if (result.msgPrefix === undefined) {
-                    result.msgPrefix = 'The label';
+                    result.msgPrefix = _this._T('The label');
                 }
                 if (result.msgSuffix === undefined) {
-                    result.msgSuffix = 'seems conflict with the call path information, please check it again.';
+                    result.msgSuffix = _this._T('seems conflict with the call path information, please check it again.');
                 }
                 tips = tips.format(
-                    _this._T(result.msgPrefix), tagShortNames.join(_this._T(', ')), _this._T(result.msgSuffix)
+                    result.msgPrefix, tagShortNames.join(_this._T(', ')), result.msgSuffix
                 );
 
                 const $span = $('<span class="tag-warning" />');
@@ -181,6 +189,7 @@ $.extend(window.ICCTagViewer, {
                     const $ctrlIgnore = $('<a href="javascript:;" class="ms-1"></a>');
                     $ctrlIgnore.html(_this._T('Ignore'));
                     $ctrlIgnore.on('click', function() {
+                        _this.data.flows[flowId].checkIgnore += result.type + ', ';
                         $span.remove();
                         warnCnt -= 1;
                         if (warnCnt < 1) {
@@ -965,7 +974,8 @@ $.extend(window.ICCTagViewer, {
                 dest: edge.getAttribute('destination'),
                 method: edge.getAttribute('method'),
                 comment: commentElem ? HTMLDecode(commentElem.innerHTML) : '',
-                metaData: metaData
+                metaData: metaData,
+                checkIgnore: edge.getElementsByTagName('tags')[0].getAttribute('checkIgnore'),
             };
             this.data.flows.push(flowObj);
         }
@@ -1062,6 +1072,7 @@ $.extend(window.ICCTagViewer, {
 
             // Tags
             const tagsNode = xml.createElement('tags');
+            if (flow.checkIgnore) tagsNode.setAttribute('checkIgnore', flow.checkIgnore);
             for (const j in this.config.tags) {
                 if (!this.config.tags.hasOwnProperty(j)) continue;
                 const tag = this.config.tags[j];

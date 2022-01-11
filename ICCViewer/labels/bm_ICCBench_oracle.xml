@@ -9,7 +9,7 @@
       <line src="/icc_dynregister1/src/main/java/org/arguslab/icc_dynregister1/MainActivity.java" start="51" end="51"/>
       <line src="/icc_dynregister1/src/main/java/org/arguslab/icc_dynregister1/MainActivity.java" start="44" end="44"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="nullisImplicitAndroidManifest, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="false" isImplicit="true"/>
@@ -31,7 +31,7 @@
       <line src="/icc_dynregister2/src/main/java/org/arguslab/icc_dynregister2/MainActivity.java" start="44" end="46"/>
       <line src="/icc_dynregister2/src/main/java/org/arguslab/icc_dynregister2/MainActivity.java" start="47" end="49"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="nullisImplicitAndroidManifest, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="false" isImplicit="true"/>
@@ -212,6 +212,7 @@
       <line src="/icc_implicit_data1/src/main/java/org/arguslab/icc_implicit_data1/MainActivity.java" start="32" end="32"/>
       <line src="/icc_implicit_data1/src/main/java/org/arguslab/icc_implicit_data1/MainActivity.java" start="54" end="54"/>
       <line src="/icc_implicit_data1/src/main/java/org/arguslab/icc_implicit_data1/MainActivity.java" start="41" end="47"/>
+      <line src="/icc_implicit_data1/src/main/AndroidManifest.xml" start="23" end="27"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -232,31 +233,7 @@
       <line src="/icc_implicit_data2/src/main/java/org/arguslab/icc_implicit_data2/MainActivity.java" start="31" end="31"/>
       <line src="/icc_implicit_data2/src/main/java/org/arguslab/icc_implicit_data2/MainActivity.java" start="50" end="50"/>
       <line src="/icc_implicit_data2/src/main/java/org/arguslab/icc_implicit_data2/MainActivity.java" start="40" end="43"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="false" isImplicit="true"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_mix1.MainActivity" destination="org.arguslab.icc_implicit_mix1.FooActivity" method="xxx">
-    <correctness correctness="true" incorrectType="No." incorrectReason=""/>
-    <nodes>
-      <node method="" type="" unit=""/>
-    </nodes>
-    <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; startActivity()</comment>
-    <callLines>
-      <line src="/icc_implicit_mix1/src/main/java/org/arguslab/icc_implicit_mix1/MainActivity.java" start="34" end="34"/>
-      <line src="/icc_implicit_mix1/src/main/java/org/arguslab/icc_implicit_mix1/MainActivity.java" start="57" end="57"/>
-      <line src="/icc_implicit_mix1/src/main/java/org/arguslab/icc_implicit_mix1/MainActivity.java" start="43" end="50"/>
-      <line src="/icc_implicit_mix1/src/main/AndroidManifest.xml" start="20" end="30"/>
+      <line src="/icc_implicit_data2/src/main/AndroidManifest.xml" start="23" end="29"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -294,6 +271,31 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
+  <OracleEdge source="org.arguslab.icc_implicit_mix1.MainActivity" destination="org.arguslab.icc_implicit_mix1.FooActivity" method="xxx">
+    <correctness correctness="true" incorrectType="No." incorrectReason=""/>
+    <nodes>
+      <node method="" type="" unit=""/>
+    </nodes>
+    <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; startActivity()</comment>
+    <callLines>
+      <line src="/icc_implicit_mix1/src/main/java/org/arguslab/icc_implicit_mix1/MainActivity.java" start="34" end="34"/>
+      <line src="/icc_implicit_mix1/src/main/java/org/arguslab/icc_implicit_mix1/MainActivity.java" start="57" end="57"/>
+      <line src="/icc_implicit_mix1/src/main/java/org/arguslab/icc_implicit_mix1/MainActivity.java" start="43" end="50"/>
+      <line src="/icc_implicit_mix1/src/main/AndroidManifest.xml" start="20" end="30"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="false" isImplicit="true"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
   <OracleEdge source="org.arguslab.icc_implicit_mix2.MainActivity" destination="org.arguslab.icc_implicit_mix2.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason=""/>
     <nodes>
@@ -304,6 +306,7 @@
       <line src="/icc_implicit_mix2/src/main/java/org/arguslab/icc_implicit_mix2/MainActivity.java" start="32" end="32"/>
       <line src="/icc_implicit_mix2/src/main/java/org/arguslab/icc_implicit_mix2/MainActivity.java" start="55" end="55"/>
       <line src="/icc_implicit_mix2/src/main/java/org/arguslab/icc_implicit_mix2/MainActivity.java" start="41" end="48"/>
+      <line src="/icc_implicit_mix2/src/main/AndroidManifest.xml" start="23" end="29"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -374,6 +377,7 @@
       <line src="/icc_implicit_src_nosink/src/main/java/org/arguslab/icc_implicit_src_nosink/MainActivity.java" start="31" end="31"/>
       <line src="/icc_implicit_src_nosink/src/main/java/org/arguslab/icc_implicit_src_nosink/MainActivity.java" start="49" end="49"/>
       <line src="/icc_implicit_src_nosink/src/main/java/org/arguslab/icc_implicit_src_nosink/MainActivity.java" start="40" end="42"/>
+      <line src="/icc_implicit_src_nosink/src/main/AndroidManifest.xml" start="23" end="26"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -437,6 +441,28 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
+  <OracleEdge source="org.arguslab.icc_rpc_comprehensive.BarActivity" destination="org.arguslab.icc_rpc_comprehensive.RemoteService" method="xxx">
+    <correctness correctness="true" incorrectType="No." incorrectReason=""/>
+    <nodes>
+      <node method="" type="" unit=""/>
+    </nodes>
+    <comment>*BarActivity.onStart() -&gt; bindService()</comment>
+    <callLines>
+      <line src="/icc_rpc_comprehensive/src/main/java/org/arguslab/icc_rpc_comprehensive/BarActivity.java" start="25" end="25"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="true" isImplicit="false"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
   <OracleEdge source="org.arguslab.icc_rpc_comprehensive.FooActivity" destination="org.arguslab.icc_rpc_comprehensive.BarActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason=""/>
     <nodes>
@@ -455,28 +481,6 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_rpc_comprehensive.BarActivity" destination="org.arguslab.icc_rpc_comprehensive.RemoteService" method="xxx">
-    <correctness correctness="true" incorrectType="No." incorrectReason=""/>
-    <nodes>
-      <node method="" type="" unit=""/>
-    </nodes>
-    <comment>*BarActivity.onStart() -&gt; bindService()</comment>
-    <callLines>
-      <line src="/icc_rpc_comprehensive/src/main/java/org/arguslab/icc_rpc_comprehensive/BarActivity.java" start="25" end="25"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="true" isImplicit="false"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>

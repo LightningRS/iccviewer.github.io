@@ -167,7 +167,7 @@
       <line src="/UnresolvableIntent1/src/edu/mit/icc_unresolvable_intent/OutFlowActivity.java" start="25" end="25"/>
       <line src="/UnresolvableIntent1/src/edu/mit/icc_unresolvable_intent/OutFlowActivity.java" start="39" end="41"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="isImplicitAndroidManifest, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="false" isImplicit="true"/>
@@ -191,7 +191,7 @@
       <line src="/UnresolvableIntent1/src/edu/mit/icc_unresolvable_intent/OutFlowActivity.java" start="27" end="27"/>
       <line src="/UnresolvableIntent1/src/edu/mit/icc_unresolvable_intent/OutFlowActivity.java" start="39" end="41"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="isImplicitAndroidManifest, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="false" isImplicit="true"/>
@@ -249,7 +249,7 @@
       <line src="/BroadcastTaintAndLeak1/src/edu/mit/icc_broadcast_programmatic_intentfilter/BroadcastTest.java" start="25" end="34"/>
       <line src="/BroadcastTaintAndLeak1/src/edu/mit/icc_broadcast_programmatic_intentfilter/BroadcastTest.java" start="42" end="45"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="isImplicitAndroidManifest, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="false" isImplicit="true"/>

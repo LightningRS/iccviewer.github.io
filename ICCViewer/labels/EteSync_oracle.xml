@@ -115,7 +115,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.ui.ViewCollectionActivity" method="">
-    <comment>*AdapterView.OnItemClickListener.onItemClick() -&gt; ViewCollectionActivity.newIntent() -&gt; startActivity()</comment>
+    <comment>AccountActivity.onLoadFinished() -&gt; AdapterView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ViewCollectionActivity.newIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountActivity.kt" start="242" end="242"/>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/ViewCollectionActivity.kt" start="264" end="266"/>
@@ -128,7 +128,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -146,7 +146,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -166,14 +166,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountSettingsActivity" destination="com.etesync.syncadapter.ui.WebViewActivity" method="">
-    <comment>AccountSettingsActivity.onLoadFinished() -&gt; WebViewActivity.openUrl() -&gt; Context.startActivity()</comment>
+    <comment>*AccountSettingsActivity.onLoadFinished() -&gt; WebViewActivity.openUrl() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountSettingsActivity.kt" start="92" end="92"/>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/WebViewActivity.kt" start="161" end="163"/>
@@ -258,7 +258,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>

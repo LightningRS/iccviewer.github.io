@@ -18,7 +18,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -30,7 +30,7 @@
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/HomeActivity.java" start="195" end="195"/>
       <line src="/app/src/main/java/com/farmerbb/taskbar/MainActivity.java" start="119" end="119"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="nullisImplicitAndroidManifest, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="false" isImplicit="true"/>
@@ -59,14 +59,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.ImportSettingsActivity" method="">
-    <comment>MainActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*MainActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/MainActivity.java" start="124" end="124"/>
     </callLines>
@@ -124,14 +124,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.ShortcutActivity" method="">
-    <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; ShortcutInfoBuilder.setIntent() -&gt; ShortcutManager.setDynamicShortcuts()</comment>
+    <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; ShortcutInfo.Builder.setIntent() -&gt; ShortcutManager.setDynamicShortcuts()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/MainActivity.java" start="129" end="129"/>
       <line src="/app/src/main/java/com/farmerbb/taskbar/MainActivity.java" start="235" end="237"/>
@@ -152,7 +152,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.StartTaskbarActivity" method="">
-    <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; ShortcutInfoBuilder.setIntent() -&gt; ShortcutManager.setDynamicShortcuts()</comment>
+    <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; ShortcutInfo.Builder.setIntent() -&gt; ShortcutManager.setDynamicShortcuts()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/MainActivity.java" start="129" end="129"/>
       <line src="/app/src/main/java/com/farmerbb/taskbar/MainActivity.java" start="225" end="227"/>
@@ -280,7 +280,7 @@
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ContextMenuActivity.java" start="668" end="668"/>
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ContextMenuActivity.java" start="678" end="678"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="nullisImplicitAndroidManifest, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="false" isImplicit="true"/>
@@ -364,7 +364,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -386,7 +386,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -484,7 +484,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.PackageUpgradeReceiver" destination="com.farmerbb.taskbar.activity.DummyActivity" method="">
-    <comment>PackageUpgradeReceiver.onReceive() -&gt; Context.startActivity()</comment>
+    <comment>*PackageUpgradeReceiver.onReceive() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/receiver/PackageUpgradeReceiver.java" start="38" end="42"/>
     </callLines>
@@ -507,7 +507,7 @@
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="53" end="53"/>
       <line src="/app/src/playstore/java/com/farmerbb/taskbar/receiver/ReceiveSettingsReceiver.java" start="159" end="159"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="nullisImplicitAndroidManifest, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="false" isImplicit="true"/>
@@ -521,7 +521,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.SendSettingsReceiver" destination="com.farmerbb.taskbar.receiver.ReceiveSettingsReceiver" method="">
-    <comment>SendSettingsReceiver.onReceive() -&gt; Context.sendBroadcast()</comment>
+    <comment>*SendSettingsReceiver.onReceive() -&gt; Context.sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/playstore/java/com/farmerbb/taskbar/receiver/SendSettingsReceiver.java" start="44" end="44"/>
       <line src="/app/src/playstore/java/com/farmerbb/taskbar/receiver/SendSettingsReceiver.java" start="159" end="159"/>
@@ -612,7 +612,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -636,7 +636,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -683,7 +683,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="true"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="true" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -709,7 +709,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="true"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="true" context="true" object="false" field="false"/>
       </analyzeScope>

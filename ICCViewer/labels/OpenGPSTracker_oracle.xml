@@ -14,7 +14,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -27,7 +27,7 @@
       <line src="/application/src/nl/sogeti/android/gpstracker/actions/DescribeTrack.java" start="225" end="225"/>
       <line src="/application/src/nl/sogeti/android/gpstracker/breadcrumbs/BreadcrumbsService.java" start="216" end="227"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="nullisService, ">
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
@@ -155,6 +155,8 @@
     <callLines>
       <line src="/application/src/nl/sogeti/android/gpstracker/logger/GPSLoggerService.java" start="588" end="588"/>
       <line src="/application/src/nl/sogeti/android/gpstracker/logger/GPSLoggerService.java" start="1063" end="1066"/>
+      <line src="/application/src/nl/sogeti/android/gpstracker/util/Constants.java" start="110" end="110"/>
+      <line src="/application/AndroidManifest.xml" start="254" end="256"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -173,6 +175,8 @@
     <comment>*BootReceiver.onReceive() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/application/src/nl/sogeti/android/gpstracker/util/BootReceiver.java" start="49" end="49"/>
+      <line src="/application/src/nl/sogeti/android/gpstracker/util/Constants.java" start="66" end="66"/>
+      <line src="/application/AndroidManifest.xml" start="194" end="197"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -188,9 +192,11 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="nl.sogeti.android.gpstracker.util.DockReceiver" destination="nl.sogeti.android.gpstracker.logger.GPSLoggerService" method="">
-    <comment>DockReceiver.onReceive() -&gt; Context.startService()</comment>
+    <comment>*DockReceiver.onReceive() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/application/src/nl/sogeti/android/gpstracker/util/DockReceiver.java" start="66" end="68"/>
+      <line src="/application/src/nl/sogeti/android/gpstracker/util/Constants.java" start="66" end="66"/>
+      <line src="/application/AndroidManifest.xml" start="194" end="197"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -206,9 +212,11 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="nl.sogeti.android.gpstracker.util.PowerReceiver" destination="nl.sogeti.android.gpstracker.logger.GPSLoggerService" method="">
-    <comment>PowerReceiver.onReceive() -&gt; Context.startService()</comment>
+    <comment>*PowerReceiver.onReceive() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/application/src/nl/sogeti/android/gpstracker/util/PowerReceiver.java" start="62" end="64"/>
+      <line src="/application/src/nl/sogeti/android/gpstracker/util/Constants.java" start="66" end="66"/>
+      <line src="/application/AndroidManifest.xml" start="194" end="197"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -283,6 +291,8 @@
       <line src="/application/src/nl/sogeti/android/gpstracker/viewer/LoggerMap.java" start="185" end="185"/>
       <line src="/application/src/nl/sogeti/android/gpstracker/viewer/LoggerMap.java" start="230" end="230"/>
       <line src="/application/src/nl/sogeti/android/gpstracker/logger/GPSLoggerServiceManager.java" start="325" end="325"/>
+      <line src="/application/src/nl/sogeti/android/gpstracker/util/Constants.java" start="66" end="66"/>
+      <line src="/application/AndroidManifest.xml" start="194" end="197"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -357,7 +367,7 @@
       <line src="/application/src/nl/sogeti/android/gpstracker/viewer/TrackList.java" start="281" end="281"/>
       <line src="/application/src/nl/sogeti/android/gpstracker/breadcrumbs/BreadcrumbsService.java" start="216" end="227"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="nullisService, ">
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>

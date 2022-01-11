@@ -28,7 +28,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.plugins.telephony.CallHandler" method="">
-    <comment>SipHome.onCreate() -&gt; DialerFragment.placeCall() -&gt;DialerFragment.placeCallWithOption() -&gt;CallHandlerPlugin.loadFrom() -&gt; Context.sendOrderedBroadcast()</comment>
+    <comment>SipHome.onCreate() -&gt; TabsAdapter.addTab() -&gt; *FragmentTransaction.commit() -&gt; DialerFragment.placeCall() -&gt; DialerFragment.placeCallWithOption() -&gt; CallHandlerPlugin.loadFrom() -&gt; Context.sendOrderedBroadcast()</comment>
     <callLines>
       <line src="/src/com/csipsimple/ui/SipHome.java" start="175" end="175"/>
       <line src="/src/com/csipsimple/ui/SipHome.java" start="385" end="385"/>
@@ -38,6 +38,8 @@
       <line src="/src/com/csipsimple/ui/dialpad/DialerFragment.java" start="694" end="694"/>
       <line src="/src/com/csipsimple/utils/CallHandlerPlugin.java" start="112" end="112"/>
       <line src="/src/com/csipsimple/utils/CallHandlerPlugin.java" start="84" end="86"/>
+      <line src="/src/com/csipsimple/api/SipManager.java" start="270" end="270"/>
+      <line src="/AndroidManifest.xml" start="524" end="526"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false"/>
@@ -98,7 +100,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.ui.PickupSipUri" method="">
-    <comment>SipHome.onCreate() -&gt; ConversationsListFragment.onContextItemSelected() -&gt; ConversationsListFragment.viewDetails() -&gt; MessageFragment.onClick() -&gt; MessageFragment.chooseSipUri() -&gt; startActivityForResult()</comment>
+    <comment>SipHome.onCreate() -&gt; ConversationsListFragment.onContextItemSelected() -&gt; ConversationsListFragment.viewDetails() -&gt; *FragmentTransaction.commit() -&gt; MessageFragment.chooseSipUri() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/src/com/csipsimple/ui/SipHome.java" start="181" end="181"/>
       <line src="/src/com/csipsimple/ui/messages/ConversationsListFragment.java" start="254" end="254"/>
@@ -183,10 +185,10 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.ui.prefs.PrefsFast" method="">
-    <comment>SipHome.onResume() -&gt; startSipService() -&gt; Thread.start() -&gt; Thread.run() -&gt; SipHome.postStartSipService() -&gt; startActivity()</comment>
+    <comment>SipHome.onResume() -&gt; startSipService() -&gt; Thread.run() -&gt; *SipHome.postStartSipService() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/com/csipsimple/ui/SipHome.java" start="592" end="592"/>
-      <line src="/src/com/csipsimple/ui/SipHome.java" start="505" end="505"/>
+      <line src="/src/com/csipsimple/ui/SipHome.java" start="495" end="505"/>
       <line src="/src/com/csipsimple/ui/SipHome.java" start="502" end="502"/>
       <line src="/src/com/csipsimple/ui/SipHome.java" start="513" end="515"/>
       <line src="/AndroidManifest.xml" start="315" end="315"/>
@@ -416,7 +418,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -445,6 +447,8 @@
     <comment>*MainPrefs.onBuildHeaders() -&gt; Header.intent</comment>
     <callLines>
       <line src="/src/com/csipsimple/ui/prefs/hc/MainPrefs.java" start="53" end="53"/>
+      <line src="/src/com/csipsimple/api/SipManager.java" start="137" end="137"/>
+      <line src="/AndroidManifest.xml" start="314" end="318"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -467,7 +471,7 @@
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="false" isAtypicalSendICC="true"/>
-      <intentMatch isExplicit="false" isImplicit="true"/>
+      <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>

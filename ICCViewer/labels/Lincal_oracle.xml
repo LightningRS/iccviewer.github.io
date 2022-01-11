@@ -19,6 +19,25 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
+  <OracleEdge source="felixwiemuth.lincal.ui.AddCalendarActivity" destination="felixwiemuth.lincal.ui.SettingsActivity" method="">
+    <comment>AddCalendarActivity extends LinCalMenuAppCompatActivity -&gt; *LinCalMenuAppCompatActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
+    <callLines>
+      <line src="/app/src/main/java/felixwiemuth/lincal/ui/AddCalendarActivity.java" start="39" end="39"/>
+      <line src="/app/src/main/java/felixwiemuth/lincal/ui/LinCalMenuAppCompatActivity.java" start="64" end="65"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="true" isImplicit="false"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarListActivity" destination="felixwiemuth.lincal.NotificationService" method="">
     <comment>CalendarListActivity.onCreate() -&gt; setupRecyclerView() -&gt; RecyclerView.setAdapter() -&gt; CalendarListActivity.SimpleItemRecyclerViewAdapter.onBindViewHolder() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; CalendarViewFragment.onCreateView() -&gt; CheckBox.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NotificationService.runWithCalendar() -&gt; Context.startService()</comment>
     <callLines>
@@ -37,29 +56,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="felixwiemuth.lincal.ui.CalendarViewActivity" destination="felixwiemuth.lincal.NotificationService" method="">
-    <comment>CalendarViewActivity.onCreate() -&gt; FragmentTransaction.commit() -&gt; CalendarViewFragment.onCreateView() -&gt; CheckBox.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NotificationService.runWithCalendar() -&gt; Context.startService()</comment>
-    <callLines>
-      <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewActivity.java" start="63" end="67"/>
-      <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewFragment.java" start="184" end="184"/>
-      <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewFragment.java" start="180" end="180"/>
-      <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewFragment.java" start="126" end="128"/>
-      <line src="/app/src/main/java/felixwiemuth/lincal/NotificationService.java" start="126" end="129"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="true" isImplicit="false"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -78,7 +75,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -99,27 +96,8 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
-        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="felixwiemuth.lincal.ui.AddCalendarActivity" destination="felixwiemuth.lincal.ui.SettingsActivity" method="">
-    <comment>AddCalendarActivity extends LinCalMenuAppCompatActivity -&gt; *LinCalMenuAppCompatActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
-    <callLines>
-      <line src="/app/src/main/java/felixwiemuth/lincal/ui/AddCalendarActivity.java" start="39" end="39"/>
-      <line src="/app/src/main/java/felixwiemuth/lincal/ui/LinCalMenuAppCompatActivity.java" start="64" end="65"/>
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="true" isImplicit="false"/>
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
-        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
@@ -139,6 +117,28 @@
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
+        <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="felixwiemuth.lincal.ui.CalendarViewActivity" destination="felixwiemuth.lincal.NotificationService" method="">
+    <comment>CalendarViewActivity.onCreate() -&gt; FragmentTransaction.commit() -&gt; CalendarViewFragment.onCreateView() -&gt; CheckBox.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NotificationService.runWithCalendar() -&gt; Context.startService()</comment>
+    <callLines>
+      <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewActivity.java" start="63" end="67"/>
+      <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewFragment.java" start="184" end="184"/>
+      <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewFragment.java" start="180" end="180"/>
+      <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewFragment.java" start="126" end="128"/>
+      <line src="/app/src/main/java/felixwiemuth/lincal/NotificationService.java" start="126" end="129"/>
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false"/>
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
+      <intentMatch isExplicit="true" isImplicit="false"/>
+      <analyzeScope>
+        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
+        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
+        <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>

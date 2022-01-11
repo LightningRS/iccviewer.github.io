@@ -19,7 +19,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -46,7 +46,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -71,14 +71,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.MoonWidget0ConfigActivity_2x1" destination="com.forrestguice.suntimeswidget.MoonWidget0_2x1" method="">
-    <comment>MoonWidget0ConfigActivity_2x1 extends MoonWidget0ConfigActivity extends SuntimesConfigActivity0-&gt; SuntimesConfigActivity0.onCreate() -&gt; MoonWidget0ConfigActivity_2x1.initViews() -&gt; MoonWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity_2x1.updateWidgets() -&gt; sendBroadcast() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0-&gt; sendBroadcast()</comment>
+    <comment>MoonWidget0ConfigActivity_2x1 extends MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; MoonWidget0ConfigActivity_2x1.initViews() -&gt; MoonWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity_2x1.updateWidgets() -&gt; sendBroadcast() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity_2x1.java" start="26" end="26"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity.java" start="33" end="33"/>
@@ -91,14 +91,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.MoonWidget0ConfigActivity_3x1" destination="com.forrestguice.suntimeswidget.MoonWidget0_3x1" method="">
-    <comment>MoonWidget0ConfigActivity_3x1 extends MoonWidget0ConfigActivity extends SuntimesConfigActivity0-&gt; SuntimesConfigActivity0.onCreate() -&gt; MoonWidget0ConfigActivity_3x1.initViews() -&gt; MoonWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity_3x1.updateWidgets() -&gt; sendBroadcast() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0-&gt; sendBroadcast()</comment>
+    <comment>MoonWidget0ConfigActivity_3x1 extends MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; MoonWidget0ConfigActivity_3x1.initViews() -&gt; MoonWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity_3x1.updateWidgets() -&gt; sendBroadcast() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity_3x1.java" start="30" end="30"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity.java" start="33" end="33"/>
@@ -111,14 +111,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SolsticeWidget0ConfigActivity" destination="com.forrestguice.suntimeswidget.SolsticeWidget0" method="">
-    <comment>SolsticeWidget0ConfigActivity extends SuntimesConfigActivity0-&gt; SuntimesConfigActivity0.onCreate() -&gt; SolsticeWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SolsticeWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>SolsticeWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SolsticeWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SolsticeWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SolsticeWidget0ConfigActivity.java" start="36" end="36"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SolsticeWidget0ConfigActivity.java" start="66" end="69"/>
@@ -130,7 +130,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -171,14 +171,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity0_2x1" destination="com.forrestguice.suntimeswidget.SuntimesWidget0_2x1" method="">
-    <comment>SuntimesConfigActivity0_2x1 extends SuntimesConfigActivity0-&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity0_2x1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity0_2x1.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity0_2x1 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity0_2x1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity0_2x1.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity0_2x1.java" start="29" end="29"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity0_2x1.java" start="49" end="52"/>
@@ -190,14 +190,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity1" destination="com.forrestguice.suntimeswidget.SuntimesWidget1" method="">
-    <comment>SuntimesConfigActivity1 extends SuntimesConfigActivity0-&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity1.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity1 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity1.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity1.java" start="30" end="30"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity1.java" start="77" end="80"/>
@@ -209,14 +209,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity2" destination="com.forrestguice.suntimeswidget.SuntimesWidget2" method="">
-    <comment>SuntimesConfigActivity2extends SuntimesConfigActivity0-&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity2extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2.java" start="37" end="37"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2.java" start="87" end="90"/>
@@ -228,14 +228,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity2_3x1" destination="com.forrestguice.suntimeswidget.SuntimesWidget2_3x1" method="">
-    <comment>SuntimesConfigActivity2_3x1extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x1.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x1extends SuntimesConfigActivity2-&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity2_3x1 extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x1.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x1 extends SuntimesConfigActivity2 -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2_3x1.java" start="30" end="30"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2.java" start="37" end="37"/>
@@ -248,14 +248,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity2_3x2" destination="com.forrestguice.suntimeswidget.SuntimesWidget2_3x2" method="">
-    <comment>SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x2.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2-&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x2.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2 -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2_3x2.java" start="30" end="30"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2.java" start="37" end="37"/>
@@ -268,7 +268,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -329,7 +329,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -364,7 +364,7 @@
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesWidgetListActivity.java" start="530" end="530"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesWidgetListActivity.java" start="265" end="267"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="nullisWidget, ">
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
@@ -430,7 +430,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -452,7 +452,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -464,7 +464,7 @@
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/themes/WidgetThemeListActivity.java" start="548" end="548"/>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/themes/WidgetThemeListActivity.java" start="257" end="264"/>
     </callLines>
-    <tags>
+    <tags checkIgnore="nullisWidget, ">
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>

@@ -112,7 +112,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -133,7 +133,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -154,7 +154,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -175,14 +175,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.MainActivity" destination="com.nutomic.syncthingandroid.service.SyncthingService" method="">
-    <comment>MainActivity.onCreate() -&gt; startService()</comment>
+    <comment>*MainActivity.onCreate() -&gt; startService()</comment>
     <callLines>
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/MainActivity.java" start="260" end="265"/>
     </callLines>
@@ -200,7 +200,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.SettingsActivity" destination="com.nutomic.syncthingandroid.activities.MainActivity" method="">
-    <comment>SettingsActivity.onCreate() -&gt; new SettingsFragment() -&gt; FragmentTransaction.commit() -&gt; SettingsActivity.SettingsFragment.onStop() -&gt; NotificationHandler.updatePersistentNotification() -&gt; NotificationManager.notify()</comment>
+    <comment>SettingsActivity.onCreate() -&gt; new SettingsFragment() -&gt; FragmentTransaction.commit() -&gt; *SettingsActivity.SettingsFragment.onStop() -&gt; NotificationHandler.updatePersistentNotification() -&gt; NotificationManager.notify()</comment>
     <callLines>
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/SettingsActivity.java" start="58" end="64"/>
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/SettingsActivity.java" start="456" end="456"/>
@@ -260,7 +260,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.SyncthingActivity" destination="com.nutomic.syncthingandroid.service.SyncthingService" method="">
-    <comment>SyncthingActivity.onResume() -&gt; bindService()</comment>
+    <comment>*SyncthingActivity.onResume() -&gt; bindService()</comment>
     <callLines>
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/SyncthingActivity.java" start="66" end="66"/>
     </callLines>
@@ -295,7 +295,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>

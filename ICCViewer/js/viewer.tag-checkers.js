@@ -17,7 +17,7 @@ function countEquals(flowId, tags, num) {
     const chk = countSel(flowId, tags) === num;
     return {
         autoFix: false,
-        ignorable: true,
+        ignorable: false,
         error: !chk,
         errorTags: tags,
         msgPrefix: ICCTagViewer._T('Can only select {0} of these labels').format(
@@ -31,7 +31,7 @@ function countNoMoreThan(flowId, tags, num) {
     const chk = countSel(flowId, tags) <= num;
     return {
         autoFix: false,
-        ignorable: true,
+        ignorable: false,
         error: !chk,
         errorTags: tags,
         msgPrefix: ICCTagViewer._T('Cannot select more than {0} of these labels').format(
@@ -45,7 +45,7 @@ function countNoLessThan(flowId, tags, num) {
     const chk = countSel(flowId, tags) >= num;
     return {
         autoFix: false,
-        ignorable: true,
+        ignorable: false,
         error: !chk,
         errorTags: tags,
         msgPrefix: ICCTagViewer._T('Cannot select less than {0} of these labels').format(
@@ -67,7 +67,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: sel ^ (chk1 || chk2),
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isLifeCycle',
             }
         },
         (flowId, comment) => {
@@ -78,7 +79,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isImplicitCallback',
             }
         },
         (flowId, comment) => {
@@ -100,18 +102,20 @@ $.extend(window.ICCTagViewer, {
                 ignorable: true,
                 error: chk ? !sel : false,
                 errorTags: [tagPath],
-                extraInfo: ids.join(', ')
+                extraInfo: ids.join(', '),
+                type: 'isDynamicCallBack',
             }
         },
         (flowId, comment) => {
             const tagPath = 'entryMethod.isStaticCallBack';
             const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /[ |.]R\./.test(comment);
+            const chk = /[ |*]R\./.test(comment);
             return {
                 autoFix: true,
                 ignorable: true,
                 error: sel ^ chk,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isDynamicCallBack',
             }
         },
         (flowId, comment) => {
@@ -132,7 +136,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: sel ^ chk,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isNormalSendICC',
             }
         },
         (flowId, comment) => {
@@ -143,7 +148,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isActivity',
             }
         },
         (flowId, comment) => {
@@ -154,7 +160,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isService',
             }
         },
         (flowId, comment) => {
@@ -168,7 +175,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: false,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath1, tagPath2]
+                errorTags: [tagPath1, tagPath2],
+                type: 'isBroadcast',
             }
         },
         (flowId, comment) => {
@@ -179,7 +187,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isDynamicBroadcast',
             }
         },
         (flowId, comment) => {
@@ -190,7 +199,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isFragment',
             }
         },
         (flowId, comment) => {
@@ -201,7 +211,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isAdapter',
             }
         },
         (flowId, comment) => {
@@ -212,7 +223,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isWidget',
             }
         },
         (flowId, comment) => {
@@ -223,7 +235,8 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isAsyncInvocation',
             }
         },
         (flowId, comment) => {
@@ -235,7 +248,7 @@ $.extend(window.ICCTagViewer, {
                 ignorable: false,
                 error: chk ? !sel : false,
                 errorTags: [tagPath],
-                type: 'Polymorphic usage'
+                type: 'isPolymorphic'
             }
         },
 
@@ -254,10 +267,11 @@ $.extend(window.ICCTagViewer, {
             return {
                 autoFix: false,
                 ignorable: true,
-                msgPrefix: 'The file AndroidManifest.xml should include in call line when tag',
-                msgSuffix: 'has been selected.',
+                msgPrefix: ICCTagViewer._T('Please check whether IntentFilter is defined in AndroidManifest.xml or not when tag'),
+                msgSuffix: ICCTagViewer._T('has been selected.'),
                 error: sel ? !chk : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isImplicitAndroidManifest'
             }
         },
         (flowId, comment) => {
@@ -268,18 +282,21 @@ $.extend(window.ICCTagViewer, {
                 autoFix: true,
                 ignorable: true,
                 error: chk ? !sel : false,
-                errorTags: [tagPath]
+                errorTags: [tagPath],
+                type: 'isListenerInvocation',
             }
         },
 
         (flowId, comment) => {
             const tagPath1 = 'exitMethod.isNormalSendICC';
             const tagPath2 = 'exitMethod.isAtypicalSendICC';
+            const num = 1;
             return countEquals(flowId, [tagPath1, tagPath2], 1);
         },
         (flowId, comment) => {
             const tagPath1 = 'intentMatch.isExplicit';
             const tagPath2 = 'analyzeScope.objectScope.isStaticVal';
+            const num = 1;
             return countNoMoreThan(flowId, [tagPath1, tagPath2], 1);
         },
         (flowId, comment) => {
