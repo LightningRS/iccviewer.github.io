@@ -2,7 +2,7 @@
 
 <root srcCodeBase="/AnkiDroid/Anki-Android-2.8.4">
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.CardBrowser" method="">
-    <comment>CardBrowser.onCreate() -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity.openCardBrowser() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
+    <comment>CardBrowser.onCreate() -&gt; initNavigationDrawer() -&gt; CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity.openCardBrowser() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardBrowser.java" start="348" end="348"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/NavigationDrawerActivity.java" start="115" end="135"/>
@@ -20,7 +20,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -42,7 +42,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -63,14 +63,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.Preferences" method="">
-    <comment>CardBrowser.onCreate() -&gt; CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
+    <comment>CardBrowser.onCreate() -&gt; initNavigationDrawer() -&gt; CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardBrowser.java" start="348" end="348"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardBrowser.java" start="86" end="86"/>
@@ -88,7 +88,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -111,15 +111,15 @@
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="true"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.Statistics" method="">
-    <comment>CardBrowser.onCreate() -&gt; CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
+    <comment>CardBrowser.onCreate() -&gt; initNavigationDrawer() -&gt; CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardBrowser.java" start="348" end="348"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardBrowser.java" start="86" end="86"/>
@@ -137,7 +137,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -198,7 +198,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -220,14 +220,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.CardBrowser" method="">
-    <comment>DeckPicker.onCreate() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; DeckPicker.openCardBrowser() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
+    <comment>DeckPicker.onCreate() -&gt; initNavigationDrawer() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; DeckPicker.openCardBrowser() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/DeckPicker.java" start="376" end="376"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/NavigationDrawerActivity.java" start="115" end="135"/>
@@ -245,7 +245,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -270,8 +270,8 @@
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -293,7 +293,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -317,8 +317,8 @@
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="true"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -365,7 +365,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -388,14 +388,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.Preferences" method="">
-    <comment>DeckPicker.onCreate() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
+    <comment>DeckPicker.onCreate() -&gt; initNavigationDrawer() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/DeckPicker.java" start="376" end="376"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/DeckPicker.java" start="110" end="110"/>
@@ -413,7 +413,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -431,13 +431,13 @@
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/AnkiActivity.java" start="187" end="189"/>
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false"/>
+      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -462,7 +462,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -486,7 +486,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -547,7 +547,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -558,8 +558,6 @@
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/IntentHandler.java" start="43" end="44"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/IntentHandler.java" start="106" end="108"/>
-      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/IntentHandler.java" start="128" end="130"/>
-      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/IntentHandler.java" start="135" end="138"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
@@ -594,7 +592,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -615,14 +613,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelBrowser" destination="com.ichi2.anki.ModelFieldEditor" method="">
-    <comment>ModelBrowser extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; ModelBrowser.onCollectionLoaded() -&gt; DeckTask.launchDeckTask() -&gt; DeckTask.execute() -&gt; DeckTask.TaskListener.onPostExecute() -&gt; ModelBrowser.fillModelList() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; AnkiActivity.startActivityForResultWithAnimation()-&gt; startActivityForResult()</comment>
+    <comment>ModelBrowser extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; ModelBrowser.onCollectionLoaded() -&gt; DeckTask.launchDeckTask() -&gt; DeckTask.execute() -&gt; DeckTask.TaskListener.onPostExecute() -&gt; ModelBrowser.fillModelList() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/ModelBrowser.java" start="58" end="58"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/AnkiActivity.java" start="286" end="286"/>
@@ -638,8 +636,8 @@
       <intentMatch isExplicit="true" isImplicit="false"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -700,7 +698,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -761,7 +759,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -783,7 +781,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -804,7 +802,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -851,7 +849,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -918,7 +916,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -941,7 +939,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -967,7 +965,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -993,7 +991,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1019,7 +1017,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1046,7 +1044,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1091,7 +1089,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1140,7 +1138,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1166,7 +1164,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1232,7 +1230,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1254,7 +1252,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -1279,7 +1277,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1304,7 +1302,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1330,7 +1328,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1350,7 +1348,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1372,16 +1370,17 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.FilteredDeckOptions" method="">
-    <comment>*StudyOptionsActivity.onCreate() -&gt; StudyOptionsActivity.loadStudyOptionsFragment() -&gt;StudyOptionsFragment.onMenuItemClick() -&gt; openFilteredDeckOptions() -&gt; startActivityForResult()</comment>
+    <comment>*StudyOptionsActivity.onCreate() -&gt; loadStudyOptionsFragment() -&gt; StudyOptionsFragment.onMenuItemClick() -&gt; openFilteredDeckOptions() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsActivity.java" start="46" end="46"/>
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsActivity.java" start="55" end="56"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsFragment.java" start="297" end="297"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsFragment.java" start="139" end="139"/>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsFragment.java" start="150" end="153"/>
@@ -1393,7 +1392,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1418,7 +1417,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1437,7 +1436,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -1462,7 +1461,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="true"/>
       </analyzeScope>
@@ -1523,7 +1522,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -1546,7 +1545,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>

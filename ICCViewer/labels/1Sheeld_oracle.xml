@@ -2,7 +2,7 @@
 
 <root srcCodeBase="/1Sheeld/1Sheeld-Android-App-1.9.0">
   <OracleEdge source="com.integreight.onesheeld.MainActivity" destination="com.facebook.FacebookActivity" method="">
-    <comment>MainActivity.onCreate() -&gt; MainActivity.replaceCurrentFragment() -&gt; SheeldsList.onResume() -&gt; R.layout.app_sheelds_list.getAvailableDevices.onClick -&gt; launchShieldsOperationActivity() -&gt; MainActivity.replaceCurrentFragment() -&gt; ShieldsOperations.onViewCreated() -&gt; initView() -&gt; SelectedShieldsListFragment.newInstance() -&gt; onListItemClick() -&gt; getShieldFragment() -&gt; generateShieldFragment() -&gt; new FacebookFragment() -&gt; *FacebookFragment.onClick() -&gt; loginToFacebook() -&gt; FacebookShield.loginToFacebook() -&gt; LoginManager.getInstance().logInWithPublishPermissions() -&gt; startActivityForResult()</comment>
+    <comment>MainActivity.onCreate() -&gt; MainActivity.replaceCurrentFragment() -&gt; SheeldsList.onResume() -&gt; R.layout.app_sheelds_list.getAvailableDevices.onClick -&gt; SheeldsList.launchShieldsOperationActivity() -&gt; MainActivity.replaceCurrentFragment() -&gt; ShieldsOperations.onViewCreated() -&gt; initView() -&gt; SelectedShieldsListFragment.newInstance() -&gt; onListItemClick() -&gt; getShieldFragment() -&gt; generateShieldFragment() -&gt; new FacebookFragment() -&gt; *FacebookFragment.onClick() -&gt; loginToFacebook() -&gt; FacebookShield.loginToFacebook() -&gt; LoginManager.getInstance().logInWithPublishPermissions() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/MainActivity.java" start="120" end="121"/>
       <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/appFragments/SheeldsList.java" start="174" end="174"/>
@@ -23,7 +23,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -48,7 +48,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.integreight.onesheeld.MainActivity" destination="com.integreight.onesheeld.shields.controller.utils.CameraHeadService" method="">
-    <comment>MainActivity.onCreate() -&gt; MainActivity.replaceCurrentFragment() -&gt; SheeldsList.onResume() -&gt; R.layout.app_sheelds_list.getAvailableDevices.onClick -&gt; launchShieldsOperationActivity() -&gt; MainActivity.replaceCurrentFragment() -&gt; ShieldsOperations.onViewCreated() -&gt; initView() -&gt; SelectedShieldsListFragment.newInstance() -&gt; onListItemClick() -&gt; getShieldFragment() -&gt; generateShieldFragment() -&gt; new CameraFragment() -&gt; CameraFragment.onChange() -&gt; applyListeners() -&gt; *CompoundButton.OnCheckedChangeListener.onCheckedChanged() -&gt; CameraShield.setCameraToPreview() -&gt; bindService() -&gt; getApplication().bindService()</comment>
+    <comment>MainActivity.onCreate() -&gt; MainActivity.replaceCurrentFragment() -&gt; SheeldsList.onResume() -&gt; R.layout.app_sheelds_list.getAvailableDevices.onClick -&gt; SheeldsList.launchShieldsOperationActivity() -&gt; MainActivity.replaceCurrentFragment() -&gt; ShieldsOperations.onViewCreated() -&gt; initView() -&gt; SelectedShieldsListFragment.newInstance() -&gt; onListItemClick() -&gt; getShieldFragment() -&gt; generateShieldFragment() -&gt; new CameraFragment() -&gt; CameraFragment.onChange() -&gt; applyListeners() -&gt; *CompoundButton.OnCheckedChangeListener.onCheckedChanged() -&gt; CameraShield.setCameraToPreview() -&gt; bindService() -&gt; getApplication().bindService()</comment>
     <callLines>
       <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/MainActivity.java" start="120" end="121"/>
       <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/appFragments/SheeldsList.java" start="174" end="174"/>
@@ -70,14 +70,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="com.integreight.onesheeld.MainActivity" destination="com.integreight.onesheeld.shields.controller.utils.SpeechRecognitionService" method="">
-    <comment>MainActivity.onCreate() -&gt; MainActivity.replaceCurrentFragment() -&gt; SheeldsList.onResume() -&gt; R.layout.app_sheelds_list.getAvailableDevices.onClick -&gt; launchShieldsOperationActivity() -&gt; MainActivity.replaceCurrentFragment() -&gt; ShieldsOperations.onViewCreated() -&gt; initView() -&gt; SelectedShieldsListFragment.newInstance() -&gt; onListItemClick() -&gt; getShieldFragment() -&gt; generateShieldFragment() -&gt; new SpeechRecognitionFragment() -&gt; *SpeechRecognitionFragment.doOnServiceConnected() -&gt; initializeFirmata() -&gt; new SpeechRecognitionShield() -&gt; SpeechRecognitionShield.init() -&gt; getApplication().bindService()</comment>
+    <comment>MainActivity.onCreate() -&gt; MainActivity.replaceCurrentFragment() -&gt; SheeldsList.onResume() -&gt; R.layout.app_sheelds_list.getAvailableDevices.onClick -&gt; SheeldsList.launchShieldsOperationActivity() -&gt; MainActivity.replaceCurrentFragment() -&gt; ShieldsOperations.onViewCreated() -&gt; initView() -&gt; SelectedShieldsListFragment.newInstance() -&gt; onListItemClick() -&gt; getShieldFragment() -&gt; generateShieldFragment() -&gt; new SpeechRecognitionFragment() -&gt; *SpeechRecognitionFragment.doOnServiceConnected() -&gt; initializeFirmata() -&gt; new SpeechRecognitionShield() -&gt; SpeechRecognitionShield.init() -&gt; getApplication().bindService()</comment>
     <callLines>
       <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/MainActivity.java" start="120" end="121"/>
       <line src="/oneSheeld/src/main/java/com/integreight/onesheeld/appFragments/SheeldsList.java" start="174" end="174"/>
@@ -98,7 +98,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="true"/>
         <sensitivityScope flow="false" path="false" context="true" object="false" field="false"/>
       </analyzeScope>
@@ -119,7 +119,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
