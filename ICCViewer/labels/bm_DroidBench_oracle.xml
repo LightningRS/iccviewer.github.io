@@ -23,6 +23,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
+ 
   <OracleEdge source="edu.mit.icc_componentname_class_constant.OutFlowActivity" destination="edu.mit.icc_componentname_class_constant.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason=""/>
     <nodes>
@@ -39,7 +40,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
@@ -76,11 +77,12 @@
     <comment>OutFlowActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/EventOrdering1/src/edu/mit/icc_event_ordering/OutFlowActivity.java" start="22" end="24"/>
+      <line src="/EventOrdering1/AndroidManifest.xml" start="27" end="32"/>
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false"/>
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false"/>
-      <intentMatch isExplicit="true" isImplicit="false"/>
+      <intentMatch isExplicit="false" isImplicit="true"/>
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
@@ -112,6 +114,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
+
   <OracleEdge source="edu.mit.icc_non_constant_class_object.OutFlowActivity" destination="edu.mit.icc_non_constant_class_object.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason=""/>
     <nodes>
@@ -128,12 +131,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false"/>
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false"/>
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false"/>
         <objectScope isStaticVal="false" isStringOp="false" isNoExtra="false"/>
         <sensitivityScope flow="false" path="false" context="false" object="false" field="false"/>
       </analyzeScope>
     </tags>
   </OracleEdge>
+
   <OracleEdge source="edu.mit.icc_service_messages.ActivityMessenger" destination="edu.mit.icc_service_messages.MessengerService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason=""/>
     <nodes>
@@ -243,7 +247,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest" destination="edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest.BroadcastReceiver" method="xxx">
+ <OracleEdge source="edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest" destination="edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest.BroadcastReceiver" method="xxx">
     <comment>BroadcastTest.onCreate() -&gt; registerReceiver() -&gt; onDestroy() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/BroadcastTaintAndLeak1/src/edu/mit/icc_broadcast_programmatic_intentfilter/BroadcastTest.java" start="25" end="34"/>
