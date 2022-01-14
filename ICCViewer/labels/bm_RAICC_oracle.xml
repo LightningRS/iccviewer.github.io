@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<root srcCodeBase="/benchmarks/RAICCBench">
+<root srcCodeBase="/benchmarks/RAICC">
   <OracleEdge source="lu.uni.trux.raicc.addAction1.MainActivity" destination="lu.uni.trux.raicc.addAction1.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason=""/>
     <nodes>
