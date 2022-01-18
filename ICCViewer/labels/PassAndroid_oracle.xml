@@ -115,7 +115,7 @@
     <callLines>
       <line src="/android/src/main/java/org/ligi/passandroid/InstallListener.java" start="16" end="20" />
     </callLines>
-    <tags>
+    <tags checkIgnore="isDynamicCallBack, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
