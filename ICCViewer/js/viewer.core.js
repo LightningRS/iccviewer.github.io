@@ -845,10 +845,12 @@ $.extend(window.ICCTagViewer, {
      */
     getFlowName: function(flowObj) {
         const source = flowObj.source.split('.').pop();
+        const sourcePkg = flowObj.source.indexOf(')') > -1 ? flowObj.source.split(' ')[0] + ' ' : '';
         const dest = flowObj.dest.split('.').pop();
-        // const method = flowObj.method.split('.').pop();
-        // return '{0} --> {1} [{2}]'.format(source, dest, method);
-        return '{0} --> {1}'.format(source, dest);
+        const destPkg = flowObj.dest.indexOf(')') > -1 ? flowObj.dest.split(' ')[0] + ' ' : '';
+        return '{0}{1} --> {2}{3}'.format(
+            sourcePkg, source, sourcePkg === destPkg ? '' : destPkg, dest
+        );
     },
 
     /**
