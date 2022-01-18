@@ -1,5 +1,5 @@
 <root srcCodeBase="/benchmarks/RAICC">
-  <OracleEdge source="lu.uni.trux.raicc.addAction1.MainActivity" destination="lu.uni.trux.raicc.addAction1.TargetActivity" method="xxx">
+  <OracleEdge source="(addAction1) lu.uni.trux.raicc.addAction1.MainActivity" destination="(addAction1) lu.uni.trux.raicc.addAction1.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -21,7 +21,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.requestLocationUpdates.MainActivity" destination="lu.uni.trux.raicc.requestLocationUpdates.IntermediateService" method="xxx">
+  <OracleEdge source="(requestLocationUpdates) lu.uni.trux.raicc.requestLocationUpdates.MainActivity" destination="(requestLocationUpdates) lu.uni.trux.raicc.requestLocationUpdates.IntermediateService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -42,7 +42,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.requestLocationUpdates.IntermediateService" destination="lu.uni.trux.raicc.requestLocationUpdates.TargetBroadcastReceiver" method="xxx">
+  <OracleEdge source="(requestLocationUpdates) lu.uni.trux.raicc.requestLocationUpdates.IntermediateService" destination="(requestLocationUpdates) lu.uni.trux.raicc.requestLocationUpdates.TargetBroadcastReceiver" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -64,7 +64,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.requestNetwork.MainActivity" destination="lu.uni.trux.raicc.requestNetwork.TargetService" method="xxx">
+  <OracleEdge source="(requestNetwork) lu.uni.trux.raicc.requestNetwork.MainActivity" destination="(requestNetwork) lu.uni.trux.raicc.requestNetwork.TargetService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -86,7 +86,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.send.MainActivity" destination="lu.uni.trux.raicc.send.TargetActivity" method="xxx">
+  <OracleEdge source="(send) lu.uni.trux.raicc.send.MainActivity" destination="(send) lu.uni.trux.raicc.send.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -108,7 +108,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.sendIntent.MainActivity" destination="lu.uni.trux.raicc.sendIntent.TargetActivity" method="xxx">
+  <OracleEdge source="(sendIntent) lu.uni.trux.raicc.sendIntent.MainActivity" destination="(sendIntent) lu.uni.trux.raicc.sendIntent.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -130,7 +130,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.sendTextMessage1.MainActivity" destination="lu.uni.trux.raicc.sendTextMessage1.TargetActivity" method="xxx">
+  <OracleEdge source="(sendTextMessage1) lu.uni.trux.raicc.sendTextMessage1.MainActivity" destination="(sendTextMessage1) lu.uni.trux.raicc.sendTextMessage1.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -152,7 +152,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.sendTextMessage2.MainActivity" destination="lu.uni.trux.raicc.sendTextMessage2.TargetActivity" method="xxx">
+  <OracleEdge source="(sendTextMessage2) lu.uni.trux.raicc.sendTextMessage2.MainActivity" destination="(sendTextMessage2) lu.uni.trux.raicc.sendTextMessage2.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -174,7 +174,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setDeleteIntent.MainActivity" destination="lu.uni.trux.raicc.setDeleteIntent.TargetActivity" method="xxx">
+  <OracleEdge source="(setDeleteIntent) lu.uni.trux.raicc.setDeleteIntent.MainActivity" destination="(setDeleteIntent) lu.uni.trux.raicc.setDeleteIntent.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -196,7 +196,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setExact.MainActivity" destination="lu.uni.trux.raicc.setExact.TargetActivity" method="xxx">
+  <OracleEdge source="(setExact) lu.uni.trux.raicc.setExact.MainActivity" destination="(setExact) lu.uni.trux.raicc.setExact.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -218,7 +218,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setExactAndAllowWhileIdle.MainActivity" destination="lu.uni.trux.raicc.setExactAndAllowWhileIdle.TargetActivity" method="xxx">
+  <OracleEdge source="(setExactAndAllowWhileIdle) lu.uni.trux.raicc.setExactAndAllowWhileIdle.MainActivity" destination="(setExactAndAllowWhileIdle) lu.uni.trux.raicc.setExactAndAllowWhileIdle.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -240,7 +240,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setFullScreenIntent.MainActivity" destination="lu.uni.trux.raicc.setFullScreenIntent.TargetActivity" method="xxx">
+  <OracleEdge source="(setFullScreenIntent) lu.uni.trux.raicc.setFullScreenIntent.MainActivity" destination="(setFullScreenIntent) lu.uni.trux.raicc.setFullScreenIntent.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -262,7 +262,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setInexactRepeating.MainActivity" destination="lu.uni.trux.raicc.setInexactRepeating.TargetActivity" method="xxx">
+  <OracleEdge source="(setInexactRepeating) lu.uni.trux.raicc.setInexactRepeating.MainActivity" destination="(setInexactRepeating) lu.uni.trux.raicc.setInexactRepeating.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -284,7 +284,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setLatestEventInfo.MainActivity" destination="lu.uni.trux.raicc.setLatestEventInfo.TargetActivity" method="xxx">
+  <OracleEdge source="(setLatestEventInfo) lu.uni.trux.raicc.setLatestEventInfo.MainActivity" destination="(setLatestEventInfo) lu.uni.trux.raicc.setLatestEventInfo.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -306,7 +306,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setOnClickPendingIntent.MainActivity" destination="lu.uni.trux.raicc.setOnClickPendingIntent.TargetActivity" method="xxx">
+  <OracleEdge source="(setOnClickPendingIntent) lu.uni.trux.raicc.setOnClickPendingIntent.MainActivity" destination="(setOnClickPendingIntent) lu.uni.trux.raicc.setOnClickPendingIntent.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -328,7 +328,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setOnClickPendingIntent.MyWidgetProvider" destination="lu.uni.trux.raicc.setOnClickPendingIntent.TargetActivity" method="xxx">
+  <OracleEdge source="(setOnClickPendingIntent) lu.uni.trux.raicc.setOnClickPendingIntent.MyWidgetProvider" destination="(setOnClickPendingIntent) lu.uni.trux.raicc.setOnClickPendingIntent.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -350,7 +350,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setPendingIntentTemplate.MainActivity" destination="lu.uni.trux.raicc.setPendingIntentTemplate.TargetActivity" method="xxx">
+  <OracleEdge source="(setPendingIntentTemplate) lu.uni.trux.raicc.setPendingIntentTemplate.MainActivity" destination="(setPendingIntentTemplate) lu.uni.trux.raicc.setPendingIntentTemplate.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -372,7 +372,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setPendingIntentTemplate.MyWidgetProvider" destination="lu.uni.trux.raicc.setPendingIntentTemplate.TargetActivity" method="xxx">
+  <OracleEdge source="(setPendingIntentTemplate) lu.uni.trux.raicc.setPendingIntentTemplate.MyWidgetProvider" destination="(setPendingIntentTemplate) lu.uni.trux.raicc.setPendingIntentTemplate.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -394,7 +394,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setRepeating.MainActivity" destination="lu.uni.trux.raicc.setRepeating.TargetActivity" method="xxx">
+  <OracleEdge source="(setRepeating) lu.uni.trux.raicc.setRepeating.MainActivity" destination="(setRepeating) lu.uni.trux.raicc.setRepeating.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -416,7 +416,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setSendDataMessage.MainActivity" destination="lu.uni.trux.raicc.setSendDataMessage.IntermediateActivity" method="xxx">
+  <OracleEdge source="(setSendDataMessage) lu.uni.trux.raicc.setSendDataMessage.MainActivity" destination="(setSendDataMessage) lu.uni.trux.raicc.setSendDataMessage.IntermediateActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -438,7 +438,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setSendDataMessage.IntermediateActivity" destination="lu.uni.trux.raicc.setSendDataMessage.TargetActivity" method="xxx">
+  <OracleEdge source="(setSendDataMessage) lu.uni.trux.raicc.setSendDataMessage.IntermediateActivity" destination="(setSendDataMessage) lu.uni.trux.raicc.setSendDataMessage.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -460,7 +460,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.setWindow.MainActivity" destination="lu.uni.trux.raicc.setWindow.TargetActivity" method="xxx">
+  <OracleEdge source="(setWindow) lu.uni.trux.raicc.setWindow.MainActivity" destination="(setWindow) lu.uni.trux.raicc.setWindow.TargetActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -482,7 +482,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.startIntentSenderForResult.SecondActivity" destination="lu.uni.trux.raicc.startIntentSenderForResult.MainActivity" method="xxx">
+  <OracleEdge source="(startIntentSenderForResult) lu.uni.trux.raicc.startIntentSenderForResult.SecondActivity" destination="(startIntentSenderForResult) lu.uni.trux.raicc.startIntentSenderForResult.MainActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -504,7 +504,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="lu.uni.trux.raicc.startIntentSenderForResult.MainActivity" destination="lu.uni.trux.raicc.startIntentSenderForResult.SecondActivity" method="xxx">
+  <OracleEdge source="(startIntentSenderForResult) lu.uni.trux.raicc.startIntentSenderForResult.MainActivity" destination="(startIntentSenderForResult) lu.uni.trux.raicc.startIntentSenderForResult.SecondActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
