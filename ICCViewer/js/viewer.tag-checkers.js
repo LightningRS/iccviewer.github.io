@@ -295,7 +295,7 @@ $.extend(window.ICCTagViewer, {
         },
         (flowId, comment) => {
             const tagPath1 = 'intentMatch.isExplicit';
-            const tagPath2 = 'analyzeScope.objectScope.isStaticVal';
+            const tagPath2 = 'analyzeScope.intentFieldScope.isStaticVal';
             const num = 1;
             return countNoMoreThan(flowId, [tagPath1, tagPath2], 1);
         },

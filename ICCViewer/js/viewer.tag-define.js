@@ -150,8 +150,8 @@ $.extend(window.ICCTagViewer.config, {
                     ]
                 },
                 {
-                    "id": "objectScope",
-                    "name": "Object Scope",
+                    "id": "intentFieldScope",
+                    "name": "Intent Field Scope",
                     "subTags": [
                         {
                             "id": "isStaticVal",
@@ -167,41 +167,11 @@ $.extend(window.ICCTagViewer.config, {
                             "id": "isNoExtra",
                             "name": "No Extra",
                             "desc": "The intent contains no extra data"
-                        }
-                    ]
-                },
-                {
-                    "id": "sensitivityScope",
-                    "name": "Sensitivity Scope",
-                    "subTags": [
-                        {
-                            "id": "flow",
-                            "name": "Flow Sensitive",
-                            "desc": "The analysis precision needs to be flow-sensitive",
-                            "isShow": false,
                         },
                         {
-                            "id": "path",
-                            "name": "Path Sensitive",
-                            "desc": "The analysis precision needs to be path-sensitive",
-                            "isShow": false,
-                        },
-                        {
-                            "id": "context",
-                            "name": "Context Sensitive",
-                            "desc": "The analysis precision needs to be context-sensitive"
-                        },
-                        {
-                            "id": "object",
-                            "name": "Object Sensitive",
-                            "desc": "The analysis precision needs to be object-sensitive",
-                            "isShow": false,
-                        },
-                        {
-                            "id": "field",
-                            "name": "Field Sensitive",
-                            "desc": "The analysis precision needs to be field-sensitive",
-                            "isShow": false,
+                            "id": "isContext",
+                            "name": "Context-related",
+                            "desc": "The value of intent field is context-related"
                         }
                     ]
                 }
