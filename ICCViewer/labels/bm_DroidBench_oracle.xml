@@ -1,5 +1,5 @@
 <root srcCodeBase="/benchmarks/DroidBench">
-  <OracleEdge source="edu.mit.icc_action_string_operations.OutFlowActivity" destination="edu.mit.icc_action_string_operations.InFlowActivity" method="xxx">
+  <OracleEdge source="(icc_action_string_operations) edu.mit.icc_action_string_operations.OutFlowActivity" destination="(icc_action_string_operations) edu.mit.icc_action_string_operations.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -20,8 +20,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
- 
-  <OracleEdge source="edu.mit.icc_componentname_class_constant.OutFlowActivity" destination="edu.mit.icc_componentname_class_constant.InFlowActivity" method="xxx">
+  <OracleEdge source="(icc_componentname_class_constant) edu.mit.icc_componentname_class_constant.OutFlowActivity" destination="(icc_componentname_class_constant) edu.mit.icc_componentname_class_constant.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -42,7 +41,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="edu.mit.icc_concat_action_string.OutFlowActivity" destination="edu.mit.icc_concat_action_string.InFlowActivity" method="xxx">
+  <OracleEdge source="(icc_concat_action_string) edu.mit.icc_concat_action_string.OutFlowActivity" destination="(icc_concat_action_string) edu.mit.icc_concat_action_string.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -64,7 +63,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="edu.mit.icc_event_ordering.OutFlowActivity" destination="edu.mit.icc_event_ordering.InFlowActivity" method="xxx">
+  <OracleEdge source="(icc_event_ordering) edu.mit.icc_event_ordering.OutFlowActivity" destination="(icc_event_ordering) edu.mit.icc_event_ordering.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -86,7 +85,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="edu.mit.icc_intent_component_name.OutFlowActivity" destination="edu.mit.icc_intent_component_name.InFlowActivity" method="xxx">
+  <OracleEdge source="(icc_intent_component_name) edu.mit.icc_intent_component_name.OutFlowActivity" destination="(icc_intent_component_name) edu.mit.icc_intent_component_name.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -107,8 +106,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-
-  <OracleEdge source="edu.mit.icc_non_constant_class_object.OutFlowActivity" destination="edu.mit.icc_non_constant_class_object.InFlowActivity" method="xxx">
+  <OracleEdge source="(icc_non_constant_class_object) edu.mit.icc_non_constant_class_object.OutFlowActivity" destination="(icc_non_constant_class_object) edu.mit.icc_non_constant_class_object.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -129,8 +127,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-
-  <OracleEdge source="edu.mit.icc_service_messages.ActivityMessenger" destination="edu.mit.icc_service_messages.MessengerService" method="xxx">
+  <OracleEdge source="(icc_service_messages) edu.mit.icc_service_messages.ActivityMessenger" destination="(icc_service_messages) edu.mit.icc_service_messages.MessengerService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -151,7 +148,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="edu.mit.icc_unresolvable_intent.OutFlowActivity" destination="edu.mit.icc_unresolvable_intent.InFlowActivity" method="xxx">
+  <OracleEdge source="(icc_unresolvable_intent) edu.mit.icc_unresolvable_intent.OutFlowActivity" destination="(icc_unresolvable_intent) edu.mit.icc_unresolvable_intent.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -174,7 +171,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="edu.mit.icc_unresolvable_intent.OutFlowActivity" destination="edu.mit.icc_unresolvable_intent.InFlowActivity2" method="xxx">
+  <OracleEdge source="(icc_unresolvable_intent) edu.mit.icc_unresolvable_intent.OutFlowActivity" destination="(icc_unresolvable_intent) edu.mit.icc_unresolvable_intent.InFlowActivity2" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -197,7 +194,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="edu.mit.icc_intent_passed_through_api.OutFlowActivity" destination="edu.mit.icc_intent_passed_through_api.InFlowActivity" method="xxx">
+  <OracleEdge source="(icc_intent_passed_through_api) edu.mit.icc_intent_passed_through_api.OutFlowActivity" destination="(icc_intent_passed_through_api) edu.mit.icc_intent_passed_through_api.InFlowActivity" method="xxx">
     <comment>OutFlowActivity.onCreate() -&gt; List&lt;Intent&gt;.get() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ActivityCommunication6/src/edu/mit/icc_intent_passed_through_api/OutFlowActivity.java" start="34" end="35" />
@@ -215,7 +212,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="edu.mit.icc_pass_action_string_through_api.OutFlowActivity" destination="edu.mit.icc_pass_action_string_through_api.InFlowActivity" method="xxx">
+  <OracleEdge source="(icc_pass_action_string_through_api) edu.mit.icc_pass_action_string_through_api.OutFlowActivity" destination="(icc_pass_action_string_through_api) edu.mit.icc_pass_action_string_through_api.InFlowActivity" method="xxx">
     <comment>OutFlowActivity.onCreate() -&gt; List&lt;String&gt;.get() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ActivityCommunication8/src/edu/mit/icc_pass_action_string_through_api/OutFlowActivity.java" start="31" end="34" />
@@ -234,7 +231,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
- <OracleEdge source="edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest" destination="edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest.BroadcastReceiver" method="xxx">
+  <OracleEdge source="(icc_broadcast_programmatic_intentfilter) edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest" destination="(icc_broadcast_programmatic_intentfilter) edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest.BroadcastReceiver" method="xxx">
     <comment>BroadcastTest.onCreate() -&gt; registerReceiver() -&gt; onDestroy() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/BroadcastTaintAndLeak1/src/edu/mit/icc_broadcast_programmatic_intentfilter/BroadcastTest.java" start="25" end="34" />

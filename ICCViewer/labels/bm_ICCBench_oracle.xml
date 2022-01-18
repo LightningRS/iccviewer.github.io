@@ -1,5 +1,5 @@
 <root srcCodeBase="/benchmarks/ICCBench">
-  <OracleEdge source="org.arguslab.icc_dynregister1.MainActivity" destination="org.arguslab.icc_dynregister1.MyReceiver" method="xxx">
+  <OracleEdge source="(icc_dynregister1) org.arguslab.icc_dynregister1.MainActivity" destination="(icc_dynregister1) org.arguslab.icc_dynregister1.MyReceiver" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; registerReceiver() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/icc_dynregister1/src/main/java/org/arguslab/icc_dynregister1/MainActivity.java" start="33" end="33" />
@@ -19,7 +19,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_dynregister2.MainActivity" destination="org.arguslab.icc_dynregister2.MainActivity" method="xxx">
+  <OracleEdge source="(icc_dynregister2) org.arguslab.icc_dynregister2.MainActivity" destination="(icc_dynregister2) org.arguslab.icc_dynregister2.MainActivity" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; registerReceiver() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; StringBuilder.toString() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/icc_dynregister2/src/main/java/org/arguslab/icc_dynregister2/MainActivity.java" start="34" end="34" />
@@ -40,7 +40,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_explicit1.MainActivity" destination="org.arguslab.icc_explicit1.FooActivity" method="xxx">
+  <OracleEdge source="(icc_explicit1) org.arguslab.icc_explicit1.MainActivity" destination="(icc_explicit1) org.arguslab.icc_explicit1.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -63,7 +63,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_explicit_nosrc_nosink.MainActivity" destination="org.arguslab.icc_explicit_nosrc_nosink.FooActivity" method="xxx">
+  <OracleEdge source="(icc_explicit_nosrc_nosink) org.arguslab.icc_explicit_nosrc_nosink.MainActivity" destination="(icc_explicit_nosrc_nosink) org.arguslab.icc_explicit_nosrc_nosink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -84,7 +84,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_explicit_nosrc_sink.MainActivity" destination="org.arguslab.icc_explicit_nosrc_sink.FooActivity" method="xxx">
+  <OracleEdge source="(icc_explicit_nosrc_sink) org.arguslab.icc_explicit_nosrc_sink.MainActivity" destination="(icc_explicit_nosrc_sink) org.arguslab.icc_explicit_nosrc_sink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -105,7 +105,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_explicit_src_nosink.MainActivity" destination="org.arguslab.icc_explicit_src_nosink.FooActivity" method="xxx">
+  <OracleEdge source="(icc_explicit_src_nosink) org.arguslab.icc_explicit_src_nosink.MainActivity" destination="(icc_explicit_src_nosink) org.arguslab.icc_explicit_src_nosink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -128,7 +128,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_explicit_src_sink.MainActivity" destination="org.arguslab.icc_explicit_src_sink.FooActivity" method="xxx">
+  <OracleEdge source="(icc_explicit_src_sink) org.arguslab.icc_explicit_src_sink.MainActivity" destination="(icc_explicit_src_sink) org.arguslab.icc_explicit_src_sink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -151,7 +151,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_action.MainActivity" destination="org.arguslab.icc_implicit_action.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_action) org.arguslab.icc_implicit_action.MainActivity" destination="(icc_implicit_action) org.arguslab.icc_implicit_action.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -175,7 +175,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_category.MainActivity" destination="org.arguslab.icc_implicit_category.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_category) org.arguslab.icc_implicit_category.MainActivity" destination="(icc_implicit_category) org.arguslab.icc_implicit_category.FooActivity" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; startActivity()</comment>
     <callLines>
       <line src="/icc_implicit_category/src/main/java/org/arguslab/icc_implicit_category/MainActivity.java" start="31" end="31" />
@@ -195,7 +195,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_data1.MainActivity" destination="org.arguslab.icc_implicit_data1.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_data1) org.arguslab.icc_implicit_data1.MainActivity" destination="(icc_implicit_data1) org.arguslab.icc_implicit_data1.FooActivity" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; startActivity()</comment>
     <callLines>
       <line src="/icc_implicit_data1/src/main/java/org/arguslab/icc_implicit_data1/MainActivity.java" start="32" end="32" />
@@ -215,7 +215,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_data2.MainActivity" destination="org.arguslab.icc_implicit_data2.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_data2) org.arguslab.icc_implicit_data2.MainActivity" destination="(icc_implicit_data2) org.arguslab.icc_implicit_data2.FooActivity" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; startActivity()</comment>
     <callLines>
       <line src="/icc_implicit_data2/src/main/java/org/arguslab/icc_implicit_data2/MainActivity.java" start="31" end="31" />
@@ -235,7 +235,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_mix1.FooActivity" destination="org.arguslab.icc_implicit_mix1.HookActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_mix1) org.arguslab.icc_implicit_mix1.FooActivity" destination="(icc_implicit_mix1) org.arguslab.icc_implicit_mix1.HookActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -257,7 +257,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_mix1.MainActivity" destination="org.arguslab.icc_implicit_mix1.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_mix1) org.arguslab.icc_implicit_mix1.MainActivity" destination="(icc_implicit_mix1) org.arguslab.icc_implicit_mix1.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -281,7 +281,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_mix2.MainActivity" destination="org.arguslab.icc_implicit_mix2.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_mix2) org.arguslab.icc_implicit_mix2.MainActivity" destination="(icc_implicit_mix2) org.arguslab.icc_implicit_mix2.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -305,7 +305,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_nosrc_nosink.MainActivity" destination="org.arguslab.icc_implicit_nosrc_nosink.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_nosrc_nosink) org.arguslab.icc_implicit_nosrc_nosink.MainActivity" destination="(icc_implicit_nosrc_nosink) org.arguslab.icc_implicit_nosrc_nosink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -327,7 +327,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_nosrc_sink.MainActivity" destination="org.arguslab.icc_implicit_nosrc_sink.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_nosrc_sink) org.arguslab.icc_implicit_nosrc_sink.MainActivity" destination="(icc_implicit_nosrc_sink) org.arguslab.icc_implicit_nosrc_sink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -349,7 +349,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_src_nosink.MainActivity" destination="org.arguslab.icc_implicit_src_nosink.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_src_nosink) org.arguslab.icc_implicit_src_nosink.MainActivity" destination="(icc_implicit_src_nosink) org.arguslab.icc_implicit_src_nosink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -373,7 +373,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_implicit_src_sink.MainActivity" destination="org.arguslab.icc_implicit_src_sink.FooActivity" method="xxx">
+  <OracleEdge source="(icc_implicit_src_sink) org.arguslab.icc_implicit_src_sink.MainActivity" destination="(icc_implicit_src_sink) org.arguslab.icc_implicit_src_sink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -397,7 +397,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_intentservice.MainActivity" destination="org.arguslab.icc_intentservice.MyIntentService" method="xxx">
+  <OracleEdge source="(icc_intentservice) org.arguslab.icc_intentservice.MainActivity" destination="(icc_intentservice) org.arguslab.icc_intentservice.MyIntentService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -420,7 +420,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_rpc_comprehensive.BarActivity" destination="org.arguslab.icc_rpc_comprehensive.RemoteService" method="xxx">
+  <OracleEdge source="(icc_rpc_comprehensive) org.arguslab.icc_rpc_comprehensive.BarActivity" destination="(icc_rpc_comprehensive) org.arguslab.icc_rpc_comprehensive.RemoteService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -441,7 +441,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_rpc_comprehensive.FooActivity" destination="org.arguslab.icc_rpc_comprehensive.BarActivity" method="xxx">
+  <OracleEdge source="(icc_rpc_comprehensive) org.arguslab.icc_rpc_comprehensive.FooActivity" destination="(icc_rpc_comprehensive) org.arguslab.icc_rpc_comprehensive.BarActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -463,7 +463,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.icc_stateful.MainActivity" destination="org.arguslab.icc_stateful.FooActivity" method="xxx">
+  <OracleEdge source="(icc_stateful) org.arguslab.icc_stateful.MainActivity" destination="(icc_stateful) org.arguslab.icc_stateful.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -485,7 +485,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.rpc_localservice.MainActivity" destination="org.arguslab.rpc_localservice.LocalService" method="xxx">
+  <OracleEdge source="(rpc_localservice) org.arguslab.rpc_localservice.MainActivity" destination="(rpc_localservice) org.arguslab.rpc_localservice.LocalService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -506,7 +506,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.rpc_messengerservice.MainActivity" destination="org.arguslab.rpc_messengerservice.MessengerService" method="xxx">
+  <OracleEdge source="(rpc_messengerservice) org.arguslab.rpc_messengerservice.MainActivity" destination="(rpc_messengerservice) org.arguslab.rpc_messengerservice.MessengerService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -527,7 +527,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.rpc_remoteservice.MainActivity" destination="org.arguslab.rpc_remoteservice.RemoteService" method="xxx">
+  <OracleEdge source="(rpc_remoteservice) org.arguslab.rpc_remoteservice.MainActivity" destination="(rpc_remoteservice) org.arguslab.rpc_remoteservice.RemoteService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
@@ -548,7 +548,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.arguslab.rpc_returnsensitive.MainActivity" destination="org.arguslab.rpc_returnsensitive.LocalService" method="xxx">
+  <OracleEdge source="(rpc_returnsensitive) org.arguslab.rpc_returnsensitive.MainActivity" destination="(rpc_returnsensitive) org.arguslab.rpc_returnsensitive.LocalService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
       <node method="" type="" unit="" />
