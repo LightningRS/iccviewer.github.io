@@ -1488,6 +1488,7 @@ $.extend(window.ICCTagViewer, {
 
         // Hide cancel button
         $summaryModal.find('.j-cancel').hide();
+        $summaryModal.find('.modal-extra-buttons').html('');
 
         if (!isFilter) {
             $summaryModal.find('.j-confirm').off('click').on('click', function() {
@@ -1514,7 +1515,7 @@ $.extend(window.ICCTagViewer, {
                     _this.clearFilter();
                     summaryModal.hide();
                 });
-            $summaryModal.find('.modal-extra-buttons').html('')
+            $summaryModal.find('.modal-extra-buttons')
                 .append($selAllBtn).append($revSelAllBtn).append($clearBtn);
             $summaryModal.find('.j-confirm').off('click').on('click', function() {
                 _this.applyFilter();
