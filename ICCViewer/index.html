@@ -131,6 +131,10 @@
             <button class="i18n-trans btn ms-1 mt-1 btn-primary j-save">Save</button>
             <button class="i18n-trans btn ms-1 mt-1 btn-success j-save-read">Read</button>
             <button class="i18n-trans btn ms-1 mt-1 btn-danger j-save-clear">Clear</button>
+            <button class="i18n-trans btn ms-1 mt-1 btn-primary j-filter">Filter</button>
+            <button class="i18n-trans btn ms-1 mt-1 btn-success j-summary">Summary</button>
+            <button class="i18n-trans btn ms-1 mt-1 btn-primary j-config">Config</button>
+            <!--
             <label class="i18n-trans ms-2 mt-1" for="option-sortBy">Sort by</label>
             <div class="container m-0 ps-1 w-auto">
                 <select class="form-select" id="option-sortBy">
@@ -153,6 +157,7 @@
                 <input class="form-check-input" id="option-checkTags" type="checkbox" />
                 <label class="i18n-trans form-check-label" for="option-checkTags">Enable Checks</label>
             </div>
+            -->
         </div>
         <div class="row mb-1">
             <div class="col-1">
@@ -192,6 +197,30 @@
             <div class="modal-footer">
                 <button type="button" class="i18n-trans btn btn-secondary j-cancel" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="i18n-trans btn btn-primary j-confirm">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="commonModal" tabindex="-1" aria-labelledby="commonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="commonModalLabel">
+                    <span class="modal-title-text">Common</span>
+                    <img class="modal-title-loading" style="height: 30px; display: none" src="images/loading.gif" />
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <div class="modal-extra-buttons">
+                    <button type="button" class="i18n-trans btn btn-primary j-filter-ctrl j-selAll">Select All</button>
+                    <button type="button" class="i18n-trans btn btn-danger j-filter-ctrl j-revSelAll">Reverse All</button>
+                    <button type="button" class="i18n-trans btn btn-primary j-filter-ctrl j-clear">Clear</button>
+                </div>
+                <button type="button" class="i18n-trans btn btn-secondary j-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="i18n-trans btn btn-success j-confirm">OK</button>
             </div>
         </div>
     </div>

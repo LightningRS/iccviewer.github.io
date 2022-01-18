@@ -33,13 +33,15 @@ $.extend(window.ICCTagViewer.config, {
     codeViewerDeltaLines: 5,
     sortMethod: 'source',
     supportLang: [
-        { id: 'en-US', name: 'ENG' },
-        { id: 'zh-CN', name: '中文' },
+        { id: 'en-US', name: 'English' },
+        { id: 'zh-CN', name: 'Chinese Simplified' },
     ]
 });
 $.extend(window.ICCTagViewer, {
     tagsCnt: 0,
     $copySrc: null,
+    filterShowTags: null,
+    autoSaveInterval: null,
     data: { flows: [] },
 
     _T: function(txt) {
@@ -136,7 +138,7 @@ $.extend(window.ICCTagViewer, {
      */
     checkTags: function(flowId, $commentInput, $commentCheckDiv) {
         const _this = this;
-        if (!_this.getOption('checkTags', false)) return;
+        if (!_this.getOption('checkTags', true)) return;
         $commentCheckDiv.empty();
         let warnCnt = 0;
         if (!_this.checkers) return;
@@ -1205,48 +1207,6 @@ $.extend(window.ICCTagViewer, {
         });
     },
 
-    initOptions: function() {
-        const _this = this;
-        // Sort by
-        $('#option-sortBy').val(_this.getOption('sortBy', 'source')).on('change', function() {
-            _this.setOption('sortBy', $(this).val());
-            _this.saveLocal();
-            _this.readLocal();
-        });
-
-        // Auto save
-        let autoSaveInterval = null;
-        let saveDuration = 5;
-        $('#option-autoSave').prop('checked', _this.getOption('autoSave', true)).on('change', function() {
-            const checked = $(this).prop('checked');
-            _this.setOption('autoSave', checked);
-            if (checked) {
-                autoSaveInterval = window.setInterval(function() {
-                    _this.saveLocal();
-                }, saveDuration * 60 * 1000);
-                _this.makeToast(_this._T('Enabled auto save'));
-            } else {
-                window.clearInterval(autoSaveInterval);
-                _this.makeToast(_this._T('Disabled auto save'));
-            }
-        });
-
-        // TAG Checkers
-        $('#option-checkTags').prop('checked', _this.getOption('checkTags')).on('change', function() {
-            const checked = $(this).prop('checked');
-            _this.setOption('checkTags', checked);
-            if (checked) {
-                $('.icc-comment-edit').trigger('blur');
-                _this.makeToast(_this._T('Enabled label checking'));
-            } else {
-                $('.icc-tag-check-result').hide();
-                $('.tag-warning-icon').hide();
-                _this.makeToast(_this._T('Disabled label checking'));
-            }
-        });
-
-    },
-
     initAppSelector: function() {
         const _this = this;
         const $selector = $('#app-selector');
@@ -1257,7 +1217,7 @@ $.extend(window.ICCTagViewer, {
                 $option.attr('value', appItem.path)
                     .attr('xml-url', appItem.xmlUrl)
                     .attr('app-name', appItem.name)
-                    .html(_this._T(appItem.name))
+                    .html(appItem.name.startsWith('=') ? _this._T(appItem.name) : appItem.name)
                     .insertBefore($custom);
             });
         }
@@ -1276,21 +1236,23 @@ $.extend(window.ICCTagViewer, {
                     _this._T('Loading ICC XML for App {0}...').format(appName),
                     -1, 'bg-primary', 'bi-hourglass-split'
                 );
-                $.ajax({
-                    url: xmlUrl + '?r=' + Math.random(),
-                    type: 'get',
-                    dataType: 'text',
-                    success: function(data) {
-                        _this._importXML(data);
-                        _this.makeToast(_this._T('Finished loading ICC XML of App {0}').format(appName));
-                    },
-                    error: function(event, xhr, options, exc) {
-                        _this.makeToast(
-                            _this._T('Failed to load ICC XML for App {0}').format(appName),
-                            -1, 'bg-danger', 'bi-x-circle-fill'
-                        );
-                    }
-                });
+                window.setTimeout(function() {
+                    $.ajax({
+                        url: xmlUrl + '?r=' + Math.random(),
+                        type: 'get',
+                        dataType: 'text',
+                        success: function(data) {
+                            _this._importXML(data);
+                            _this.makeToast(_this._T('Finished loading ICC XML of App {0}').format(appName));
+                        },
+                        error: function(event, xhr, options, exc) {
+                            _this.makeToast(
+                                _this._T('Failed to load ICC XML for App {0}').format(appName),
+                                -1, 'bg-danger', 'bi-x-circle-fill'
+                            );
+                        }
+                    });
+                }, 200);
             }
         });
     },
@@ -1340,18 +1302,6 @@ $.extend(window.ICCTagViewer, {
         const _this = this;
         const lang = this.getOption('lang', this.config.supportLang[0].id);
 
-        // Lang Selector
-        const $lang = $('#option-lang');
-        $lang.html('');
-        this.config.supportLang.forEach(function(langItem) {
-            $lang.append($('<option />').attr('value', langItem.id).html(langItem.name));
-        });
-        $lang.val(lang);
-        $lang.on('change', function() {
-            _this.setOption('lang', $(this).val());
-            _this.saveLocal();
-            window.location.reload();
-        });
         if (lang !== this.config.supportLang[0].id) {
             $.ajax({
                 url: 'js/i18n/{0}.json'.format(lang),
@@ -1362,13 +1312,31 @@ $.extend(window.ICCTagViewer, {
                     callback(true);
                 },
                 error: function(event, xhr, options, exc) {
-                    console.log(event, xhr, options, exc);
-                    console.log('[ERROR] Failed to load i18n config {0}.json'.format(lang));
+                    console.error('[ERROR] Failed to load i18n config {0}.json'.format(lang));
+                    console.error(event, xhr, options, exc);
                     callback(false);
                 }
             })
         } else {
             callback(true);
+        }
+    },
+
+    initAutoSave: function() {
+        const _this = this;
+        const isAutoSave = _this.getOption('autoSave', true);
+        const durationMin = _this.getOption('autoSaveDurationMin', 5);
+        if (isAutoSave) {
+            if (_this.autoSaveInterval) window.clearInterval(_this.autoSaveInterval);
+            _this.autoSaveInterval = window.setInterval(function() {
+                _this.saveLocal();
+            }, durationMin * 60 * 1000);
+            _this.makeToast(_this._T('Enabled auto save'));
+            console.info('Enabled auto save');
+        } else {
+            window.clearInterval(_this.autoSaveInterval);
+            _this.makeToast(_this._T('Disabled auto save'));
+            console.info('Disabled auto save');
         }
     },
 
@@ -1381,9 +1349,9 @@ $.extend(window.ICCTagViewer, {
             $('#xmlCode').attr('placeholder', _this._T('Paste your ICC XML here'));
 
             _this.initFlows();
-            _this.initSearch()
-            _this.initOptions();
+            _this.initSearch();
             _this.initAppSelector();
+            _this.initAutoSave();
 
             $('.icc-local-warning').on('click', function() {
                 _this.makeToast(
@@ -1409,6 +1377,15 @@ $.extend(window.ICCTagViewer, {
             });
             $('.j-save-clear').on('click', function() {
                 _this.clearLocal();
+            });
+            $('.j-filter').on('click', function() {
+                _this.showFilter();
+            });
+            $('.j-summary').on('click', function() {
+                _this.showSummary();
+            });
+            $('.j-config').on('click', function() {
+                _this.showConfig();
             });
             $('.j-add-flow').on('click', function() {
                 _this.addFlow();
@@ -1464,6 +1441,232 @@ $.extend(window.ICCTagViewer, {
             $('.app-customRoot-container').show();
         }
         $('#app-customRoot').val(this.config.srcBasePath + srcPath);
+    },
+
+    buildSummaryUL: function($baseUL, tag, isFilter = false) {
+        const _this = this;
+        const $title = $("<li />");
+        const $titleSpan = $("<span />").html(_this._T(tag.name));
+        $title.append($titleSpan);
+        $baseUL.append($title);
+        if (tag.hasOwnProperty('subTags')) {
+            const $subUL = $('<ul />');
+            $.each(tag.subTags, function(i, subTag) {
+                _this.buildSummaryUL($subUL, subTag, isFilter);
+            });
+            $baseUL.append($subUL);
+        } else {
+            const $cntSpan = $('<span />');
+            const cnt = $('.icc-flow input[value="' + tag.id + '"]:checked').length;
+            $cntSpan.html(cnt).addClass(cnt > 0 ? 'text-primary' : 'text-danger');
+            $titleSpan.html($titleSpan.html() + ': ');
+            $title.append($('<b />').append($cntSpan));
+            if (isFilter) {
+                const chk = (_this.filterShowTags ? _this.filterShowTags.indexOf(tag.id) > -1 : true);
+                const $sel = $('<input class="me-1" type="checkbox" />').attr('data-tag-id', tag.id).prop('checked', chk);
+                $sel.insertBefore($titleSpan);
+            }
+        }
+    },
+
+    showSummary: function(isFilter = false) {
+        const _this = this;
+        const $summaryDiv = $('<div class="row" />');
+
+        $.each(_this.config.tags, function(i, tag) {
+            const $colDiv = $('<div class="col-auto" />');
+            const $rootUL = $('<ul />');
+            _this.buildSummaryUL($rootUL, tag, isFilter);
+            $colDiv.append($rootUL);
+            $summaryDiv.append($colDiv);
+        });
+
+        const $summaryModal = $('#commonModal');
+        const summaryModal = new bootstrap.Modal($summaryModal);
+        $summaryModal.find('.modal-title-text').html(isFilter ? this._T('Filter Setting') : this._T('ICC Summary'));
+        $summaryModal.find('.modal-body').html('').append($summaryDiv);
+
+        // Hide cancel button
+        $summaryModal.find('.j-cancel').hide();
+
+        if (!isFilter) {
+            $summaryModal.find('.j-confirm').off('click').on('click', function() {
+                summaryModal.toggle();
+            });
+        } else {
+            // Build buttons
+            const $selAllBtn = $('<button class="btn btn-primary j-selAll ms-2" />')
+                .html(_this._T("Select All"))
+                .off('click').on('click', function() {
+                    $summaryDiv.find('input[type="checkbox"]').prop('checked', true);
+                });
+            const $revSelAllBtn = $('<button class="btn btn-primary j-revSelAll ms-2" />')
+                .html(_this._T("Reverse All"))
+                .off('click').on('click', function() {
+                    const $checkBoxes = $summaryDiv.find('input[type="checkbox"]');
+                    $checkBoxes.each(function (i, checkBox) {
+                        $(checkBox).prop('checked', !$(checkBox).prop('checked'));
+                    });
+                });
+            const $clearBtn = $('<button class="btn btn-danger j-clear ms-2" />')
+                .html(_this._T("Clear Filter"))
+                .off('click').on('click', function() {
+                    _this.clearFilter();
+                    summaryModal.hide();
+                });
+            $summaryModal.find('.modal-extra-buttons').html('')
+                .append($selAllBtn).append($revSelAllBtn).append($clearBtn);
+            $summaryModal.find('.j-confirm').off('click').on('click', function() {
+                _this.applyFilter();
+                summaryModal.hide();
+            });
+        }
+        summaryModal.toggle();
+    },
+
+    showFilter: function() {
+        this.showSummary(true);
+    },
+
+    applyFilter: function() {
+        const _this = this;
+        const $filterDiv = $('#commonModal');
+        if (!_this.filterShowTags) _this.filterShowTags = [];
+        else _this.filterShowTags.length = 0;
+        $filterDiv.find('input[type="checkbox"]:checked').each(function(i, elem) {
+            _this.filterShowTags.push($(elem).attr('data-tag-id'));
+        });
+        console.log('showTags', _this.filterShowTags);
+        $('.icc-flow').each(function(i, flowDiv) {
+            const $flowDiv = $(flowDiv);
+            let flag = false;
+            let flagTag = null;
+            _this.filterShowTags.some(function(tagId, i) {
+                if ($flowDiv.find('input[value="' + tagId + '"]:checked').length > 0) {
+                    flag = true;
+                    flagTag = tagId;
+                    return true;
+                }
+            });
+            !flag ? $flowDiv.hide() : $flowDiv.show();
+        });
+    },
+
+    clearFilter: function() {
+        $('.icc-flow').show();
+    },
+
+    showConfig: function() {
+        const _this = this;
+        const $configModal = $('#commonModal');
+        const configModal = new bootstrap.Modal($configModal);
+        $configModal.find('.modal-title-text').html(this._T('Viewer Config'));
+        const $modalBody = $configModal.find('.modal-body');
+        $modalBody.html('');
+
+        // Hide extra buttons
+        $configModal.find('.modal-extra-buttons').html('');
+
+        // Show cancel button
+        $configModal.find('.j-cancel').show();
+
+        // Sort order
+        const $sortByLabel = $('<label class="form-label" />').html(_this._T("Sort by"));
+        const $sortBySelect = $('<select class="form-select" id="option-sortBy" />');
+        $sortBySelect.append($('<option value="source" />').html(_this._T("Source")));
+        $sortBySelect.append($('<option value="destination" />').html(_this._T("Destination")));
+        $sortByLabel.append($sortBySelect);
+        $modalBody.append($sortByLabel);
+
+        // Language
+        const $langLabel = $('<label class="form-label ms-4" />').html(_this._T("Language"));
+        const $langSelect = $('<select class="form-select" id="option-lang" />');
+        _this.config.supportLang.forEach(function(langItem) {
+            $langSelect.append($('<option />').attr('value', langItem.id).html(_this._T(langItem.name)));
+        });
+        $langLabel.append($langSelect);
+        $modalBody.append($langLabel);
+
+        // Auto-Save duration
+        const $saveDurationLabel = $('<label class="form-label ms-4" />').html(_this._T("Auto Save Duration (Minutes)"));
+        const $saveDurationInput = $('<input class="form-control" id="option-autoSaveDuration" type="number" />');
+        $saveDurationInput.css('max-width', '100px');
+        $saveDurationLabel.append($saveDurationInput);
+        $modalBody.append($saveDurationLabel);
+
+        // Auto-Save
+        const $saveLabel = $('<label for="option-autoSave" class="form-label ms-2" />').html(_this._T("Auto Save"));
+        const $saveInput = $('<input class="form-check-input" id="option-autoSave" type="checkbox" />');
+        const $saveOption = $('<div class="form-check-inline ms-4" />');
+        $saveOption.append($saveInput).append($saveLabel);
+        $saveInput.off('change').on('change', function() {
+            if ($saveInput.prop('checked')) $saveDurationInput.prop('disabled', false);
+            else $saveDurationInput.prop('disabled', true);
+        });
+        $modalBody.append($saveOption);
+
+        // Checker
+        const $checkLabel = $('<label for="option-checkTags" class="form-label ms-2" />').html(_this._T("Enable Checks"));
+        const $checkInput = $('<input class="form-check-input" id="option-checkTags" type="checkbox" />');
+        const $checkOption = $('<div class="form-check-inline" />');
+        $checkOption.append($checkInput).append($checkLabel);
+        $modalBody.append($checkOption);
+
+        const currSortBy = _this.getOption('sortBy', 'source');
+        const currLang = _this.getOption('lang', this.config.supportLang[0].id);
+        const currAutoSave = _this.getOption('autoSave', true);
+        const currCheckTags = _this.getOption('checkTags', true);
+        const currAutoSaveDuration = _this.getOption('autoSaveDuration', 5);
+        $sortBySelect.val(currSortBy);
+        $langSelect.val(currLang);
+        $saveDurationInput.val(currAutoSaveDuration);
+        $saveInput.prop('checked', currAutoSave);
+        if (currAutoSave) $saveDurationInput.prop('disabled', false);
+        else $saveDurationInput.prop('disabled', true);
+        $checkInput.prop('checked', currCheckTags);
+
+        // Confirm
+        $configModal.find('.j-confirm').off('click').on('click', function() {
+            const newSortBy = $sortBySelect.val();
+            const newLang = $langSelect.val();
+            const newAutoSaveDuration = parseInt($saveDurationInput.val());
+            const newAutoSave = $saveInput.prop('checked');
+            const newCheckTags = $checkInput.prop('checked');
+            const isReload = (newLang !== currLang);
+            const isSaveAndRead = (newSortBy !== currSortBy);
+
+            _this.setOption('sortBy', newSortBy);
+            _this.setOption('lang', newLang);
+            _this.setOption('autoSaveDuration', newAutoSaveDuration);
+            _this.setOption('autoSave', newAutoSave);
+            _this.setOption('checkTags', newCheckTags);
+
+            if (newCheckTags !== currCheckTags) {
+                if (newCheckTags) {
+                    $('.icc-comment-edit').trigger('blur');
+                } else {
+                    $('.icc-tag-check-result').hide();
+                    $('.tag-warning-icon').hide();
+                }
+            }
+
+            if (newAutoSave !== currAutoSave || newAutoSaveDuration !== currAutoSaveDuration) {
+                _this.initAutoSave();
+            }
+
+            if (isReload) {
+                if ($('#app-selector').val() !== 'EMPTY') _this.saveLocal();
+                window.location.reload();
+            }
+            else if (isSaveAndRead) {
+                _this.saveLocal();
+                _this.readLocal();
+            }
+            _this.makeToast(_this._T('Config saved'));
+            configModal.hide();
+        });
+
+        configModal.toggle();
     },
     // ===================== Controller Ended =====================
 
@@ -1603,7 +1806,15 @@ $.extend(window.ICCTagViewer, {
      * @returns {null|String} Option value (parse by JSON)
      */
     getOption: function(optionId, defaultVal = null) {
-        const v = localStorage.getItem('icc-{0}'.format(optionId));
+        let v = localStorage.getItem('icc-{0}'.format(optionId));
+        if (defaultVal && v !== null) {
+            const typeVerify = typeof JSON.parse(v) === typeof defaultVal;
+            if (!typeVerify) {
+                localStorage.setItem('icc-{0}'.format(optionId), defaultVal);
+                v = defaultVal;
+                console.warn('option [' + optionId + '] type verify failed, reset to default value:', v);
+            }
+        }
         return v === null ? defaultVal : JSON.parse(v);
     },
 
