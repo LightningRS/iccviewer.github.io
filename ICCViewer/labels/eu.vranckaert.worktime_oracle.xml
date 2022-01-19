@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/eu.vranckaert.worktime_1.1.13.4/eu.vranckaert.worktime_260_src">
   <OracleEdge source="eu.vranckaert.worktime.activities.HomeActivity" destination="eu.vranckaert.worktime.activities.about.AboutActivity" method="">
     <comment>*HomeActivity.onOptionsItemSelected() -&gt; launchActivity() -&gt; startActivity()</comment>

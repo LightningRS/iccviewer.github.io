@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/benchmarks/DroidBench">
   <OracleEdge source="(icc_action_string_operations) edu.mit.icc_action_string_operations.OutFlowActivity" destination="(icc_action_string_operations) edu.mit.icc_action_string_operations.InFlowActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />

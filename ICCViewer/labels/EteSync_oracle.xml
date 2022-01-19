@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/EteSync/android-1.4.6">
   <OracleEdge source="com.etesync.syncadapter.syncadapter.SyncNotification$NotificationHandlerActivity" destination="com.etesync.syncadapter.ui.AccountSettingsActivity" method="">
     <comment>*SyncNotification.NotificationHandlerActivity.onCreate() -&gt; startActivity()</comment>

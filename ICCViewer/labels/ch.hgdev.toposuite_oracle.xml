@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/ch.hgdev.toposuite/toposuite-android-1.0.3">
   <OracleEdge source="ch.hgdev.toposuite.calculation.activities.abriss.AbrissActivity" destination="ch.hgdev.toposuite.calculation.activities.abriss.AbrissActivity" method="">
     <comment>AbrissActivity extends TopoSuiteActivity -&gt; TopoSuiteActivity.onCreate() -&gt; createRightMenuItems() -&gt; new ActivityItem() -&gt; CalculationGroup.add() -&gt; new ExpandableRightMenuAdapter() -&gt; ExpandableListView.setAdapter() -&gt; ExpandableRightMenuAdapter.getChildView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TopoSuiteActivity.ActivityItem.getActivityClass() -&gt; TopoSuiteActivity.startActivity() -&gt; startActivity()</comment>

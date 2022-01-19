@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/SuntimesWidget/SuntimesWidget-0.11.3">
   <OracleEdge source="com.forrestguice.suntimeswidget.ClockWidget0ConfigActivity" destination="com.forrestguice.suntimeswidget.ClockWidget0" method="">
     <comment>ClockWidget0ConfigActivity extends ClockWidget0 -&gt; ClockWidget0.onCreate() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; ClockWidget0.initViews() -&gt; ClockWidget0.setOnClickListener() -&gt; *ClockWidget0.onClick() -&gt; ClockWidget0.addWidget() -&gt; ClockWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>

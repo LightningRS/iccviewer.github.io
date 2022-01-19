@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/org.smssecure.smssecure/Silence-Android-v0.15.1">
   <OracleEdge source="org.smssecure.smssecure.ApplicationPreferencesActivity" destination="org.smssecure.smssecure.BlockedContactsActivity" method="">
     <comment>ApplicationPreferencesActivity.onCreate() -&gt; new ApplicationPreferenceFragment() -&gt; ApplicationPreferencesActivity extends PassphraseRequiredActionBarActivity -&gt; PassphraseRequiredActionBarActivity.initFragment() -&gt; FragmentTransaction.commit() -&gt; ApplicationPreferencesActivity.ApplicationPreferenceFragment.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; new AppProtectionPreferenceFragment() -&gt; FragmentTransaction.commit() -&gt; AppProtectionPreferenceFragment.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; AppProtectionPreferenceFragment.startActivity()</comment>

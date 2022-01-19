@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/CSipSimple/CSipSimple-master">
   <OracleEdge source="com.csipsimple.service.SipService" destination="com.csipsimple.plugins.codecs.ReceiverSilk" method="">
     <comment>*SipService.onBind() -&gt; ISipService.Stub.sipStart() -&gt; new StartRunnable() -&gt; SipServiceExecutor.execute() -&gt; SipService.startSipStack() -&gt; PjSipService.sipStart() -&gt; ExtraPlugins.getDynCodecPlugin() -&gt; PackageManager.queryBroadcastReceivers()</comment>

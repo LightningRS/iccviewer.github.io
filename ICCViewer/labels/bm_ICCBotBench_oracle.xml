@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/benchmarks/ICCBotBench">
   <OracleEdge source="com.iccbot.withCtx.Source1WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />

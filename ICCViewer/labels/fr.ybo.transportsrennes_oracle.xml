@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/fr.ybo.transportsrennes/TransportsRennes-TR_noGoogleMap_3.8.4">
   <OracleEdge source="fr.ybo.transportsrennes.activity.TransportsRennes" destination="fr.ybo.transportsrennes.activity.alerts.TabAlertes" method="">
     <comment>TransportsRennes.onCreate() -&gt; setContentView() -&gt; R.layout.main.fragment_dashboard -&gt; DashboardFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>

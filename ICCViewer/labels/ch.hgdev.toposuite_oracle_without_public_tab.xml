@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/ch.hgdev.toposuite/toposuite-android-1.0.3">
   <OracleEdge source="ch.hgdev.toposuite.calculation.activities.axisimpl.AxisImplantationActivity" destination="ch.hgdev.toposuite.calculation.activities.axisimpl.AxisImplantationResultsActivity" method="">
     <comment>*AxisImplantationActivity.onOptionsItemSelected() -&gt; startAxisImplantationResultsActivity() -&gt; startActivity()</comment>

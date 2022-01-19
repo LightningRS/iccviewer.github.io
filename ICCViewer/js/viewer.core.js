@@ -643,8 +643,8 @@ $.extend(window.ICCTagViewer, {
         // Source
         const $sourceDiv = $('<div class="row align-items-center" />');
         const $sourceCol1 = $('<div class="col-auto">');
-        const $sourceCol2 = $('<div class="col-6 detail-edit">').hide();
-        const $sourceCol3 = $('<div class="col-6 detail-show">');
+        const $sourceCol2 = $('<div class="col-lg mb-1 detail-edit">').hide();
+        const $sourceCol3 = $('<div class="col-lg detail-show">');
         const $labelSource = $('<label class="col-form-label"></label>');
         $sourceCol1.append($labelSource.html(this._T('Source Class:')));
         const $sourceInput = $('<input class="form-control icc-source-edit" type="text" />').val(flowObj.source);
@@ -673,8 +673,8 @@ $.extend(window.ICCTagViewer, {
         // Target
         const $destDiv = $('<div class="row align-items-center" />');
         const $destCol1 = $('<div class="col-auto">');
-        const $destCol2 = $('<div class="col-sm-6 detail-edit">').hide();
-        const $destCol3 = $('<div class="col-sm-6 detail-show">');
+        const $destCol2 = $('<div class="col-lg mb-1 detail-edit">').hide();
+        const $destCol3 = $('<div class="col-lg detail-show">');
         const $labelDest = $('<label class="col-form-label"></label>');
         $destCol1.append($labelDest.html(this._T('Destination Class:')));
         const $destInput = $('<input class="form-control icc-dest-edit" type="text" />').val(flowObj.dest);
@@ -981,6 +981,7 @@ $.extend(window.ICCTagViewer, {
                 metaData: metaData,
                 checkIgnore: edge.getElementsByTagName('tags')[0].getAttribute('checkIgnore'),
             };
+            if (!flowObj.checkIgnore) flowObj.checkIgnore = '';
             this.data.flows.push(flowObj);
         }
 
@@ -1785,8 +1786,9 @@ $.extend(window.ICCTagViewer, {
         const nodes = xml.slice(1, -1).split(/>\s*</);
         if (nodes[0][0] === '?') formatted += '<' + nodes.shift() + '>' + nl;
         for (let i = 0; i < nodes.length; i++) {
-            const node = nodes[i];
+            let node = nodes[i];
             if (node[0] === '/') indent = indent.slice(tab.length);
+            if (node[node.length - 1] === '/' && node[node.length - 2] !== ' ') node = node.slice(0, node.length - 1) + ' /';
             formatted += indent + '<' + node + '>' + nl;
             if (node[0] !== '/' && node[node.length - 1] !== '/' && node.indexOf('</') === -1) indent += tab;
         }

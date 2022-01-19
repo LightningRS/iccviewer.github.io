@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/com.oriondev.moneywallet/moneywallet-4.0.2">
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.BackupListActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
     <comment>*BackupListActivity.onResume() -&gt; BackupListActivity extends BaseActivity -&gt; BaseActivity.onResume() -&gt; startActivityForResult()</comment>

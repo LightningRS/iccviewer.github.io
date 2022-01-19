@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/org.liberty.android.fantastischmemo/AnyMemo-10.6.3">
   <OracleEdge source="org.liberty.android.fantastischmemo.AnyMemoWidgetProvider" destination="org.liberty.android.fantastischmemo.service.AnyMemoService" method="">
     <comment>*AnyMemoWidgetProvider.onUpdate() -&gt; Context.startService()</comment>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/Padland/padland-1.5">
   <OracleEdge source="com.mikifus.padland.About" destination="com.mikifus.padland.SettingsActivity" method="xxx">
     <comment>Aboutextends PadLandActivity -&gt; *PadLandActivity.onOptionsItemSelected() -&gt; startActivity()</comment>

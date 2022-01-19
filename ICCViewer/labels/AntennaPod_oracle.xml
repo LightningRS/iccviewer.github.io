@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/AntennaPod/AntennaPod-1.7.1">
   <OracleEdge source="de.danoeh.antennapod.activity.AudioplayerActivity" destination="de.danoeh.antennapod.activity.CastplayerActivity" method="">
     <comment>AudioplayerActivity.onResume() -&gt; AudioplayerActivity extends MediaplayerInfoActivity -&gt; MediaplayerInfoActivity.onResume() -&gt; MediaplayerInfoActivity extends MediaplayerActivity -&gt; MediaplayerActivity.onResume() -&gt; PlaybackController.init() -&gt; initServiceRunning() -&gt; Activity.registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; PlaybackController.onReloadNotification() -&gt; AudioplayerActivity.onReloadNotification() -&gt; startActivity()</comment>

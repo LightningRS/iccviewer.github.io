@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/SteamGifts/SteamGifts-1.5.11">
   <OracleEdge source="net.mabako.steamgifts.activities.AboutActivity" destination="net.mabako.steamgifts.activities.DetailActivity" method="">
     <comment>AboutActivity.onCreate() -&gt; loadFragment() -&gt; new AboutFragment() -&gt; AboutFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>

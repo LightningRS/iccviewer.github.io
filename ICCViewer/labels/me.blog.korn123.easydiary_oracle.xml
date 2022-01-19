@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/me.blog.korn123.easydiary/aaf-easydiary-1.4.153">
   <OracleEdge source="me.blog.korn123.easydiary.activities.CalendarActivity" destination="me.blog.korn123.easydiary.activities.DiaryInsertActivity" method="">
     <comment>CalendarActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TransitionHelper.startActivityWithTransition() -&gt; CalendarActivity.startActivity()</comment>

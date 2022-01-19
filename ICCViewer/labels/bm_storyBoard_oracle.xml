@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/benchmarks/storyBoard">
   <OracleEdge source="(activity_1) com.test.ui.transition.A" destination="(activity_1) com.test.ui.transition.B" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />

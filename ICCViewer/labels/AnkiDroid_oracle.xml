@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/AnkiDroid/Anki-Android-2.8.4">
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.CardBrowser" method="">
     <comment>CardBrowser.onCreate() -&gt; initNavigationDrawer() -&gt; CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity.openCardBrowser() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>

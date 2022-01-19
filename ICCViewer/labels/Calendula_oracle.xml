@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/Calendula/calendula-2.5.11">
   <OracleEdge source="es.usc.citius.servando.calendula.HomePagerActivity" destination="es.usc.citius.servando.calendula.activities.AboutActivity" method="">
     <comment>HomePagerActivity.onCreate() -&gt; initializeDrawer() -&gt; LeftDrawerMgr.init() -&gt; *onItemClick() -&gt; showAbout() -&gt; launchActivity() -&gt; HomePagerActivity.startActivity()</comment>

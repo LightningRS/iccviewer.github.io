@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <root srcCodeBase="/OpenKeychain/open-keychain-5.2">
   <OracleEdge source="org.sufficientlysecure.keychain.remote.ui.dialog.RemoteSelectIdKeyActivity" destination="org.sufficientlysecure.keychain.ui.MainActivity" method="">
     <comment>*RemoteSelectIdKeyActivity.onCreate() -&gt; new RemoteSelectIdentityKeyDialogFragment() -&gt; RemoteSelectIdKeyActivity.RemoteSelectIdentityKeyDialogFragment.show() -&gt; onCreateDialog() -&gt; createMvpView() -&gt; new RemoteSelectIdentityKeyView() -&gt; RemoteSelectIdentityKeyView.showOpenKeychainIntent() -&gt; RemoteSelectIdKeyActivity.RemoteSelectIdentityKeyDialogFragment.startActivity()</comment>
