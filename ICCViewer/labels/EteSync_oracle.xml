@@ -266,7 +266,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>

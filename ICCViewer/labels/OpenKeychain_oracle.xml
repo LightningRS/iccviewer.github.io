@@ -37,7 +37,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -58,7 +58,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -79,7 +79,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -99,7 +99,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -144,7 +144,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -165,7 +165,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -184,7 +184,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -205,7 +205,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -416,7 +416,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -439,7 +439,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -466,7 +466,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -495,7 +495,7 @@
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptTextActivity.java" start="133" end="135" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptTextFragment.java" start="378" end="379" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptTextFragment.java" start="342" end="343" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptTextFragment.java" start="342" end="344" />
       <line src="/OpenKeychain/src/main/AndroidManifest.xml" start="311" end="316" />
     </callLines>
     <tags>
@@ -610,7 +610,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -710,7 +710,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>

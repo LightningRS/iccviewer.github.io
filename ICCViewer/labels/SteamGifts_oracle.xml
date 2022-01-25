@@ -38,7 +38,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -131,7 +131,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -144,7 +144,7 @@
       <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DiscussionDetailFragment.java" start="217" end="217" />
       <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DiscussionDetailFragment.java" start="220" end="220" />
       <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DiscussionDetailFragment.java" start="41" end="41" />
-      <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DetailFragment.java" start="206" end="206" />
+      <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DetailFragment.java" start="200" end="206" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -154,7 +154,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
