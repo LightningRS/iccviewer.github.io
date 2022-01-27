@@ -58,258 +58,357 @@ function countNoLessThan(flowId, tags, num) {
 window.ICCTagViewer = window.ICCTagViewer ? window.ICCTagViewer : {};
 $.extend(window.ICCTagViewer, {
     checkers: [
-        (flowId, comment) => {
-            const tagPath = 'entryMethod.isLifeCycle';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk1 = /[.| ]on(Create|CreateView|ViewCreated|Attach|Detach|Start|Resume|Pause|Stop|Destroy|Receive|StartCommand|Update)\(/.test(comment);
-            const chk2 = /[.| ]on(RestoreInstanceState|PostCreate|PostResume|CreateDescription|SaveInstanceState|Bind|Rebind|Unbind|ActivityCreated|ViewStateRestored)\(/.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: sel ^ (chk1 || chk2),
-                errorTags: [tagPath],
-                type: 'isLifeCycle',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'entryMethod.isImplicitCallback';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /[.| ]on(OptionsSelected|ActivityResult|RequestPermissionsResult|NavigationItemSelected|AttachedToWindow)\(/.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isImplicitCallback',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'entryMethod.isDynamicCallBack';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const patterns = [
-                /(add|set|with|reg|regist|register)[^.(]*(listener|callback)/i,
-                /listener.on/i,
-                /[.| ]onPositive\(/i,
-                /[.| ]set(Positive|Negative)Button\(/i
-            ];
-            let ids = [];
-            for (let i = 0; i < patterns.length; i++) {
-                if (patterns[i].test(comment)) ids.push(i);
-            }
-            const chk = ids.length > 0;
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                extraInfo: ids.join(', '),
-                type: 'isDynamicCallBack',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'entryMethod.isStaticCallBack';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /[ |*]R\./.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: sel ^ chk,
-                errorTags: [tagPath],
-                type: 'isDynamicCallBack',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'exitMethod.isNormalSendICC';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const patterns = [
-                /[.| ]startActivity(ForResult|FromChild|FromFragment|IfNeeded)*\(/,
-                /[.| ]start(Activities|Service|ForegroundService)\(/i,
-                /[.| ]send(Ordered)*Broadcast(AsUser|WithMultiplePermissions)*\(/i,
-                /[.| ](bind|stop|unbind)Service\(/i
-            ];
-            let ids = [];
-            for (let i = 0; i < patterns.length; i++) {
-                if (patterns[i].test(comment)) ids.push(i);
-            }
-            const chk = ids.length > 0;
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: sel ^ chk,
-                errorTags: [tagPath],
-                type: 'isNormalSendICC',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'analyzeScope.componentScope.isActivity';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /Activity\./.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isActivity',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'analyzeScope.componentScope.isService';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /Service\./.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isService',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath1 = 'analyzeScope.componentScope.isBroadCast';
-            const tagPath2 = 'analyzeScope.componentScope.isDynamicBroadCast';
-            const t1 = ICCTagViewer.tagSelect(flowId, tagPath1);
-            const t2 = ICCTagViewer.tagSelect(flowId, tagPath2);
-            const sel = t1 || t2;
-            const chk = /Receiver\./.test(comment);
-            return {
-                autoFix: false,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath1, tagPath2],
-                type: 'isBroadcast',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'analyzeScope.componentScope.isDynamicBroadCast';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /registerReceiver\./.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isDynamicBroadcast',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'analyzeScope.nonComponentScope.isFragment';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /Fragment/i.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isFragment',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'analyzeScope.nonComponentScope.isAdapter';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /Adapter/i.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isAdapter',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'analyzeScope.nonComponentScope.isWidget';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /Widget/i.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isWidget',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'analyzeScope.methodScope.isAsyncInvocation';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /(runOnUiThread|Thread|onPostExecute|AsyncTask| Handler\.)/i.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isAsyncInvocation',
-            }
-        },
-        (flowId, comment) => {
-            const tagPath = 'analyzeScope.methodScope.isPolymorphic';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /(extends)/.test(comment);
-            return {
-                autoFix: true,
-                ignorable: false,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isPolymorphic'
-            }
-        },
-
-        (flowId, comment) => {
-            const tagPath = 'intentMatch.isImplicit';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            let chk = false;
-            const callLines = $('#icc-flow-{0}'.format(flowId)).find('.call-line');
-            callLines.toArray().some(function(elem, i){
-                const fp = $(elem).find('input').val();
-                if (/(AndroidManifest.xml)/i.test(fp)) {
-                    chk = true;
-                    return true;
+        {
+            id: 'isLifeCycle',
+            name: "Checker of lifecycle related invocation",
+            desc: "Whether common life cycle method name appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'entryMethod.isLifeCycle';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk1 = /[.| ]on(Create|CreateView|ViewCreated|Attach|Detach|Start|Resume|Pause|Stop|Destroy|Receive|StartCommand|Update)\(/.test(comment);
+                const chk2 = /[.| ]on(RestoreInstanceState|PostCreate|PostResume|CreateDescription|SaveInstanceState|Bind|Rebind|Unbind|ActivityCreated|ViewStateRestored)\(/.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: sel ^ (chk1 || chk2),
+                    errorTags: [tagPath],
+                    type: 'isLifeCycle',
                 }
-            });
-            return {
-                autoFix: false,
-                ignorable: true,
-                msgPrefix: ICCTagViewer._T('Please check whether IntentFilter is defined in AndroidManifest.xml or not when tag'),
-                msgSuffix: ICCTagViewer._T('has been selected.'),
-                error: sel ? !chk : false,
-                errorTags: [tagPath],
-                type: 'isImplicitAndroidManifest'
             }
         },
-        (flowId, comment) => {
-            const tagPath = 'analyzeScope.methodScope.isListenerInvocation';
-            const sel = ICCTagViewer.tagSelect(flowId, tagPath);
-            const chk = /(add|set|with|reg|regist|register)[^.(]*(listener)/i.test(comment);
-            return {
-                autoFix: true,
-                ignorable: true,
-                error: chk ? !sel : false,
-                errorTags: [tagPath],
-                type: 'isListenerInvocation',
+        {
+            id: 'isImplicitCallback',
+            name: "Checker of implicit callback",
+            desc: "Whether common implicit callback method name appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'entryMethod.isImplicitCallback';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /[.| ]on(OptionsSelected|ActivityResult|RequestPermissionsResult|NavigationItemSelected|AttachedToWindow)\(/.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    type: 'isImplicitCallback',
+                }
+            }
+        },
+        {
+            id: 'isDynamicCallBack',
+            name: "Checker of dynamic callback",
+            desc: "Whether common dynamic callback method name appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'entryMethod.isDynamicCallBack';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const patterns = [
+                    /(add|set|with|reg|regist|register)[^.(]*(listener|callback)/i,
+                    /listener.on/i,
+                    /[.| ]onPositive\(/i,
+                    /[.| ]set(Positive|Negative)Button\(/i
+                ];
+                let ids = [];
+                for (let i = 0; i < patterns.length; i++) {
+                    if (patterns[i].test(comment)) ids.push(i);
+                }
+                const chk = ids.length > 0;
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    extraInfo: ids.join(', '),
+                    type: 'isDynamicCallBack',
+                }
+            }
+        },
+        {
+            id: 'isStaticCallBack',
+            name: "Checker of static callback",
+            desc: "Whether static resource reference (R.) appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'entryMethod.isStaticCallBack';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /[ |*]R\./.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: sel ^ chk,
+                    errorTags: [tagPath],
+                    type: 'isStaticCallBack',
+                }
+            }
+        },
+        {
+            id: 'isNormalSendICC',
+            name: "Checker of normal ICC",
+            desc: "Whether typical ICC method name appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'exitMethod.isNormalSendICC';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const patterns = [
+                    /[.| ]startActivity(ForResult|FromChild|FromFragment|IfNeeded)*\(/,
+                    /[.| ]start(Activities|Service|ForegroundService)\(/i,
+                    /[.| ]send(Ordered)*Broadcast(AsUser|WithMultiplePermissions)*\(/i,
+                    /[.| ](bind|stop|unbind)Service\(/i
+                ];
+                let ids = [];
+                for (let i = 0; i < patterns.length; i++) {
+                    if (patterns[i].test(comment)) ids.push(i);
+                }
+                const chk = ids.length > 0;
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: sel ^ chk,
+                    errorTags: [tagPath],
+                    type: 'isNormalSendICC',
+                }
+            }
+        },
+        {
+            id: 'isActivity',
+            name: "Checker of Activity class",
+            desc: "Whether the keyword \"Activity\" appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'analyzeScope.componentScope.isActivity';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /Activity\./.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    type: 'isActivity',
+                }
+            }
+        },
+        {
+            id: 'isService',
+            name: "Checker of Service class",
+            desc: "Whether the keyword \"Service\" appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'analyzeScope.componentScope.isService';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /Service\./.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    type: 'isService',
+                }
+            }
+        },
+        {
+            id: 'isBroadcast',
+            name: "Checker of Receiver class",
+            desc: "Whether the keyword \"Receiver\" appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath1 = 'analyzeScope.componentScope.isBroadCast';
+                const tagPath2 = 'analyzeScope.componentScope.isDynamicBroadCast';
+                const t1 = ICCTagViewer.tagSelect(flowId, tagPath1);
+                const t2 = ICCTagViewer.tagSelect(flowId, tagPath2);
+                const sel = t1 || t2;
+                const chk = /Receiver\./.test(comment);
+                return {
+                    autoFix: false,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath1, tagPath2],
+                    type: 'isBroadcast',
+                }
+            }
+        },
+        {
+            id: 'isDynamicBroadcast',
+            name: "Checker of dynamic broadcast",
+            desc: "Whether the keyword \"registerReceiver\" appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'analyzeScope.componentScope.isDynamicBroadCast';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /registerReceiver\./.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    type: 'isDynamicBroadcast',
+                }
+            }
+        },
+        {
+            id: 'isFragment',
+            name: "Checker of Fragment invocation",
+            desc: "Whether the keyword \"Fragment\" appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'analyzeScope.nonComponentScope.isFragment';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /Fragment/i.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    type: 'isFragment',
+                }
+            }
+        },
+        {
+            id: 'isAdapter',
+            name: "Checker of Adapter invocation",
+            desc: "Whether the keyword \"Adapter\" appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'analyzeScope.nonComponentScope.isAdapter';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /Adapter/i.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    type: 'isAdapter',
+                }
+            }
+        },
+        {
+            id: 'isWidget',
+            name: "Checker of Widget invocation",
+            desc: "Whether the keyword \"Widget\" appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'analyzeScope.nonComponentScope.isWidget';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /Widget/i.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    type: 'isWidget',
+                }
+            }
+        },
+        {
+            id: 'isAsyncInvocation',
+            name: "Checker of async invocation",
+            desc: "Whether any keyword related to async invoke appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'analyzeScope.methodScope.isAsyncInvocation';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /(runOnUiThread|Thread|onPostExecute|AsyncTask| Handler\.)/i.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: true,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    type: 'isAsyncInvocation',
+                }
+            }
+        },
+        {
+            id: 'isPolymorphic',
+            name: "Checker of polymorphism",
+            desc: "Whether the keyword \"extends\" appears in the call path",
+            func: (flowId, comment) => {
+                const tagPath = 'analyzeScope.methodScope.isPolymorphic';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const chk = /(extends)/.test(comment);
+                return {
+                    autoFix: true,
+                    ignorable: false,
+                    error: chk ? !sel : false,
+                    errorTags: [tagPath],
+                    type: 'isPolymorphic'
+                }
+            }
+        },
+        {
+            id: 'isStaticVal',
+            name: "Checker of static value",
+            desc: "Cannot select more than one of the labels \"isExplicit\" and \"isStaticVal\"",
+            func: (flowId, comment) => {
+                const tagPath1 = 'intentMatch.isExplicit';
+                const tagPath2 = 'analyzeScope.intentFieldScope.isStaticVal';
+                return countNoMoreThan(flowId, [tagPath1, tagPath2], 1);
+            }
+        },
+        {
+            id: 'isExitMethodSelected',
+            name: "Checker of exit method",
+            desc: "Can only select one of the labels \"isNormalSendICC\" and \"isAtypicalSendICC\"",
+            func: (flowId, comment) => {
+                const tagPath1 = 'exitMethod.isNormalSendICC';
+                const tagPath2 = 'exitMethod.isAtypicalSendICC';
+                return countEquals(flowId, [tagPath1, tagPath2], 1);
+            }
+        },
+        {
+            id: 'isComponentTypeSelected',
+            name: "Checker of component type",
+            desc: "Cannot select less than one of the labels \"isActivity\", \"isService\", \"isBroadCast\" and \"isDynamicBroadCast\"",
+            func: (flowId, comment) => {
+                const tagPath1 = 'analyzeScope.componentScope.isActivity';
+                const tagPath2 = 'analyzeScope.componentScope.isService';
+                const tagPath3 = 'analyzeScope.componentScope.isBroadCast';
+                const tagPath4 = 'analyzeScope.componentScope.isDynamicBroadCast';
+                return countNoLessThan(flowId, [tagPath1, tagPath2, tagPath3, tagPath4], 1);
+            }
+        },
+        {
+            id: 'isIntentTypeSelected',
+            name: "Checker of Intent type",
+            desc: "Can only select one of the labels \"isExplicit\" and \"isImplicit\"",
+            func: (flowId, comment) => {
+                const tagPath1 = 'intentMatch.isExplicit';
+                const tagPath2 = 'intentMatch.isImplicit';
+                return countEquals(flowId, [tagPath1, tagPath2], 1);
             }
         },
 
-        (flowId, comment) => {
-            const tagPath1 = 'exitMethod.isNormalSendICC';
-            const tagPath2 = 'exitMethod.isAtypicalSendICC';
-            const num = 1;
-            return countEquals(flowId, [tagPath1, tagPath2], 1);
-        },
-        (flowId, comment) => {
-            const tagPath1 = 'intentMatch.isExplicit';
-            const tagPath2 = 'analyzeScope.intentFieldScope.isStaticVal';
-            const num = 1;
-            return countNoMoreThan(flowId, [tagPath1, tagPath2], 1);
-        },
-        (flowId, comment) => {
-            const tagPath1 = 'analyzeScope.componentScope.isActivity';
-            const tagPath2 = 'analyzeScope.componentScope.isService';
-            const tagPath3 = 'analyzeScope.componentScope.isBroadCast';
-            const tagPath4 = 'analyzeScope.componentScope.isDynamicBroadCast';
-            return countNoLessThan(flowId, [tagPath1, tagPath2, tagPath3, tagPath4], 1);
-        },
-        (flowId, comment) => {
-            const tagPath1 = 'intentMatch.isExplicit';
-            const tagPath2 = 'intentMatch.isImplicit';
-            return countEquals(flowId, [tagPath1, tagPath2], 1);
-        },
+        // {
+        //     id: 'isListenerInvocation',
+        //     name: "listener invocation",
+        //     desc: "Whether any keyword related to listener invocation appears in the call path",
+        //     isPublic: false,
+        //     func: (flowId, comment) => {
+        //         const tagPath = 'analyzeScope.methodScope.isListenerInvocation';
+        //         const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+        //         const chk = /(add|set|with|reg|regist|register)[^.(]*(listener)/i.test(comment);
+        //         return {
+        //             autoFix: true,
+        //             ignorable: true,
+        //             error: chk ? !sel : false,
+        //             errorTags: [tagPath],
+        //             type: 'isListenerInvocation',
+        //         }
+        //     }
+        // },
+        // {
+        //     id: 'isImplicitAndroidManifest',
+        //     name: "implicit Intent",
+        //     desc: "Whether the keyword \"AndroidManifest.xml\" appears in the call lines",
+        //     isPublic: false,
+        //     func: (flowId, comment) => {
+        //         const tagPath = 'intentMatch.isImplicit';
+        //         const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+        //         let chk = false;
+        //         const callLines = $('#icc-flow-{0}'.format(flowId)).find('.call-line');
+        //         callLines.toArray().some(function(elem, i){
+        //             const fp = $(elem).find('input').val();
+        //             if (/(AndroidManifest.xml)/i.test(fp)) {
+        //                 chk = true;
+        //                 return true;
+        //             }
+        //         });
+        //         return {
+        //             autoFix: false,
+        //             ignorable: true,
+        //             msgPrefix: ICCTagViewer._T('Please check whether IntentFilter is defined in AndroidManifest.xml or not when tag'),
+        //             msgSuffix: ICCTagViewer._T('has been selected.'),
+        //             error: sel ? !chk : false,
+        //             errorTags: [tagPath],
+        //             type: 'isImplicitAndroidManifest'
+        //         }
+        //     }
+        // },
     ]
 });

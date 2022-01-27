@@ -42,6 +42,7 @@ $.extend(window.ICCTagViewer, {
     $copySrc: null,
     filterShowTags: null,
     autoSaveInterval: null,
+    enabledCheckers: [],
     data: { flows: [] },
 
     _T: function(txt) {
@@ -138,13 +139,23 @@ $.extend(window.ICCTagViewer, {
      */
     checkTags: function(flowId, $commentInput, $commentCheckDiv) {
         const _this = this;
+        if (!_this.checkers) return;
         if (!_this.getOption('checkTags', true)) return;
+        if (!_this.hasOption('enabledCheckers')) {
+            if (_this.enabledCheckers.length < 1) {
+                $.each(_this.checkers, function(i, checker) {
+                    _this.enabledCheckers.push(checker.id);
+                });
+            }
+        } else {
+            _this.enabledCheckers = _this.getOption('enabledCheckers', []);
+        }
         $commentCheckDiv.empty();
         let warnCnt = 0;
-        if (!_this.checkers) return;
-        $.each(_this.checkers, function(i, elem) {
+        $.each(_this.checkers, function(i, checker) {
+            if (_this.enabledCheckers.indexOf(checker.id) === -1) return;
             const comment = $commentInput.val();
-            const result = elem(flowId, comment);
+            const result = checker.func(flowId, comment);
             if (result.error) {
                 if (result.type) {
                     const checkIgnore = _this.data.flows[flowId].checkIgnore;
@@ -1560,6 +1571,79 @@ $.extend(window.ICCTagViewer, {
         $('.icc-flow').show();
     },
 
+    buildCheckerConfigDiv: function(currCheckTags) {
+        const _this = this;
+        if (!_this.hasOption('enabledCheckers')) {
+            $.each(_this.checkers, function(i, checker) {
+                _this.enabledCheckers.push(checker.id);
+            })
+        } else {
+            _this.enabledCheckers = _this.getOption('enabledCheckers', []);
+        }
+        const $div = $('<div class="checker-config"/>');
+
+        const $checkLabel = $('<label for="option-checkTags" class="form-label" />');
+        const $checkInput = $('<input class="form-check-input me-2" id="option-checkTags" type="checkbox" />');
+        $checkInput.prop('checked', currCheckTags);
+        const $checkOption = $('<div class="form-check-inline" />');
+        $checkLabel.append($checkInput).append(_this._T("Enable Label Checking"));
+        $checkOption.append($checkLabel);
+
+        const $selAllA = $('<a class="ms-2" href="javascript:;" />').html(_this._T("Select All"));
+        const $revSelA = $('<a class="ms-2" href="javascript:;" />').html(_this._T("Reverse All"));
+        $checkOption.append($selAllA).append($revSelA);
+        $div.append($checkOption);
+
+        const $checkersDiv = $('<div class="row checkers-config" />');
+        if (_this.checkers) {
+            let totalCheckerCnt = 0;
+            $.each(_this.checkers, function(i, checker) {
+                if (checker.isPublic !== false) totalCheckerCnt++;
+            });
+            const cols = 3;
+            const $colDivs = [];
+            for (let i = 0; i < cols; i++) {
+                $colDivs.push($('<div class="col-auto" />'));
+            }
+            const cntPerCol = Math.ceil(totalCheckerCnt / cols);
+            let ri = 0;
+            $.each(_this.checkers, function(i, checker) {
+                if (checker.isPublic !== false) {
+                    let $colDiv = $colDivs[Math.floor(ri / cntPerCol)];
+                    const $checkerLabel = $('<label class="form-label ms-2" />');
+                    $checkerLabel.attr('title', _this._T(checker.desc));
+                    const $checkerInput = $('<input class="form-check-input checker-checkbox me-1" type="checkbox" />');
+                    $checkerInput.val(checker.id);
+                    $checkerInput.prop('checked', _this.enabledCheckers.indexOf(checker.id) > -1);
+                    $checkerLabel.append($checkerInput).append(_this._T(checker.name));
+                    $colDiv.append($checkerLabel).append('<div class="clearfix" />');
+                    ri++;
+                }
+            });
+            for (let i = 0; i < cols; i++) {
+                $checkersDiv.append($colDivs[i]);
+            }
+        }
+        $div.append($checkersDiv);
+        if (!currCheckTags) $checkersDiv.hide();
+
+        $checkInput.on('change', function() {
+            const sel = $checkInput.prop('checked');
+            sel ? $checkersDiv.slideDown() : $checkersDiv.slideUp();
+        });
+        $selAllA.on('click', function() {
+            $checkersDiv.find('input').prop('checked', true);
+        });
+        $revSelA.on('click', function() {
+            $checkersDiv.find('input').each(function(i, elem) {
+                const $box = $(elem);
+                $box.prop('checked', !$box.prop('checked'));
+            })
+        })
+
+        return $div;
+    },
+
     showConfig: function() {
         const _this = this;
         const $configModal = $('#commonModal');
@@ -1573,6 +1657,13 @@ $.extend(window.ICCTagViewer, {
 
         // Show cancel button
         $configModal.find('.j-cancel').show();
+
+        // Load config values
+        const currSortBy = _this.getOption('sortBy', 'source');
+        const currLang = _this.getOption('lang', this.config.supportLang[0].id);
+        const currAutoSave = _this.getOption('autoSave', true);
+        const currCheckTags = _this.getOption('checkTags', true);
+        const currAutoSaveDuration = _this.getOption('autoSaveDuration', 5);
 
         // Sort order
         const $sortByLabel = $('<label class="form-label" />').html(_this._T("Sort by"));
@@ -1610,24 +1701,16 @@ $.extend(window.ICCTagViewer, {
         $modalBody.append($saveOption);
 
         // Checker
-        const $checkLabel = $('<label for="option-checkTags" class="form-label ms-2" />').html(_this._T("Enable Checks"));
-        const $checkInput = $('<input class="form-check-input" id="option-checkTags" type="checkbox" />');
-        const $checkOption = $('<div class="form-check-inline" />');
-        $checkOption.append($checkInput).append($checkLabel);
-        $modalBody.append($checkOption);
+        const $checkerDiv = _this.buildCheckerConfigDiv(currCheckTags);
+        const $checkEnableInput = $checkerDiv.find('#option-checkTags');
+        $modalBody.append($checkerDiv);
 
-        const currSortBy = _this.getOption('sortBy', 'source');
-        const currLang = _this.getOption('lang', this.config.supportLang[0].id);
-        const currAutoSave = _this.getOption('autoSave', true);
-        const currCheckTags = _this.getOption('checkTags', true);
-        const currAutoSaveDuration = _this.getOption('autoSaveDuration', 5);
         $sortBySelect.val(currSortBy);
         $langSelect.val(currLang);
         $saveDurationInput.val(currAutoSaveDuration);
         $saveInput.prop('checked', currAutoSave);
         if (currAutoSave) $saveDurationInput.prop('disabled', false);
         else $saveDurationInput.prop('disabled', true);
-        $checkInput.prop('checked', currCheckTags);
 
         // Confirm
         $configModal.find('.j-confirm').off('click').on('click', function() {
@@ -1635,17 +1718,24 @@ $.extend(window.ICCTagViewer, {
             const newLang = $langSelect.val();
             const newAutoSaveDuration = parseInt($saveDurationInput.val());
             const newAutoSave = $saveInput.prop('checked');
-            const newCheckTags = $checkInput.prop('checked');
+            const newCheckTags = $checkEnableInput.prop('checked');
             const isReload = (newLang !== currLang);
             const isSaveAndRead = (newSortBy !== currSortBy);
+
+            const newEnabledCheckers = [];
+            $checkerDiv.find('.checker-checkbox:checked').each(function(i, elem) {
+                newEnabledCheckers.push($(elem).val());
+            });
+            const isCheckerChanged = JSON.stringify(newEnabledCheckers) !== JSON.stringify(_this.enabledCheckers);
 
             _this.setOption('sortBy', newSortBy);
             _this.setOption('lang', newLang);
             _this.setOption('autoSaveDuration', newAutoSaveDuration);
             _this.setOption('autoSave', newAutoSave);
             _this.setOption('checkTags', newCheckTags);
+            _this.setOption('enabledCheckers', newEnabledCheckers);
 
-            if (newCheckTags !== currCheckTags) {
+            if (newCheckTags !== currCheckTags || isCheckerChanged) {
                 if (newCheckTags) {
                     $('.icc-comment-edit').trigger('blur');
                 } else {
@@ -1821,6 +1911,10 @@ $.extend(window.ICCTagViewer, {
             }
         }
         return v === null ? defaultVal : JSON.parse(v);
+    },
+
+    hasOption: function(optionId) {
+        return localStorage.getItem('icc-{0}'.format(optionId)) !== null;
     },
 
     /**

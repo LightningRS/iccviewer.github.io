@@ -25,7 +25,7 @@ The website implementation is based on [Bootstrap 5](https://getbootstrap.com), 
 
 ### View the ICCs and their characteristics of picked applications
 
-On the ICCViewer page, click the option in the drop-down menu next to **Application** to view the built-in ICC results of 31 open source apps involved in our experiment.
+On the ICCViewer page, click the option in the drop-down menu next to **Application** to view the built-in ICC results of 5 benchmarks and 31 open-source apps involved in our experiment.
 
 ![Select picked applications](images/readme-01.png)
 
@@ -56,6 +56,15 @@ The following is a brief description of the annotation panel:
 - **Label Accordion**：Each category of label can be collapsed and expanded separately, and each label is presented as a checkbox. The original name and description of the label will be displayed when the mouse is moved to the checkbox.
 - **Label Checking**: When the label checking is turned on, the possible problems of label selection will be displayed at the end of accordion panel. Please refers to [Label Checking Based on Call Path](#label-checking-based-on-call-path)
 
+### Summary & Filter
+You can click the button "Summary" to get the summary ICC information of current app. It will show the overall number count of all types of labels.
+
+![Summary modal](images/readme-05.png)
+
+You can click the button "Filter" to display the oracle edges with only specific labels. Click the button `Filter -> Clear Filter` can clear the filters.
+
+![Filter modal](images/readme-06.png)
+
 ### Create ICC Annotation for Other Applications
 
 After clicking the last option `-- Custom -- ` of the drop-down menu next to **Application**, the **Source Root** edit box will be shown. The default value of source code path is `/ICCViewer/apps`, which is the path corresponding to the `apps` folder in the online version of **ICCViewer**, storing all source code of picked applications in our experiment.
@@ -83,25 +92,29 @@ Based on above specifications, the following call path annotations are legal:
 
 On the premise that the call path annotation meets the specifications, the label checking feature can be turned on. It can perform simple rule-based checking according to the call path to avoid some possible problems with manual labeling.
 
+The configure of label checking can be found in `Config` modal as follow. The description of rule will be shown when mouse over.
+
+![Config modal](images/readme-04.png)
+
 The main checking rules are as follows:
 
 | Rule name | Related labels | Checking logic | Description
 | :----- | :----- | :----- | :----- |
-| Lifecycle related invocation | `entryMethod.isLifeCycle` | include <-> select, ~include <-> ~select | Whether common life cycle method name appear in the call path
-| Suspected implicit callback | `entryMethod.isImplicitCallback` | include -> select | Whether common implicit callback method name appear in the call path
-| Suspected dynamic callback | `entryMethod.isDynamicCallBack` | include -> select | Whether common dynamic callback method name appear in the call path
-| Suspected static callback | `entryMethod.isStaticCallBack` | include -> select | Whether static resource reference (`R.`) in the call path
-| Normal ICC | `exitMethod.isNormalSendICC` | include <-> select, ~include <-> ~select | Whether typical ICC method name appears in the call path
-| Suspected Activity class | `analyzeScope.componentScope.isActivity` | include -> select | Whether the `Activity` keyword appears in the class name in the call path
-| Suspected Service class | `analyzeScope.componentScope.isService` | include -> select | Whether the `Service` keyword appears in the class name in the call path
-| Suspected Receiver class | `analyzeScope.componentScope.isBroadCast`, `analyzeScope.componentScope.isDynamicBroadCast` | include -> select | Whether the `Receiver` keyword appears in the class name in the call path
-| Suspected dynamic broadcast | `analyzeScope.componentScope.isDynamicBroadCast` | include -> select | Whether the `registerReceiver` keyword appears in the class name in the call path
-| Suspected Fragment invocation | `analyzeScope.nonComponentScope.isFragment` | include -> select | Whether the `Fragment` keyword appears in the class name in the call path
-| Suspected Adapter invocation | `analyzeScope.nonComponentScope.isAdapter` | include -> select | Whether the `Adapter` keyword appears in the class name in the call path
-| Suspected Widget invocation | `analyzeScope.nonComponentScope.isWidget` | include -> select | Whether the `Widget` keyword appears in the class name in the call path
-| Suspected async invocation | `analyzeScope.methodScope.isAsyncInvocation` | include -> select | Whether some keywords related to async invoke appears in the class name in the call path
-| Suspected polymorphism | `analyzeScope.methodScope.isAsyncInvocation` | include -> select | Whether the `extends` keyword appears in the class name in the call path
-| Explicit intent must not select static value | `intentMatch.isExplicit`, `analyzeScope.objectScope.isStaticVal` | No more than one | Cannot select more than one of the labels
-| Either normal ICC or atypical ICC | `exitMethod.isNormalSendICC`, `exitMethod.isAtypicalSendICC` | Equals to one | Can only select one of the labels
-| Component type should be selected | `analyzeScope.componentScope.isActivity / isService / isBroadCast / isDynamicBroadCast` | No less than one | Cannot select less than one of the labels
-| Intent type should be selected | `intentMatch.isExplicit / isImplicit` | Equals to one | Can only select one of the labels
+| Checker of lifecycle related invocation | `entryMethod.isLifeCycle` | include <-> select, ~include <-> ~select | Whether common life cycle method name appears in the call path
+| Checker of implicit callback | `entryMethod.isImplicitCallback` | include -> select | Whether common implicit callback method name appears in the call path
+| Checker of dynamic callback | `entryMethod.isDynamicCallBack` | include -> select | Whether common dynamic callback method name appears in the call path
+| Checker of static callback | `entryMethod.isStaticCallBack` | include -> select | Whether static resource reference (`R.`) appears in the call path
+| Checker of Normal ICC | `exitMethod.isNormalSendICC` | include <-> select, ~include <-> ~select | Whether typical ICC method name appears in the call path
+| Checker of Activity class | `analyzeScope.componentScope.isActivity` | include -> select | Whether the keyword `Activity` appears in the call path
+| Checker of Service class | `analyzeScope.componentScope.isService` | include -> select | Whether the keyword `Service` appears in the call path
+| Checker of Receiver class | `analyzeScope.componentScope.isBroadCast`, `analyzeScope.componentScope.isDynamicBroadCast` | include -> select | Whether the keyword `Receiver` appears in the call path
+| Checker of dynamic broadcast | `analyzeScope.componentScope.isDynamicBroadCast` | include -> select | Whether the keyword `registerReceiver` appears in the call path
+| Checker of Fragment invocation | `analyzeScope.nonComponentScope.isFragment` | include -> select | Whether the keyword `Fragment` appears in the call path
+| Checker of Adapter invocation | `analyzeScope.nonComponentScope.isAdapter` | include -> select | Whether the keyword `Adapter` appears in the call path
+| Checker of Widget invocation | `analyzeScope.nonComponentScope.isWidget` | include -> select | Whether the keyword `Widget` appears in the call path
+| Checker of async invocation | `analyzeScope.methodScope.isAsyncInvocation` | include -> select | Whether any keyword related to async invoke (including `runOnUiThread`, `Thread`, `onPostExecute`, `AsyncTask` and `Handler`)  appears in the call path
+| Checker of polymorphism | `analyzeScope.methodScope.isAsyncInvocation` | include -> select | Whether the keyword `extends` appears in the call path
+| Checker of static value | `intentMatch.isExplicit`, `analyzeScope.objectScope.isStaticVal` | No more than one | Cannot select more than one of the labels `isExplicit` and `isStaticVal`
+| Checker of exit method | `exitMethod.isNormalSendICC`, `exitMethod.isAtypicalSendICC` | Equals to one | Can only select one of the labels `isNormalSendICC` and `isAtypicalSendICC`
+| Checker of component type | `analyzeScope.componentScope.isActivity / isService / isBroadCast / isDynamicBroadCast` | No less than one | Cannot select less than one of the labels `isActivity`, `isService`, `isBroadCast` and `isDynamicBroadCast`
+| Checker of Intent type | `intentMatch.isExplicit / isImplicit` | Equals to one | Can only select one of the labels `isExplicit` and `isImplicit`
