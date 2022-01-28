@@ -323,7 +323,7 @@ $.extend(window.ICCTagViewer, {
         },
         {
             id: 'isStaticVal',
-            name: "Checker of static value",
+            name: "Checker of static value (mutual exclusion)",
             desc: "Cannot select more than one of the labels \"isExplicit\" and \"isStaticVal\"",
             func: (flowId, comment) => {
                 const tagPath1 = 'intentMatch.isExplicit';
@@ -333,7 +333,7 @@ $.extend(window.ICCTagViewer, {
         },
         {
             id: 'isExitMethodSelected',
-            name: "Checker of exit method",
+            name: "Checker of exit method (mutual exclusion)",
             desc: "Can only select one of the labels \"isNormalSendICC\" and \"isAtypicalSendICC\"",
             func: (flowId, comment) => {
                 const tagPath1 = 'exitMethod.isNormalSendICC';
@@ -343,7 +343,7 @@ $.extend(window.ICCTagViewer, {
         },
         {
             id: 'isComponentTypeSelected',
-            name: "Checker of component type",
+            name: "Checker of component type (mutual exclusion)",
             desc: "Cannot select less than one of the labels \"isActivity\", \"isService\", \"isBroadCast\" and \"isDynamicBroadCast\"",
             func: (flowId, comment) => {
                 const tagPath1 = 'analyzeScope.componentScope.isActivity';
@@ -355,7 +355,7 @@ $.extend(window.ICCTagViewer, {
         },
         {
             id: 'isIntentTypeSelected',
-            name: "Checker of Intent type",
+            name: "Checker of Intent type (mutual exclusion)",
             desc: "Can only select one of the labels \"isExplicit\" and \"isImplicit\"",
             func: (flowId, comment) => {
                 const tagPath1 = 'intentMatch.isExplicit';
