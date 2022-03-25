@@ -1246,8 +1246,6 @@ $.extend(window.ICCTagViewer, {
             const $option = $(this).find('option:selected');
             const appName = $option.attr('app-name');
 
-            let xmlUrl = $option.attr('oracle-file');
-            if (xmlUrl.indexOf('://') === -1) xmlUrl = _this.config.labelBasePath + '/' + xmlUrl;
             const apkFile = $option.attr('apk-file');
             const srcPackFile = $option.attr('src-pack-file');
             const $dlLinkDiv = $('.app-dl-links').html('').hide();
@@ -1265,7 +1263,6 @@ $.extend(window.ICCTagViewer, {
             }
             if ($dlLinkDiv.html() !== '') $dlLinkDiv.show();
 
-            if (val !== 'CUSTOM' && !xmlUrl) return;
             if (val === 'CUSTOM') $('.app-customRoot-container').show();
             else {
                 $('.app-customRoot-container').hide();
@@ -1275,6 +1272,9 @@ $.extend(window.ICCTagViewer, {
                     _this._T('Loading ICC XML for App {0}...').format(appName),
                     -1, 'bg-primary', 'bi-hourglass-split'
                 );
+                
+                let xmlUrl = $option.attr('oracle-file');
+                if (xmlUrl.indexOf('://') === -1) xmlUrl = _this.config.labelBasePath + '/' + xmlUrl;
                 window.setTimeout(function() {
                     $.ajax({
                         url: xmlUrl + '?r=' + Math.random(),
