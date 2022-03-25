@@ -113,7 +113,7 @@ The main checking rules are as follows:
 | Checker of Adapter invocation | `analyzeScope.nonComponentScope.isAdapter` | include -> select | Whether the keyword `Adapter` appears in the call path
 | Checker of Widget invocation | `analyzeScope.nonComponentScope.isWidget` | include -> select | Whether the keyword `Widget` appears in the call path
 | Checker of async invocation | `analyzeScope.methodScope.isAsyncInvocation` | include -> select | Whether any keyword related to async invoke (including `runOnUiThread`, `Thread`, `onPostExecute`, `AsyncTask` and `Handler`)  appears in the call path
-| Checker of polymorphism | `analyzeScope.methodScope.isAsyncInvocation` | include -> select | Whether the keyword `extends` appears in the call path
+| Checker of polymorphism | `analyzeScope.methodScope.isPolymorphic` | include -> select | Whether the keyword `extends` appears in the call path
 | Checker of static value | `intentMatch.isExplicit`, `analyzeScope.objectScope.isStaticVal` | No more than one | Cannot select more than one of the labels `isExplicit` and `isStaticVal`
 | Checker of exit method | `exitMethod.isNormalSendICC`, `exitMethod.isAtypicalSendICC` | Equals to one | Can only select one of the labels `isNormalSendICC` and `isAtypicalSendICC`
 | Checker of component type | `analyzeScope.componentScope.isActivity / isService / isBroadCast / isDynamicBroadCast` | No less than one | Cannot select less than one of the labels `isActivity`, `isService`, `isBroadCast` and `isDynamicBroadCast`
