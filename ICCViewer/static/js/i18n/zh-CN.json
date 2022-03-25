@@ -111,6 +111,12 @@
     "English": "英语",
     "Chinese Simplified": "简体中文",
 
+    "Download APK": "下载 APK",
+    "Download Source Pack": "下载源码包",
+    "Download All APKs": "下载所有 APK",
+    "Download All Label XMLs": "下载所有标注 XML",
+    "Download All Source Packs": "下载所有源码包",
+
     "Copy source class name": "复制源类名",
     "Copy destination class name": "复制目标类名",
     "Class name copied": "类名已复制",

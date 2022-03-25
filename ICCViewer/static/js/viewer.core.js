@@ -29,7 +29,10 @@
 window.ICCTagViewer = window.ICCTagViewer ? window.ICCTagViewer : {};
 window.ICCTagViewer.config = window.ICCTagViewer.config ? window.ICCTagViewer.config : {};
 $.extend(window.ICCTagViewer.config, {
-    srcBasePath: '/ICCViewer/apps',
+    srcBasePath: '/ICCViewer/source',
+    labelBasePath: '/ICCViewer/label',
+    dlApkBasePath: '/ICCViewer/download/apk',
+    dlSrcPackBasePath: '/ICCViewer/download/srcPack',
     codeViewerDeltaLines: 5,
     sortMethod: 'source',
     supportLang: [
@@ -1228,9 +1231,12 @@ $.extend(window.ICCTagViewer, {
         if (this.preDefinedApps) {
             this.preDefinedApps.forEach(function(appItem) {
                 const $option = $('<option />');
-                $option.attr('value', appItem.path)
-                    .attr('xml-url', appItem.xmlUrl)
+                $option.attr('value', appItem.pkgName)
                     .attr('app-name', appItem.name)
+                    .attr('apk-file', appItem.apkFile)
+                    .attr('src-pack-file', appItem.srcPackFile)
+                    .attr('oracle-file', appItem.oracleFile ? appItem.oracleFile : appItem.pkgName + '_oracle.xml')
+                    // .attr('data-package-name', appItem.pkgName)
                     .html(appItem.name.startsWith('=') ? _this._T(appItem.name) : appItem.name)
                     .insertBefore($custom);
             });
@@ -1238,8 +1244,27 @@ $.extend(window.ICCTagViewer, {
         $selector.on('change', function() {
             const val = $(this).val();
             const $option = $(this).find('option:selected');
-            const xmlUrl = $option.attr('xml-url');
             const appName = $option.attr('app-name');
+
+            let xmlUrl = $option.attr('oracle-file');
+            if (xmlUrl.indexOf('://') === -1) xmlUrl = _this.config.labelBasePath + '/' + xmlUrl;
+            const apkFile = $option.attr('apk-file');
+            const srcPackFile = $option.attr('src-pack-file');
+            const $dlLinkDiv = $('.app-dl-links').html('').hide();
+            if (apkFile !== undefined) {
+                const $apkLink = $('<a class="me-2" target="_blank" />');
+                $apkLink.html(_this._T("Download APK"));
+                $apkLink.attr('href', apkFile.indexOf('://') !== -1 ? apkFile : _this.config.dlApkBasePath + '/' + apkFile);
+                $dlLinkDiv.append($apkLink);
+            }
+            if (srcPackFile !== undefined) {
+                const $srcPackLink = $('<a class="me-2" target="_blank" />');
+                $srcPackLink.html(_this._T("Download Source Pack"));
+                $srcPackLink.attr('href', srcPackFile.indexOf('://') !== -1 ? srcPackFile : _this.config.dlSrcPackBasePath + '/' + srcPackFile);
+                $dlLinkDiv.append($srcPackLink);
+            }
+            if ($dlLinkDiv.html() !== '') $dlLinkDiv.show();
+
             if (val !== 'CUSTOM' && !xmlUrl) return;
             if (val === 'CUSTOM') $('.app-customRoot-container').show();
             else {
@@ -1318,7 +1343,7 @@ $.extend(window.ICCTagViewer, {
 
         if (lang !== this.config.supportLang[0].id) {
             $.ajax({
-                url: 'js/i18n/{0}.json'.format(lang),
+                url: 'static/js/i18n/{0}.json'.format(lang),
                 type: 'get',
                 dataType: 'json',
                 success: function(data) {
@@ -1446,13 +1471,22 @@ $.extend(window.ICCTagViewer, {
     setSrcRootPath: function(srcPath) {
         const $selector = $('#app-selector');
         if (!srcPath) srcPath = '';
-        const option = $selector.find('option[value="{0}"]'.format(srcPath));
+
+        let pkgName = '';
+        const sp = srcPath.split('/');
+        if (sp.length > 0) pkgName = sp[sp.length - 1];
+
+        const option = $selector.find('option[value="{0}"]'.format(pkgName));
         if (option.length > 0) {
-            if ($selector.val() !== srcPath) $selector.val(srcPath);
-            $('.app-customRoot-container').hide();
+            if (!srcPath.endsWith($selector.val())) {
+                $selector.val(pkgName);
+                $selector.trigger('change');
+            }
+            // $('.app-customRoot-container').hide();
         } else {
             $selector.val('CUSTOM');
-            $('.app-customRoot-container').show();
+            $selector.trigger('change');
+            // $('.app-customRoot-container').show();
         }
         $('#app-customRoot').val(this.config.srcBasePath + srcPath);
     },

@@ -116,6 +116,15 @@
         </button>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
+                <a class="i18n-trans nav-link" target="_blank" href="https://drive.google.com/uc?id=1rOzZZv2XKniLO1Wo6f1hxm3riiXeO-NT&export=download&confirm=t">Download All APKs</a>
+            </li>
+            <li class="nav-item">
+                <a class="i18n-trans nav-link" target="_blank" href="https://drive.google.com/uc?id=114-rZBsuMJnqsaiOlcBClQURMZyWRJKx&export=download&confirm=t">Download All Label XMLs</a>
+            </li>
+            <li class="nav-item">
+                <a class="i18n-trans nav-link" target="_blank" href="https://drive.google.com/uc?id=1lXNEkae5kAf6oNXlSk_-u5Sf9RBb4eNS&export=download&confirm=t">Download All Source Packs</a>
+            </li>
+            <li class="nav-item">
                 <a class="i18n-trans nav-link active text-warning icc-local-warning" href="javascript:;">* You are using the local storage of the browser</a>
             </li>
         </ul>
@@ -146,13 +155,14 @@
                 </select>
             </div>
         </div>
-        <div class="row mb-1 app-customRoot-container" style="display: none">
-            <div class="col-1">
+        <div class="row mb-1">
+            <div class="col-1 app-customRoot-container" style="display: none">
                 <label class="i18n-trans col-form-label" for="app-customRoot">SourceRoot:</label>
             </div>
-            <div class="col-11">
+            <div class="col-7 app-customRoot-container" style="display: none">
                 <input id="app-customRoot" type="text" class="form-control" value="/ICCTagViewer_code/apps" spellcheck="false"/>
             </div>
+            <div class="col-4 app-dl-links" style="display: none"></div>
         </div>
         <div class="row mb-2"></div>
     </div>
@@ -163,7 +173,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="xmlModalLabel">
                     <span class="modal-title-text">XML Operation</span>
-                    <img class="modal-title-loading" style="height: 30px; display: none" src="images/loading.gif" />
+                    <img class="modal-title-loading" style="height: 30px; display: none" src="static/images/loading.gif" />
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -184,7 +194,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="commonModalLabel">
                     <span class="modal-title-text">Common</span>
-                    <img class="modal-title-loading" style="height: 30px; display: none" src="images/loading.gif" />
+                    <img class="modal-title-loading" style="height: 30px; display: none" src="static/images/loading.gif" />
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
