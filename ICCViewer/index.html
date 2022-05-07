@@ -104,6 +104,16 @@
         .line-highlight {
             background: lightblue;
         }
+
+        .nav-link:link {
+            color: rgba(255, 255, 255, .85) !important;
+        }
+        .nav-link:hover {
+            color: rgba(255, 255, 255, .95) !important;
+        }
+        .icc-local-warning:link {
+            color: yellow !important;
+        }
     </style>
 </head>
 <body>
@@ -115,17 +125,35 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="i18n-trans nav-link" target="_blank" href="https://drive.google.com/drive/folders/1fh4HHCqGXFX2EGiT5X3M_RoyLehlmxVn">View Google Drive</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript:;" id="downloadsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Downloads
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
+                    <li>
+                        <a class="i18n-trans dropdown-item" target="_blank" href="https://drive.google.com/drive/folders/1fh4HHCqGXFX2EGiT5X3M_RoyLehlmxVn">
+                            View Google Drive
+                        </a>
+                    </li>
+                    <li>
+                        <a class="i18n-trans dropdown-item" target="_blank" href="https://drive.google.com/uc?id=1rOzZZv2XKniLO1Wo6f1hxm3riiXeO-NT&export=download&confirm=t">
+                            Download All APKs
+                        </a>
+                    </li>
+                    <li>
+                        <a class="i18n-trans dropdown-item" target="_blank" href="https://drive.google.com/uc?id=114-rZBsuMJnqsaiOlcBClQURMZyWRJKx&export=download&confirm=t">
+                            Download All Label XMLs
+                        </a>
+                    </li>
+                    <li>
+                        <a class="i18n-trans dropdown-item" target="_blank" href="https://drive.google.com/uc?id=1lXNEkae5kAf6oNXlSk_-u5Sf9RBb4eNS&export=download&confirm=t">
+                            Download All Source Packs
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
-                <a class="i18n-trans nav-link" target="_blank" href="https://drive.google.com/uc?id=1rOzZZv2XKniLO1Wo6f1hxm3riiXeO-NT&export=download&confirm=t">Download All APKs</a>
-            </li>
-            <li class="nav-item">
-                <a class="i18n-trans nav-link" target="_blank" href="https://drive.google.com/uc?id=114-rZBsuMJnqsaiOlcBClQURMZyWRJKx&export=download&confirm=t">Download All Label XMLs</a>
-            </li>
-            <li class="nav-item">
-                <a class="i18n-trans nav-link" target="_blank" href="https://drive.google.com/uc?id=1lXNEkae5kAf6oNXlSk_-u5Sf9RBb4eNS&export=download&confirm=t">Download All Source Packs</a>
+                <a class="i18n-trans nav-link" target="_blank" href="//details-of-model&extraction.pdf">Details of Model & Extraction</a>
             </li>
             <li class="nav-item">
                 <a class="i18n-trans nav-link active text-warning icc-local-warning" href="javascript:;">* You are using the local storage of the browser</a>
