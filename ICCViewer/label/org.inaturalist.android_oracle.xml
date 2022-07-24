@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<root srcCodeBase="/apps/org.inaturalist">
+<root srcCodeBase="/apps/org.inaturalist.android">
   <OracleEdge source="org.inaturalist.android.DataQualityAssessment" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*DataQualityAssessment.onCreate() -&gt; ContextCompat.startForegroundService()</comment>
     <callLines>
