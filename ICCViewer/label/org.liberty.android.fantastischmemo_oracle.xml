@@ -557,7 +557,8 @@
     <callLines>
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="171" end="171" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="673" end="673" />
-      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="466" end="466" />
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="461" end="470" />
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="466" end="467" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="249" end="249" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="254" end="254" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="272" end="275" />
@@ -579,7 +580,8 @@
     <callLines>
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="171" end="171" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="673" end="673" />
-      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="466" end="466" />
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="461" end="470" />
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="466" end="467" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="249" end="249" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="257" end="257" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="279" end="282" />
@@ -599,6 +601,12 @@
   <OracleEdge source="org.liberty.android.fantastischmemo.ui.CardListActivity" destination="org.liberty.android.fantastischmemo.ui.PreviewEditActivity" method="">
     <comment>CardListActivity.onCreate() -&gt; MultipleLoaderManager.setOnAllLoaderCompletedRunnable() -&gt; Thread.start() -&gt; Thread.run() -&gt; AdapterView.OnItemLongClickListener.onItemLongClick() -&gt; CardListActivity.showListItemLongClickPopup() -&gt; PopupMenu.setOnMenuItemClickListener() -&gt; *PopupMenu.OnMenuItemClickListener.onMenuItemClick() -&gt; gotoPreviewEditActivity() -&gt; startActivity()</comment>
     <callLines>
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="171" end="171" />
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="673" end="673" />
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="461" end="470" />
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="466" end="467" />
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="249" end="249" />
+      <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="261" end="261" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/CardListActivity.java" start="286" end="289" />
     </callLines>
     <tags>

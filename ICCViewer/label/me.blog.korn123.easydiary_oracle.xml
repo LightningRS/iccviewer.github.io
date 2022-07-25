@@ -381,6 +381,9 @@
   <OracleEdge source="me.blog.korn123.easydiary.activities.SettingsActivity" destination="me.blog.korn123.easydiary.activities.MarkDownViewActivity" method="">
     <comment>SettingsActivity.onCreate() -&gt; new SettingsAppInfoFragment() -&gt; new DotIndicatorPager2Adapter() -&gt; ViewPager.setAdapter() -&gt; SettingsAppInfoFragment.onActivityCreated() -&gt; bindEvent() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TransitionHelper.startActivityWithTransition() -&gt; SettingsActivity.startActivity()</comment>
     <callLines>
+      <line src="/app/src/foss/java/me/blog/korn123/easydiary/activities/SettingsActivity.kt" start="20" end="20" />
+      <line src="/app/src/foss/java/me/blog/korn123/easydiary/activities/SettingsActivity.kt" start="22" end="23" />
+      <line src="/app/src/main/java/me/blog/korn123/easydiary/fragments/SettingsAppInfoFragment.kt" start="44" end="44" />
       <line src="/app/src/main/java/me/blog/korn123/easydiary/fragments/SettingsAppInfoFragment.kt" start="93" end="93" />
       <line src="/app/src/main/java/me/blog/korn123/easydiary/fragments/SettingsAppInfoFragment.kt" start="70" end="73" />
       <line src="/app/src/main/java/me/blog/korn123/easydiary/helper/TransitionHelper.kt" start="21" end="21" />

@@ -111,8 +111,8 @@
   <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.ui.ViewCollectionActivity" method="">
     <comment>AccountActivity.onLoadFinished() -&gt; AdapterView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ViewCollectionActivity.newIntent() -&gt; startActivity()</comment>
     <callLines>
-      <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountActivity.kt" start="242" end="242" />
-      <line src="/app/src/main/java/com/etesync/syncadapter/ui/ViewCollectionActivity.kt" start="264" end="266" />
+      <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountActivity.kt" start="241" end="242" />
+      <line src="/app/src/main/java/com/etesync/syncadapter/ui/ViewCollectionActivity.kt" start="264" end="267" />
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountActivity.kt" start="64" end="64" />
     </callLines>
     <tags>

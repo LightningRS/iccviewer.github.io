@@ -27,21 +27,21 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.plugins.telephony.CallHandler" method="">
-    <comment>SipHome.onCreate() -&gt; TabsAdapter.addTab() -&gt; *FragmentTransaction.commit() -&gt; DialerFragment.placeCall() -&gt; DialerFragment.placeCallWithOption() -&gt; CallHandlerPlugin.loadFrom() -&gt; Context.sendOrderedBroadcast()</comment>
+    <comment>SipHome.onCreate() -&gt; new TabsAdapter() -&gt; TabsAdapter.addTab() -&gt; *TabsAdapter.getItem() -&gt; FragmentTransaction.commit() -&gt; DialerFragment.placeCall() -&gt; DialerFragment.placeCallWithOption() -&gt; CallHandlerPlugin.loadFrom() -&gt; Context.sendOrderedBroadcast()</comment>
     <callLines>
-      <line src="/src/com/csipsimple/ui/SipHome.java" start="175" end="175" />
-      <line src="/src/com/csipsimple/ui/SipHome.java" start="385" end="385" />
-      <line src="/src/com/csipsimple/ui/SipHome.java" start="369" end="369" />
+      <line src="/src/com/csipsimple/ui/SipHome.java" start="173" end="175" />
+      <line src="/src/com/csipsimple/ui/SipHome.java" start="243" end="243" />
+      <line src="/src/com/csipsimple/ui/SipHome.java" start="278" end="278" />
       <line src="/src/com/csipsimple/ui/dialpad/DialerFragment.java" start="94" end="94" />
       <line src="/src/com/csipsimple/ui/dialpad/DialerFragment.java" start="643" end="643" />
       <line src="/src/com/csipsimple/ui/dialpad/DialerFragment.java" start="694" end="694" />
       <line src="/src/com/csipsimple/utils/CallHandlerPlugin.java" start="112" end="112" />
-      <line src="/src/com/csipsimple/utils/CallHandlerPlugin.java" start="84" end="86" />
+      <line src="/src/com/csipsimple/utils/CallHandlerPlugin.java" start="84" end="98" />
       <line src="/src/com/csipsimple/api/SipManager.java" start="270" end="270" />
       <line src="/AndroidManifest.xml" start="524" end="526" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />
       <analyzeScope>

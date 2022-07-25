@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <root srcCodeBase="/apps/com.fsck.k9">
-  <OracleEdge source="com.fsck.k9.service.PollService" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*PollService.checkMailFinished() -&gt; PollService.release() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
-    <callLines>
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="21" end="21" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="56" end="56" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="76" end="76" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="138" end="138" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="128" end="128" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="59" end="63" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.Accounts" destination="com.fsck.k9.activity.FolderList" method="">
     <comment>*Accounts.onItemClick() -&gt; Accounts.onOpenAccount() -&gt; FolderList.actionHandleAccount() -&gt; FolderList.actionHandleAccountIntent() -&gt; Context.startActivity()</comment>
     <callLines>
@@ -275,7 +253,7 @@
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="294" end="298" />
       <line src="/k9mail/src/main/java/com/fsck/k9/fragment/MessageListFragment.java" start="110" end="110" />
       <line src="/k9mail/src/main/java/com/fsck/k9/fragment/MessageListFragment.java" start="2175" end="2175" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/fragment/MessageListFragment.java" start="1716" end="1716" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/fragment/MessageListFragment.java" start="1716" end="1718" />
       <line src="/k9mail/src/main/java/com/fsck/k9/fragment/MessageListFragment.java" start="1768" end="1780" />
     </callLines>
     <tags>
@@ -316,7 +294,7 @@
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="231" end="231" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="305" end="305" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="1217" end="1217" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/activity/compose/MessageActions.java" start="92" end="96" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/activity/compose/MessageActions.java" start="92" end="95" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -333,8 +311,8 @@
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.setup.AccountSettings" method="">
     <comment>*MessageList.onOptionsItemSelected() -&gt; MessageList.onEditAccount() -&gt; AccountSettings.actionSettings() -&gt; Context.startActivity()</comment>
     <callLines>
-      <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="855" end="855" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="789" end="789" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="854" end="854" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="788" end="788" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/AccountSettings.java" start="210" end="212" />
     </callLines>
     <tags>
@@ -411,7 +389,7 @@
   <OracleEdge source="com.fsck.k9.activity.UnreadWidgetConfiguration" destination="com.fsck.k9.activity.ChooseAccount" method="">
     <comment>UnreadWidgetConfiguration.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; startActivityForResult()</comment>
     <callLines>
-      <line src="/k9mail/src/main/java/com/fsck/k9/activity/UnreadWidgetConfiguration.java" start="83" end="85" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/activity/UnreadWidgetConfiguration.java" start="80" end="87" />
     </callLines>
     <tags checkIgnore="nullisWidget, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -428,7 +406,7 @@
   <OracleEdge source="com.fsck.k9.activity.UnreadWidgetConfiguration" destination="com.fsck.k9.activity.ChooseFolder" method="">
     <comment>UnreadWidgetConfiguration.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; startActivityForResult()</comment>
     <callLines>
-      <line src="/k9mail/src/main/java/com/fsck/k9/activity/UnreadWidgetConfiguration.java" start="103" end="106" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/activity/UnreadWidgetConfiguration.java" start="99" end="109" />
     </callLines>
     <tags checkIgnore="nullisWidget, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -443,7 +421,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.UpgradeDatabases" destination="com.fsck.k9.service.DatabaseUpgradeService" method="">
-    <comment>*UpgradeDatabases.onStartCommand() -&gt; DatabaseUpgradeService.releaseWakeLock() -&gt; Context.startService()</comment>
+    <comment>*UpgradeDatabases.onResume() -&gt; DatabaseUpgradeService.startService() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/UpgradeDatabases.java" start="168" end="168" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/DatabaseUpgradeService.java" start="85" end="88" />
@@ -765,7 +743,7 @@
     <comment>*DeviceIdleReceiver.onReceive() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/power/DeviceIdleReceiver.java" start="30" end="30" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="44" end="47" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="43" end="47" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -798,10 +776,12 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.service.BootReceiver" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*BootReceiver.onReceive() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
+    <comment>*BootReceiver.onReceive() -&gt; BootReceiver extends CoreReceiver -&gt; CoreReceiver.onReceive() -&gt; BootReceiver.receive() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
     <callLines>
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/BootReceiver.java" start="15" end="15" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreReceiver.java" start="62" end="62" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/BootReceiver.java" start="44" end="44" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="44" end="47" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="43" end="47" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -810,7 +790,7 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
@@ -827,6 +807,28 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.fsck.k9.service.PollService" destination="com.fsck.k9.service.MailService" method="">
+    <comment>*PollService.checkMailFinished() -&gt; PollService.release() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
+    <callLines>
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="21" end="21" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="56" end="56" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="76" end="76" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="138" end="138" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="128" end="128" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="59" end="63" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="false" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />

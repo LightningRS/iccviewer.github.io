@@ -18,20 +18,48 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.PluginActivity" method="">
+    <comment>MapActivity.onResume() -&gt; DashboardOnMap.updateDashboard() -&gt; refreshContent() -&gt; updateListAdapter() -&gt; new ConfigureMapMenu() -&gt; ConfigureMapMenu.createListAdapter() -&gt; createLayersItems() -&gt; ContextMenuAdapter.setListener() -&gt; *ConfigureMapMenu.LayerMenuListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
+    <callLines>
+      <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="238" end="238" />
+      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="194" end="194" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="786" end="786" />
+      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="651" end="651" />
+      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="774" end="774" />
+      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="693" end="693" />
+      <line src="/OsmAnd/src/net/osmand/plus/dialogs/ConfigureMapMenu.java" start="151" end="151" />
+      <line src="/OsmAnd/src/net/osmand/plus/dialogs/ConfigureMapMenu.java" start="303" end="303" />
+      <line src="/OsmAnd/src/net/osmand/plus/dialogs/ConfigureMapMenu.java" start="310" end="316" />
+      <line src="/OsmAnd/src/net/osmand/plus/dialogs/ConfigureMapMenu.java" start="316" end="316" />
+      <line src="/OsmAnd/src/net/osmand/plus/dialogs/ConfigureMapMenu.java" start="241" end="243" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.PluginsActivity" method="">
     <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; MapActivityActions.createMainOptionsMenu() -&gt; MapActivityActions.createNormalOptionsMenu() -&gt; *ItemClickListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="383" end="383" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="1134" end="1134" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="661" end="661" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="962" end="962" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="904" end="906" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="908" end="911" />
+      <line src="/OsmAnd/src/net/osmand/plus/OsmAndAppCustomization.java" start="174" end="174" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -40,32 +68,6 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.PluginsActivity" method="">
-    <comment>MapActivity.onResume() -&gt; DashboardOnMap.setDashboardVisibility() -&gt; DashboardOnMap.addOrUpdateDashboardFragments() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; DashPluginsFragment.startActivity()</comment>
-    <callLines>
-      <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="238" end="238" />
-      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="193" end="193" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="775" end="775" />
-      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="595" end="595" />
-      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="974" end="976" />
-      <line src="/OsmAnd/src/net/osmand/plus/dashboard/tools/TransactionBuilder.java" start="42" end="42" />
-      <line src="/OsmAnd/src/net/osmand/plus/dashboard/tools/TransactionBuilder.java" start="59" end="63" />
-      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="117" end="117" />
-      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashPluginsFragment.java" start="83" end="83" />
-      <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashPluginsFragment.java" start="86" end="86" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
@@ -111,6 +113,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/mapmarkers/CoordinateInputDialogFragment.java" start="222" end="222" />
       <line src="/OsmAnd/src/net/osmand/plus/OsmAndAppCustomization.java" start="162" end="162" />
       <line src="/OsmAnd/src/net/osmand/plus/mapmarkers/CoordinateInputDialogFragment.java" start="1089" end="1093" />
+      <line src="/OsmAnd/src/net/osmand/plus/OsmAndAppCustomization.java" start="162" end="162" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -120,7 +123,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -134,6 +137,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="840" end="840" />
       <line src="/OsmAnd/src/net/osmand/plus/OsmAndAppCustomization.java" start="170" end="170" />
       <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="845" end="851" />
+      <line src="/OsmAnd/src/net/osmand/plus/OsmAndAppCustomization.java" start="170" end="170" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -143,7 +147,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -164,7 +168,7 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
@@ -178,6 +182,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="661" end="661" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="960" end="962" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="755" end="758" />
+      <line src="/OsmAnd/src/net/osmand/plus/OsmAndAppCustomization.java" start="166" end="166" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -185,9 +190,9 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -206,7 +211,7 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
@@ -228,7 +233,7 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
@@ -250,7 +255,7 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
@@ -272,7 +277,7 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
@@ -294,7 +299,7 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
@@ -316,7 +321,7 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
@@ -445,7 +450,7 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
@@ -477,7 +482,9 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="132" end="134" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="173" end="173" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchPoiFilterFragment.java" start="73" end="73" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchPoiFilterFragment.java" start="80" end="85" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchPoiFilterFragment.java" start="83" end="83" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchPoiFilterFragment.java" start="334" end="342" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchPoiFilterFragment.java" start="339" end="339" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchPoiFilterFragment.java" start="242" end="246" />
     </callLines>
@@ -487,7 +494,7 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="true" isAdapter="true" isWidget="false" isOtherClass="false" />
+        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
