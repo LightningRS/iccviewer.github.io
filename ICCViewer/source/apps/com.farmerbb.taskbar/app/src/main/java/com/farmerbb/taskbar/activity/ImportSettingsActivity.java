@@ -23,10 +23,8 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 
-import com.farmerbb.taskbar.BuildConfig;
 import com.farmerbb.taskbar.MainActivity;
 import com.farmerbb.taskbar.R;
-import com.farmerbb.taskbar.util.U;
 
 public class ImportSettingsActivity extends Activity {
 
@@ -53,10 +51,7 @@ public class ImportSettingsActivity extends Activity {
         LocalBroadcastManager.getInstance(this).registerReceiver(settingsReceivedReceiver, new IntentFilter("com.farmerbb.taskbar.IMPORT_FINISHED"));
 
         if(!broadcastSent) {
-            Intent intent = new Intent("com.farmerbb.taskbar.RECEIVE_SETTINGS");
-            intent.setPackage(BuildConfig.BASE_APPLICATION_ID);
-            sendBroadcast(intent);
-
+            sendBroadcast(new Intent("com.farmerbb.taskbar.RECEIVE_SETTINGS"));
             broadcastSent = true;
         }
     }

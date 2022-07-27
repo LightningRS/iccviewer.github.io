@@ -24,8 +24,6 @@
     <string name="click_to_open_settings">Klocken, um Einstellungen zu öffnen</string>
     <string name="action_show">Taskbar anzeigen</string>
     <string name="action_hide">Taskbar verstecken</string>
-    <string name="action_show_alt">@string/action_show</string>
-    <string name="action_hide_alt">@string/action_hide</string>
     <string name="action_quit">Beenden</string>
     <string name="action_grant_permission">Zugriff erlauben</string>
 
@@ -52,13 +50,6 @@
     <string-array name="pref_recents_amount">
         <item>Seit dem letzten Tag</item>
         <item>Nach dem Start von Taskbar</item>
-        <item>All apps (may reduce performance)</item>
-    </string-array>
-    <string-array name="pref_recents_amount_alt">
-        <item>Seit dem letzten Tag</item>
-        <item>Nach dem Start von Taskbar</item>
-        <item>All apps (may reduce performance)</item>
-        <item>Running apps only</item>
     </string-array>
 
     <string name="pref_title_sort_order">Sortierungsreinfolge</string>
@@ -68,10 +59,6 @@
         <item>Am meisten genutzt</item>
         <item>Am wenigsten genutzt</item>
     </string-array>
-    <string-array name="pref_sort_order_alt">
-        <item>Zuletzt benutzt (absteigend)</item>
-        <item>Zuletzt genutzt (aufsteigend)</item>
-    </string-array>
 
     <string name="pref_header_advanced">Fortgeschrittene Optionen</string>
 
@@ -79,8 +66,7 @@
     <string name="pref_description_freeform_hack">Erlaubt Taskbar, Apps im Freifenstermodus zu starten, für ein Desktop-ähnlicheres Erlebnis.\n\nDiese Funktion ist experemintell und kann u.U. Probleme mit standart Split-Screen Multitasking veraursachen.</string>
 
     <string name="pref_header_about">Über Taskbar</string>
-    <string name="pref_about_description">Taskbar: Multitasking mit wenigen Fingertips\n\n&#169; 2018 Braden Farmer\nApps Logo von Mark Morilla\n\nKlicken Sie hier um auf Updates zu überprüfen oder eine Bewertung geben! %1$s</string>
-    <string name="pref_about_description_alt">Taskbar: Multitasking mit wenigen Fingertips\n\n&#169; 2018 Braden Farmer\nApps Logo von Mark Morilla</string>
+    <string name="pref_about_description">Taskbar: Multitasking mit wenigen Fingertips\n\n&#169; 2017 Braden Farmer\nApps Logo von Mark Morilla\n\nKlicken Sie hier um auf Updates zu überprüfen oder eine Bewertung geben! %1$s</string>
 
     <string name="pref_title_hide_taskbar">Taskbar nach dem Auswählen der App verbergen</string>
 
@@ -96,7 +82,7 @@
         <item>Unten links (vertikal)</item>
         <item>Unten rechts (horizontal)</item>
         <item>Unten rechts (vertikal)</item>
-        <item>Oben links (horizontal)</item>
+        <item>Oben rechts (horizontal)</item>
         <item>Oben links (vertikal)</item>
         <item>Oben rechts (horizontal)</item>
         <item>Oben rechts (vertikal)</item>
@@ -109,7 +95,6 @@
 
     <string name="pref_title_keyboard_shortcut">Tastaturkürzel aktivieren</string>
     <string name="pref_description_keyboard_shortcut">Taskbar starten / anhalten\n - Super + M / Suche + M\n\nGerät sperren\n - Super + L / Suche + L\n\nStartmenü anzeigen\n - Super / Suche\n(Muss in den Einstellungen als Suchassistent festgelegt werden)</string>
-    <string name="pref_description_keyboard_shortcut_alt">@string/pref_description_keyboard_shortcut</string>
     <string name="loading_apps">Apps werden geladen&#8230;</string>
     <string name="press_enter">Keine Apps gefunden\n\nDrücken Sie Enter, um mit Google zu suchen</string>
     <string name="nothing_to_see_here">Nichts zu sehen hier, gehen Sie weiter&#8230;</string>
@@ -126,7 +111,6 @@
     <string name="clear_pinned_apps">Appeinstellungen zurücksetzen</string>
 
     <string name="pref_title_hide_foreground">Symbol für Fordergrundapp verstecken</string>
-    <string name="pref_summary_hide_foreground">May reduce performance</string>
 
     <string name="pref_title_theme">Thema</string>
     <string-array name="pref_theme_list">
@@ -255,7 +239,6 @@
     <string name="tools">Werkzeuge</string>
 
     <string name="enable_accessibility">Taskbar muss als Zugangshilfe akriviert werden, um das Powermenü anzuzeigen</string>
-    <string name="accessibility_service_summary">Erlaubt, Taskbar das Ausschaltmenü anzuzeigen.</string>
     <string name="accessibility_service_description">Erlaubt, Taskbar das Ausschaltmenü anzuzeigen. \n\n(wird nicht für einen anderen Zweck verwendet)</string>
 
     <string name="pref_title_force_new_window">Apps immer in neuen Fenstern öffnen</string>
@@ -298,64 +281,5 @@
 
     <string name="launch_games_fullscreen_title">Launch games fullscreen</string>
     <string name="launch_games_fullscreen_message">If an application declares itself to be a game, disallow it from launching in freeform mode</string>
-
-    <string name="invalid_grid_size">Invalid grid size</string>
-
-    <string name="window_sizes_not_available">Window sizes don\'t work correctly on this Android version - see \"Help &amp; instructions\" for a workaround</string>
-
-    <string name="navigation_bar_buttons">Navigation bar buttons</string>
-    <string name="navigation_bar_buttons_description">Add additional buttons to the Taskbar that perform navigation bar actions</string>
-    <string name="button_back">Back</string>
-    <string name="button_home">Home</string>
-    <string name="button_recents">Recents</string>
-
-    <string name="full_length">Expand area with whitespace</string>
-
-    <string name="restore_widget">Restore widget</string>
-
-    <string name="samsung_freeform_title">Note</string>
-    <string name="samsung_freeform_message">Taskbar may have issues with opening apps in freeform mode on some Samsung devices, due to system changes made to multi-window mode.\n\nIf this is the case, you may need to flash a custom ROM in order to use freeform mode on this device.</string>
-
-    <string name="widget_restore_toast">Select \"%1$s\" to restore this widget</string>
-
-    <string name="freeform_on">Freeform on</string>
-    <string name="freeform_off">Freeform off</string>
-
-    <string name="auto_hide_navbar">Automatically control the system navigation bar</string>
-    <string name="auto_hide_navbar_description">Hide the navigation bar when Taskbar is active, and show it when Taskbar is inactive</string>
-
-    <string name="press_enter_alt">@string/press_enter</string>
-
-    <string name="freeform_dialog_message_alt">In order for Taskbar to launch apps in freeform window mode, please follow these steps:\n\n&#8226; Go to Developer Options and enable USB debugging\n\n&#8226; Connect your device to a computer with the Android SDK installed, and run the following command (one-line):\n\nadb shell settings put global enable_freeform_support 1\n\n&#8226; Reboot your device</string>
-
-    <string name="color_picker_alpha">Alpha</string>
-    <string name="color_picker_red">Red</string>
-    <string name="color_picker_green">Green</string>
-    <string name="color_picker_blue">Blue</string>
-
-    <string name="pref_title_chrome_os_context_menu_fix">Chrome OS dock compatibility fix</string>
-    <string name="pref_description_chrome_os_context_menu_fix">Enable this if using Taskbar alongside the Chrome OS dock</string>
-
-    <string name="pin_shortcut_not_supported">Your launcher doesn\'t support adding shortcuts from other apps.\n\nPlease manually add the shortcut from your launcher\'s \"Widgets\" menu.</string>
-
-    <string name="device_admin_disclosure">In order to lock your device\'s screen, Taskbar needs to be activated as a device administrator. This permission is used only to lock the screen, and for no other purpose.\n\nIf you choose to activate this, you will need to deactivate Taskbar as a device administrator prior to uninstalling.</string>
-    <string name="action_activate">Activate</string>
-
-    <string name="pref_secondscreen_title_open">Open SecondScreen</string>
-    <string name="pref_secondscreen_title_install">Install SecondScreen</string>
-    <string name="pref_secondscreen_description">Change your device\'s resolution and density when connected to an external display, for a Continuum or DeX-like experience</string>
-
-    <string name="dialog_upgrade_message">Taskbar\'s freeform mode support has not been tested on this version of Android. It may stop working completely or behave in other unexpected ways.\n\nCheck for app updates if you see any issues.</string>
-
-    <string name="use_default">Use default</string>
-
-    <string name="action_continue">Continue</string>
-
-    <string name="tasker_action_title">Select action</string>
-    <string name="tasker_condition_title">Select condition</string>
-    <string name="tasker_on">Taskbar On</string>
-    <string name="tasker_off">Taskbar Off</string>
-    <string name="on">On</string>
-    <string name="off">Off</string>
 
 </resources>

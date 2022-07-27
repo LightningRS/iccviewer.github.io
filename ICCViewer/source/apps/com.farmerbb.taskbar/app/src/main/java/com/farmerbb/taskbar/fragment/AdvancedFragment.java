@@ -16,17 +16,12 @@
 package com.farmerbb.taskbar.fragment;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.CheckBoxPreference;
@@ -40,103 +35,43 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-import com.farmerbb.taskbar.BuildConfig;
 import com.farmerbb.taskbar.R;
 import com.farmerbb.taskbar.activity.ClearDataActivity;
-import com.farmerbb.taskbar.activity.NavigationBarButtonsActivity;
 import com.farmerbb.taskbar.activity.dark.ClearDataActivityDark;
 import com.farmerbb.taskbar.activity.HomeActivity;
 import com.farmerbb.taskbar.activity.KeyboardShortcutActivity;
-import com.farmerbb.taskbar.activity.dark.NavigationBarButtonsActivityDark;
-import com.farmerbb.taskbar.util.DependencyUtils;
 import com.farmerbb.taskbar.util.U;
 
 public class AdvancedFragment extends SettingsFragment implements Preference.OnPreferenceClickListener {
 
-    boolean secondScreenPrefEnabled = false;
-
-    private BroadcastReceiver homeToggleReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            SharedPreferences pref = U.getSharedPreferences(getActivity());
-            CheckBoxPreference checkBox = (CheckBoxPreference) findPreference("launcher");
-            checkBox.setChecked(pref.getBoolean("launcher", false));
-        }
-    };
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        finishedLoadingPrefs = false;
-
-        super.onCreate(savedInstanceState);
-
-        // Add preferences
-        addPreferencesFromResource(R.xml.pref_advanced);
-
-        // Set OnClickListeners for certain preferences
-        findPreference("clear_pinned_apps").setOnPreferenceClickListener(this);
-        findPreference("launcher").setOnPreferenceClickListener(this);
-        findPreference("keyboard_shortcut").setOnPreferenceClickListener(this);
-        findPreference("dashboard_grid_size").setOnPreferenceClickListener(this);
-        findPreference("navigation_bar_buttons").setOnPreferenceClickListener(this);
-        findPreference("keyboard_shortcut").setSummary(DependencyUtils.getKeyboardShortcutSummary(getActivity()));
-
-        if(!BuildConfig.APPLICATION_ID.equals(BuildConfig.ANDROIDX86_APPLICATION_ID)
-                && U.isPlayStoreInstalled(getActivity())) {
-            findPreference("secondscreen").setOnPreferenceClickListener(this);
-            secondScreenPrefEnabled = true;
-        } else
-            getPreferenceScreen().removePreference(findPreference("secondscreen"));
-
-        bindPreferenceSummaryToValue(findPreference("dashboard"));
-
-        SharedPreferences pref = U.getSharedPreferences(getActivity());
-        boolean lockHomeToggle = pref.getBoolean("launcher", false)
-                && U.isLauncherPermanentlyEnabled(getActivity());
-
-        findPreference("launcher").setEnabled(!lockHomeToggle);
-
-        finishedLoadingPrefs = true;
-    }
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+        finishedLoadingPrefs = false;
+
         super.onActivityCreated(savedInstanceState);
+
+        if(findPreference("dummy") == null) {
+            // Add preferences
+            addPreferencesFromResource(R.xml.pref_advanced);
+
+            // Set OnClickListeners for certain preferences
+            findPreference("clear_pinned_apps").setOnPreferenceClickListener(this);
+            findPreference("launcher").setOnPreferenceClickListener(this);
+            findPreference("keyboard_shortcut").setOnPreferenceClickListener(this);
+            findPreference("dashboard_grid_size").setOnPreferenceClickListener(this);
+
+            bindPreferenceSummaryToValue(findPreference("dashboard"));
+
+            updateDashboardGridSize(false);
+        }
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setTitle(R.string.pref_header_advanced);
         ActionBar actionBar = activity.getSupportActionBar();
         if(actionBar != null)
             actionBar.setDisplayHomeAsUpEnabled(true);
-    }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        if(secondScreenPrefEnabled) {
-            findPreference("secondscreen").setTitle(
-                    U.getSecondScreenPackageName(getActivity()) == null
-                            ? R.string.pref_secondscreen_title_install
-                            : R.string.pref_secondscreen_title_open);
-        }
-
-        updateDashboardGridSize(false);
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
-        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(homeToggleReceiver,
-                new IntentFilter("com.farmerbb.taskbar.LAUNCHER_PREF_CHANGED"));
-    }
-
-    @Override
-    public void onDetach() {
-        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(homeToggleReceiver);
-
-        super.onDetach();
+        finishedLoadingPrefs = true;
     }
 
     @SuppressLint("SetTextI18n")
@@ -199,40 +134,25 @@ public class AdvancedFragment extends SettingsFragment implements Preference.OnP
                     editText2Id = R.id.fragmentEditText2;
                 }
 
-                final EditText editText = U.findViewById(dialogLayout, editTextId);
-                final EditText editText2 = U.findViewById(dialogLayout, editText2Id);
+                final EditText editText = (EditText) dialogLayout.findViewById(editTextId);
+                final EditText editText2 = (EditText) dialogLayout.findViewById(editText2Id);
 
                 builder.setView(dialogLayout)
                         .setTitle(R.string.dashboard_grid_size)
                         .setPositiveButton(R.string.action_ok, (dialog, id) -> {
-                            boolean successfullyUpdated = false;
+                            int width = Integer.parseInt(editText.getText().toString());
+                            int height = Integer.parseInt(editText2.getText().toString());
 
-                            String widthString = editText.getText().toString();
-                            String heightString = editText2.getText().toString();
+                            if(width > 0 && height > 0) {
+                                SharedPreferences.Editor editor = pref.edit();
+                                editor.putInt("dashboard_width", width);
+                                editor.putInt("dashboard_height", height);
+                                editor.apply();
 
-                            if(widthString.length() > 0 && heightString.length() > 0) {
-                                int width = Integer.parseInt(widthString);
-                                int height = Integer.parseInt(heightString);
-
-                                if(width > 0 && height > 0) {
-                                    SharedPreferences.Editor editor = pref.edit();
-                                    editor.putInt("dashboard_width", width);
-                                    editor.putInt("dashboard_height", height);
-                                    editor.apply();
-
-                                    updateDashboardGridSize(true);
-                                    successfullyUpdated = true;
-                                }
+                                updateDashboardGridSize(true);
                             }
-
-                            if(!successfullyUpdated)
-                                U.showToast(getActivity(), R.string.invalid_grid_size);
                         })
-                        .setNegativeButton(R.string.action_cancel, null)
-                        .setNeutralButton(R.string.use_default, (dialog, id) -> {
-                            pref.edit().remove("dashboard_width").remove("dashboard_height").apply();
-                            updateDashboardGridSize(true);
-                        });
+                        .setNegativeButton(R.string.action_cancel, null);
 
                 editText.setText(Integer.toString(pref.getInt("dashboard_width", getActivity().getApplicationContext().getResources().getInteger(R.integer.dashboard_width))));
                 editText2.setText(Integer.toString(pref.getInt("dashboard_height", getActivity().getApplicationContext().getResources().getInteger(R.integer.dashboard_height))));
@@ -244,40 +164,6 @@ public class AdvancedFragment extends SettingsFragment implements Preference.OnP
                     InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.showSoftInput(editText2, InputMethodManager.SHOW_IMPLICIT);
                 });
-
-                break;
-            case "navigation_bar_buttons":
-                Intent intent = null;
-
-                switch(pref.getString("theme", "light")) {
-                    case "light":
-                        intent = new Intent(getActivity(), NavigationBarButtonsActivity.class);
-                        break;
-                    case "dark":
-                        intent = new Intent(getActivity(), NavigationBarButtonsActivityDark.class);
-                        break;
-                }
-
-                startActivity(intent);
-                break;
-            case "secondscreen":
-                PackageManager packageManager = getActivity().getPackageManager();
-                String packageName = U.getSecondScreenPackageName(getActivity());
-                Intent intent2;
-
-                if(packageName == null) {
-                    intent2 = new Intent(Intent.ACTION_VIEW);
-                    intent2.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.farmerbb.secondscreen.free"));
-                } else
-                    intent2 = packageManager.getLaunchIntentForPackage(packageName);
-
-                if(intent2 != null) {
-                    intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                    try {
-                        startActivity(intent2);
-                    } catch (ActivityNotFoundException e) { /* Gracefully fail */ }
-                }
 
                 break;
         }
@@ -308,6 +194,6 @@ public class AdvancedFragment extends SettingsFragment implements Preference.OnP
 
         findPreference("dashboard_grid_size").setSummary(getString(R.string.dashboard_grid_description, first, second));
 
-        if(restartTaskbar) U.restartTaskbar(getActivity());
+        if(restartTaskbar) restartTaskbar();
     }
 }

@@ -19,14 +19,12 @@ import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.service.quicksettings.TileService;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
@@ -35,14 +33,9 @@ import android.support.v4.content.LocalBroadcastManager;
 import com.farmerbb.taskbar.BuildConfig;
 import com.farmerbb.taskbar.MainActivity;
 import com.farmerbb.taskbar.R;
-import com.farmerbb.taskbar.util.DependencyUtils;
-import com.farmerbb.taskbar.util.IconCache;
-import com.farmerbb.taskbar.util.CompatUtils;
 import com.farmerbb.taskbar.util.U;
 
 public class NotificationService extends Service {
-
-    private boolean isHidden = true;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -51,34 +44,8 @@ public class NotificationService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if(intent != null && intent.getBooleanExtra("start_services", false)) {
-            startService(new Intent(this, TaskbarService.class));
-            startService(new Intent(this, StartMenuService.class));
-            startService(new Intent(this, DashboardService.class));
-        }
-
         return START_STICKY;
     }
-
-    BroadcastReceiver userForegroundReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            startService(new Intent(context, TaskbarService.class));
-            startService(new Intent(context, StartMenuService.class));
-            startService(new Intent(context, DashboardService.class));
-        }
-    };
-
-    BroadcastReceiver userBackgroundReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            stopService(new Intent(context, TaskbarService.class));
-            stopService(new Intent(context, StartMenuService.class));
-            stopService(new Intent(context, DashboardService.class));
-
-            IconCache.getInstance(context).clearCache();
-        }
-    };
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -87,50 +54,28 @@ public class NotificationService extends Service {
 
         SharedPreferences pref = U.getSharedPreferences(this);
         if(pref.getBoolean("taskbar_active", false)) {
-            if(U.canDrawOverlays(this)) {
-                isHidden = U.getSharedPreferences(this).getBoolean("is_hidden", false);
+            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.M || Settings.canDrawOverlays(this)) {
+                boolean isHidden = U.getSharedPreferences(this).getBoolean("is_hidden", false);
+                String label = getString(isHidden ? R.string.action_show : R.string.action_hide);
 
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                Intent receiverIntent = new Intent("com.farmerbb.taskbar.SHOW_HIDE_TASKBAR");
-                receiverIntent.setPackage(BuildConfig.APPLICATION_ID);
-
-                Intent receiverIntent2 = new Intent("com.farmerbb.taskbar.QUIT");
-                receiverIntent2.setPackage(BuildConfig.APPLICATION_ID);
-
                 PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-                PendingIntent receiverPendingIntent = PendingIntent.getBroadcast(this, 0, receiverIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-                PendingIntent receiverPendingIntent2 = PendingIntent.getBroadcast(this, 0, receiverIntent2, PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent receiverIntent = PendingIntent.getBroadcast(this, 0, new Intent("com.farmerbb.taskbar.SHOW_HIDE_TASKBAR"), PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent receiverIntent2 = PendingIntent.getBroadcast(this, 0, new Intent("com.farmerbb.taskbar.QUIT"), PendingIntent.FLAG_UPDATE_CURRENT);
 
-                NotificationCompat.Builder mBuilder = CompatUtils.getNotificationBuilder(this)
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                         .setSmallIcon(pref.getBoolean("app_drawer_icon", false) ? R.drawable.ic_system : R.drawable.ic_allapps)
                         .setContentIntent(contentIntent)
                         .setContentTitle(getString(R.string.taskbar_is_active))
                         .setContentText(getString(R.string.click_to_open_settings))
                         .setColor(ContextCompat.getColor(this, R.color.colorPrimary))
+                        .addAction(0, label, receiverIntent)
+                        .addAction(0, getString(R.string.action_quit), receiverIntent2)
                         .setPriority(Notification.PRIORITY_MIN)
                         .setShowWhen(false)
                         .setOngoing(true);
-
-                String showHideLabel;
-
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && !U.isChromeOs(this)) {
-                    String freeformLabel = getString(pref.getBoolean("freeform_hack", false) ? R.string.freeform_off : R.string.freeform_on);
-
-                    Intent freeformIntent = new Intent("com.farmerbb.taskbar.TOGGLE_FREEFORM_MODE");
-                    freeformIntent.setPackage(BuildConfig.APPLICATION_ID);
-
-                    PendingIntent freeformPendingIntent = PendingIntent.getBroadcast(this, 0, freeformIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-                    mBuilder.addAction(0, freeformLabel, freeformPendingIntent);
-
-                    showHideLabel = getString(isHidden ? R.string.action_show_alt : R.string.action_hide_alt);
-                } else
-                    showHideLabel = getString(isHidden ? R.string.action_show : R.string.action_hide);
-
-                mBuilder.addAction(0, showHideLabel, receiverPendingIntent)
-                        .addAction(0, getString(R.string.action_quit), receiverPendingIntent2);
 
                 startForeground(8675309, mBuilder.build());
 
@@ -138,13 +83,6 @@ public class NotificationService extends Service {
 
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
                     TileService.requestListeningState(this, new ComponentName(BuildConfig.APPLICATION_ID, QuickSettingsTileService.class.getName()));
-
-                DependencyUtils.requestTaskerQuery(this);
-
-                if(!isHidden) {
-                    registerReceiver(userForegroundReceiver, new IntentFilter(Intent.ACTION_USER_FOREGROUND));
-                    registerReceiver(userBackgroundReceiver, new IntentFilter(Intent.ACTION_USER_BACKGROUND));
-                }
             } else {
                 pref.edit().putBoolean("taskbar_active", false).apply();
 
@@ -164,17 +102,10 @@ public class NotificationService extends Service {
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
                 TileService.requestListeningState(this, new ComponentName(BuildConfig.APPLICATION_ID, QuickSettingsTileService.class.getName()));
 
-            DependencyUtils.requestTaskerQuery(this);
-
-            if(!U.launcherIsDefault(this) || U.isChromeOs(this))
+            if(!U.launcherIsDefault(this))
                 LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.FINISH_FREEFORM_ACTIVITY"));
         }
 
         super.onDestroy();
-
-        if(!isHidden) {
-            unregisterReceiver(userForegroundReceiver);
-            unregisterReceiver(userBackgroundReceiver);
-        }
     }
 }

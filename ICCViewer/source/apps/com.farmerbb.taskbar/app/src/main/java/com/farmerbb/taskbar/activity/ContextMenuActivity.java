@@ -15,10 +15,8 @@
 
 package com.farmerbb.taskbar.activity;
 
-import android.accessibilityservice.AccessibilityService;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.app.ActivityManager;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -31,17 +29,17 @@ import android.content.pm.LauncherApps;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ShortcutInfo;
+import android.hardware.display.DisplayManager;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.UserManager;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.provider.Settings;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -51,10 +49,8 @@ import com.farmerbb.taskbar.MainActivity;
 import com.farmerbb.taskbar.R;
 import com.farmerbb.taskbar.activity.dark.SelectAppActivityDark;
 import com.farmerbb.taskbar.util.AppEntry;
-import com.farmerbb.taskbar.util.ApplicationType;
 import com.farmerbb.taskbar.util.FreeformHackHelper;
 import com.farmerbb.taskbar.util.IconCache;
-import com.farmerbb.taskbar.util.MenuHelper;
 import com.farmerbb.taskbar.util.PinnedBlockedApps;
 import com.farmerbb.taskbar.util.SavedWindowSizes;
 import com.farmerbb.taskbar.util.U;
@@ -74,8 +70,6 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
     boolean isOverflowMenu = false;
     boolean secondaryMenu = false;
     boolean dashboardOrStartMenuAppearing = false;
-    boolean contextMenuFix = false;
-    boolean isRunningApp = false;
 
     List<ShortcutInfo> shortcuts;
 
@@ -94,18 +88,16 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
         super.onPostCreate(savedInstanceState);
 
         LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.CONTEXT_MENU_APPEARING"));
-        MenuHelper.getInstance().setContextMenuOpen(true);
 
         boolean isNonAppMenu = !getIntent().hasExtra("package_name") && !getIntent().hasExtra("app_name");
         showStartMenu = getIntent().getBooleanExtra("launched_from_start_menu", false);
         isStartButton = isNonAppMenu && getIntent().getBooleanExtra("is_start_button", false);
         isOverflowMenu = isNonAppMenu && getIntent().getBooleanExtra("is_overflow_menu", false);
-        contextMenuFix = getIntent().hasExtra("context_menu_fix");
-        isRunningApp = getIntent().getBooleanExtra("is_running_app", false);
 
         // Determine where to position the dialog on screen
         WindowManager.LayoutParams params = getWindow().getAttributes();
-        DisplayMetrics metrics = U.getRealDisplayMetrics(this);
+        DisplayManager dm = (DisplayManager) getSystemService(DISPLAY_SERVICE);
+        Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
 
         int statusBarHeight = 0;
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -122,13 +114,13 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
                 case "bottom_vertical_left":
                     params.gravity = Gravity.BOTTOM | Gravity.LEFT;
                     params.x = x;
-                    params.y = metrics.heightPixels - y - offset;
+                    params.y = display.getHeight() - y - offset;
                     break;
                 case "bottom_right":
                 case "bottom_vertical_right":
                     params.gravity = Gravity.BOTTOM | Gravity.LEFT;
                     params.x = x - getResources().getDimensionPixelSize(R.dimen.context_menu_width) + offset + offset;
-                    params.y = metrics.heightPixels - y - offset;
+                    params.y = display.getHeight() - y - offset;
                     break;
                 case "top_left":
                 case "top_vertical_left":
@@ -146,8 +138,8 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
         } else {
             LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
 
-            int x = getIntent().getIntExtra("x", metrics.widthPixels);
-            int y = getIntent().getIntExtra("y", metrics.heightPixels);
+            int x = getIntent().getIntExtra("x", display.getWidth());
+            int y = getIntent().getIntExtra("y", display.getHeight());
             int offset = getResources().getDimensionPixelSize(R.dimen.icon_size);
 
             switch(U.getTaskbarPosition(this)) {
@@ -159,17 +151,17 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
                 case "bottom_vertical_left":
                     params.gravity = Gravity.BOTTOM | Gravity.LEFT;
                     params.x = offset;
-                    params.y = metrics.heightPixels - y - (isStartButton ? 0 : offset);
+                    params.y = display.getHeight() - y - (isStartButton ? 0 : offset);
                     break;
                 case "bottom_right":
                     params.gravity = Gravity.BOTTOM | Gravity.RIGHT;
-                    params.x = metrics.widthPixels - x;
+                    params.x = display.getWidth() - x;
                     params.y = offset;
                     break;
                 case "bottom_vertical_right":
                     params.gravity = Gravity.BOTTOM | Gravity.RIGHT;
                     params.x = offset;
-                    params.y = metrics.heightPixels - y - (isStartButton ? 0 : offset);
+                    params.y = display.getHeight() - y - (isStartButton ? 0 : offset);
                     break;
                 case "top_left":
                     params.gravity = Gravity.TOP | Gravity.LEFT;
@@ -183,7 +175,7 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
                     break;
                 case "top_right":
                     params.gravity = Gravity.TOP | Gravity.RIGHT;
-                    params.x = metrics.widthPixels - x;
+                    params.x = display.getWidth() - x;
                     params.y = offset;
                     break;
                 case "top_vertical_right":
@@ -192,18 +184,12 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
                     params.y = isStartButton ? 0 : y - statusBarHeight;
                     break;
             }
-
-            if(!U.getTaskbarPosition(this).contains("vertical") && (params.x > metrics.widthPixels / 2))
-                params.x = params.x - getResources().getDimensionPixelSize(R.dimen.context_menu_width) + offset;
         }
 
         params.width = getResources().getDimensionPixelSize(R.dimen.context_menu_width);
         params.dimAmount = 0;
 
         getWindow().setAttributes(params);
-
-        if(U.isChromeOs(this) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1)
-            getWindow().setElevation(0);
 
         View view = findViewById(android.R.id.list);
         if(view != null) view.setPadding(0, 0, 0, 0);
@@ -250,8 +236,6 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
 
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
                 findPreference("file_manager").setOnPreferenceClickListener(this);
-            else
-                getPreferenceScreen().removePreference(findPreference("file_manager"));
         } else {
             appName = getIntent().getStringExtra("app_name");
             packageName = getIntent().getStringExtra("package_name");
@@ -319,14 +303,7 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
             addPreferencesFromResource(R.xml.pref_context_menu);
 
             findPreference("app_info").setOnPreferenceClickListener(this);
-
-            if(isRunningApp) {
-                findPreference("close").setOnPreferenceClickListener(this);
-                getPreferenceScreen().removePreference(findPreference("uninstall"));
-            } else {
-                findPreference("uninstall").setOnPreferenceClickListener(this);
-                getPreferenceScreen().removePreference(findPreference("close"));
-            }
+            findPreference("uninstall").setOnPreferenceClickListener(this);
         }
     }
 
@@ -366,23 +343,6 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
     }
 
     @SuppressWarnings("deprecation")
-    private void generateWindowSizes() {
-        getPreferenceScreen().removeAll();
-
-        addPreferencesFromResource(R.xml.pref_context_menu_window_size_list);
-        findPreference("window_size_standard").setOnPreferenceClickListener(this);
-        findPreference("window_size_large").setOnPreferenceClickListener(this);
-        findPreference("window_size_fullscreen").setOnPreferenceClickListener(this);
-        findPreference("window_size_half_left").setOnPreferenceClickListener(this);
-        findPreference("window_size_half_right").setOnPreferenceClickListener(this);
-        findPreference("window_size_phone_size").setOnPreferenceClickListener(this);
-
-        String windowSizePref = SavedWindowSizes.getInstance(this).getWindowSize(this, packageName);
-        CharSequence title = findPreference("window_size_" + windowSizePref).getTitle();
-        findPreference("window_size_" + windowSizePref).setTitle('\u2713' + " " + title);
-    }
-
-    @SuppressWarnings("deprecation")
     @TargetApi(Build.VERSION_CODES.N_MR1)
     @Override
     public boolean onPreferenceClick(Preference p) {
@@ -394,63 +354,49 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
 
         if(appIsValid) switch(p.getKey()) {
             case "app_info":
-                U.launchApp(this, () ->
-                        launcherApps.startAppDetailsActivity(
-                                ComponentName.unflattenFromString(componentName),
-                                userManager.getUserForSerialNumber(userId),
-                                null,
-                                U.getActivityOptionsBundle(ApplicationType.APPLICATION)));
+                startFreeformActivity();
+                launcherApps.startAppDetailsActivity(ComponentName.unflattenFromString(componentName), userManager.getUserForSerialNumber(userId), null, null);
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "uninstall":
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && isInMultiWindowMode() && !U.isChromeOs(this)) {
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && isInMultiWindowMode()) {
                     Intent intent2 = new Intent(ContextMenuActivity.this, DummyActivity.class);
                     intent2.putExtra("uninstall", packageName);
                     intent2.putExtra("user_id", userId);
 
-                    try {
-                        startActivity(intent2);
-                    } catch (IllegalArgumentException e) { /* Gracefully fail */ }
+                    startFreeformActivity();
+                    startActivity(intent2);
                 } else {
+                    startFreeformActivity();
+
                     Intent intent2 = new Intent(Intent.ACTION_DELETE, Uri.parse("package:" + packageName));
                     intent2.putExtra(Intent.EXTRA_USER, userManager.getUserForSerialNumber(userId));
 
-                    new Handler().post(() -> {
-                        try {
-                            startActivity(intent2);
-                        } catch (ActivityNotFoundException | IllegalArgumentException e) { /* Gracefully fail */ }
-                    });
+                    try {
+                        startActivity(intent2);
+                    } catch (ActivityNotFoundException e) { /* Gracefully fail */ }
                 }
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "open_taskbar_settings":
-                U.launchApp(this, () -> {
-                    Intent intent2 = new Intent(this, MainActivity.class);
-                    intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startFreeformActivity();
 
-                    try {
-                        startActivity(intent2, U.getActivityOptionsBundle(ApplicationType.APPLICATION));
-                    } catch (IllegalArgumentException e) { /* Gracefully fail */ }
-                });
+                Intent intent2 = new Intent(this, MainActivity.class);
+                intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent2);
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "quit_taskbar":
-                Intent quitIntent = new Intent("com.farmerbb.taskbar.QUIT");
-                quitIntent.setPackage(BuildConfig.APPLICATION_ID);
-                sendBroadcast(quitIntent);
+                sendBroadcast(new Intent("com.farmerbb.taskbar.QUIT"));
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "pin_app":
                 PinnedBlockedApps pba = PinnedBlockedApps.getInstance(this);
@@ -488,19 +434,22 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
                 }
                 break;
             case "show_window_sizes":
-                generateWindowSizes();
+                getPreferenceScreen().removeAll();
 
-                if(U.hasBrokenSetLaunchBoundsApi())
-                    U.showToastLong(this, R.string.window_sizes_not_available);
+                addPreferencesFromResource(R.xml.pref_context_menu_window_size_list);
+                findPreference("window_size_standard").setOnPreferenceClickListener(this);
+                findPreference("window_size_large").setOnPreferenceClickListener(this);
+                findPreference("window_size_fullscreen").setOnPreferenceClickListener(this);
+                findPreference("window_size_half_left").setOnPreferenceClickListener(this);
+                findPreference("window_size_half_right").setOnPreferenceClickListener(this);
+                findPreference("window_size_phone_size").setOnPreferenceClickListener(this);
 
-                getListView().setOnItemLongClickListener((parent, view, position, id) -> {
-                    String[] windowSizes = { "standard", "large", "fullscreen", "half_left", "half_right", "phone_size" };
-
-                    SavedWindowSizes.getInstance(ContextMenuActivity.this).setWindowSize(ContextMenuActivity.this, packageName, windowSizes[position]);
-
-                    generateWindowSizes();
-                    return true;
-                });
+                SharedPreferences pref = U.getSharedPreferences(this);
+                if(pref.getBoolean("save_window_sizes", true)) {
+                    String windowSizePref = SavedWindowSizes.getInstance(this).getWindowSize(this, packageName);
+                    CharSequence title = findPreference("window_size_" + windowSizePref).getTitle();
+                    findPreference("window_size_" + windowSizePref).setTitle('\u2713' + " " + title);
+                }
 
                 secondaryMenu = true;
                 break;
@@ -517,14 +466,11 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
                     SavedWindowSizes.getInstance(this).setWindowSize(this, packageName, windowSize);
                 }
 
+                startFreeformActivity();
                 U.launchApp(getApplicationContext(), packageName, componentName, userId, windowSize, false, true);
-
-                if(U.hasBrokenSetLaunchBoundsApi())
-                    U.cancelToast();
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "app_shortcuts":
                 getPreferenceScreen().removeAll();
@@ -541,9 +487,10 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "start_menu_apps":
+                startFreeformActivity();
+
                 Intent intent = null;
 
                 SharedPreferences pref3 = U.getSharedPreferences(this);
@@ -563,15 +510,11 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT);
 
                     U.launchAppMaximized(getApplicationContext(), intent);
-                } else {
-                    try {
-                        startActivity(intent);
-                    } catch (IllegalArgumentException e) { /* Gracefully fail */ }
-                }
+                } else
+                    startActivity(intent);
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "volume":
                 AudioManager audio = (AudioManager) getSystemService(AUDIO_SERVICE);
@@ -579,65 +522,55 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "file_manager":
-                U.launchApp(this, () -> {
-                    Intent fileManagerIntent;
+                Intent fileManagerIntent;
 
-                    if(Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1)
-                        fileManagerIntent = new Intent(Intent.ACTION_VIEW);
-                    else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                        fileManagerIntent = new Intent("android.provider.action.BROWSE");
-                    else {
-                        fileManagerIntent = new Intent("android.provider.action.BROWSE_DOCUMENT_ROOT");
-                        fileManagerIntent.setComponent(ComponentName.unflattenFromString("com.android.documentsui/.DocumentsActivity"));
-                    }
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    startFreeformActivity();
+                    fileManagerIntent = new Intent("android.provider.action.BROWSE");
+                } else {
+                    fileManagerIntent = new Intent("android.provider.action.BROWSE_DOCUMENT_ROOT");
+                    fileManagerIntent.setComponent(ComponentName.unflattenFromString("com.android.documentsui/.DocumentsActivity"));
+                }
 
-                    fileManagerIntent.addCategory(Intent.CATEGORY_DEFAULT);
-                    fileManagerIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    fileManagerIntent.setData(Uri.parse("content://com.android.externalstorage.documents/root/primary"));
+                fileManagerIntent.addCategory(Intent.CATEGORY_DEFAULT);
+                fileManagerIntent.setData(Uri.parse("content://com.android.externalstorage.documents/root/primary"));
 
-                    try {
-                        startActivity(fileManagerIntent, U.getActivityOptionsBundle(ApplicationType.APPLICATION));
-                    } catch (ActivityNotFoundException e) {
-                        U.showToast(this, R.string.lock_device_not_supported);
-                    } catch (IllegalArgumentException e) { /* Gracefully fail */ }
-                });
+                try {
+                    startActivity(fileManagerIntent);
+                } catch (ActivityNotFoundException e) {
+                    U.showToast(this, R.string.lock_device_not_supported);
+                }
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "system_settings":
-                U.launchApp(this, () -> {
-                    Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
-                    settingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startFreeformActivity();
 
-                    try {
-                        startActivity(settingsIntent, U.getActivityOptionsBundle(ApplicationType.APPLICATION));
-                    } catch (ActivityNotFoundException e) {
-                        U.showToast(this, R.string.lock_device_not_supported);
-                    } catch (IllegalArgumentException e) { /* Gracefully fail */ }
-                });
+                Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
+
+                try {
+                    startActivity(settingsIntent);
+                } catch (ActivityNotFoundException e) {
+                    U.showToast(this, R.string.lock_device_not_supported);
+                }
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "lock_device":
                 U.lockDevice(this);
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "power_menu":
-                U.sendAccessibilityAction(this, AccessibilityService.GLOBAL_ACTION_POWER_DIALOG);
+                U.showPowerMenu(this);
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
             case "change_wallpaper":
                 Intent intent3 = Intent.createChooser(new Intent(Intent.ACTION_SET_WALLPAPER), getString(R.string.set_wallpaper));
@@ -646,15 +579,6 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
 
                 showStartMenu = false;
                 shouldHideTaskbar = true;
-                contextMenuFix = false;
-                break;
-            case "close":
-                ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-                am.killBackgroundProcesses(packageName);
-
-                showStartMenu = false;
-                shouldHideTaskbar = true;
-                contextMenuFix = false;
                 break;
         }
 
@@ -671,22 +595,30 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
     @Override
     public void finish() {
         LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.CONTEXT_MENU_DISAPPEARING"));
-        MenuHelper.getInstance().setContextMenuOpen(false);
 
         if(!dashboardOrStartMenuAppearing) {
             if(showStartMenu)
-                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.TOGGLE_START_MENU"));
-            else {
-                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.RESET_START_MENU"));
-
-                if(shouldHideTaskbar && U.shouldCollapse(this, true))
+                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.TOGGLE_START_MENU_ALT"));
+            else if(shouldHideTaskbar) {
+                SharedPreferences pref = U.getSharedPreferences(this);
+                if(pref.getBoolean("hide_taskbar", true) && !FreeformHackHelper.getInstance().isInFreeformWorkspace())
                     LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_TASKBAR"));
             }
         }
 
         super.finish();
-        if(showStartMenu)
-            overridePendingTransition(0, 0);
+    }
+
+    @SuppressWarnings("deprecation")
+    private void startFreeformActivity() {
+        SharedPreferences pref = U.getSharedPreferences(this);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
+                && pref.getBoolean("taskbar_active", false)
+                && pref.getBoolean("freeform_hack", false)
+                && isInMultiWindowMode()
+                && !FreeformHackHelper.getInstance().isFreeformHackActive()) {
+            U.startFreeformHack(this, false, false);
+        }
     }
 
     @TargetApi(Build.VERSION_CODES.N_MR1)
@@ -726,19 +658,8 @@ public class ContextMenuActivity extends PreferenceActivity implements Preferenc
 
             getPreferenceScreen().removeAll();
             generateMenu();
-
-            getListView().setOnItemLongClickListener(null);
-
-            if(U.hasBrokenSetLaunchBoundsApi())
-                U.cancelToast();
-        } else {
-            if(contextMenuFix && !showStartMenu)
-                U.startFreeformHack(this, false, false);
-
+        } else
             super.onBackPressed();
-            if(FreeformHackHelper.getInstance().isInFreeformWorkspace())
-                overridePendingTransition(0, 0);
-        }
     }
 
     @Override

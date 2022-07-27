@@ -15,10 +15,11 @@
 
 package com.farmerbb.taskbar.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -30,25 +31,17 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.farmerbb.taskbar.MainActivity;
-import com.farmerbb.taskbar.util.FreeformHackHelper;
+import com.farmerbb.taskbar.service.DashboardService;
+import com.farmerbb.taskbar.service.NotificationService;
+import com.farmerbb.taskbar.service.StartMenuService;
+import com.farmerbb.taskbar.service.TaskbarService;
 import com.farmerbb.taskbar.util.U;
 
-public abstract class SettingsFragment extends PreferenceFragment {
+public class SettingsFragment extends PreferenceFragment {
 
     boolean finishedLoadingPrefs;
     boolean showReminderToast = false;
     boolean restartNotificationService = false;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        // Set values
-        setRetainInstance(true);
-        setHasOptionsMenu(true);
-
-        U.initPrefs(getActivity());
-    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -57,8 +50,32 @@ public abstract class SettingsFragment extends PreferenceFragment {
         // Remove dividers
         View rootView = getView();
         if(rootView != null) {
-            ListView list = U.findViewById(rootView, android.R.id.list);
+            ListView list = (ListView) rootView.findViewById(android.R.id.list);
             if(list != null) list.setDivider(null);
+        }
+
+        // Set values
+        setRetainInstance(true);
+        setHasOptionsMenu(true);
+
+        // On smaller-screened devices, set "Grid" as the default start menu layout
+        SharedPreferences pref = U.getSharedPreferences(getActivity());
+        if(getActivity().getApplicationContext().getResources().getConfiguration().smallestScreenWidthDp < 600
+                && pref.getString("start_menu_layout", "null").equals("null")) {
+            pref.edit().putString("start_menu_layout", "grid").apply();
+        }
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            if(!pref.getBoolean("freeform_hack_override", false)) {
+                pref.edit()
+                        .putBoolean("freeform_hack", U.hasFreeformSupport(getActivity()))
+                        .putBoolean("freeform_hack_override", true)
+                        .apply();
+            } else if(!U.hasFreeformSupport(getActivity())) {
+                pref.edit().putBoolean("freeform_hack", false).apply();
+
+                LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(new Intent("com.farmerbb.taskbar.FINISH_FREEFORM_ACTIVITY"));
+            }
         }
     }
 
@@ -75,37 +92,23 @@ public abstract class SettingsFragment extends PreferenceFragment {
 
                 // Set the summary to reflect the new value.
                 preference.setSummary(index >= 0 ? listPreference.getEntries()[index] : null);
+
+                if(finishedLoadingPrefs && preference.getKey().equals("theme")) {
+                    // Restart MainActivity
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("theme_change", true);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(0, 0);
+                }
+
             } else if(!(preference instanceof CheckBoxPreference)) {
                 // For all other preferences, set the summary to the value's
                 // simple string representation.
                 preference.setSummary(stringValue);
             }
 
-            if(finishedLoadingPrefs) {
-                switch(preference.getKey()) {
-                    case "theme":
-                        // Restart MainActivity
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.putExtra("theme_change", true);
-                        startActivity(intent);
-                        getActivity().overridePendingTransition(0, 0);
-                        break;
-                    case "chrome_os_context_menu_fix":
-                        FreeformHackHelper helper = FreeformHackHelper.getInstance();
-                        helper.setFreeformHackActive(false);
-                        helper.setInFreeformWorkspace(false);
-
-                        LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(new Intent("com.farmerbb.taskbar.FINISH_FREEFORM_ACTIVITY"));
-
-                        SharedPreferences pref = U.getSharedPreferences(getActivity());
-                        if(pref.getBoolean("taskbar_active", false) && !pref.getBoolean("is_hidden", false))
-                            new Handler().post(() -> U.startFreeformHack(getActivity(), false, false));
-                        break;
-                }
-
-                U.restartTaskbar(getActivity());
-            }
+            if(finishedLoadingPrefs) restartTaskbar();
 
             return true;
         }
@@ -134,6 +137,41 @@ public abstract class SettingsFragment extends PreferenceFragment {
         }
     }
 
+    private void startTaskbarService(boolean fullRestart) {
+        getActivity().startService(new Intent(getActivity(), TaskbarService.class));
+        getActivity().startService(new Intent(getActivity(), StartMenuService.class));
+        getActivity().startService(new Intent(getActivity(), DashboardService.class));
+        if(fullRestart) getActivity().startService(new Intent(getActivity(), NotificationService.class));
+    }
+
+    private void stopTaskbarService(boolean fullRestart) {
+        getActivity().stopService(new Intent(getActivity(), TaskbarService.class));
+        getActivity().stopService(new Intent(getActivity(), StartMenuService.class));
+        getActivity().stopService(new Intent(getActivity(), DashboardService.class));
+        if(fullRestart) getActivity().stopService(new Intent(getActivity(), NotificationService.class));
+    }
+
+    public void restartTaskbar() {
+        SharedPreferences pref = U.getSharedPreferences(getActivity());
+        if(pref.getBoolean("taskbar_active", false) && !pref.getBoolean("is_hidden", false)) {
+            pref.edit().putBoolean("is_restarting", true).apply();
+
+            stopTaskbarService(true);
+            startTaskbarService(true);
+        } else if(U.isServiceRunning(getActivity(), StartMenuService.class)) {
+            stopTaskbarService(false);
+            startTaskbarService(false);
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 123 && resultCode == Activity.RESULT_OK) {
+            U.refreshPinnedIcons(getActivity());
+            restartTaskbar();
+        }
+    }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -141,7 +179,14 @@ public abstract class SettingsFragment extends PreferenceFragment {
         if(restartNotificationService) {
             restartNotificationService = false;
 
-            U.restartNotificationService(getActivity());
+            if(U.isServiceRunning(getActivity(), NotificationService.class)) {
+                SharedPreferences pref = U.getSharedPreferences(getActivity());
+                pref.edit().putBoolean("is_restarting", true).apply();
+
+                Intent intent = new Intent(getActivity(), NotificationService.class);
+                getActivity().stopService(intent);
+                getActivity().startService(intent);
+            }
         }
     }
 }

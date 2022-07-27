@@ -17,6 +17,7 @@ package com.farmerbb.taskbar.service;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.ActivityOptions;
 import android.app.SearchManager;
 import android.app.Service;
 import android.content.ActivityNotFoundException;
@@ -33,6 +34,7 @@ import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.hardware.display.DisplayManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
@@ -42,8 +44,8 @@ import android.os.UserManager;
 import android.provider.Settings;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.SearchView;
-import android.util.DisplayMetrics;
-import android.util.Patterns;
+import android.view.ContextThemeWrapper;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -52,7 +54,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.URLUtil;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
@@ -67,13 +68,11 @@ import com.farmerbb.taskbar.activity.InvisibleActivity;
 import com.farmerbb.taskbar.activity.InvisibleActivityAlt;
 import com.farmerbb.taskbar.adapter.StartMenuAdapter;
 import com.farmerbb.taskbar.util.AppEntry;
-import com.farmerbb.taskbar.util.ApplicationType;
 import com.farmerbb.taskbar.util.Blacklist;
 import com.farmerbb.taskbar.util.FreeformHackHelper;
 import com.farmerbb.taskbar.util.IconCache;
 import com.farmerbb.taskbar.util.LauncherHelper;
-import com.farmerbb.taskbar.util.MenuHelper;
-import com.farmerbb.taskbar.util.CompatUtils;
+import com.farmerbb.taskbar.util.StartMenuHelper;
 import com.farmerbb.taskbar.util.TopApps;
 import com.farmerbb.taskbar.util.U;
 import com.farmerbb.taskbar.widget.StartMenuLayout;
@@ -103,47 +102,26 @@ public class StartMenuService extends Service {
 
     private List<String> currentStartMenuIds = new ArrayList<>();
 
-    private View.OnClickListener ocl = view -> toggleStartMenu();
+    private View.OnClickListener ocl = view -> toggleStartMenu(true);
     
     private BroadcastReceiver toggleReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            toggleStartMenu();
+            toggleStartMenu(true);
         }
     };
 
-    private BroadcastReceiver showSpaceReceiver = new BroadcastReceiver() {
+    private BroadcastReceiver toggleReceiverAlt = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            layout.findViewById(R.id.start_menu_space).setVisibility(View.VISIBLE);
+            toggleStartMenu(false);
         }
     };
-
-    private BroadcastReceiver hideSpaceReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            layout.findViewById(R.id.start_menu_space).setVisibility(View.GONE);
-        }
-    };
-
+    
     private BroadcastReceiver hideReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            hideStartMenu(true);
-        }
-    };
-
-    private BroadcastReceiver hideReceiverNoReset = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            hideStartMenu(false);
-        }
-    };
-
-    private BroadcastReceiver resetReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            startMenu.setSelection(0);
+            hideStartMenu();
         }
     };
 
@@ -181,7 +159,7 @@ public class StartMenuService extends Service {
 
         SharedPreferences pref = U.getSharedPreferences(this);
         if(pref.getBoolean("taskbar_active", false) || LauncherHelper.getInstance().isOnHomeScreen()) {
-            if(U.canDrawOverlays(this))
+            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.M || Settings.canDrawOverlays(this))
                 drawStartMenu();
             else {
                 pref.edit().putBoolean("taskbar_active", false).apply();
@@ -217,7 +195,7 @@ public class StartMenuService extends Service {
         final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
-                CompatUtils.getOverlayType(),
+                WindowManager.LayoutParams.TYPE_PHONE,
                 shouldShowSearchBox ? 0 : WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM,
                 PixelFormat.TRANSLUCENT);
 
@@ -258,8 +236,20 @@ public class StartMenuService extends Service {
         }
 
         // Initialize views
-        layout = (StartMenuLayout) LayoutInflater.from(U.wrapContext(this)).inflate(layoutId, null);
-        startMenu = U.findViewById(layout, R.id.start_menu);
+        int theme = 0;
+
+        switch(pref.getString("theme", "light")) {
+            case "light":
+                theme = R.style.AppTheme;
+                break;
+            case "dark":
+                theme = R.style.AppTheme_Dark;
+                break;
+        }
+
+        ContextThemeWrapper wrapper = new ContextThemeWrapper(this, theme);
+        layout = (StartMenuLayout) LayoutInflater.from(wrapper).inflate(layoutId, null);
+        startMenu = (GridView) layout.findViewById(R.id.start_menu);
 
         if((shouldShowSearchBox && !hasHardwareKeyboard) || Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP_MR1)
             layout.viewHandlesBackButton();
@@ -272,15 +262,12 @@ public class StartMenuService extends Service {
         if(pref.getBoolean("transparent_start_menu", false))
             startMenu.setBackgroundColor(0);
 
-        if(U.visualFeedbackEnabled(this))
-            startMenu.setRecyclerListener(view -> view.setBackgroundColor(0));
-
-        searchView = U.findViewById(layout, R.id.search);
+        searchView = (SearchView) layout.findViewById(R.id.search);
 
         int backgroundTint = U.getBackgroundTint(this);
 
-        FrameLayout startMenuFrame = U.findViewById(layout, R.id.start_menu_frame);
-        FrameLayout searchViewLayout = U.findViewById(layout, R.id.search_view_layout);
+        FrameLayout startMenuFrame = (FrameLayout) layout.findViewById(R.id.start_menu_frame);
+        FrameLayout searchViewLayout = (FrameLayout) layout.findViewById(R.id.search_view_layout);
         startMenuFrame.setBackgroundColor(backgroundTint);
         searchViewLayout.setBackgroundColor(backgroundTint);
 
@@ -297,26 +284,17 @@ public class StartMenuService extends Service {
 
                             if(adapter.getCount() > 0) {
                                 View view = adapter.getView(0, null, startMenu);
-                                LinearLayout layout = U.findViewById(view, R.id.entry);
+                                LinearLayout layout = (LinearLayout) view.findViewById(R.id.entry);
                                 layout.performClick();
                             } else {
-                                if(U.shouldCollapse(StartMenuService.this, true))
+                                if(pref.getBoolean("hide_taskbar", true) && !FreeformHackHelper.getInstance().isInFreeformWorkspace())
                                     LocalBroadcastManager.getInstance(StartMenuService.this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_TASKBAR"));
                                 else
                                     LocalBroadcastManager.getInstance(StartMenuService.this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
 
-                                Intent intent;
-
-                                if(Patterns.WEB_URL.matcher(query).matches()) {
-                                    intent = new Intent(Intent.ACTION_VIEW);
-                                    intent.setData(Uri.parse(URLUtil.guessUrl(query)));
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                } else {
-                                    intent = new Intent(Intent.ACTION_WEB_SEARCH);
-                                    intent.putExtra(SearchManager.QUERY, query);
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                }
-
+                                Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+                                intent.putExtra(SearchManager.QUERY, query);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 if(intent.resolveActivity(getPackageManager()) != null)
                                     startActivity(intent);
                                 else {
@@ -352,7 +330,7 @@ public class StartMenuService extends Service {
 
                     if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP_MR1) {
                         new Handler().postDelayed(() -> {
-                            EditText editText = U.findViewById(searchView, R.id.search_src_text);
+                            EditText editText = (EditText) searchView.findViewById(R.id.search_src_text);
                             if(editText != null) {
                                 editText.requestFocus();
                                 editText.setSelection(editText.getText().length());
@@ -368,7 +346,7 @@ public class StartMenuService extends Service {
                 if(!hasHardwareKeyboard) {
                     ViewGroup.LayoutParams params1 = startMenu.getLayoutParams();
                     params1.height = getResources().getDimensionPixelSize(
-                            b && !isSecondScreenDisablingKeyboard()
+                            b && !U.isServiceRunning(this, "com.farmerbb.secondscreen.service.DisableKeyboardService")
                                     ? R.dimen.start_menu_height_half
                                     : R.dimen.start_menu_height);
                     startMenu.setLayoutParams(params1);
@@ -386,7 +364,7 @@ public class StartMenuService extends Service {
 
             searchView.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
 
-            LinearLayout powerButton = U.findViewById(layout, R.id.power_button);
+            LinearLayout powerButton = (LinearLayout) layout.findViewById(R.id.power_button);
             powerButton.setOnClickListener(view -> {
                 int[] location = new int[2];
                 view.getLocationOnScreen(location);
@@ -406,7 +384,7 @@ public class StartMenuService extends Service {
             searchViewLayout.setOnClickListener(view -> searchView.setIconified(false));
 
             startMenu.setOnItemClickListener((parent, view, position, id) -> {
-                hideStartMenu(true);
+                hideStartMenu();
 
                 AppEntry entry = (AppEntry) parent.getAdapter().getItem(position);
                 U.launchApp(StartMenuService.this, entry.getPackageName(), entry.getComponentName(), entry.getUserId(StartMenuService.this), null, false, false);
@@ -417,23 +395,15 @@ public class StartMenuService extends Service {
         } else
             searchViewLayout.setVisibility(View.GONE);
         
-        textView = U.findViewById(layout, R.id.no_apps_found);
+        textView = (TextView) layout.findViewById(R.id.no_apps_found);
 
-        LocalBroadcastManager lbm = LocalBroadcastManager.getInstance(this);
-        
-        lbm.unregisterReceiver(toggleReceiver);
-        lbm.unregisterReceiver(hideReceiver);
-        lbm.unregisterReceiver(hideReceiverNoReset);
-        lbm.unregisterReceiver(showSpaceReceiver);
-        lbm.unregisterReceiver(hideSpaceReceiver);
-        lbm.unregisterReceiver(resetReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(toggleReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(toggleReceiverAlt);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(hideReceiver);
 
-        lbm.registerReceiver(toggleReceiver, new IntentFilter("com.farmerbb.taskbar.TOGGLE_START_MENU"));
-        lbm.registerReceiver(hideReceiver, new IntentFilter("com.farmerbb.taskbar.HIDE_START_MENU"));
-        lbm.registerReceiver(hideReceiverNoReset, new IntentFilter("com.farmerbb.taskbar.HIDE_START_MENU_NO_RESET"));
-        lbm.registerReceiver(showSpaceReceiver, new IntentFilter("com.farmerbb.taskbar.SHOW_START_MENU_SPACE"));
-        lbm.registerReceiver(hideSpaceReceiver, new IntentFilter("com.farmerbb.taskbar.HIDE_START_MENU_SPACE"));
-        lbm.registerReceiver(resetReceiver, new IntentFilter("com.farmerbb.taskbar.RESET_START_MENU"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(toggleReceiver, new IntentFilter("com.farmerbb.taskbar.TOGGLE_START_MENU"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(toggleReceiverAlt, new IntentFilter("com.farmerbb.taskbar.TOGGLE_START_MENU_ALT"));
+        LocalBroadcastManager.getInstance(this).registerReceiver(hideReceiver, new IntentFilter("com.farmerbb.taskbar.HIDE_START_MENU"));
 
         handler = new Handler();
         refreshApps(true);
@@ -449,175 +419,175 @@ public class StartMenuService extends Service {
         if(thread != null) thread.interrupt();
 
         handler = new Handler();
-        thread = new Thread(() -> {
-            if(pm == null) pm = getPackageManager();
+        thread = new Thread() {
+            @SuppressWarnings("Convert2streamapi")
+            @Override
+            public void run() {
+                if(pm == null) pm = getPackageManager();
 
-            UserManager userManager = (UserManager) getSystemService(Context.USER_SERVICE);
-            LauncherApps launcherApps = (LauncherApps) getSystemService(Context.LAUNCHER_APPS_SERVICE);
+                UserManager userManager = (UserManager) getSystemService(Context.USER_SERVICE);
+                LauncherApps launcherApps = (LauncherApps) getSystemService(Context.LAUNCHER_APPS_SERVICE);
 
-            final List<UserHandle> userHandles = userManager.getUserProfiles();
-            final List<LauncherActivityInfo> unfilteredList = new ArrayList<>();
+                final List<UserHandle> userHandles = userManager.getUserProfiles();
+                final List<LauncherActivityInfo> unfilteredList = new ArrayList<>();
 
-            for(UserHandle handle : userHandles) {
-                unfilteredList.addAll(launcherApps.getActivityList(null, handle));
-            }
-
-            final List<LauncherActivityInfo> topAppsList = new ArrayList<>();
-            final List<LauncherActivityInfo> allAppsList = new ArrayList<>();
-            final List<LauncherActivityInfo> list = new ArrayList<>();
-
-            TopApps topApps = TopApps.getInstance(StartMenuService.this);
-            for(LauncherActivityInfo appInfo : unfilteredList) {
-                if(topApps.isTopApp(appInfo.getComponentName().flattenToString())
-                        || topApps.isTopApp(appInfo.getName()))
-                    topAppsList.add(appInfo);
-            }
-
-            Blacklist blacklist = Blacklist.getInstance(StartMenuService.this);
-            for(LauncherActivityInfo appInfo : unfilteredList) {
-                if(!(blacklist.isBlocked(appInfo.getComponentName().flattenToString())
-                        || blacklist.isBlocked(appInfo.getName()))
-                        && !(topApps.isTopApp(appInfo.getComponentName().flattenToString())
-                        || topApps.isTopApp(appInfo.getName())))
-                    allAppsList.add(appInfo);
-            }
-
-            Collections.sort(topAppsList, comparator);
-            Collections.sort(allAppsList, comparator);
-
-            list.addAll(topAppsList);
-            list.addAll(allAppsList);
-
-            topAppsList.clear();
-            allAppsList.clear();
-
-            List<LauncherActivityInfo> queryList;
-            if(query == null)
-                queryList = list;
-            else {
-                queryList = new ArrayList<>();
-                for(LauncherActivityInfo appInfo : list) {
-                    if(appInfo.getLabel().toString().toLowerCase().contains(query.toLowerCase()))
-                        queryList.add(appInfo);
-                }
-            }
-
-            // Now that we've generated the list of apps,
-            // we need to determine if we need to redraw the start menu or not
-            boolean shouldRedrawStartMenu = false;
-            List<String> finalApplicationIds = new ArrayList<>();
-
-            if(query == null && !firstDraw) {
-                for(LauncherActivityInfo appInfo : queryList) {
-                    finalApplicationIds.add(appInfo.getApplicationInfo().packageName);
+                for(UserHandle handle : userHandles) {
+                    unfilteredList.addAll(launcherApps.getActivityList(null, handle));
                 }
 
-                if(finalApplicationIds.size() != currentStartMenuIds.size())
-                    shouldRedrawStartMenu = true;
+                final List<LauncherActivityInfo> topAppsList = new ArrayList<>();
+                final List<LauncherActivityInfo> allAppsList = new ArrayList<>();
+                final List<LauncherActivityInfo> list = new ArrayList<>();
+
+                TopApps topApps = TopApps.getInstance(StartMenuService.this);
+                for(LauncherActivityInfo appInfo : unfilteredList) {
+                    if(topApps.isTopApp(appInfo.getComponentName().flattenToString())
+                            || topApps.isTopApp(appInfo.getName()))
+                        topAppsList.add(appInfo);
+                }
+
+                Blacklist blacklist = Blacklist.getInstance(StartMenuService.this);
+                for(LauncherActivityInfo appInfo : unfilteredList) {
+                    if(!(blacklist.isBlocked(appInfo.getComponentName().flattenToString())
+                            || blacklist.isBlocked(appInfo.getName()))
+                            && !(topApps.isTopApp(appInfo.getComponentName().flattenToString())
+                            || topApps.isTopApp(appInfo.getName())))
+                        allAppsList.add(appInfo);
+                }
+
+                Collections.sort(topAppsList, comparator);
+                Collections.sort(allAppsList, comparator);
+
+                list.addAll(topAppsList);
+                list.addAll(allAppsList);
+
+                topAppsList.clear();
+                allAppsList.clear();
+
+                List<LauncherActivityInfo> queryList;
+                if(query == null)
+                    queryList = list;
                 else {
-                    for(int i = 0; i < finalApplicationIds.size(); i++) {
-                        if(!finalApplicationIds.get(i).equals(currentStartMenuIds.get(i))) {
-                            shouldRedrawStartMenu = true;
-                            break;
+                    queryList = new ArrayList<>();
+                    for(LauncherActivityInfo appInfo : list) {
+                        if(appInfo.getLabel().toString().toLowerCase().contains(query.toLowerCase()))
+                            queryList.add(appInfo);
+                    }
+                }
+
+                // Now that we've generated the list of apps,
+                // we need to determine if we need to redraw the start menu or not
+                boolean shouldRedrawStartMenu = false;
+                List<String> finalApplicationIds = new ArrayList<>();
+
+                if(query == null && !firstDraw) {
+                    for(LauncherActivityInfo appInfo : queryList) {
+                        finalApplicationIds.add(appInfo.getApplicationInfo().packageName);
+                    }
+
+                    if(finalApplicationIds.size() != currentStartMenuIds.size())
+                        shouldRedrawStartMenu = true;
+                    else {
+                        for(int i = 0; i < finalApplicationIds.size(); i++) {
+                            if(!finalApplicationIds.get(i).equals(currentStartMenuIds.get(i))) {
+                                shouldRedrawStartMenu = true;
+                                break;
+                            }
                         }
                     }
-                }
-            } else shouldRedrawStartMenu = true;
+                } else shouldRedrawStartMenu = true;
 
-            if(shouldRedrawStartMenu) {
-                if(query == null) currentStartMenuIds = finalApplicationIds;
+                if(shouldRedrawStartMenu) {
+                    if(query == null) currentStartMenuIds = finalApplicationIds;
 
-                Drawable defaultIcon = pm.getDefaultActivityIcon();
+                    Drawable defaultIcon = pm.getDefaultActivityIcon();
 
-                final List<AppEntry> entries = new ArrayList<>();
-                for(LauncherActivityInfo appInfo : queryList) {
+                    final List<AppEntry> entries = new ArrayList<>();
+                    for(LauncherActivityInfo appInfo : queryList) {
 
-                    // Attempt to work around frequently reported OutOfMemoryErrors
-                    String label;
-                    Drawable icon;
+                        // Attempt to work around frequently reported OutOfMemoryErrors
+                        String label;
+                        Drawable icon;
 
-                    try {
-                        label = appInfo.getLabel().toString();
-                        icon = IconCache.getInstance(StartMenuService.this).getIcon(StartMenuService.this, pm, appInfo);
-                    } catch (OutOfMemoryError e) {
-                        System.gc();
+                        try {
+                            label = appInfo.getLabel().toString();
+                            icon = IconCache.getInstance(StartMenuService.this).getIcon(StartMenuService.this, pm, appInfo);
+                        } catch (OutOfMemoryError e) {
+                            System.gc();
 
-                        label = appInfo.getApplicationInfo().packageName;
-                        icon = defaultIcon;
+                            label = appInfo.getApplicationInfo().packageName;
+                            icon = defaultIcon;
+                        }
+
+                        AppEntry newEntry = new AppEntry(
+                                appInfo.getApplicationInfo().packageName,
+                                new ComponentName(
+                                        appInfo.getApplicationInfo().packageName,
+                                        appInfo.getName()).flattenToString(),
+                                label,
+                                icon,
+                                false);
+
+                        newEntry.setUserId(userManager.getSerialNumberForUser(appInfo.getUser()));
+                        entries.add(newEntry);
                     }
 
-                    AppEntry newEntry = new AppEntry(
-                            appInfo.getApplicationInfo().packageName,
-                            new ComponentName(
-                                    appInfo.getApplicationInfo().packageName,
-                                    appInfo.getName()).flattenToString(),
-                            label,
-                            icon,
-                            false);
+                    handler.post(() -> {
+                        String queryText = searchView.getQuery().toString();
+                        if(query == null && queryText.length() == 0
+                                || query != null && query.equals(queryText)) {
+                            StartMenuAdapter adapter;
+                            SharedPreferences pref = U.getSharedPreferences(StartMenuService.this);
+                            if(pref.getString("start_menu_layout", "list").equals("grid")) {
+                                startMenu.setNumColumns(3);
+                                adapter = new StartMenuAdapter(StartMenuService.this, R.layout.row_alt, entries);
+                            } else
+                                adapter = new StartMenuAdapter(StartMenuService.this, R.layout.row, entries);
 
-                    newEntry.setUserId(userManager.getSerialNumberForUser(appInfo.getUser()));
-                    entries.add(newEntry);
+                            int position = startMenu.getFirstVisiblePosition();
+                            startMenu.setAdapter(adapter);
+                            startMenu.setSelection(position);
+
+                            if(adapter.getCount() > 0)
+                                textView.setText(null);
+                            else if(query != null)
+                                textView.setText(getString(R.string.press_enter));
+                            else
+                                textView.setText(getString(R.string.nothing_to_see_here));
+                        }
+                    });
                 }
-
-                handler.post(() -> {
-                    String queryText = searchView.getQuery().toString();
-                    if(query == null && queryText.length() == 0
-                            || query != null && query.equals(queryText)) {
-                        StartMenuAdapter adapter;
-                        SharedPreferences pref = U.getSharedPreferences(StartMenuService.this);
-                        if(pref.getString("start_menu_layout", "list").equals("grid")) {
-                            startMenu.setNumColumns(3);
-                            adapter = new StartMenuAdapter(StartMenuService.this, R.layout.row_alt, entries);
-                        } else
-                            adapter = new StartMenuAdapter(StartMenuService.this, R.layout.row, entries);
-
-                        int position = startMenu.getFirstVisiblePosition();
-                        startMenu.setAdapter(adapter);
-                        startMenu.setSelection(position);
-
-                        if(adapter.getCount() > 0)
-                            textView.setText(null);
-                        else if(query != null)
-                            textView.setText(getString(Patterns.WEB_URL.matcher(query).matches() ? R.string.press_enter_alt : R.string.press_enter));
-                        else
-                            textView.setText(getString(R.string.nothing_to_see_here));
-                    }
-                });
             }
-        });
+        };
 
         thread.start();
     }
     
-    private void toggleStartMenu() {
+    private void toggleStartMenu(boolean shouldReset) {
         if(layout.getVisibility() == View.GONE)
-            showStartMenu();
+            showStartMenu(shouldReset);
         else
-            hideStartMenu(true);
+            hideStartMenu();
     }
 
     @SuppressWarnings("deprecation")
     @TargetApi(Build.VERSION_CODES.N)
-    private void showStartMenu() {
+    private void showStartMenu(boolean shouldReset) {
         if(layout.getVisibility() == View.GONE) {
+            if(shouldReset) startMenu.setSelection(0);
+
             layout.setOnClickListener(ocl);
             layout.setVisibility(View.VISIBLE);
 
-            if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1)
-                layout.setAlpha(1);
-
-            MenuHelper.getInstance().setStartMenuOpen(true);
+            StartMenuHelper.getInstance().setStartMenuOpen(true);
 
             LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.START_MENU_APPEARING"));
 
             boolean onHomeScreen = LauncherHelper.getInstance().isOnHomeScreen();
             boolean inFreeformMode = FreeformHackHelper.getInstance().isInFreeformWorkspace();
 
-            if(!U.isChromeOs(this) && (!onHomeScreen || inFreeformMode)) {
-                Class clazz = inFreeformMode && !U.hasBrokenSetLaunchBoundsApi()
-                        ? InvisibleActivityAlt.class
-                        : InvisibleActivity.class;
-
+            if(!onHomeScreen || inFreeformMode) {
+                Class clazz = inFreeformMode && !shouldShowSearchBox ? InvisibleActivityAlt.class : InvisibleActivity.class;
                 Intent intent = new Intent(this, clazz);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -634,23 +604,15 @@ public class StartMenuService extends Service {
             if(searchView.getVisibility() == View.VISIBLE) searchView.requestFocus();
 
             refreshApps(false);
-
-            new Handler().postDelayed(() -> {
-                if(Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1)
-                    layout.setAlpha(1);
-
-                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(layout.getWindowToken(), 0);
-            }, 100);
         }
     }
 
-    private void hideStartMenu(boolean shouldReset) {
+    private void hideStartMenu() {
         if(layout.getVisibility() == View.VISIBLE) {
             layout.setOnClickListener(null);
-            layout.setAlpha(0);
+            layout.setVisibility(View.INVISIBLE);
 
-            MenuHelper.getInstance().setStartMenuOpen(false);
+            StartMenuHelper.getInstance().setStartMenuOpen(false);
 
             LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.START_MENU_DISAPPEARING"));
 
@@ -660,14 +622,9 @@ public class StartMenuService extends Service {
                 searchView.setIconified(true);
                 hasSubmittedQuery = false;
 
-                if(shouldReset) {
-                    startMenu.smoothScrollBy(0, 0);
-                    startMenu.setSelection(0);
-                }
-
                 InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(layout.getWindowToken(), 0);
-            }, 100);
+            }, 250);
         }
     }
     
@@ -679,16 +636,9 @@ public class StartMenuService extends Service {
                 windowManager.removeView(layout);
             } catch (IllegalArgumentException e) { /* Gracefully fail */ }
 
-        LocalBroadcastManager lbm = LocalBroadcastManager.getInstance(this);
-
-        lbm.unregisterReceiver(toggleReceiver);
-        lbm.unregisterReceiver(hideReceiver);
-        lbm.unregisterReceiver(hideReceiverNoReset);
-        lbm.unregisterReceiver(showSpaceReceiver);
-        lbm.unregisterReceiver(hideSpaceReceiver);
-        lbm.unregisterReceiver(resetReceiver);
-
-        lbm.sendBroadcast(new Intent("com.farmerbb.taskbar.START_MENU_DISAPPEARING"));
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(toggleReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(toggleReceiverAlt);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(hideReceiver);
     }
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -701,7 +651,7 @@ public class StartMenuService extends Service {
                 windowManager.removeView(layout);
             } catch (IllegalArgumentException e) { /* Gracefully fail */ }
 
-            if(U.canDrawOverlays(this))
+            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.M || Settings.canDrawOverlays(this))
                 drawStartMenu();
             else {
                 SharedPreferences pref = U.getSharedPreferences(this);
@@ -714,7 +664,7 @@ public class StartMenuService extends Service {
 
     @SuppressWarnings("deprecation")
     private void openContextMenu(final int[] location) {
-        LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU_NO_RESET"));
+        LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
 
         new Handler().postDelayed(() -> {
             SharedPreferences pref = U.getSharedPreferences(StartMenuService.this);
@@ -738,12 +688,10 @@ public class StartMenuService extends Service {
             }
 
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && FreeformHackHelper.getInstance().isInFreeformWorkspace()) {
-                DisplayMetrics metrics = U.getRealDisplayMetrics(this);
+                DisplayManager dm = (DisplayManager) getSystemService(DISPLAY_SERVICE);
+                Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
 
-                if(intent != null && U.hasBrokenSetLaunchBoundsApi())
-                    intent.putExtra("context_menu_fix", true);
-
-                startActivity(intent, U.getActivityOptions(ApplicationType.CONTEXT_MENU).setLaunchBounds(new Rect(0, 0, metrics.widthPixels, metrics.heightPixels)).toBundle());
+                startActivity(intent, ActivityOptions.makeBasic().setLaunchBounds(new Rect(0, 0, display.getWidth(), display.getHeight())).toBundle());
             } else
                 startActivity(intent);
         }, shouldDelay() ? 100 : 0);
@@ -754,10 +702,5 @@ public class StartMenuService extends Service {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
                 && pref.getBoolean("freeform_hack", false)
                 && !FreeformHackHelper.getInstance().isFreeformHackActive();
-    }
-
-    private boolean isSecondScreenDisablingKeyboard() {
-        return Settings.Secure.getString(getContentResolver(), Settings.Secure.DEFAULT_INPUT_METHOD)
-                .startsWith("com.farmerbb.secondscreen");
     }
 }

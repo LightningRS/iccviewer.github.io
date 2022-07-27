@@ -17,10 +17,7 @@ package com.farmerbb.taskbar.fragment;
 
 import android.annotation.TargetApi;
 import android.content.ActivityNotFoundException;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -35,87 +32,42 @@ import android.view.View;
 
 import com.farmerbb.taskbar.R;
 import com.farmerbb.taskbar.util.FreeformHackHelper;
-import com.farmerbb.taskbar.util.CompatUtils;
 import com.farmerbb.taskbar.util.U;
 
 public class FreeformModeFragment extends SettingsFragment implements Preference.OnPreferenceClickListener {
 
-    private BroadcastReceiver checkBoxReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            CheckBoxPreference preference = (CheckBoxPreference) findPreference("freeform_hack");
-            if(preference != null) {
-                SharedPreferences pref = U.getSharedPreferences(getActivity());
-                preference.setChecked(pref.getBoolean("freeform_hack", false));
-            }
-        }
-    };
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        finishedLoadingPrefs = false;
-
-        super.onCreate(savedInstanceState);
-
-        // Add preferences
-        addPreferencesFromResource(R.xml.pref_freeform_hack);
-
-        findPreference("freeform_hack").setOnPreferenceClickListener(this);
-        findPreference("freeform_mode_help").setOnPreferenceClickListener(this);
-        findPreference("add_shortcut").setOnPreferenceClickListener(this);
-        findPreference("window_size").setOnPreferenceClickListener(this);
-
-        bindPreferenceSummaryToValue(findPreference("window_size"));
-
-        SharedPreferences pref = U.getSharedPreferences(getActivity());
-        boolean lockFreeformToggle = pref.getBoolean("freeform_hack", false)
-                && U.isChromeOs(getActivity());
-
-        if(!lockFreeformToggle) {
-            findPreference("save_window_sizes").setDependency("freeform_hack");
-            findPreference("force_new_window").setDependency("freeform_hack");
-            findPreference("launch_games_fullscreen").setDependency("freeform_hack");
-            findPreference("window_size").setDependency("freeform_hack");
-            findPreference("add_shortcut").setDependency("freeform_hack");
-        }
-
-        findPreference("freeform_hack").setEnabled(!lockFreeformToggle);
-
-        // Dialog shown on devices which seem to not work correctly with freeform mode
-        if(U.hasPartialFreeformSupport() && !pref.getBoolean("samsung_dialog_shown", false)) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setTitle(R.string.samsung_freeform_title)
-                    .setMessage(R.string.samsung_freeform_message)
-                    .setPositiveButton(R.string.action_ok, (dialog, which) -> pref.edit().putBoolean("samsung_dialog_shown", true).apply());
-
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            dialog.setCancelable(false);
-        } else if(U.isUntestedAndroidVersion(getActivity())) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setTitle(R.string.samsung_freeform_title)
-                    .setMessage(R.string.dialog_upgrade_message)
-                    .setPositiveButton(R.string.action_ok, (dialog, which) -> pref.edit().putFloat("current_api_version_new", U.getCurrentApiVersion()).apply());
-
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            dialog.setCancelable(false);
-        }
-
-        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(checkBoxReceiver, new IntentFilter("com.farmerbb.taskbar.UPDATE_FREEFORM_CHECKBOX"));
-
-        finishedLoadingPrefs = true;
-    }
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+        finishedLoadingPrefs = false;
+
         super.onActivityCreated(savedInstanceState);
+
+        if(findPreference("dummy") == null) {
+            // Add preferences
+            addPreferencesFromResource(R.xml.pref_freeform_hack);
+
+            findPreference("freeform_hack").setOnPreferenceClickListener(this);
+            findPreference("freeform_mode_help").setOnPreferenceClickListener(this);
+            findPreference("add_shortcut").setOnPreferenceClickListener(this);
+
+            bindPreferenceSummaryToValue(findPreference("window_size"));
+
+            SharedPreferences pref = U.getSharedPreferences(getActivity());
+            boolean freeformHackEnabled = pref.getBoolean("freeform_hack", false);
+            findPreference("launch_games_fullscreen").setEnabled(freeformHackEnabled);
+            findPreference("save_window_sizes").setEnabled(freeformHackEnabled);
+            findPreference("window_size").setEnabled(freeformHackEnabled);
+            findPreference("add_shortcut").setEnabled(freeformHackEnabled);
+            findPreference("force_new_window").setEnabled(freeformHackEnabled);
+        }
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setTitle(R.string.pref_header_freeform);
         ActionBar actionBar = activity.getSupportActionBar();
         if(actionBar != null)
             actionBar.setDisplayHomeAsUpEnabled(true);
+
+        finishedLoadingPrefs = true;
     }
 
     @Override
@@ -125,15 +77,18 @@ public class FreeformModeFragment extends SettingsFragment implements Preference
         if(showReminderToast) {
             showReminderToast = false;
 
-            freeformSetupComplete();
+            ((CheckBoxPreference) findPreference("freeform_hack")).setChecked(U.hasFreeformSupport(getActivity()));
+
+            findPreference("launch_games_fullscreen").setEnabled(U.hasFreeformSupport(getActivity()));
+            findPreference("save_window_sizes").setEnabled(U.hasFreeformSupport(getActivity()));
+            findPreference("window_size").setEnabled(U.hasFreeformSupport(getActivity()));
+            findPreference("add_shortcut").setEnabled(U.hasFreeformSupport(getActivity()));
+            findPreference("force_new_window").setEnabled(U.hasFreeformSupport(getActivity()));
+
+            if(U.hasFreeformSupport(getActivity())) {
+                U.showToastLong(getActivity(), R.string.reboot_required);
+            }
         }
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
-        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(checkBoxReceiver);
     }
 
     @TargetApi(Build.VERSION_CODES.N)
@@ -145,41 +100,30 @@ public class FreeformModeFragment extends SettingsFragment implements Preference
             case "freeform_hack":
                 if(((CheckBoxPreference) p).isChecked()) {
                     if(!U.hasFreeformSupport(getActivity())) {
-                        try {
-                            Settings.Global.putInt(getActivity().getContentResolver(), "enable_freeform_support", 1);
-                            U.showToastLong(getActivity(), R.string.reboot_required);
-                        } catch (Exception e) {
-                            ((CheckBoxPreference) p).setChecked(false);
+                        ((CheckBoxPreference) p).setChecked(false);
 
-                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                            if(Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1) {
-                                builder.setTitle(R.string.freeform_dialog_title)
-                                        .setMessage(R.string.freeform_dialog_message_alt)
-                                        .setPositiveButton(R.string.action_continue, (dialogInterface, i) -> freeformSetupComplete());
-                            } else {
-                                builder.setTitle(R.string.freeform_dialog_title)
-                                        .setMessage(R.string.freeform_dialog_message)
-                                        .setPositiveButton(R.string.action_developer_options, (dialogInterface, i) -> {
-                                            showReminderToast = true;
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setTitle(R.string.freeform_dialog_title)
+                                .setMessage(R.string.freeform_dialog_message)
+                                .setPositiveButton(R.string.action_developer_options, (dialogInterface, i) -> {
+                                    showReminderToast = true;
 
-                                            Intent intent = new Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
-                                            try {
-                                                startActivity(intent);
-                                                U.showToastLong(getActivity(), R.string.enable_force_activities_resizable);
-                                            } catch (ActivityNotFoundException e1) {
-                                                intent = new Intent(Settings.ACTION_DEVICE_INFO_SETTINGS);
-                                                try {
-                                                    startActivity(intent);
-                                                    U.showToastLong(getActivity(), R.string.enable_developer_options);
-                                                } catch (ActivityNotFoundException e2) { /* Gracefully fail */ }
-                                            }
-                                        });
-                            }
+                                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
+                                    try {
+                                        startActivity(intent);
+                                        U.showToastLong(getActivity(), R.string.enable_force_activities_resizable);
+                                    } catch (ActivityNotFoundException e) {
+                                        intent = new Intent(Settings.ACTION_DEVICE_INFO_SETTINGS);
+                                        try {
+                                            startActivity(intent);
+                                            U.showToastLong(getActivity(), R.string.enable_developer_options);
+                                        } catch (ActivityNotFoundException e2) { /* Gracefully fail */ }
+                                    }
+                                });
 
-                            AlertDialog dialog = builder.create();
-                            dialog.show();
-                            dialog.setCancelable(false);
-                        }
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                        dialog.setCancelable(false);
                     }
 
                     if(pref.getBoolean("taskbar_active", false)
@@ -192,7 +136,12 @@ public class FreeformModeFragment extends SettingsFragment implements Preference
                     LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(new Intent("com.farmerbb.taskbar.FORCE_TASKBAR_RESTART"));
                 }
 
-                U.restartNotificationService(getActivity());
+                findPreference("launch_games_fullscreen").setEnabled(((CheckBoxPreference) p).isChecked());
+                findPreference("save_window_sizes").setEnabled(((CheckBoxPreference) p).isChecked());
+                findPreference("window_size").setEnabled(((CheckBoxPreference) p).isChecked());
+                findPreference("add_shortcut").setEnabled(((CheckBoxPreference) p).isChecked());
+                findPreference("force_new_window").setEnabled(((CheckBoxPreference) p).isChecked());
+
                 break;
             case "freeform_mode_help":
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -204,22 +153,16 @@ public class FreeformModeFragment extends SettingsFragment implements Preference
                 dialog.show();
                 break;
             case "add_shortcut":
-                CompatUtils.pinAppShortcut(getActivity());
-                break;
-            case "window_size":
-                if(U.hasBrokenSetLaunchBoundsApi())
-                    U.showToastLong(getActivity(), R.string.window_sizes_not_available);
+                Intent intent = U.getShortcutIntent(getActivity());
+                intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+                intent.putExtra("duplicate", false);
+
+                getActivity().sendBroadcast(intent);
+
+                U.showToast(getActivity(), R.string.shortcut_created);
                 break;
         }
 
         return true;
-    }
-
-    private void freeformSetupComplete() {
-        ((CheckBoxPreference) findPreference("freeform_hack")).setChecked(U.hasFreeformSupport(getActivity()));
-
-        if(U.hasFreeformSupport(getActivity())) {
-            U.showToastLong(getActivity(), R.string.reboot_required);
-        }
     }
 }

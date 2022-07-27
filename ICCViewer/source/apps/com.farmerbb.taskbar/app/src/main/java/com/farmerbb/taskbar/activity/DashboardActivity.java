@@ -28,9 +28,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.hardware.display.DisplayManager;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.WindowManager;
@@ -39,6 +41,7 @@ import android.widget.LinearLayout;
 
 import com.farmerbb.taskbar.R;
 import com.farmerbb.taskbar.util.DashboardHelper;
+import com.farmerbb.taskbar.util.FreeformHackHelper;
 import com.farmerbb.taskbar.util.U;
 
 public class DashboardActivity extends Activity {
@@ -51,7 +54,6 @@ public class DashboardActivity extends Activity {
 
     private boolean shouldFinish = true;
     private boolean shouldCollapse = true;
-    private boolean contextMenuFix = false;
     private int cellId = -1;
 
     private BroadcastReceiver addWidgetReceiver = new BroadcastReceiver() {
@@ -109,10 +111,6 @@ public class DashboardActivity extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
             shouldCollapse = false;
-
-            if(contextMenuFix)
-                U.startFreeformHack(DashboardActivity.this, false, false);
-
             finish();
         }
     };
@@ -122,18 +120,17 @@ public class DashboardActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        contextMenuFix = getIntent().hasExtra("context_menu_fix");
-
         // Detect outside touches, and finish the activity when one is detected
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH, WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH);
 
-        DisplayMetrics metrics = U.getRealDisplayMetrics(this);
+        DisplayManager dm = (DisplayManager) getSystemService(DISPLAY_SERVICE);
+        Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
 
         setContentView(R.layout.incognito);
 
-        LinearLayout layout = U.findViewById(this, R.id.incognitoLayout);
-        layout.setLayoutParams(new FrameLayout.LayoutParams(metrics.widthPixels, metrics.heightPixels));
+        LinearLayout layout = (LinearLayout) findViewById(R.id.incognitoLayout);
+        layout.setLayoutParams(new FrameLayout.LayoutParams(display.getWidth(), display.getHeight()));
 
         LocalBroadcastManager.getInstance(this).registerReceiver(addWidgetReceiver, new IntentFilter("com.farmerbb.taskbar.ADD_WIDGET_REQUESTED"));
         LocalBroadcastManager.getInstance(this).registerReceiver(removeWidgetReceiver, new IntentFilter("com.farmerbb.taskbar.REMOVE_WIDGET_REQUESTED"));
@@ -150,9 +147,6 @@ public class DashboardActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        if(contextMenuFix)
-            U.startFreeformHack(this, false, false);
-
         LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_DASHBOARD"));
     }
 
@@ -172,13 +166,13 @@ public class DashboardActivity extends Activity {
 
         if(shouldFinish) {
             if(shouldCollapse) {
-                if(U.shouldCollapse(this, true))
+                SharedPreferences pref = U.getSharedPreferences(this);
+                if(pref.getBoolean("hide_taskbar", true) && !FreeformHackHelper.getInstance().isInFreeformWorkspace())
                     LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_TASKBAR"));
                 else
                     LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
             }
 
-            contextMenuFix = false;
             onBackPressed();
         }
     }

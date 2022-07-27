@@ -76,8 +76,7 @@ public class InvisibleActivityFreeform extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        FreeformHackHelper helper = FreeformHackHelper.getInstance();
-        if(helper.isFreeformHackActive()) {
+        if(FreeformHackHelper.getInstance().isFreeformHackActive()) {
             proceedWithOnCreate = false;
             super.finish();
         }
@@ -91,14 +90,6 @@ public class InvisibleActivityFreeform extends Activity {
             }
         }
 
-        if(U.isOverridingFreeformHack(this)) {
-            helper.setFreeformHackActive(true);
-            helper.setInFreeformWorkspace(true);
-            
-            proceedWithOnCreate = false;
-            super.finish();
-        }
-
         if(proceedWithOnCreate) {
             // Detect outside touches, and pass them through to the underlying activity
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
@@ -107,17 +98,16 @@ public class InvisibleActivityFreeform extends Activity {
             IntentFilter appearingReceiverFilter = new IntentFilter();
             appearingReceiverFilter.addAction("com.farmerbb.taskbar.START_MENU_APPEARING");
             appearingReceiverFilter.addAction("com.farmerbb.taskbar.CONTEXT_MENU_APPEARING");
-            appearingReceiverFilter.addAction("com.farmerbb.taskbar.DASHBOARD_APPEARING");
 
             IntentFilter disappearingReceiverFilter = new IntentFilter();
             disappearingReceiverFilter.addAction("com.farmerbb.taskbar.START_MENU_DISAPPEARING");
             disappearingReceiverFilter.addAction("com.farmerbb.taskbar.CONTEXT_MENU_DISAPPEARING");
-            disappearingReceiverFilter.addAction("com.farmerbb.taskbar.DASHBOARD_DISAPPEARING");
 
             LocalBroadcastManager.getInstance(this).registerReceiver(appearingReceiver, appearingReceiverFilter);
             LocalBroadcastManager.getInstance(this).registerReceiver(disappearingReceiver, disappearingReceiverFilter);
             LocalBroadcastManager.getInstance(this).registerReceiver(finishReceiver, new IntentFilter("com.farmerbb.taskbar.FINISH_FREEFORM_ACTIVITY"));
 
+            FreeformHackHelper helper = FreeformHackHelper.getInstance();
             helper.setFreeformHackActive(true);
 
             // Show power button warning on CyanogenMod / LineageOS devices
@@ -130,10 +120,10 @@ public class InvisibleActivityFreeform extends Activity {
 
                             switch(pref.getString("theme", "light")) {
                                 case "light":
-                                    intent = new Intent(this, InvisibleActivityAlt.class);
+                                    intent = new Intent(InvisibleActivityFreeform.this, InvisibleActivityAlt.class);
                                     break;
                                 case "dark":
-                                    intent = new Intent(this, InvisibleActivityAltDark.class);
+                                    intent = new Intent(InvisibleActivityFreeform.this, InvisibleActivityAltDark.class);
                                     break;
                             }
 
@@ -168,6 +158,12 @@ public class InvisibleActivityFreeform extends Activity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        possiblyHideTaskbar();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
 
@@ -192,49 +188,29 @@ public class InvisibleActivityFreeform extends Activity {
 
         FreeformHackHelper.getInstance().setInFreeformWorkspace(true);
 
-        if(U.launcherIsDefault(this) && !U.isChromeOs(this)) {
+        if(U.launcherIsDefault(this)) {
             LauncherHelper.getInstance().setOnHomeScreen(true);
             bootToFreeform = true;
-
-            SharedPreferences pref = U.getSharedPreferences(this);
-            if(pref.getBoolean("first_run", true)) {
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putBoolean("first_run", false);
-                editor.putBoolean("collapsed", true);
-                editor.apply();
-
-                new Handler().postDelayed(() -> {
-                    Intent intent = new Intent(this, DummyActivity.class);
-                    intent.putExtra("show_recent_apps_dialog", true);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                    startActivity(intent);
-                }, 250);
-            }
 
             // We always start the Taskbar and Start Menu services, even if the app isn't normally running
             startService(new Intent(this, TaskbarService.class));
             startService(new Intent(this, StartMenuService.class));
             startService(new Intent(this, DashboardService.class));
 
+            SharedPreferences pref = U.getSharedPreferences(this);
             if(pref.getBoolean("taskbar_active", false) && !U.isServiceRunning(this, NotificationService.class))
                 pref.edit().putBoolean("taskbar_active", false).apply();
 
             // Show the taskbar when activity is started
-            if(showTaskbar)
-                new Handler().postDelayed(() -> LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.SHOW_TASKBAR")), 100);
+            new Handler().postDelayed(() -> {
+                if(showTaskbar)
+                    LocalBroadcastManager.getInstance(InvisibleActivityFreeform.this).sendBroadcast(new Intent("com.farmerbb.taskbar.SHOW_TASKBAR"));
+            }, 100);
         }
 
         // Show the taskbar when activity is started
         if(showTaskbar)
             LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.SHOW_TASKBAR"));
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        possiblyHideTaskbar();
     }
 
     @Override
@@ -266,18 +242,21 @@ public class InvisibleActivityFreeform extends Activity {
     public void finish() {}
 
     private void possiblyHideTaskbar() {
-        if(!doNotHide) {
-            new Handler().postDelayed(() -> {
-                if(U.shouldCollapse(this, false) && !LauncherHelper.getInstance().isOnHomeScreen())
+        new Handler().postDelayed(() -> {
+            if(!doNotHide) {
+                SharedPreferences pref = U.getSharedPreferences(InvisibleActivityFreeform.this);
+                if(pref.getBoolean("hide_taskbar", true)
+                        && !FreeformHackHelper.getInstance().isInFreeformWorkspace()
+                        && !LauncherHelper.getInstance().isOnHomeScreen())
                     LocalBroadcastManager.getInstance(InvisibleActivityFreeform.this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_TASKBAR"));
                 else
                     LocalBroadcastManager.getInstance(InvisibleActivityFreeform.this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
-            }, 100);
-        }
+            }
+        }, 100);
     }
 
     private void reallyFinish() {
-        super.finish();
+        InvisibleActivityFreeform.super.finish();
         overridePendingTransition(0, 0);
 
         if(!finish) {

@@ -21,8 +21,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.LauncherActivityInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.UserManager;
@@ -59,33 +57,20 @@ public class IconCache {
         UserManager userManager = (UserManager) context.getSystemService(Context.USER_SERVICE);
         String name = appInfo.getComponentName().flattenToString() + ":" + userManager.getSerialNumberForUser(appInfo.getUser());
 
-        BitmapDrawable drawable;
+        Drawable drawable;
+        Drawable loadedIcon = null;
 
         synchronized (drawables) {
             drawable = drawables.get(name);
             if(drawable == null) {
-                Drawable loadedIcon = loadIcon(context, pm, appInfo);
+                loadedIcon = loadIcon(context, pm, appInfo);
 
                 if(loadedIcon instanceof BitmapDrawable)
-                    drawable = (BitmapDrawable) loadedIcon;
-                else {
-                    int width = Math.max(loadedIcon.getIntrinsicWidth(), 1);
-                    int height = Math.max(loadedIcon.getIntrinsicHeight(), 1);
-
-                    Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-                    Canvas canvas = new Canvas(bitmap);
-
-                    loadedIcon.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-                    loadedIcon.draw(canvas);
-
-                    drawable = new BitmapDrawable(context.getResources(), bitmap);
-                }
-
-                drawables.put(name, drawable);
+                    drawables.put(name, (BitmapDrawable) loadedIcon);
             }
         }
 
-        return drawable;
+        return drawable == null ? loadedIcon : drawable;
     }
 
     private Drawable loadIcon(Context context, PackageManager pm, LauncherActivityInfo appInfo) {
@@ -103,16 +88,16 @@ public class IconCache {
         }
 
         if(iconPackPackage.equals(BuildConfig.APPLICATION_ID))
-            return getIcon(pm, appInfo);
+            return appInfo.getBadgedIcon(0);
         else {
             IconPack iconPack = iconPackManager.getIconPack(iconPackPackage);
             String componentName = new ComponentName(appInfo.getApplicationInfo().packageName, appInfo.getName()).toString();
 
             if(!useMask) {
                 Drawable icon = iconPack.getDrawableIconForPackage(context, componentName);
-                return icon == null ? getIcon(pm, appInfo) : icon;
+                return icon == null ? appInfo.getBadgedIcon(0) : icon;
             } else {
-                Drawable drawable = getIcon(pm, appInfo);
+                Drawable drawable = appInfo.getBadgedIcon(0);
                 if(drawable instanceof BitmapDrawable) {
                     return new BitmapDrawable(context.getResources(),
                             iconPack.getIconForPackage(context, componentName, ((BitmapDrawable) drawable).getBitmap()));
@@ -128,13 +113,5 @@ public class IconCache {
         drawables.evictAll();
         IconPackManager.getInstance().nullify();
         System.gc();
-    }
-
-    private Drawable getIcon(PackageManager pm, LauncherActivityInfo appInfo) {
-        try {
-            return appInfo.getBadgedIcon(0);
-        } catch (NullPointerException e) {
-            return pm.getDefaultActivityIcon();
-        }
     }
 }

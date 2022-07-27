@@ -15,6 +15,7 @@
 
 package com.farmerbb.taskbar.adapter;
 
+import android.app.ActivityOptions;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -23,13 +24,14 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.hardware.display.DisplayManager;
 import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.graphics.ColorUtils;
-import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.PointerIcon;
@@ -44,7 +46,6 @@ import com.farmerbb.taskbar.R;
 import com.farmerbb.taskbar.activity.ContextMenuActivity;
 import com.farmerbb.taskbar.activity.dark.ContextMenuActivityDark;
 import com.farmerbb.taskbar.util.AppEntry;
-import com.farmerbb.taskbar.util.ApplicationType;
 import com.farmerbb.taskbar.util.FreeformHackHelper;
 import com.farmerbb.taskbar.util.TopApps;
 import com.farmerbb.taskbar.util.U;
@@ -71,7 +72,7 @@ public class StartMenuAdapter extends ArrayAdapter<AppEntry> {
 
         final SharedPreferences pref = U.getSharedPreferences(getContext());
 
-        TextView textView = U.findViewById(convertView, R.id.name);
+        TextView textView = (TextView) convertView.findViewById(R.id.name);
         textView.setText(entry.getLabel());
 
         Intent intent = new Intent();
@@ -90,10 +91,10 @@ public class StartMenuAdapter extends ArrayAdapter<AppEntry> {
                 break;
         }
 
-        ImageView imageView = U.findViewById(convertView, R.id.icon);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.icon);
         imageView.setImageDrawable(entry.getIcon(getContext()));
 
-        LinearLayout layout = U.findViewById(convertView, R.id.entry);
+        LinearLayout layout = (LinearLayout) convertView.findViewById(R.id.entry);
         layout.setOnClickListener(view -> {
             LocalBroadcastManager.getInstance(getContext()).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
             U.launchApp(getContext(), entry.getPackageName(), entry.getComponentName(), entry.getUserId(getContext()), null, false, false);
@@ -116,13 +117,13 @@ public class StartMenuAdapter extends ArrayAdapter<AppEntry> {
                 openContextMenu(entry, location);
             }
 
-            if(action == MotionEvent.ACTION_SCROLL && U.visualFeedbackEnabled(getContext()))
+            if(action == MotionEvent.ACTION_SCROLL && pref.getBoolean("visual_feedback", true))
                 view.setBackgroundColor(0);
 
             return false;
         });
 
-        if(U.visualFeedbackEnabled(getContext())) {
+        if(pref.getBoolean("visual_feedback", true)) {
             layout.setOnHoverListener((v, event) -> {
                 if(event.getAction() == MotionEvent.ACTION_HOVER_ENTER) {
                     int backgroundTint = pref.getBoolean("transparent_start_menu", false)
@@ -142,9 +143,7 @@ public class StartMenuAdapter extends ArrayAdapter<AppEntry> {
 
                 return false;
             });
-        }
 
-        if(pref.getBoolean("visual_feedback", true)) {
             layout.setOnTouchListener((v, event) -> {
                 v.setAlpha(event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE ? 0.5f : 1);
                 return false;
@@ -161,7 +160,7 @@ public class StartMenuAdapter extends ArrayAdapter<AppEntry> {
 
     @SuppressWarnings("deprecation")
     private void openContextMenu(final AppEntry entry, final int[] location) {
-        LocalBroadcastManager.getInstance(getContext()).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU_NO_RESET"));
+        LocalBroadcastManager.getInstance(getContext()).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
 
         new Handler().postDelayed(() -> {
             SharedPreferences pref = U.getSharedPreferences(getContext());
@@ -188,12 +187,10 @@ public class StartMenuAdapter extends ArrayAdapter<AppEntry> {
             }
 
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && FreeformHackHelper.getInstance().isInFreeformWorkspace()) {
-                DisplayMetrics metrics = U.getRealDisplayMetrics(getContext());
+                DisplayManager dm = (DisplayManager) getContext().getSystemService(Context.DISPLAY_SERVICE);
+                Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
 
-                if(intent != null && U.hasBrokenSetLaunchBoundsApi())
-                    intent.putExtra("context_menu_fix", true);
-
-                getContext().startActivity(intent, U.getActivityOptions(ApplicationType.CONTEXT_MENU).setLaunchBounds(new Rect(0, 0, metrics.widthPixels, metrics.heightPixels)).toBundle());
+                getContext().startActivity(intent, ActivityOptions.makeBasic().setLaunchBounds(new Rect(0, 0, display.getWidth(), display.getHeight())).toBundle());
             } else
                 getContext().startActivity(intent);
         }, shouldDelay() ? 100 : 0);

@@ -60,8 +60,8 @@ public class IconPackActivity extends AppCompatActivity {
         setFinishOnTouchOutside(false);
         setTitle(R.string.icon_pack);
 
-        progressBar = U.findViewById(this, R.id.progress_bar);
-        appList = U.findViewById(this, R.id.list);
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        appList = (ListView) findViewById(R.id.list);
 
         appListGenerator = new AppListGenerator();
         appListGenerator.execute();
@@ -98,11 +98,11 @@ public class IconPackActivity extends AppCompatActivity {
             final IconPack entry = getItem(position);
             assert entry != null;
 
-            TextView textView = U.findViewById(convertView, R.id.name);
+            TextView textView = (TextView) convertView.findViewById(R.id.name);
             textView.setText(entry.getName());
 
             PackageManager pm = getPackageManager();
-            ImageView imageView = U.findViewById(convertView, R.id.icon);
+            ImageView imageView = (ImageView) convertView.findViewById(R.id.icon);
 
             if(entry.getPackageName().equals(BuildConfig.APPLICATION_ID)) {
                 imageView.setImageDrawable(null);
@@ -114,7 +114,7 @@ public class IconPackActivity extends AppCompatActivity {
                 }
             }
 
-            LinearLayout layout = U.findViewById(convertView, R.id.entry);
+            LinearLayout layout = (LinearLayout) convertView.findViewById(R.id.entry);
             layout.setOnClickListener(view -> {
                 SharedPreferences pref = U.getSharedPreferences(IconPackActivity.this);
                 pref.edit().putString("icon_pack", entry.getPackageName()).apply();
@@ -142,7 +142,7 @@ public class IconPackActivity extends AppCompatActivity {
     private final class AppListGenerator extends AsyncTask<Void, Void, AppListAdapter> {
         @Override
         protected AppListAdapter doInBackground(Void... params) {
-            List<IconPack> list = IconPackManager.getInstance().getAvailableIconPacks(IconPackActivity.this);
+            List<IconPack> list = IconPackManager.getInstance().getAvailableIconPacks(IconPackActivity.this, true);
             if(list.isEmpty())
                 return null;
             else {

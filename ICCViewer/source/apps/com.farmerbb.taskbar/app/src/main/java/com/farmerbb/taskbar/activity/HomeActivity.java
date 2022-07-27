@@ -15,22 +15,23 @@
 
 package com.farmerbb.taskbar.activity;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.WallpaperManager;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.DisplayMetrics;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.view.ContextThemeWrapper;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -48,15 +49,25 @@ import com.farmerbb.taskbar.util.U;
 public class HomeActivity extends Activity {
 
     private boolean forceTaskbarStart = false;
-    private AlertDialog dialog;
-
-    private boolean shouldDelayFreeformHack;
-    private int hits;
 
     private BroadcastReceiver killReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            killHomeActivity();
+            LauncherHelper.getInstance().setOnHomeScreen(false);
+
+            // Stop the Taskbar and Start Menu services if they should normally not be active
+            SharedPreferences pref = U.getSharedPreferences(HomeActivity.this);
+            if(!pref.getBoolean("taskbar_active", false) || pref.getBoolean("is_hidden", false)) {
+                stopService(new Intent(HomeActivity.this, TaskbarService.class));
+                stopService(new Intent(HomeActivity.this, StartMenuService.class));
+                stopService(new Intent(HomeActivity.this, DashboardService.class));
+
+                IconCache.getInstance(context).clearCache();
+
+                LocalBroadcastManager.getInstance(HomeActivity.this).sendBroadcast(new Intent("com.farmerbb.taskbar.FINISH_FREEFORM_ACTIVITY"));
+            }
+
+            finish();
         }
     };
 
@@ -67,38 +78,13 @@ public class HomeActivity extends Activity {
         }
     };
 
-    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        shouldDelayFreeformHack = true;
-        hits = 0;
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        View view = new View(this) {
-            @Override
-            protected void onAttachedToWindow() {
-                super.onAttachedToWindow();
-
-                WallpaperManager wallpaperManager = (WallpaperManager) getSystemService(WALLPAPER_SERVICE);
-                wallpaperManager.setWallpaperOffsets(getWindowToken(), 0.5f, 0.5f);
-
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    DisplayMetrics metrics = U.getRealDisplayMetrics(HomeActivity.this);
-                    wallpaperManager.suggestDesiredDimensions(metrics.widthPixels, metrics.heightPixels);
-                }
-
-                boolean shouldStartFreeformHack = shouldDelayFreeformHack && hits > 0;
-                shouldDelayFreeformHack = false;
-
-                if(shouldStartFreeformHack)
-                    startFreeformHack();
-            }
-        };
-
-        view.setOnClickListener(view1 -> LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU")));
+        View view = new View(this);
+        view.setOnClickListener(view1 -> LocalBroadcastManager.getInstance(HomeActivity.this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU")));
 
         view.setOnLongClickListener(view12 -> {
             setWallpaper();
@@ -149,7 +135,17 @@ public class HomeActivity extends Activity {
                     if(pref.getBoolean("double_tap_to_sleep", false)) {
                         U.lockDevice(HomeActivity.this);
                     } else {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(U.wrapContext(HomeActivity.this));
+                        int theme = -1;
+                        switch(pref.getString("theme", "light")) {
+                            case "light":
+                                theme = R.style.AppTheme;
+                                break;
+                            case "dark":
+                                theme = R.style.AppTheme_Dark;
+                                break;
+                        }
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(HomeActivity.this, theme));
                         builder.setTitle(R.string.double_tap_to_sleep)
                                 .setMessage(R.string.enable_double_tap_to_sleep)
                                 .setNegativeButton(pref.getBoolean("double_tap_dialog_shown", false)
@@ -187,25 +183,14 @@ public class HomeActivity extends Activity {
             return false;
         });
 
-        if(U.isChromeOs(this))
-            killHomeActivity();
-        else
-            setContentView(view);
+        setContentView(view);
 
         LocalBroadcastManager.getInstance(this).registerReceiver(killReceiver, new IntentFilter("com.farmerbb.taskbar.KILL_HOME_ACTIVITY"));
         LocalBroadcastManager.getInstance(this).registerReceiver(forceTaskbarStartReceiver, new IntentFilter("com.farmerbb.taskbar.FORCE_TASKBAR_RESTART"));
-
-        SharedPreferences pref = U.getSharedPreferences(this);
-        pref.edit().putBoolean("launcher", true).apply();
-
-        U.initPrefs(this);
     }
 
     private void setWallpaper() {
-        if(U.shouldCollapse(this, true))
-            LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.TEMP_HIDE_TASKBAR"));
-        else
-            LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
+        LocalBroadcastManager.getInstance(HomeActivity.this).sendBroadcast(new Intent("com.farmerbb.taskbar.TEMP_HIDE_TASKBAR"));
 
         try {
             startActivity(Intent.createChooser(new Intent(Intent.ACTION_SET_WALLPAPER), getString(R.string.set_wallpaper)));
@@ -219,9 +204,9 @@ public class HomeActivity extends Activity {
         super.onResume();
 
         if(bootToFreeform()) {
-            if(U.launcherIsDefault(this))
-                startFreeformHack();
-            else {
+            if(U.launcherIsDefault(this)) {
+                U.startFreeformHack(this, false, false);
+            } else {
                 U.showToastLong(this, R.string.set_as_default_home);
 
                 Intent homeIntent = new Intent(Intent.ACTION_MAIN);
@@ -242,9 +227,9 @@ public class HomeActivity extends Activity {
     protected void onStart() {
         super.onStart();
 
-        LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
+        LocalBroadcastManager.getInstance(HomeActivity.this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
 
-        if(U.canDrawOverlays(this)) {
+        if(canDrawOverlays()) {
             if(!bootToFreeform()) {
                 final LauncherHelper helper = LauncherHelper.getInstance();
                 helper.setOnHomeScreen(true);
@@ -257,12 +242,15 @@ public class HomeActivity extends Activity {
                     }, 250);
                 } else
                     startTaskbar();
-            } else if(U.launcherIsDefault(this))
-                startFreeformHack();
-        } else
-            dialog = U.showPermissionDialog(U.wrapContext(this),
-                    () -> dialog = U.showErrorDialog(U.wrapContext(this), "SYSTEM_ALERT_WINDOW"),
-                    null);
+            }
+        } else {
+            ComponentName component = new ComponentName(this, HomeActivity.class);
+            getPackageManager().setComponentEnabledSetting(component,
+                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                    PackageManager.DONT_KILL_APP);
+
+            finish();
+        }
     }
 
     private boolean bootToFreeform() {
@@ -273,35 +261,17 @@ public class HomeActivity extends Activity {
     }
 
     private void startTaskbar() {
-        SharedPreferences pref = U.getSharedPreferences(this);
-        if(pref.getBoolean("first_run", true)) {
-            SharedPreferences.Editor editor = pref.edit();
-            editor.putBoolean("first_run", false);
-            editor.putBoolean("collapsed", true);
-            editor.apply();
-
-            dialog = U.showRecentAppsDialog(U.wrapContext(this),
-                    () -> dialog = U.showErrorDialog(U.wrapContext(this), "GET_USAGE_STATS"),
-                    null);
-        }
-
         // We always start the Taskbar and Start Menu services, even if the app isn't normally running
         startService(new Intent(this, TaskbarService.class));
         startService(new Intent(this, StartMenuService.class));
         startService(new Intent(this, DashboardService.class));
 
+        SharedPreferences pref = U.getSharedPreferences(this);
         if(pref.getBoolean("taskbar_active", false) && !U.isServiceRunning(this, NotificationService.class))
             pref.edit().putBoolean("taskbar_active", false).apply();
 
         // Show the Taskbar temporarily, as nothing else will be visible on screen
         new Handler().postDelayed(() -> LocalBroadcastManager.getInstance(HomeActivity.this).sendBroadcast(new Intent("com.farmerbb.taskbar.TEMP_SHOW_TASKBAR")), 100);
-    }
-
-    private void startFreeformHack() {
-        if(shouldDelayFreeformHack)
-            hits++;
-        else
-            U.startFreeformHack(this, false, false);
     }
 
     @Override
@@ -312,10 +282,7 @@ public class HomeActivity extends Activity {
         if(!bootToFreeform()) {
             LauncherHelper.getInstance().setOnHomeScreen(false);
 
-            if(U.shouldCollapse(this, true))
-                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.TEMP_HIDE_TASKBAR"));
-            else
-                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
+            LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.TEMP_HIDE_TASKBAR"));
 
             // Stop the Taskbar and Start Menu services if they should normally not be active
             if(!pref.getBoolean("taskbar_active", false) || pref.getBoolean("is_hidden", false)) {
@@ -325,11 +292,6 @@ public class HomeActivity extends Activity {
 
                 IconCache.getInstance(this).clearCache();
             }
-        }
-
-        if(dialog != null) {
-            dialog.dismiss();
-            dialog = null;
         }
     }
 
@@ -345,22 +307,9 @@ public class HomeActivity extends Activity {
     public void onBackPressed() {
         LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.HIDE_START_MENU"));
     }
-    
-    private void killHomeActivity() {
-        LauncherHelper.getInstance().setOnHomeScreen(false);
 
-        // Stop the Taskbar and Start Menu services if they should normally not be active
-        SharedPreferences pref = U.getSharedPreferences(this);
-        if(!pref.getBoolean("taskbar_active", false) || pref.getBoolean("is_hidden", false)) {
-            stopService(new Intent(this, TaskbarService.class));
-            stopService(new Intent(this, StartMenuService.class));
-            stopService(new Intent(this, DashboardService.class));
-
-            IconCache.getInstance(this).clearCache();
-
-            LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.FINISH_FREEFORM_ACTIVITY"));
-        }
-
-        finish();
+    @TargetApi(Build.VERSION_CODES.M)
+    private boolean canDrawOverlays() {
+        return Build.VERSION.SDK_INT < Build.VERSION_CODES.M || Settings.canDrawOverlays(this);
     }
 }

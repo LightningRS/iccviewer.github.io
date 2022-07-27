@@ -25,7 +25,8 @@
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="keyboard_shortcut"
-        android:title="@string/pref_title_keyboard_shortcut" />
+        android:title="@string/pref_title_keyboard_shortcut"
+        android:summary="@string/pref_description_keyboard_shortcut" />
 
     <CheckBoxPreference
         android:defaultValue="false"
@@ -36,16 +37,6 @@
     <Preference
         android:key="dashboard_grid_size"
         android:title="@string/dashboard_grid_size" />
-
-    <Preference
-        android:key="navigation_bar_buttons"
-        android:title="@string/navigation_bar_buttons"
-        android:summary="@string/navigation_bar_buttons_description" />
-
-    <Preference
-        android:key="secondscreen"
-        android:summary="@string/pref_secondscreen_description"
-        android:widgetLayout="@layout/secondscreen_pref_widget"/>
 
     <Preference
         android:key="clear_pinned_apps"

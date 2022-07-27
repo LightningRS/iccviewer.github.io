@@ -32,27 +32,24 @@ import com.farmerbb.taskbar.util.U;
 public class QuitReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+        Intent taskbarIntent = new Intent(context, TaskbarService.class);
+        Intent startMenuIntent = new Intent(context, StartMenuService.class);
+        Intent dashboardIntent = new Intent(context, DashboardService.class);
+        Intent notificationIntent = new Intent(context, NotificationService.class);
+
         SharedPreferences pref = U.getSharedPreferences(context);
-        if(!pref.getBoolean("skip_quit_receiver", false)) {
-            Intent taskbarIntent = new Intent(context, TaskbarService.class);
-            Intent startMenuIntent = new Intent(context, StartMenuService.class);
-            Intent dashboardIntent = new Intent(context, DashboardService.class);
-            Intent notificationIntent = new Intent(context, NotificationService.class);
+        pref.edit().putBoolean("taskbar_active", false).apply();
 
-            pref.edit().putBoolean("taskbar_active", false).apply();
+        if(!LauncherHelper.getInstance().isOnHomeScreen()) {
+            context.stopService(taskbarIntent);
+            context.stopService(startMenuIntent);
+            context.stopService(dashboardIntent);
 
-            if(!LauncherHelper.getInstance().isOnHomeScreen()) {
-                context.stopService(taskbarIntent);
-                context.stopService(startMenuIntent);
-                context.stopService(dashboardIntent);
+            IconCache.getInstance(context).clearCache();
 
-                IconCache.getInstance(context).clearCache();
+            LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent("com.farmerbb.taskbar.START_MENU_DISAPPEARING"));
+        }
 
-                LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent("com.farmerbb.taskbar.START_MENU_DISAPPEARING"));
-            }
-
-            context.stopService(notificationIntent);
-        } else
-            pref.edit().remove("skip_quit_receiver").apply();
+        context.stopService(notificationIntent);
     }
 }

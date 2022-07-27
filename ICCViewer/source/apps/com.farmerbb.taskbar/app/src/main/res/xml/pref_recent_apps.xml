@@ -49,8 +49,7 @@
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="hide_foreground"
-        android:title="@string/pref_title_hide_foreground"
-        android:summary="@string/pref_summary_hide_foreground"/>
+        android:title="@string/pref_title_hide_foreground"/>
 
     <CheckBoxPreference
         android:defaultValue="false"
@@ -61,11 +60,6 @@
         android:defaultValue="false"
         android:key="disable_scrolling_list"
         android:title="@string/disable_scrolling_list"/>
-
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="full_length"
-        android:title="@string/full_length"/>
 
     <PreferenceCategory android:key="dummy" android:title="\n\n" />
 

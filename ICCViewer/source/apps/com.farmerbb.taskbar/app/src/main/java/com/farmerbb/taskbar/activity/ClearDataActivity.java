@@ -28,7 +28,6 @@ import com.farmerbb.taskbar.util.Blacklist;
 import com.farmerbb.taskbar.util.PinnedBlockedApps;
 import com.farmerbb.taskbar.util.SavedWindowSizes;
 import com.farmerbb.taskbar.util.TopApps;
-import com.farmerbb.taskbar.util.U;
 
 public class ClearDataActivity extends AppCompatActivity {
 
@@ -55,35 +54,35 @@ public class ClearDataActivity extends AppCompatActivity {
         setContentView(R.layout.clear_data);
         setTitle(R.string.clear_pinned_apps);
 
-        pba = U.findViewById(this, R.id.clear_pba);
+        pba = (CheckBox) findViewById(R.id.clear_pba);
         pba.setOnCheckedChangeListener(listener);
         
-        hiddenApps = U.findViewById(this, R.id.clear_hidden_apps);
+        hiddenApps = (CheckBox) findViewById(R.id.clear_hidden_apps);
         hiddenApps.setOnCheckedChangeListener(listener);
         
-        topApps = U.findViewById(this, R.id.clear_top_apps);
+        topApps = (CheckBox) findViewById(R.id.clear_top_apps);
         topApps.setOnCheckedChangeListener(listener);
         
-        savedWindowSizes = U.findViewById(this, R.id.clear_window_sizes);
+        savedWindowSizes = (CheckBox) findViewById(R.id.clear_window_sizes);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
             savedWindowSizes.setOnCheckedChangeListener(listener);
         else
             savedWindowSizes.setVisibility(View.GONE);
         
-        button = U.findViewById(this, R.id.button);
+        button = (Button) findViewById(R.id.button);
         button.setText(getResources().getString(R.string.action_close).toUpperCase());
         button.setOnClickListener(view -> {
             if(pba.isChecked())
-                PinnedBlockedApps.getInstance(this).clear(this);
+                PinnedBlockedApps.getInstance(ClearDataActivity.this).clear(ClearDataActivity.this);
 
             if(hiddenApps.isChecked())
-                Blacklist.getInstance(this).clear(this);
+                Blacklist.getInstance(ClearDataActivity.this).clear(ClearDataActivity.this);
 
             if(topApps.isChecked())
-                TopApps.getInstance(this).clear(this);
+                TopApps.getInstance(ClearDataActivity.this).clear(ClearDataActivity.this);
 
             if(savedWindowSizes.isChecked())
-                SavedWindowSizes.getInstance(this).clear(this);
+                SavedWindowSizes.getInstance(ClearDataActivity.this).clear(ClearDataActivity.this);
 
             finish();
         });

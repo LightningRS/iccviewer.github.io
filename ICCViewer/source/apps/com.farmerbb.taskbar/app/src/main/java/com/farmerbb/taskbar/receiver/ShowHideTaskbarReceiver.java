@@ -19,17 +19,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
 
-import com.farmerbb.taskbar.activity.DummyActivity;
 import com.farmerbb.taskbar.service.DashboardService;
 import com.farmerbb.taskbar.service.NotificationService;
 import com.farmerbb.taskbar.service.StartMenuService;
 import com.farmerbb.taskbar.service.TaskbarService;
 import com.farmerbb.taskbar.util.IconCache;
 import com.farmerbb.taskbar.util.LauncherHelper;
-import com.farmerbb.taskbar.util.CompatUtils;
 import com.farmerbb.taskbar.util.U;
 
 public class ShowHideTaskbarReceiver extends BroadcastReceiver {
@@ -45,18 +42,11 @@ public class ShowHideTaskbarReceiver extends BroadcastReceiver {
             pref.edit().putBoolean("is_hidden", false).apply();
 
             context.stopService(notificationIntent);
+            context.startService(taskbarIntent);
+            context.startService(startMenuIntent);
+            context.startService(dashboardIntent);
+            context.startService(notificationIntent);
 
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && pref.getBoolean("freeform_hack", false)) {
-                Intent intent2 = new Intent(context, DummyActivity.class);
-                intent2.putExtra("start_freeform_hack", true);
-                intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                context.startActivity(intent2);
-            }
-
-            notificationIntent.putExtra("start_services", true);
-
-            CompatUtils.startForegroundService(context, notificationIntent);
         } else {
             pref.edit().putBoolean("is_hidden", true).apply();
 
@@ -72,7 +62,7 @@ public class ShowHideTaskbarReceiver extends BroadcastReceiver {
                 LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent("com.farmerbb.taskbar.START_MENU_DISAPPEARING"));
             }
 
-            CompatUtils.startForegroundService(context, notificationIntent);
+            context.startService(notificationIntent);
         }
     }
 }

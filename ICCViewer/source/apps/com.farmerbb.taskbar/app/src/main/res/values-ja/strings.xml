@@ -17,15 +17,13 @@
 <resources>
 
     <string name="app_name">Taskbar</string>
-    <string name="app_name_debug">Taskbar (デバッグ)</string>
-    <string name="debug_build">デバッグビルド</string>
+    <string name="app_name_debug">Taskbar (Debug)</string>
+    <string name="debug_build">Debug build</string>
 
     <string name="taskbar_is_active">Taskbar はアクティブです</string>
     <string name="click_to_open_settings">クリックすると設定を開きます</string>
     <string name="action_show">Taskbar を表示</string>
     <string name="action_hide">Taskbar を非表示</string>
-    <string name="action_show_alt">@string/action_show</string>
-    <string name="action_hide_alt">@string/action_hide</string>
     <string name="action_quit">終了</string>
     <string name="action_grant_permission">アクセス許可を付与</string>
 
@@ -52,13 +50,6 @@
     <string-array name="pref_recents_amount">
         <item>経過日内</item>
         <item>Taskbar 開始後</item>
-        <item>All apps (may reduce performance)</item>
-    </string-array>
-    <string-array name="pref_recents_amount_alt">
-        <item>経過日内</item>
-        <item>Taskbar 開始後</item>
-        <item>All apps (may reduce performance)</item>
-        <item>Running apps only</item>
     </string-array>
 
     <string name="pref_title_sort_order">並び順</string>
@@ -68,10 +59,6 @@
         <item>長時間使用した (降順)</item>
         <item>長時間使用した (昇順)</item>
     </string-array>
-    <string-array name="pref_sort_order_alt">
-        <item>最近使用した (降順)</item>
-        <item>最近使用した (昇順)</item>
-    </string-array>
 
     <string name="pref_header_advanced">詳細</string>
 
@@ -79,8 +66,7 @@
     <string name="pref_description_freeform_hack">Taskbar がよりデスクトップライクな操作のフリーフォーム ウインドウ モードでアプリを起動できるようにします。\n\nこの機能は実験的で、標準の分割画面マルチタスクで問題が発生する可能性があります。</string>
 
     <string name="pref_header_about">Taskbar について</string>
-    <string name="pref_about_description">Taskbar: 指先でスタートメニューと最近使用したアプリ\n\n&#169; 2018 Braden Farmer\n\nここをクリックして更新の確認、または評価してください! %1$s</string>
-    <string name="pref_about_description_alt">Taskbar: 指先でスタートメニューと最近使用したアプリ\n\n&#169; 2018 Braden Farmer</string>
+    <string name="pref_about_description">Taskbar: 指先でスタートメニューと最近使用したアプリ\n\n&#169; 2017 Braden Farmer\n\nここをクリックして更新の確認、または評価してください! %1$s</string>
 
     <string name="pref_title_hide_taskbar">アプリを選択したときに Taskbar を折りたたむ</string>
 
@@ -109,7 +95,6 @@
 
     <string name="pref_title_keyboard_shortcut">キーボードショートカットを有効にする</string>
     <string name="pref_description_keyboard_shortcut">Taskbar の開始/停止\n&#8226; Winキー+M, 検索+M\n\nデバイスのロック\n&#8226; Winキー+L, 検索+L\n\nスタートメニューを表示\n&#8226; Winキー, 検索\n(設定で Taskbar を検索アシスタントとして設定が必要)</string>
-    <string name="pref_description_keyboard_shortcut_alt">@string/pref_description_keyboard_shortcut</string>
     <string name="loading_apps">アプリのロード中&#8230;</string>
     <string name="press_enter">アプリが見つかりません\n\nEnter を押すと Google で検索します</string>
     <string name="nothing_to_see_here">ここには何もありません&#8230;</string>
@@ -126,7 +111,6 @@
     <string name="clear_pinned_apps">アプリのピン止め/ブロックをリセット</string>
 
     <string name="pref_title_hide_foreground">前面アプリケーションのアイコンを非表示</string>
-    <string name="pref_summary_hide_foreground">May reduce performance</string>
 
     <string name="pref_title_theme">テーマ</string>
     <string-array name="pref_theme_list">
@@ -255,7 +239,6 @@
     <string name="tools">ツール</string>
 
     <string name="enable_accessibility">電源メニューを表示するには Taskbar のアクセシビリティサービスを有効にする必要があります</string>
-    <string name="accessibility_service_summary">Taskbar がデバイスの電源メニューを表示できるようにします。</string>
     <string name="accessibility_service_description">Taskbar がデバイスの電源メニューを表示できるようにします。\n\n(このサービスは他の目的には使用されません)</string>
 
     <string name="pref_title_force_new_window">新しいウインドウでアプリを開くことを許可</string>
@@ -289,73 +272,14 @@
     <string name="refresh_frequency_singular">1 秒</string>
     <string name="refresh_frequency_continuous">連続</string>
 
-    <string name="power_button_warning_title">注意</string>
-    <string name="power_button_warning_message">CyanogenMod / LineageOS をベースにしたカスタム ROM は、デバイスがフリーフォームモードの間に電源ボタンが機能しない問題があります。\n\n今すぐ電源ボタンをテストしてください。 それが機能しない場合は、画面がタイムアウトした場合にデバイスをスリープ状態から復帰させる機能が失われる可能性があるため、フリーフォームモードを使用する場合は注意が必要です。</string>
-    <string name="action_i_understand">理解しました</string>
+    <string name="power_button_warning_title">Caution</string>
+    <string name="power_button_warning_message">Custom ROMs based on CyanogenMod / LineageOS have an issue where the power button does not work while the device is in freeform mode.\n\nPlease test your power button now.  If it does not work, then exercise caution when using freeform mode as you may lose the ability to wake the device from sleep if the screen times out.</string>
+    <string name="action_i_understand">I understand</string>
 
-    <string name="hide_taskbar_disclaimer">フリーフォームモードのアプリには適用しないでください</string>
-    <string name="transparent_start_menu">透明なスタートメニュー</string>
+    <string name="hide_taskbar_disclaimer">Does not apply to apps in freeform mode</string>
+    <string name="transparent_start_menu">Transparent start menu</string>
 
-    <string name="launch_games_fullscreen_title">ゲームを全画面で起動</string>
-    <string name="launch_games_fullscreen_message">アプリケーションがゲームであると宣言した場合、フリーフォームモードで起動できないようにします</string>
-
-    <string name="invalid_grid_size">グリッドサイズが無効です</string>
-
-    <string name="window_sizes_not_available">ウィンドウサイズは現在、Android 8.0 で動作ません</string>
-
-    <string name="navigation_bar_buttons">ナビゲーションバーボタン</string>
-    <string name="navigation_bar_buttons_description">ナビゲーションバーの操作を実行する追加のボタンをタスクバーに追加します</string>
-    <string name="button_back">戻る</string>
-    <string name="button_home">ホーム</string>
-    <string name="button_recents">最近使用した</string>
-
-    <string name="full_length">領域を空白で拡張する</string>
-
-    <string name="restore_widget">ウィジェットを復元</string>
-
-    <string name="samsung_freeform_title">注意</string>
-    <string name="samsung_freeform_message">マルチウィンドウモードのシステム変更により、フリーフォームモードが Samsung デバイスで動作しない可能性があります。\n\nこのデバイスでフリーフォームモードを使用するにはカスタム ROM をフラッシュする必要があります。</string>
-
-    <string name="widget_restore_toast">\"%1$s\" を選択してこのウィジェットを復元します</string>
-
-    <string name="freeform_on">Freeform on</string>
-    <string name="freeform_off">Freeform off</string>
-
-    <string name="auto_hide_navbar">Automatically control the system navigation bar</string>
-    <string name="auto_hide_navbar_description">Hide the navigation bar when Taskbar is active, and show it when Taskbar is inactive</string>
-
-    <string name="press_enter_alt">@string/press_enter</string>
-
-    <string name="freeform_dialog_message_alt">In order for Taskbar to launch apps in freeform window mode, please follow these steps:\n\n&#8226; Go to Developer Options and enable USB debugging\n\n&#8226; Connect your device to a computer with the Android SDK installed, and run the following command (one-line):\n\nadb shell settings put global enable_freeform_support 1\n\n&#8226; Reboot your device</string>
-
-    <string name="color_picker_alpha">Alpha</string>
-    <string name="color_picker_red">Red</string>
-    <string name="color_picker_green">Green</string>
-    <string name="color_picker_blue">Blue</string>
-
-    <string name="pref_title_chrome_os_context_menu_fix">Chrome OS dock compatibility fix</string>
-    <string name="pref_description_chrome_os_context_menu_fix">Enable this if using Taskbar alongside the Chrome OS dock</string>
-
-    <string name="pin_shortcut_not_supported">Your launcher doesn\'t support adding shortcuts from other apps.\n\nPlease manually add the shortcut from your launcher\'s \"Widgets\" menu.</string>
-
-    <string name="device_admin_disclosure">In order to lock your device\'s screen, Taskbar needs to be activated as a device administrator. This permission is used only to lock the screen, and for no other purpose.\n\nIf you choose to activate this, you will need to deactivate Taskbar as a device administrator prior to uninstalling.</string>
-    <string name="action_activate">Activate</string>
-
-    <string name="pref_secondscreen_title_open">Open SecondScreen</string>
-    <string name="pref_secondscreen_title_install">Install SecondScreen</string>
-    <string name="pref_secondscreen_description">Change your device\'s resolution and density when connected to an external display, for a Continuum or DeX-like experience</string>
-
-    <string name="dialog_upgrade_message">Taskbar\'s freeform mode support has not been tested on this version of Android. It may stop working completely or behave in other unexpected ways.\n\nCheck for app updates if you see any issues.</string>
-
-    <string name="use_default">Use default</string>
-
-    <string name="action_continue">Continue</string>
-
-    <string name="tasker_action_title">Select action</string>
-    <string name="tasker_condition_title">Select condition</string>
-    <string name="tasker_on">Taskbar On</string>
-    <string name="tasker_off">Taskbar Off</string>
-    <string name="on">On</string>
-    <string name="off">Off</string>
+    <string name="launch_games_fullscreen_title">Launch games fullscreen</string>
+    <string name="launch_games_fullscreen_message">If an application declares itself to be a game, disallow it from launching in freeform mode</string>
 
 </resources>

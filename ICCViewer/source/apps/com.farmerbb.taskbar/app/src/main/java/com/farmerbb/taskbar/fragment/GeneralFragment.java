@@ -29,53 +29,44 @@ import com.farmerbb.taskbar.R;
 import com.farmerbb.taskbar.activity.SelectAppActivity;
 import com.farmerbb.taskbar.activity.dark.SelectAppActivityDark;
 import com.farmerbb.taskbar.util.Blacklist;
-import com.farmerbb.taskbar.util.CompatUtils;
 import com.farmerbb.taskbar.util.TopApps;
 import com.farmerbb.taskbar.util.U;
 
 public class GeneralFragment extends SettingsFragment implements Preference.OnPreferenceClickListener {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onActivityCreated(Bundle savedInstanceState) {
         finishedLoadingPrefs = false;
 
-        super.onCreate(savedInstanceState);
-
-        // Add preferences
-        addPreferencesFromResource(R.xml.pref_general);
-
-        // Set OnClickListeners for certain preferences
-        findPreference("blacklist").setOnPreferenceClickListener(this);
-        findPreference("notification_settings").setOnPreferenceClickListener(this);
-
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && !U.isChromeOs(getActivity()))
-            findPreference("hide_taskbar").setSummary(R.string.hide_taskbar_disclaimer);
-
-        bindPreferenceSummaryToValue(findPreference("start_menu_layout"));
-        bindPreferenceSummaryToValue(findPreference("scrollbar"));
-        bindPreferenceSummaryToValue(findPreference("position"));
-        bindPreferenceSummaryToValue(findPreference("anchor"));
-        bindPreferenceSummaryToValue(findPreference("alt_button_config"));
-        bindPreferenceSummaryToValue(findPreference("show_search_bar"));
-        bindPreferenceSummaryToValue(findPreference("hide_when_keyboard_shown"));
-
-        if(U.isChromeOs(getActivity()))
-            bindPreferenceSummaryToValue(findPreference("chrome_os_context_menu_fix"));
-        else
-            getPreferenceScreen().removePreference(findPreference("chrome_os_context_menu_fix"));
-
-        finishedLoadingPrefs = true;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        if(findPreference("dummy") == null) {
+            // Add preferences
+            addPreferencesFromResource(R.xml.pref_general);
+
+            // Set OnClickListeners for certain preferences
+            findPreference("blacklist").setOnPreferenceClickListener(this);
+            findPreference("notification_settings").setOnPreferenceClickListener(this);
+
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+                findPreference("hide_taskbar").setSummary(R.string.hide_taskbar_disclaimer);
+
+            bindPreferenceSummaryToValue(findPreference("start_menu_layout"));
+            bindPreferenceSummaryToValue(findPreference("scrollbar"));
+            bindPreferenceSummaryToValue(findPreference("position"));
+            bindPreferenceSummaryToValue(findPreference("anchor"));
+            bindPreferenceSummaryToValue(findPreference("alt_button_config"));
+            bindPreferenceSummaryToValue(findPreference("show_search_bar"));
+            bindPreferenceSummaryToValue(findPreference("hide_when_keyboard_shown"));
+        }
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setTitle(R.string.pref_header_general);
         ActionBar actionBar = activity.getSupportActionBar();
         if(actionBar != null)
             actionBar.setDisplayHomeAsUpEnabled(true);
+
+        finishedLoadingPrefs = true;
     }
 
     @Override
@@ -115,14 +106,9 @@ public class GeneralFragment extends SettingsFragment implements Preference.OnPr
                 break;
             case "notification_settings":
                 Intent intent2 = new Intent();
-                intent2.setAction(CompatUtils.ACTION_APP_NOTIFICATION_SETTINGS);
-
-                if(Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1)
-                    intent2.putExtra(CompatUtils.EXTRA_APP_PACKAGE, BuildConfig.APPLICATION_ID);
-                else {
-                    intent2.putExtra("app_package", BuildConfig.APPLICATION_ID);
-                    intent2.putExtra("app_uid", getActivity().getApplicationInfo().uid);
-                }
+                intent2.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+                intent2.putExtra("app_package", BuildConfig.APPLICATION_ID);
+                intent2.putExtra("app_uid", getActivity().getApplicationInfo().uid);
 
                 try {
                     startActivity(intent2);

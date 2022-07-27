@@ -19,6 +19,7 @@ import android.app.FragmentTransaction;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,54 +41,50 @@ public class AboutFragment extends SettingsFragment implements Preference.OnPref
     private int noThanksCount = 0;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onActivityCreated(Bundle savedInstanceState) {
         finishedLoadingPrefs = false;
 
-        super.onCreate(savedInstanceState);
-
-        // Add preferences
-        addPreferencesFromResource(R.xml.pref_base);
-
-        SharedPreferences pref = U.getSharedPreferences(getActivity());
-        addPreferencesFromResource(R.xml.pref_about);
-
-        if(BuildConfig.APPLICATION_ID.equals(BuildConfig.BASE_APPLICATION_ID)
-                && U.isPlayStoreInstalled(getActivity())
-                && !U.isSystemApp(getActivity())
-                && !pref.getBoolean("hide_donate", false)) {
-            findPreference("donate").setOnPreferenceClickListener(this);
-        } else
-            getPreferenceScreen().removePreference(findPreference("donate_category"));
-
-        // Set OnClickListeners for certain preferences
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-            findPreference("pref_screen_freeform").setOnPreferenceClickListener(this);
-        else
-            getPreferenceScreen().removePreference(findPreference("pref_screen_freeform"));
-
-        findPreference("pref_screen_general").setOnPreferenceClickListener(this);
-        findPreference("pref_screen_appearance").setOnPreferenceClickListener(this);
-        findPreference("pref_screen_recent_apps").setOnPreferenceClickListener(this);
-        findPreference("pref_screen_advanced").setOnPreferenceClickListener(this);
-
-        if(!BuildConfig.APPLICATION_ID.equals(BuildConfig.ANDROIDX86_APPLICATION_ID)) {
-            findPreference("about").setSummary(getString(R.string.pref_about_description, new String(Character.toChars(0x1F601))));
-            findPreference("about").setOnPreferenceClickListener(this);
-        } else
-            findPreference("about").setSummary(R.string.pref_about_description_alt);
-
-        finishedLoadingPrefs = true;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        if(findPreference("dummy") == null) {
+            // Add preferences
+            addPreferencesFromResource(R.xml.pref_base);
+
+            boolean playStoreInstalled = true;
+            try {
+                getActivity().getPackageManager().getPackageInfo("com.android.vending", 0);
+            } catch (PackageManager.NameNotFoundException e) {
+                playStoreInstalled = false;
+            }
+
+            SharedPreferences pref = U.getSharedPreferences(getActivity());
+            if(BuildConfig.APPLICATION_ID.equals(BuildConfig.BASE_APPLICATION_ID)
+                    && playStoreInstalled
+                    && !pref.getBoolean("hide_donate", false)) {
+                addPreferencesFromResource(R.xml.pref_about_donate);
+                findPreference("donate").setOnPreferenceClickListener(this);
+            } else
+                addPreferencesFromResource(R.xml.pref_about);
+
+            // Set OnClickListeners for certain preferences
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+                findPreference("pref_screen_freeform").setOnPreferenceClickListener(this);
+
+            findPreference("pref_screen_general").setOnPreferenceClickListener(this);
+            findPreference("pref_screen_appearance").setOnPreferenceClickListener(this);
+            findPreference("pref_screen_recent_apps").setOnPreferenceClickListener(this);
+            findPreference("pref_screen_advanced").setOnPreferenceClickListener(this);
+            findPreference("about").setOnPreferenceClickListener(this);
+            findPreference("about").setSummary(getString(R.string.pref_about_description, new String(Character.toChars(0x1F601))));
+        }
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setTitle(R.string.app_name);
         ActionBar actionBar = activity.getSupportActionBar();
         if(actionBar != null)
             actionBar.setDisplayHomeAsUpEnabled(false);
+
+        finishedLoadingPrefs = true;
     }
 
     @Override
@@ -106,20 +103,20 @@ public class AboutFragment extends SettingsFragment implements Preference.OnPref
                 builder.setTitle(R.string.pref_title_donate)
                         .setMessage(getString(R.string.dialog_donate_message, format.format(1.99)))
                         .setPositiveButton(R.string.action_ok, (dialog, which) -> {
-                            Intent intent2 = new Intent(Intent.ACTION_VIEW);
-                            intent2.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + BuildConfig.PAID_APPLICATION_ID));
-                            intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + BuildConfig.BASE_APPLICATION_ID + ".paid"));
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                             try {
-                                startActivity(intent2);
+                                startActivity(intent);
                             } catch (ActivityNotFoundException e) { /* Gracefully fail */ }
                         })
-                        .setNegativeButton(noThanksCount == 2 ? R.string.action_dont_show_again : R.string.action_no_thanks, (dialog, which) -> {
+                        .setNegativeButton(R.string.action_no_thanks, (dialog, which) -> {
                             noThanksCount++;
 
                             if(noThanksCount == 3) {
                                 pref.edit().putBoolean("hide_donate", true).apply();
-                                getPreferenceScreen().removePreference(findPreference("donate_category"));
+                                findPreference("donate").setEnabled(false);
                             }
                         });
 

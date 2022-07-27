@@ -15,7 +15,9 @@
 
 package com.farmerbb.taskbar;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
+import android.app.AppOpsManager;
 import android.app.FragmentTransaction;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
@@ -24,6 +26,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
@@ -32,11 +35,14 @@ import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 
+import com.enrico.colorpicker.colorDialog;
 import com.farmerbb.taskbar.activity.HomeActivity;
 import com.farmerbb.taskbar.activity.ImportSettingsActivity;
 import com.farmerbb.taskbar.activity.KeyboardShortcutActivity;
@@ -44,6 +50,7 @@ import com.farmerbb.taskbar.activity.ShortcutActivity;
 import com.farmerbb.taskbar.activity.StartTaskbarActivity;
 import com.farmerbb.taskbar.fragment.AboutFragment;
 import com.farmerbb.taskbar.fragment.AppearanceFragment;
+import com.farmerbb.taskbar.fragment.SettingsFragment;
 import com.farmerbb.taskbar.service.DashboardService;
 import com.farmerbb.taskbar.service.NotificationService;
 import com.farmerbb.taskbar.service.StartMenuService;
@@ -56,7 +63,7 @@ import com.farmerbb.taskbar.util.U;
 import java.io.File;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements colorDialog.ColorSelectedListener {
 
     private SwitchCompat theSwitch;
 
@@ -66,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
             updateSwitch();
         }
     };
+
+    public final int BACKGROUND_TINT = 1;
+    public final int ACCENT_COLOR = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,10 +99,9 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("taskbar_active", false);
 
         // Ensure that components that should be enabled are enabled properly
-        boolean launcherEnabled = (pref.getBoolean("launcher", false) && U.canDrawOverlays(this))
-                || U.isLauncherPermanentlyEnabled(this);
-
+        boolean launcherEnabled = pref.getBoolean("launcher", false) && canDrawOverlays();
         editor.putBoolean("launcher", launcherEnabled);
+
         editor.apply();
 
         ComponentName component = new ComponentName(this, HomeActivity.class);
@@ -118,15 +127,17 @@ public class MainActivity extends AppCompatActivity {
         if(!launcherEnabled)
             LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent("com.farmerbb.taskbar.KILL_HOME_ACTIVITY"));
 
-        if(BuildConfig.APPLICATION_ID.equals(BuildConfig.PAID_APPLICATION_ID)) {
+        if(BuildConfig.APPLICATION_ID.equals(BuildConfig.BASE_APPLICATION_ID))
+            proceedWithAppLaunch(savedInstanceState);
+        else {
             File file = new File(getFilesDir() + File.separator + "imported_successfully");
             if(freeVersionInstalled() && !file.exists()) {
                 startActivity(new Intent(this, ImportSettingsActivity.class));
                 finish();
-            } else
+            } else {
                 proceedWithAppLaunch(savedInstanceState);
-        } else
-            proceedWithAppLaunch(savedInstanceState);
+            }
+        }
     }
 
     private boolean freeVersionInstalled() {
@@ -150,21 +161,47 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_CUSTOM);
         }
 
-        theSwitch = U.findViewById(this, R.id.the_switch);
+        theSwitch = (SwitchCompat) findViewById(R.id.the_switch);
         if(theSwitch != null) {
             final SharedPreferences pref = U.getSharedPreferences(this);
             theSwitch.setChecked(pref.getBoolean("taskbar_active", false));
 
             theSwitch.setOnCheckedChangeListener((compoundButton, b) -> {
                 if(b) {
-                    if(U.canDrawOverlays(this)) {
+                    if(canDrawOverlays()) {
                         boolean firstRun = pref.getBoolean("first_run", true);
                         startTaskbarService();
 
-                        if(firstRun)
-                            U.showRecentAppsDialog(this);
+                        if(firstRun && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !isSystemApp()) {
+                            ApplicationInfo applicationInfo = null;
+                            try {
+                                applicationInfo = getPackageManager().getApplicationInfo(BuildConfig.APPLICATION_ID, 0);
+                            } catch (PackageManager.NameNotFoundException e) { /* Gracefully fail */ }
+
+                            if(applicationInfo != null) {
+                                AppOpsManager appOpsManager = (AppOpsManager) getSystemService(Context.APP_OPS_SERVICE);
+                                int mode = appOpsManager.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS, applicationInfo.uid, applicationInfo.packageName);
+
+                                if(mode != AppOpsManager.MODE_ALLOWED) {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                    builder.setTitle(R.string.pref_header_recent_apps)
+                                            .setMessage(R.string.enable_recent_apps)
+                                            .setPositiveButton(R.string.action_ok, (dialog, which) -> {
+                                                try {
+                                                    startActivity(new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS));
+                                                    U.showToastLong(MainActivity.this, R.string.usage_stats_message);
+                                                } catch (ActivityNotFoundException e) {
+                                                    U.showErrorDialog(MainActivity.this, "GET_USAGE_STATS");
+                                                }
+                                            }).setNegativeButton(R.string.action_cancel, null);
+
+                                    AlertDialog dialog = builder.create();
+                                    dialog.show();
+                                }
+                            }
+                        }
                     } else {
-                        U.showPermissionDialog(this);
+                        U.showPermissionDialog(MainActivity.this);
                         compoundButton.setChecked(false);
                     }
                 } else
@@ -214,6 +251,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 editor.putBoolean("first_run", true);
+                editor.putBoolean("dashboard_tutorial_shown", false);
                 editor.apply();
             }
         }
@@ -307,6 +345,11 @@ public class MainActivity extends AppCompatActivity {
         stopService(new Intent(this, NotificationService.class));
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
+    private boolean canDrawOverlays() {
+        return Build.VERSION.SDK_INT < Build.VERSION_CODES.M || Settings.canDrawOverlays(this);
+    }
+
     private void updateSwitch() {
         if(theSwitch != null) {
             SharedPreferences pref = U.getSharedPreferences(this);
@@ -324,5 +367,37 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.fragmentContainer, new AboutFragment(), "AboutFragment")
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                     .commit();
+    }
+
+    private boolean isSystemApp() {
+        try {
+            ApplicationInfo info = getPackageManager().getApplicationInfo(BuildConfig.APPLICATION_ID, 0);
+            int mask = ApplicationInfo.FLAG_SYSTEM | ApplicationInfo.FLAG_UPDATED_SYSTEM_APP;
+            return (info.flags & mask) != 0;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+
+    @Override
+    public void onColorSelection(DialogFragment dialogFragment, int color) {
+        SharedPreferences pref = U.getSharedPreferences(this);
+        String preferenceId = null;
+
+        switch(Integer.parseInt(dialogFragment.getTag())) {
+            case BACKGROUND_TINT:
+                preferenceId = "background_tint";
+                break;
+            case ACCENT_COLOR:
+                preferenceId = "accent_color";
+                break;
+        }
+
+        pref.edit().putInt(preferenceId, color).apply();
+
+        SettingsFragment fragment = (SettingsFragment) getFragmentManager().findFragmentById(R.id.fragmentContainer);
+        colorDialog.setColorPreferenceSummary(fragment.findPreference(preferenceId + "_pref"), color, this, getResources());
+
+        fragment.restartTaskbar();
     }
 }

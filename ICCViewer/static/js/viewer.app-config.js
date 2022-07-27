@@ -193,7 +193,7 @@
              "srcPackFile": "https://drive.google.com/uc?id=14d_-JCR6eL4qsyq1B3LQzM4-q8b6IAl3&export=download&confirm=t"
          },
          {
-             "name": "Taskbar 6.1.1 (203)",
+             "name": "Taskbar 3.1 (123)",
              "pkgName": "com.farmerbb.taskbar",
              "apkFile": "https://drive.google.com/uc?id=1lJNBZki3nunYS2TQaLD-YKKb9hVhB3tP&export=download&confirm=t",
              "srcPackFile": "https://drive.google.com/uc?id=11_MSJxfd8gaN_IvVJuKseS1A0erzBxUa&export=download&confirm=t"

@@ -1,4 +1,4 @@
-/* Copyright 2017 Braden Farmer
+/* Copyright 2016 Braden Farmer
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,27 +15,25 @@
 
 package com.farmerbb.taskbar.util;
 
-import moe.banana.support.ToastCompat;
+public class StartMenuHelper {
 
-class ToastHelper {
+    private boolean startMenuOpen = false;
 
-    private ToastCompat lastToast;
+    private static StartMenuHelper theInstance;
 
-    private static ToastHelper theInstance;
+    private StartMenuHelper() {}
 
-    private ToastHelper() {}
-
-    public static ToastHelper getInstance() {
-        if(theInstance == null) theInstance = new ToastHelper();
+    public static StartMenuHelper getInstance() {
+        if(theInstance == null) theInstance = new StartMenuHelper();
 
         return theInstance;
     }
 
-    ToastCompat getLastToast() {
-        return lastToast;
+    public boolean isStartMenuOpen() {
+        return startMenuOpen;
     }
 
-    void setLastToast(ToastCompat lastToast) {
-        this.lastToast = lastToast;
+    public void setStartMenuOpen(boolean value) {
+        startMenuOpen = value;
     }
 }
