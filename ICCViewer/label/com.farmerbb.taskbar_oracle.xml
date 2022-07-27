@@ -557,7 +557,7 @@
   <OracleEdge source="com.farmerbb.taskbar.receiver.StartReceiver" destination="com.farmerbb.taskbar.service.NotificationService" method="">
     <comment>*StartReceiver.onReceive() -&gt; Context.stopService()</comment>
     <callLines>
-      <line src="/app/src/main/java/com/farmerbb/taskbar/receiver/StartReceiver.java" start="73" end="73" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/receiver/StartReceiver.java" start="49" end="49" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
