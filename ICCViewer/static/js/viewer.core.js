@@ -43,6 +43,7 @@ $.extend(window.ICCTagViewer.config, {
 $.extend(window.ICCTagViewer, {
     tagsCnt: 0,
     $copySrc: null,
+    $copyCallPathSrc: null,
     filterShowTags: null,
     autoSaveInterval: null,
     enabledCheckers: [],
@@ -743,7 +744,7 @@ $.extend(window.ICCTagViewer, {
         // Lines
         const $linesDiv = $('<div class="call-lines" />');
         const $lineDiv = $('<div class="row align-items-center" />');
-        const $lineFirstCol1 = $('<div class="col-sm-2">');
+        const $lineFirstCol1 = $('<div class="col-sm-4">');
         const $lineFirstLabel = $('<label class="col-form-label"></label>');
         $lineFirstLabel.html(this._T('CallLines:'));
         $lineFirstCol1.append($lineFirstLabel);
@@ -767,13 +768,44 @@ $.extend(window.ICCTagViewer, {
         });
         $lineFirstCol1.append($lineViewAllBtn);
 
+        // Line Copy
+        const $lineCopyBtn = $('<button class="btn btn-sm btn-primary ms-1 btn-call-line-copy" type="button"><i class="bi bi-file-earmark-text" /></button>');
+        $lineCopyBtn.attr('title', this._T('Copy Call Lines'));
+        $lineCopyBtn.on('click', function() {
+            let $parent = $(this).parent();
+            while (!$parent.hasClass('accordion-item')) $parent = $parent.parent();
+            _this.$copyCallPathSrc = $parent;
+            _this.makeToast(_this._T('Successfully copied call lines'), 2);
+        });
+        $lineFirstCol1.append($lineCopyBtn);
+
+        // Line Paste
+        const $linePasteBtn = $('<button class="btn btn-sm btn-success ms-1 btn-call-line-paste" type="button"><i class="bi bi-clipboard-check" /></button>');
+        $linePasteBtn.attr('title', this._T('Paste Call Lines'));
+        $lineFirstCol1.append($linePasteBtn);
+
         $lineDiv.append($lineFirstCol1);
-        $lineDiv.append($('<div class="col-sm-6 text-center"></div>').html(this._T('Source File')));
+        $lineDiv.append($('<div class="col-sm-4 text-center"></div>').html(this._T('Source File')));
         $lineDiv.append($('<div class="col-sm-1 text-center"></div>').html(this._T('FromLine')));
         $lineDiv.append($('<div class="col-sm-1 text-center"></div>').html(this._T('ToLine')));
         $linesDiv.append($lineDiv);
         this.addCallLine($linesDiv, {});
         $basicInfo.append($linesDiv);
+
+        // Line Paste Callback
+        $linePasteBtn.on('click', function() {
+            if (_this.$copyCallPathSrc != null) {
+                _this.$copyCallPathSrc.find('.call-line').each(function(i, elem) {
+                    const $lineDiv = $(elem);
+                    _this.addCallLine($linesDiv, {
+                        src: $lineDiv.find('.call-line-src').val(),
+                        start: $lineDiv.find('.call-line-st').val(),
+                        end: $lineDiv.find('.call-line-ed').val(),
+                    });
+                });
+                _this.makeToast(_this._T('Successfully pasted call lines'), 2);
+            }
+        });
 
         // Counter
         const $counterDiv = $('<div class="row align-items-center mt-2" />');
