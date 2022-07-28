@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <root srcCodeBase="/apps/com.nutomic.syncthingandroid">
+  <OracleEdge source="com.nutomic.syncthingandroid.activities.DeviceActivity" destination="com.nutomic.syncthingandroid.service.SyncthingService" method="">
+    <comment>*DeviceActivity.onResume() -&gt; DeviceActivity extends SyncthingService -&gt; SyncthingActivity.onResume() -&gt; bindService()</comment>
+    <callLines>
+      <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/DeviceActivity.java" start="49" end="49" />
+      <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/SyncthingActivity.java" start="66" end="66" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.FirstStartActivity" destination="com.nutomic.syncthingandroid.activities.MainActivity" method="">
     <comment>*FirstStartActivity.onCreate() -&gt; startApp() -&gt; startActivity()</comment>
     <callLines>
@@ -243,23 +261,6 @@
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.nutomic.syncthingandroid.activities.SyncthingActivity" destination="com.nutomic.syncthingandroid.service.SyncthingService" method="">
-    <comment>*SyncthingActivity.onResume() -&gt; bindService()</comment>
-    <callLines>
-      <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/SyncthingActivity.java" start="66" end="66" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>

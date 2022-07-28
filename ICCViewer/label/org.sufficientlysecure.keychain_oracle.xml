@@ -471,41 +471,44 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.EncryptFilesActivity" destination="org.sufficientlysecure.keychain.ui.DecryptActivity" method="">
-    <comment>EncryptFilesActivity.onCreate() -&gt; EncryptFilesFragment.onQueuedOperationSuccess() -&gt; DeleteFileDialogFragment.setOnDeletedListener() -&gt; *DeleteFileDialogFragment.OnDeletedListener.onDeleted() -&gt; EncryptFilesFragment.createSendIntent() -&gt; EncryptFilesFragment.startActivity()</comment>
+    <comment>EncryptFilesActivity.onCreate() -&gt; EncryptFilesFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; EncryptFilesFragment.onQueuedOperationSuccess() -&gt; DeleteFileDialogFragment.setOnDeletedListener() -&gt; *DeleteFileDialogFragment.OnDeletedListener.onDeleted() -&gt; EncryptFilesFragment.createSendIntent() -&gt; EncryptFilesFragment.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptFilesActivity.java" start="66" end="70" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptFilesFragment.java" start="517" end="520" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptFilesFragment.java" start="523" end="523" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptFilesFragment.java" start="714" end="721" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptFilesFragment.java" start="712" end="721" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptFilesFragment.java" start="744" end="744" />
       <line src="/OpenKeychain/src/main/AndroidManifest.xml" start="311" end="312" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.EncryptTextActivity" destination="org.sufficientlysecure.keychain.ui.DecryptActivity" method="">
-    <comment>EncryptTextActivity.onCreate() -&gt; *EncryptTextFragment.onQueuedOperationSuccess() -&gt; createSendIntent() -&gt; startActivity()</comment>
+    <comment>EncryptTextActivity.onCreate() -&gt; EncryptTextFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; *EncryptTextFragment.onQueuedOperationSuccess() -&gt; createSendIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptTextActivity.java" start="133" end="135" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptTextFragment.java" start="378" end="379" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptTextFragment.java" start="342" end="344" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptTextFragment.java" start="341" end="344" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptTextFragment.java" start="367" end="367" />
       <line src="/OpenKeychain/src/main/AndroidManifest.xml" start="311" end="316" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
@@ -887,7 +890,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.remote.ui.RemoteBackupActivity" destination="org.sufficientlysecure.keychain.ui.HelpActivity" method="">
-    <comment>RemoteBackupActivity.onCreate()  -&gt; BackupCodeFragment.onCreateView() -&gt; *BackupCodeFragment.setOnClickListener()  -&gt; HelpActivity.startHelpActivity() -&gt; Context.startActivity()</comment>
+    <comment>RemoteBackupActivity.onCreate()  -&gt; BackupCodeFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; BackupCodeFragment.onCreateView() -&gt; *BackupCodeFragment.setOnClickListener()  -&gt; HelpActivity.startHelpActivity() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ui/RemoteBackupActivity.java" start="51" end="57" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/BackupCodeFragment.java" start="144" end="144" />

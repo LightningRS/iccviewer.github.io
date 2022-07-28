@@ -844,17 +844,17 @@
     <comment>ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onPostCreate() -&gt; safeRegisterReceiver() -&gt; Context.registerReceiver() -&gt; *BaseFragmentActivity.UserDetailsReceiver.onReceive() -&gt; startActivity()</comment>
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationListActivity.java" start="68" end="68" />
-      <line src="/iNaturalist/src/main/java/org/inaturalist/android/BaseFragmentActivity.java" start="495" end="495" />
+      <line src="/iNaturalist/src/main/java/org/inaturalist/android/BaseFragmentActivity.java" start="492" end="495" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/BaseFragmentActivity.java" start="547" end="547" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/BaseFragmentActivity.java" start="554" end="554" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/BaseFragmentActivity.java" start="569" end="572" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false" />
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="true" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
@@ -1988,6 +1988,7 @@
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/UserActivity.java" start="98" end="98" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/UserActivity.java" start="319" end="320" />
+      <line src="/iNaturalist/src/main/java/org/inaturalist/android/UserActivitiesAdapter.java" start="108" end="108" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/UserActivitiesAdapter.java" start="200" end="200" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/UserActivitiesAdapter.java" start="194" end="196" />
     </callLines>

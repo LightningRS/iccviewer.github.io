@@ -1,11 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <root srcCodeBase="/apps/com.oriondev.moneywallet">
+  <OracleEdge source="com.oriondev.moneywallet.ui.activity.AboutActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
+    <comment>AboutActivity extends SinglePanelActivity -&gt; *SinglePanelActivity.onResume() -&gt; SinglePanelActivity extends BaseActivity -&gt; BaseActivity.onResume() -&gt; startActivityForResult()</comment>
+    <callLines>
+      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/AboutActivity.java" start="35" end="35" />
+      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/SinglePanelActivity.java" start="39" end="39" />
+      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/BaseActivity.java" start="48" end="49" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.BackupListActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
     <comment>*BackupListActivity.onResume() -&gt; BackupListActivity extends BaseActivity -&gt; BaseActivity.onResume() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/BackupListActivity.java" start="49" end="49" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/BaseActivity.java" start="49" end="49" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.oriondev.moneywallet.ui.activity.CalendarActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
+    <comment>*CalendarActivity.onResume() -&gt; CalendarActivity extends MultiPanelActivity -&gt; MultiPanelActivity.onResume() -&gt; MultiPanelActivity extends BaseActivity -&gt; BaseActivity.onResume() -&gt; startActivityForResult()</comment>
+    <callLines>
+      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/CalendarActivity.java" start="29" end="29" />
+      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/MultiPanelActivity.java" start="34" end="34" />
+      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/BaseActivity.java" start="48" end="49" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -561,24 +599,6 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.oriondev.moneywallet.ui.activity.base.MultiPanelActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
-    <comment>*MultiPanelActivity.onResume() -&gt; MultiPanelActivity extends BaseActivity -&gt; BaseActivity.onResume() -&gt; startActivityForResult()</comment>
-    <callLines>
-      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/MultiPanelActivity.java" start="34" end="34" />
-      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/BaseActivity.java" start="48" end="49" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.NewEditBudgetActivity" destination="com.oriondev.moneywallet.ui.activity.CategoryPickerActivity" method="">
     <comment>NewEditBudgetActivity.onCreatePanelView() -&gt; EditText.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CategoryPicker.showPicker() -&gt; startActivityForResult()</comment>
     <callLines>
@@ -1083,24 +1103,6 @@
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.oriondev.moneywallet.ui.activity.base.SinglePanelActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
-    <comment>*SinglePanelActivity.onResume() -&gt; SinglePanelActivity extends BaseActivity -&gt; BaseActivity.onResume() -&gt; startActivityForResult()</comment>
-    <callLines>
-      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/SinglePanelActivity.java" start="39" end="39" />
-      <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/BaseActivity.java" start="48" end="49" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>

@@ -368,24 +368,6 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*RemoteControlService.startService() -&gt; MailService.actionRestartPushers() -&gt; Context.startService()</comment>
-    <callLines>
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/RemoteControlService.java" start="49" end="49" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="55" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.UnreadWidgetConfiguration" destination="com.fsck.k9.activity.ChooseAccount" method="">
     <comment>UnreadWidgetConfiguration.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; startActivityForResult()</comment>
     <callLines>
@@ -814,7 +796,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.service.PollService" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*PollService.checkMailFinished() -&gt; PollService.release() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
+    <comment>PollService.startService() -&gt; MessagingController.setCheckMailListener() -&gt; *PollService.Listener.checkMailFinished() -&gt; PollService.release() -&gt; MailService.actionReschedulePoll() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="21" end="21" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="56" end="56" />
@@ -851,6 +833,24 @@
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.fsck.k9.service.RemoteControlService" destination="com.fsck.k9.service.MailService" method="">
+    <comment>*RemoteControlService.startService() -&gt; MailService.actionRestartPushers() -&gt; Context.startService()</comment>
+    <callLines>
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/RemoteControlService.java" start="49" end="49" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="55" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>

@@ -302,8 +302,9 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.ImportSettingsActivity" destination="com.farmerbb.taskbar.MainActivity" method="">
-    <comment>*ImportSettingsActivity.onReceive() -&gt; startActivity()</comment>
+    <comment>ImportSettingsActivity.onCreate() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *ImportSettingsActivity.onReceive() -&gt; startActivity()</comment>
     <callLines>
+      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="51" end="51" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="36" end="38" />
     </callLines>
     <tags>
@@ -311,7 +312,7 @@
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="true" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
@@ -639,28 +640,6 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.farmerbb.taskbar.service.StartMenuService" destination="com.farmerbb.taskbar.activity.dark.ContextMenuActivityDark" method="xxx">
-    <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LinearLayout.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartMenuService.openContextMenu() -&gt; Handler.postDelayed() -&gt; StartMenuService.startActivity()</comment>
-    <callLines>
-      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="163" end="163" />
-      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="367" end="368" />
-      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="371" end="371" />
-      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="675" end="675" />
-      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="682" end="688" />
-      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="696" end="696" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.StartMenuService" destination="com.farmerbb.taskbar.activity.InvisibleActivity" method="xxx">
     <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *StartMenuService.toggleReceiver.onReceive() -&gt; StartMenuService.toggleStartMenu() -&gt; showStartMenu() -&gt; U.launchAppMaximized() -&gt; launchMode2() -&gt; Context.startActivity()</comment>
     <callLines>
@@ -706,6 +685,28 @@
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.farmerbb.taskbar.service.StartMenuService" destination="com.farmerbb.taskbar.activity.dark.ContextMenuActivityDark" method="xxx">
+    <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LinearLayout.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartMenuService.openContextMenu() -&gt; Handler.postDelayed() -&gt; StartMenuService.startActivity()</comment>
+    <callLines>
+      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="163" end="163" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="367" end="368" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="371" end="371" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="675" end="675" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="682" end="688" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="696" end="696" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>

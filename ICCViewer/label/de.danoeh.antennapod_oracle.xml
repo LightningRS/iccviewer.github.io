@@ -358,7 +358,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="de.danoeh.antennapod.activity.OpmlImportFromPathActivity" destination="de.danoeh.antennapod.activity.OpmlFeedChooserActivity" method="">
+  <OracleEdge source="de.danoeh.antennapod.activity.OpmlImportBaseActivity" destination="de.danoeh.antennapod.activity.OpmlFeedChooserActivity" method="">
     <comment>*OpmlImportBaseActivity.onRequestPermissionsResult() -&gt; startImport() -&gt; OpmlImportWorker.executeAsync() -&gt; onPostExecute() -&gt; OpmlImportBaseActivity.startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/OpmlImportBaseActivity.java" start="104" end="104" />
@@ -803,9 +803,12 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="de.danoeh.antennapod.core.service.playback.PlaybackService" destination="de.danoeh.antennapod.core.service.PlayerWidgetJobService" method="">
-    <comment>PlaybackService.onCreate() -&gt; PlaybackServiceFlavorHelper.PlaybackServiceFlavorHelper() -&gt; FlavorHelperCallback.getMediaPlayerCallback() -&gt; *PlaybackServiceMediaPlayer.PSMPCallback.statusChanged() -&gt; PlayerWidgetJobService.updateWidget() -&gt; SafeJobIntentService.enqueueWork()</comment>
+    <comment>PlaybackService.onCreate() -&gt; new PlaybackService.PlaybackServiceFlavorHelper() -&gt; FlavorHelperCallback.getMediaPlayerCallback() -&gt; *PlaybackServiceMediaPlayer.PSMPCallback.statusChanged() -&gt; PlayerWidgetJobService.updateWidget() -&gt; SafeJobIntentService.enqueueWork()</comment>
     <callLines>
-      <line src="/core/src/main/java/de/danoeh/antennapod/core/service/playback/PlaybackService.java" start="279" end="281" />
+      <line src="/core/src/main/java/de/danoeh/antennapod/core/service/playback/PlaybackService.java" start="279" end="279" />
+      <line src="/core/src/main/java/de/danoeh/antennapod/core/service/playback/PlaybackService.java" start="1857" end="1859" />
+      <line src="/core/src/main/java/de/danoeh/antennapod/core/service/playback/PlaybackService.java" start="1860" end="1860" />
+      <line src="/core/src/main/java/de/danoeh/antennapod/core/service/playback/PlaybackService.java" start="652" end="654" />
       <line src="/core/src/main/java/de/danoeh/antennapod/core/service/playback/PlaybackService.java" start="709" end="709" />
       <line src="/core/src/main/java/de/danoeh/antennapod/core/service/PlayerWidgetJobService.java" start="39" end="39" />
     </callLines>
@@ -815,8 +818,8 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>

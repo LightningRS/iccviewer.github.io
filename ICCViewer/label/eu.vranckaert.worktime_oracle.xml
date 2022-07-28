@@ -370,7 +370,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -391,7 +391,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -412,7 +412,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -433,7 +433,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -492,7 +492,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -979,28 +979,6 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x1_ProjectTask" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarPunchOutHandleActivity" method="">
-    <comment>*WorkTimeWidgetProvider_2x1_ProjectTask.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
-    <callLines>
-      <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x1_ProjectTask.java" start="40" end="40" />
-      <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x1_ProjectTask.java" start="49" end="49" />
-      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="132" end="133" />
-      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="145" end="149" />
-      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="318" end="318" />
-      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="321" end="328" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
-        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x1_ProjectTask" destination="eu.vranckaert.worktime.activities.HomeActivity" method="">
     <comment>*WorkTimeWidgetProvider_2x1_ProjectTask.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.setContentIntent() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
     <callLines>
@@ -1019,7 +997,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
         <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -1041,7 +1019,29 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
         <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x1_ProjectTask" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarPunchOutHandleActivity" method="">
+    <comment>*WorkTimeWidgetProvider_2x1_ProjectTask.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
+    <callLines>
+      <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x1_ProjectTask.java" start="40" end="40" />
+      <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x1_ProjectTask.java" start="49" end="49" />
+      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="132" end="133" />
+      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="145" end="149" />
+      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="318" end="318" />
+      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="321" end="328" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -1063,29 +1063,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
         <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x2_Project" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarPunchOutHandleActivity" method="">
-    <comment>*WorkTimeWidgetProvider_2x2_Project.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
-    <callLines>
-      <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x2_Project.java" start="40" end="40" />
-      <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x2_Project.java" start="51" end="51" />
-      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="132" end="133" />
-      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="145" end="149" />
-      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="318" end="318" />
-      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="321" end="328" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
-        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -1096,6 +1074,7 @@
       <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x2_Project.java" start="51" end="51" />
       <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="110" end="110" />
       <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="145" end="149" />
+      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="304" end="304" />
       <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="313" end="313" />
       <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="321" end="328" />
     </callLines>
@@ -1107,7 +1086,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
         <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -1129,7 +1108,29 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
         <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x2_Project" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarPunchOutHandleActivity" method="">
+    <comment>*WorkTimeWidgetProvider_2x2_Project.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
+    <callLines>
+      <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x2_Project.java" start="40" end="40" />
+      <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x2_Project.java" start="51" end="51" />
+      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="132" end="133" />
+      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="145" end="149" />
+      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="318" end="318" />
+      <line src="/src/eu/vranckaert/worktime/service/ui/impl/StatusBarNotificationServiceImpl.java" start="321" end="328" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="false" isAtypicalSendICC="true" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -1151,7 +1152,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
         <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>

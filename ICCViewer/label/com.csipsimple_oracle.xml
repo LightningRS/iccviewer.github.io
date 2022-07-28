@@ -430,7 +430,7 @@
       <line src="/AndroidManifest.xml" start="314" end="318" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="false" isAtypicalSendICC="true" />
       <intentMatch isExplicit="false" isImplicit="true" />
       <analyzeScope>
@@ -447,7 +447,7 @@
       <line src="/src/com/csipsimple/ui/prefs/hc/MainPrefs.java" start="55" end="55" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="false" isAtypicalSendICC="true" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
