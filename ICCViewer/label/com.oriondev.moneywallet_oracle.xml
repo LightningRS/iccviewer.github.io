@@ -561,7 +561,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.oriondev.moneywallet.ui.activity.MultiPanelActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
+  <OracleEdge source="com.oriondev.moneywallet.ui.activity.base.MultiPanelActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
     <comment>*MultiPanelActivity.onResume() -&gt; MultiPanelActivity extends BaseActivity -&gt; BaseActivity.onResume() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/MultiPanelActivity.java" start="34" end="34" />
@@ -1086,7 +1086,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.oriondev.moneywallet.ui.activity.SinglePanelActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
+  <OracleEdge source="com.oriondev.moneywallet.ui.activity.base.SinglePanelActivity" destination="com.oriondev.moneywallet.ui.activity.LockActivity" method="">
     <comment>*SinglePanelActivity.onResume() -&gt; SinglePanelActivity extends BaseActivity -&gt; BaseActivity.onResume() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/base/SinglePanelActivity.java" start="39" end="39" />

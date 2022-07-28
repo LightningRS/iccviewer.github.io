@@ -72,7 +72,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.ui.AccountUpdateService" method="">
+  <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.AccountUpdateService" method="">
     <comment>AccountActivity.onCreateLoader() -&gt; *AccountActivity.AccountLoader.onStartLoading() -&gt; Context.bindService()</comment>
     <callLines>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountActivity.kt" start="221" end="221" />

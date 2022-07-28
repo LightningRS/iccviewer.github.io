@@ -855,7 +855,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.fsck.k9.widget.list.MessageListWidgetProvider" destination="com.fsck.k9.service.MessageListWidgetService" method="">
+  <OracleEdge source="com.fsck.k9.widget.list.MessageListWidgetProvider" destination="com.fsck.k9.widget.list.MessageListWidgetService" method="">
     <comment>*MessageListWidgetProvider.onUpdate() -&gt; MessageListWidgetProvider.updateAppWidget() -&gt; AppWidgetManager.updateAppWidget()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/widget/list/MessageListWidgetProvider.java" start="37" end="37" />

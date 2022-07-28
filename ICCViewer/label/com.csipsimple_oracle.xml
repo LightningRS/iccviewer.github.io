@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <root srcCodeBase="/apps/com.csipsimple">
-  <OracleEdge source="com.csipsimple.service.SipService" destination="com.csipsimple.plugins.codecs.ReceiverSilk" method="">
+  <OracleEdge source="com.csipsimple.service.SipService" destination="com.csipsimple.plugins.codecs.ReceiverSILK" method="">
     <comment>*SipService.onBind() -&gt; ISipService.Stub.sipStart() -&gt; new StartRunnable() -&gt; SipServiceExecutor.execute() -&gt; SipService.startSipStack() -&gt; PjSipService.sipStart() -&gt; ExtraPlugins.getDynCodecPlugin() -&gt; PackageManager.queryBroadcastReceivers()</comment>
     <callLines>
       <line src="/src/com/csipsimple/service/SipService.java" start="1302" end="1302" />

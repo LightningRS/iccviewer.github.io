@@ -348,7 +348,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="net.osmand.plus.activities.SettingsActivity" destination="net.osmand.plus.activities.OsmLiveActivity" method="">
+  <OracleEdge source="net.osmand.plus.activities.SettingsActivity" destination="net.osmand.plus.liveupdates.OsmLiveActivity" method="">
     <comment>*SettingsActivity.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *SettingsActivity.onPreferenceClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/SettingsActivity.java" start="40" end="41" />

@@ -27,78 +27,6 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.iccbot.withCtx.Source2WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
-    <correctness correctness="true" incorrectType="No." incorrectReason="" />
-    <nodes>
-      <node method="" type="" unit="" />
-    </nodes>
-    <comment>Source2WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source2WithCtx.doWithAction() -&gt; startActivity()</comment>
-    <callLines>
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="24" end="24" />
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="29" end="29" />
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="40" end="42" />
-      <line src="/ICCBotBench/AndroidManifest.xml" start="62" end="68" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="false" isImplicit="true" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.iccbot.withCtx.Source3WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
-    <correctness correctness="true" incorrectType="No." incorrectReason="" />
-    <nodes>
-      <node method="" type="" unit="" />
-    </nodes>
-    <comment>Source3WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
-    <callLines>
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source3WithCtx.java" start="23" end="23" />
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source3WithCtx.java" start="27" end="30" />
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Utils.java" start="9" end="9" />
-      <line src="/ICCBotBench/AndroidManifest.xml" start="62" end="68" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="false" isImplicit="true" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="com.iccbot.withCtx.Source5WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
-    <correctness correctness="true" incorrectType="No." incorrectReason="" />
-    <nodes>
-      <node method="" type="" unit="" />
-    </nodes>
-    <comment>Source5WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source5WithCtx.addCategory() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
-    <callLines>
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="23" end="23" />
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="27" end="29" />
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="36" end="36" />
-      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="30" end="30" />
-    </callLines>
-    <tags checkIgnore="isImplicitAndroidManifest, ">
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="false" isImplicit="true" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
   <OracleEdge source="com.iccbot.withCtx.Source1WithCtx" destination="com.iccbot.withCtx.Des2WithCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
@@ -112,6 +40,30 @@
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source1WithCtx.java" start="46" end="46" />
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source1WithCtx.java" start="42" end="42" />
       <line src="/ICCBotBench/AndroidManifest.xml" start="69" end="75" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="false" isImplicit="true" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.iccbot.withCtx.Source2WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
+    <correctness correctness="true" incorrectType="No." incorrectReason="" />
+    <nodes>
+      <node method="" type="" unit="" />
+    </nodes>
+    <comment>Source2WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source2WithCtx.doWithAction() -&gt; startActivity()</comment>
+    <callLines>
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="24" end="24" />
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="29" end="29" />
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="40" end="42" />
+      <line src="/ICCBotBench/AndroidManifest.xml" start="62" end="68" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -149,6 +101,30 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
+  <OracleEdge source="com.iccbot.withCtx.Source3WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
+    <correctness correctness="true" incorrectType="No." incorrectReason="" />
+    <nodes>
+      <node method="" type="" unit="" />
+    </nodes>
+    <comment>Source3WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
+    <callLines>
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source3WithCtx.java" start="23" end="23" />
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source3WithCtx.java" start="27" end="30" />
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Utils.java" start="9" end="9" />
+      <line src="/ICCBotBench/AndroidManifest.xml" start="62" end="68" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="false" isImplicit="true" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
   <OracleEdge source="com.iccbot.withCtx.Source4WithCtx" destination="com.iccbot.withCtx.Des2WithCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
     <nodes>
@@ -167,7 +143,31 @@
       <intentMatch isExplicit="false" isImplicit="true" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="com.iccbot.withCtx.Source5WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
+    <correctness correctness="true" incorrectType="No." incorrectReason="" />
+    <nodes>
+      <node method="" type="" unit="" />
+    </nodes>
+    <comment>Source5WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source5WithCtx.addCategory() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
+    <callLines>
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="23" end="23" />
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="27" end="29" />
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="36" end="36" />
+      <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="30" end="30" />
+    </callLines>
+    <tags checkIgnore="isImplicitAndroidManifest, ">
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="false" isImplicit="true" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>

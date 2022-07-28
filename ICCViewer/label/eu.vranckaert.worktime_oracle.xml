@@ -979,7 +979,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x1_ProjectTask" destination="eu.vranckaert.worktime.StatusBarPunchOutHandleActivity" method="">
+  <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x1_ProjectTask" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarPunchOutHandleActivity" method="">
     <comment>*WorkTimeWidgetProvider_2x1_ProjectTask.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
     <callLines>
       <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x1_ProjectTask.java" start="40" end="40" />
@@ -1067,7 +1067,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x2_Project" destination="eu.vranckaert.worktime.StatusBarPunchOutHandleActivity" method="">
+  <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x2_Project" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarPunchOutHandleActivity" method="">
     <comment>*WorkTimeWidgetProvider_2x2_Project.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
     <callLines>
       <line src="/src/eu/vranckaert/worktime/providers/WorkTimeWidgetProvider_2x2_Project.java" start="40" end="40" />

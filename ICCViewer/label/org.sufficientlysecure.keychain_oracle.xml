@@ -591,7 +591,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.remote.ui.QrCodeCaptureActivity" method="">
+  <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.QrCodeCaptureActivity" method="">
     <comment>MainActivity.onNewIntent() -&gt; MainActivity.onTransferSelected() -&gt; MainActivity.setFragment() -&gt; TransferFragment.onCreateView() -&gt; new TransferPresenter() -&gt; TransferPresenter.onUiClickScan() -&gt; *TransferFragment.scanQrCode() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="198" end="198" />
@@ -886,7 +886,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.sufficientlysecure.keychain.ui.RemoteBackupActivity" destination="org.sufficientlysecure.keychain.ui.HelpActivity" method="">
+  <OracleEdge source="org.sufficientlysecure.keychain.remote.ui.RemoteBackupActivity" destination="org.sufficientlysecure.keychain.ui.HelpActivity" method="">
     <comment>RemoteBackupActivity.onCreate()  -&gt; BackupCodeFragment.onCreateView() -&gt; *BackupCodeFragment.setOnClickListener()  -&gt; HelpActivity.startHelpActivity() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ui/RemoteBackupActivity.java" start="51" end="57" />
@@ -965,7 +965,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.sufficientlysecure.keychain.ui.ViewKeyActivity" destination="org.sufficientlysecure.keychain.ui.ImportKeysProxyActivity" method="">
+  <OracleEdge source="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" destination="org.sufficientlysecure.keychain.ui.ImportKeysProxyActivity" method="">
     <comment>ViewKeyActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ViewKeyActivity.scanQrCode() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="260" end="260" />
