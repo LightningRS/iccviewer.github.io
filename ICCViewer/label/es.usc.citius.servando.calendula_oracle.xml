@@ -541,14 +541,20 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.scheduling.AlarmIntentService" destination="es.usc.citius.servando.calendula.activities.ConfirmActivity" method="">
-    <comment>*AlarmIntentService.onHandleWork() -&gt; AlarmScheduler.onAlarmReceived() -&gt; onRoutineTime() -&gt; ReminderNotification.notify() -&gt; notify() -&gt; notify() -&gt; NotificationManagerCompat.notify()</comment>
+    <comment>*AlarmIntentService.onHandleWork() -&gt; AlarmScheduler.onAlarmReceived() -&gt; onRoutineTime() -&gt; ReminderNotification.notify() -&gt; notify() -&gt; PendingIntent.getActivity() -&gt; NotificationOptions.defaultIntent -&gt; ReminderNotification.buildNotification() -&gt; NotificationCompat.Builder.setContentIntent() -&gt; build() -&gt; ReminderNotification.notify() -&gt; NotificationManagerCompat.from() -&gt; notify()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmIntentService.kt" start="68" end="71" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmScheduler.java" start="124" end="124" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmScheduler.java" start="374" end="377" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="106" end="106" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="173" end="173" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="188" end="188" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="196" end="196" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="224" end="224" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="264" end="264" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="269" end="269" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="197" end="197" />
-      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="367" end="367" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="366" end="367" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -557,7 +563,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
@@ -585,14 +591,19 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.scheduling.AlarmIntentService" destination="es.usc.citius.servando.calendula.scheduling.NotificationEventReceiver" method="">
-    <comment>*AlarmIntentService.onHandleWork() -&gt; AlarmScheduler.onAlarmReceived() -&gt; onRoutineTime() -&gt; ReminderNotification.notify() -&gt; notify() -&gt; notify() -&gt; NotificationManagerCompat.notify()</comment>
+    <comment>*AlarmIntentService.onHandleWork() -&gt; AlarmScheduler.onAlarmReceived() -&gt; onRoutineTime() -&gt; ReminderNotification.notify() -&gt; notify() -&gt; PendingIntent.getBroadcast() -&gt; NotificationOptions.confirmAllIntent -&gt; ReminderNotification.buildNotification() -&gt; NotificationCompat.Builder.addAction() -&gt; build() -&gt; ReminderNotification.notify() -&gt; NotificationManagerCompat.from() -&gt; notify()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmIntentService.kt" start="68" end="71" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmScheduler.java" start="124" end="124" />
-      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmScheduler.java" start="374" end="377" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmScheduler.java" start="377" end="377" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="92" end="94" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="106" end="106" />
-      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="197" end="197" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="181" end="181" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="192" end="192" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="196" end="196" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="246" end="246" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="264" end="264" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="269" end="269" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ReminderNotification.java" start="367" end="367" />
     </callLines>
     <tags>
@@ -600,9 +611,9 @@
       <exitMethod isNormalSendICC="false" isAtypicalSendICC="true" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
-        <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
+        <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
@@ -625,10 +636,12 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.scheduling.PickupAlarmReceiver" destination="es.usc.citius.servando.calendula.activities.CalendarActivity" method="">
-    <comment>*PickupAlarmReceiver.onReceive() -&gt; showNotification() -&gt; PickupNotification.notify() -&gt; NotificationManagerCompat.notify()</comment>
+    <comment>*PickupAlarmReceiver.onReceive() -&gt; showNotification() -&gt; PendingIntent.getActivity() -&gt; NotificationCompat.Builder.setContentIntent() -&gt; PickupNotification.notify() -&gt; NotificationManagerCompat.from() -&gt; notify()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/PickupAlarmReceiver.java" start="51" end="51" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/PickupAlarmReceiver.java" start="57" end="60" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/PickupNotification.java" start="69" end="73" />
+      <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/PickupNotification.java" start="88" end="88" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/PickupNotification.java" start="104" end="104" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/PickupNotification.java" start="117" end="118" />
     </callLines>
@@ -639,7 +652,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>

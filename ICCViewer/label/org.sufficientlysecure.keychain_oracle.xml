@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <root srcCodeBase="/apps/org.sufficientlysecure.keychain">
+  <OracleEdge source="org.sufficientlysecure.keychain.remote.ui.RemoteBackupActivity" destination="org.sufficientlysecure.keychain.ui.HelpActivity" method="">
+    <comment>RemoteBackupActivity.onCreate()  -&gt; BackupCodeFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; BackupCodeFragment.onCreateView() -&gt; *BackupCodeFragment.setOnClickListener()  -&gt; HelpActivity.startHelpActivity() -&gt; Context.startActivity()</comment>
+    <callLines>
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ui/RemoteBackupActivity.java" start="51" end="57" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/BackupCodeFragment.java" start="144" end="144" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/BackupCodeFragment.java" start="165" end="165" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/HelpActivity.java" start="143" end="145" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.remote.ui.dialog.RemoteSelectIdKeyActivity" destination="org.sufficientlysecure.keychain.ui.MainActivity" method="">
     <comment>*RemoteSelectIdKeyActivity.onCreate() -&gt; new RemoteSelectIdentityKeyDialogFragment() -&gt; RemoteSelectIdKeyActivity.RemoteSelectIdentityKeyDialogFragment.show() -&gt; onCreateDialog() -&gt; createMvpView() -&gt; new RemoteSelectIdentityKeyView() -&gt; RemoteSelectIdentityKeyView.showOpenKeychainIntent() -&gt; RemoteSelectIdKeyActivity.RemoteSelectIdentityKeyDialogFragment.startActivity()</comment>
     <callLines>
@@ -37,39 +57,50 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.EditKeyActivity" method="">
-    <comment>CreateKeyEmailFragment.onAttach() -&gt; Button.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; CreateKeyFinalFragment.newInstance() -&gt; CreateKeyActivity.loadFragment() -&gt; *CreateKeyFinalFragment.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
+    <comment>CreateKeyActivity.startCreateKeyForSecurityToken() -&gt; CreateKeyNameFragment.newInstance() -&gt; new CreateKeyNameFragment() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateKeyNameFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; CreateKeyNameFragment.nextClicked() -&gt; CreateKeyEmailFragment.newInstance() -&gt; new CreateKeyEmailFragment() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateKeyEmailFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; CreateKeyEmailFragment.nextClicked() -&gt; CreateKeyFinalFragment.newInstance() -&gt; new CreateKeyFinalFragment() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; *CreateKeyFinalFragment.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
     <callLines>
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyEmailFragment.java" start="186" end="186" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="196" end="196" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyNameFragment.java" start="44" end="44" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="197" end="197" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyNameFragment.java" start="69" end="69" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyNameFragment.java" start="84" end="84" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyEmailFragment.java" start="59" end="59" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyNameFragment.java" start="85" end="85" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyEmailFragment.java" start="102" end="102" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyEmailFragment.java" start="203" end="203" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyFinalFragment.java" start="94" end="94" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyEmailFragment.java" start="203" end="204" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyEmailFragment.java" start="204" end="204" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyFinalFragment.java" start="178" end="180" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.ImportKeysActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyStartFragment.newInstance() -&gt; new CreateKeyStartFragment -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentTransaction.commit() -&gt; CreateKeyStartFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *CreateKeyStartFragment.onClick() -&gt; startActivityForResult()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyStartFragment.newInstance() -&gt; new CreateKeyStartFragment() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateKeyStartFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="123" end="123" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyStartFragment.java" start="58" end="58" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="124" end="124" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="215" end="217" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyStartFragment.java" start="93" end="96" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyStartFragment.java" start="93" end="93" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyStartFragment.java" start="94" end="96" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -78,40 +109,46 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.LogDisplayActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentTransaction.commit() -&gt; *ManageSecurityTokenFragment.showDisplayLogActivity() -&gt; ManageSecurityTokenFragment.startActivity()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; ManageSecurityTokenFragment.newInstance() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; *ManageSecurityTokenFragment.onOptionsItemSelected() -&gt; ManageSecurityTokenPresenter.onMenuClickViewLog() -&gt; ManageSecurityTokenMvpView.showDisplayLogActivity() -&gt; ManageSecurityTokenFragment.showDisplayLogActivity() -&gt; ManageSecurityTokenFragment.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="114" end="115" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="215" end="217" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="165" end="165" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenPresenter.java" start="411" end="411" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenContract.java" start="97" end="97" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="78" end="78" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="360" end="362" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.QrCodeCaptureActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; CreateKeyStartFragment.onCreateView() -&gt; CreateKeyActivity.loadFragment() -&gt; *TransferPresenter.onUiClickScan() -&gt; QrCodeCaptureActivity.scanQrCode() -&gt; TransferFragment.startActivityForResult()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyStartFragment.newInstance() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateKeyStartFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; new TransferFragment() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; TransferFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TransferPresenter.onUiClickScan() -&gt; TransferMvpView.scanQrCode() -&gt; TransferFragment implements TransferMvpView -&gt; TransferFragment.scanQrCode() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="123" end="124" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="215" end="217" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyStartFragment.java" start="100" end="100" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyStartFragment.java" start="101" end="102" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="227" end="231" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/presenter/TransferPresenter.java" start="439" end="439" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/view/TransferFragment.java" start="127" end="129" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/view/TransferFragment.java" start="131" end="131" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/presenter/TransferPresenter.java" start="139" end="139" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/presenter/TransferPresenter.java" start="451" end="451" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/view/TransferFragment.java" start="76" end="76" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/view/TransferFragment.java" start="287" end="288" />
     </callLines>
@@ -122,58 +159,82 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.SecurityTokenChangePinOperationActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; *ManageSecurityTokenFragment.operationChangePinSecurityToken() -&gt; ManageSecurityTokenFragment.startActivityForResult()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; ManageSecurityTokenFragment.onCreate() -&gt; new ManageSecurityTokenPresenter() -&gt; ManageSecurityTokenPresenter.setView() -&gt; ManageSecurityTokenFragment.onClick() -&gt; ManageSecurityTokenPresenter.onClickUnlockToken() -&gt; ManageSecurityTokenMvpView.showAdminPinDialog() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.showAdminPinDialog() -&gt; ChangePinDialogHelper.createAdminPinDialog() -&gt; AlertDialog.setOnShowListener() -&gt; AlertDialog.show() -&gt; DialogInterface.OnShowListener.onShow() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ChangePinDialogHelper.checkAndHandleInput() -&gt; ManageSecurityTokenPresenter.onInputAdminPin() -&gt; ManageSecurityTokenMvpView.operationChangePinSecurityToken() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.operationChangePinSecurityToken() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="114" end="115" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="215" end="217" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="78" end="78" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="115" end="115" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="142" end="142" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenPresenter.java" start="69" end="69" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="451" end="451" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenPresenter.java" start="189" end="189" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="333" end="333" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ChangePinDialogHelper.java" start="54" end="56" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="335" end="335" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ChangePinDialogHelper.java" start="57" end="59" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ChangePinDialogHelper.java" start="60" end="60" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ChangePinDialogHelper.java" start="91" end="91" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenPresenter.java" start="208" end="208" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenContract.java" start="88" end="88" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="78" end="78" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="310" end="314" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.SecurityTokenOperationActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; *ManageSecurityTokenFragment.operationChangePinSecurityToken() -&gt; ManageSecurityTokenFragment.startActivityForResult()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; ManageSecurityTokenFragment.onCreate() -&gt; new ManageSecurityTokenPresenter() -&gt; ManageSecurityTokenPresenter.setView() -&gt; ManageSecurityTokenFragment.onClick() -&gt; ManageSecurityTokenPresenter.onClickResetToken() -&gt; ManageSecurityTokenMvpView.showConfirmResetDialog() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.showConfirmResetDialog() -&gt; AlertDialog.Builder.setPositiveButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; ManageSecurityTokenPresenter.onClickConfirmReset() -&gt; ManageSecurityTokenMvpView.operationResetSecurityToken() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.operationResetSecurityToken() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="114" end="115" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="215" end="217" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="77" end="77" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="88" end="88" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="115" end="115" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="142" end="142" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenPresenter.java" start="69" end="69" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="446" end="446" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenPresenter.java" start="331" end="331" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="78" end="78" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="328" end="328" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenPresenter.java" start="336" end="336" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenContract.java" start="87" end="87" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="78" end="78" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="301" end="305" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.ShowNfcSweetspotActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; CreateKeyStartFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CreateSecurityTokenWaitFragment.startActivityForResult()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateKeyStartFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; new CreateSecurityTokenWaitFragment() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateSecurityTokenWaitFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CreateSecurityTokenWaitFragment.startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="123" end="124" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyStartFragment.java" start="88" end="88" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyStartFragment.java" start="89" end="90" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateSecurityTokenWaitFragment.java" start="98" end="100" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateSecurityTokenWaitFragment.java" start="101" end="102" />
     </callLines>
     <tags>
@@ -184,12 +245,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; *FragmentManager.executePendingTransactions() -&gt; ManageSecurityTokenFragment.finishAndShowKey()  -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; *ManageSecurityTokenFragment.finishAndShowKey()  -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="114" end="115" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
@@ -198,24 +259,25 @@
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/token/ManageSecurityTokenFragment.java" start="193" end="193" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.RemoteRegisterActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createRegisterPendingIntent() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createRegisterPendingIntent() -&gt; DebugActionsActivity.startPendingIntent() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="90" end="92" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="90" end="91" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="224" end="224" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="231" end="239" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="236" end="238" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="92" end="92" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="163" end="163" />
     </callLines>
     <tags>
@@ -225,18 +287,18 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.RemoteSelectPubKeyActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectPublicKeyPendingIntent() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectPublicKeyPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="99" end="100" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="98" end="104" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="213" end="219" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="217" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="163" end="163" />
     </callLines>
     <tags>
@@ -246,18 +308,18 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.RequestKeyPermissionActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createRequestKeyPermissionPendingIntent() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createRequestKeyPermissionPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="125" end="127" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="126" end="130" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="213" end="219" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="217" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="163" end="163" />
     </callLines>
     <tags>
@@ -267,18 +329,18 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.SelectSignKeyIdActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectSignKeyIdLegacyPendingIntent() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectSignKeyIdLegacyPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="104" end="107" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="141" end="146" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="213" end="219" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="217" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="163" end="163" />
     </callLines>
     <tags>
@@ -288,18 +350,18 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.dialog.RemoteDeduplicateActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createDeduplicatePendingIntent() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createDeduplicatePendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="132" end="133" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="108" end="113" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="213" end="219" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="217" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="163" end="163" />
     </callLines>
     <tags>
@@ -309,18 +371,18 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.dialog.RemoteSelectAuthenticationKeyActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectAuthenticationKeyIdPendingIntent() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectAuthenticationKeyIdPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="114" end="114" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="161" end="164" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="213" end="219" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="217" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="163" end="163" />
     </callLines>
     <tags>
@@ -330,18 +392,18 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.dialog.RemoteSelectIdKeyActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectSignKeyIdPendingIntent() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectSignKeyIdPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="71" end="71" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="109" end="111" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="151" end="157" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="213" end="219" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ApiPendingIntentFactory.java" start="217" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="163" end="163" />
     </callLines>
     <tags>
@@ -351,7 +413,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
@@ -400,22 +462,25 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DecryptActivity" destination="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" method="">
-    <comment>DecryptActivity.onCreate() -&gt; DecryptActivity.handleActions() -&gt; DecryptActivity.displayListFragment() -&gt; DecryptListFragment.onBindViewHolder() -&gt; DecryptListFragment.bindItemSuccess() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Activity.startActivity()</comment>
+    <comment>DecryptActivity.onCreate() -&gt; DecryptActivity.handleActions() -&gt; DecryptActivity.displayListFragment() -&gt; DecryptListFragment.onBindViewHolder() -&gt; DecryptListFragment.bindItemSuccess() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="57" end="57" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="195" end="195" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="221" end="233" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptListFragment.java" start="941" end="941" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptListFragment.java" start="1032" end="1033" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptListFragment.java" start="1027" end="1027" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptListFragment.java" start="1032" end="1032" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="158" end="160" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptListFragment.java" start="1033" end="1033" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
@@ -438,8 +503,8 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -455,8 +520,9 @@
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptFragment.java" start="271" end="271" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptFragment.java" start="307" end="307" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptFragment.java" start="249" end="249" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptFragment.java" start="191" end="192" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptFragment.java" start="191" end="191" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="158" end="160" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptFragment.java" start="192" end="192" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -590,30 +656,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.QrCodeCaptureActivity" method="">
-    <comment>MainActivity.onNewIntent() -&gt; MainActivity.onTransferSelected() -&gt; MainActivity.setFragment() -&gt; TransferFragment.onCreateView() -&gt; new TransferPresenter() -&gt; TransferPresenter.onUiClickScan() -&gt; *TransferFragment.scanQrCode() -&gt; startActivityForResult()</comment>
-    <callLines>
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="198" end="198" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="250" end="251" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="205" end="212" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/presenter/TransferPresenter.java" start="439" end="439" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/view/TransferFragment.java" start="146" end="146" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/presenter/TransferPresenter.java" start="139" end="139" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/view/TransferFragment.java" start="287" end="288" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -634,7 +677,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -671,7 +714,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -691,7 +734,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -713,7 +756,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -741,7 +784,7 @@
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="218" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="205" end="212" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/KeyListFragment.java" start="130" end="130" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/KeyListFragment.java" start="380" end="384" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/KeyListFragment.java" start="380" end="383" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -751,7 +794,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -772,7 +815,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -792,6 +835,29 @@
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.QrCodeCaptureActivity" method="">
+    <comment>MainActivity.onNewIntent() -&gt; MainActivity.onTransferSelected() -&gt; MainActivity.setFragment() -&gt; TransferFragment.onCreateView() -&gt; new TransferPresenter() -&gt; TransferPresenter.onUiClickScan() -&gt; *TransferFragment.scanQrCode() -&gt; startActivityForResult()</comment>
+    <callLines>
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="198" end="198" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="250" end="251" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="205" end="212" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/presenter/TransferPresenter.java" start="439" end="439" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/view/TransferFragment.java" start="146" end="146" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/presenter/TransferPresenter.java" start="139" end="139" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/transfer/view/TransferFragment.java" start="287" end="288" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -830,7 +896,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -889,26 +955,6 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="org.sufficientlysecure.keychain.remote.ui.RemoteBackupActivity" destination="org.sufficientlysecure.keychain.ui.HelpActivity" method="">
-    <comment>RemoteBackupActivity.onCreate()  -&gt; BackupCodeFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; BackupCodeFragment.onCreateView() -&gt; *BackupCodeFragment.setOnClickListener()  -&gt; HelpActivity.startHelpActivity() -&gt; Context.startActivity()</comment>
-    <callLines>
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ui/RemoteBackupActivity.java" start="51" end="57" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/BackupCodeFragment.java" start="144" end="144" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/BackupCodeFragment.java" start="165" end="165" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/HelpActivity.java" start="143" end="145" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.SafeSlingerActivity" destination="edu.cmu.cylab.starslinger.exchange.ExchangeActivity" method="">
     <comment>SafeSlingerActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SafeSlingerActivity.startExchange() -&gt; startActivityForResult()</comment>
     <callLines>
@@ -963,25 +1009,6 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
-  <OracleEdge source="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" destination="org.sufficientlysecure.keychain.ui.ImportKeysProxyActivity" method="">
-    <comment>ViewKeyActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ViewKeyActivity.scanQrCode() -&gt; startActivityForResult()</comment>
-    <callLines>
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="260" end="260" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="264" end="264" />
-      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="438" end="440" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
@@ -1146,6 +1173,25 @@
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="258" end="258" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="606" end="608" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="615" end="615" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
+  <OracleEdge source="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" destination="org.sufficientlysecure.keychain.ui.ImportKeysProxyActivity" method="">
+    <comment>ViewKeyActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ViewKeyActivity.scanQrCode() -&gt; startActivityForResult()</comment>
+    <callLines>
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="260" end="260" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="264" end="264" />
+      <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/keyview/ViewKeyActivity.java" start="438" end="440" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />

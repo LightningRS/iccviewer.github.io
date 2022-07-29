@@ -385,21 +385,22 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.prefs.cupcake.MainPrefs" destination="com.csipsimple.ui.prefs.cupcake.PrefsLoaderActivity" method="">
-    <comment>MainPrefs.onCreate() -&gt; getIntentForType() -&gt; new PrefGroupAdapter() -&gt; MainPrefs.setListAdapter() -&gt; *MainPrefs.onListItemClick() -&gt; startActivity()</comment>
+    <comment>MainPrefs.onCreate() -&gt; getIntentForType() -&gt; new PrefGroup() -&gt; new PrefGroupAdapter() -&gt; MainPrefs.setListAdapter() -&gt; *MainPrefs.onListItemClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/com/csipsimple/ui/prefs/cupcake/MainPrefs.java" start="71" end="72" />
       <line src="/src/com/csipsimple/ui/prefs/cupcake/MainPrefs.java" start="57" end="59" />
+      <line src="/src/com/csipsimple/ui/prefs/cupcake/MainPrefs.java" start="109" end="109" />
       <line src="/src/com/csipsimple/ui/prefs/cupcake/MainPrefs.java" start="82" end="83" />
       <line src="/src/com/csipsimple/ui/prefs/cupcake/MainPrefs.java" start="95" end="95" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>

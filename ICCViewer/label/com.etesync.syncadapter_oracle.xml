@@ -55,23 +55,6 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.ui.AccountSettingsActivity" method="">
-    <comment>*AccountActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
-    <callLines>
-      <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountActivity.kt" start="138" end="140" />
-    </callLines>
-    <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
-      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
-      <intentMatch isExplicit="true" isImplicit="false" />
-      <analyzeScope>
-        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
-      </analyzeScope>
-    </tags>
-  </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.AccountUpdateService" method="">
     <comment>AccountActivity.onCreateLoader() -&gt; *AccountActivity.AccountLoader.onStartLoading() -&gt; Context.bindService()</comment>
     <callLines>
@@ -90,10 +73,27 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
+  <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.ui.AccountSettingsActivity" method="">
+    <comment>*AccountActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
+    <callLines>
+      <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountActivity.kt" start="138" end="140" />
+    </callLines>
+    <tags>
+      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
+      <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
+      <intentMatch isExplicit="true" isImplicit="false" />
+      <analyzeScope>
+        <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+      </analyzeScope>
+    </tags>
+  </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.ui.CreateCollectionActivity" method="">
     <comment>*AccountActivity.onMenuItemClick() -&gt; CreateCollectionActivity.newIntent() -&gt; startActivity()</comment>
     <callLines>
-      <line src="/app/src/main/java/com/etesync/syncadapter/ui/CreateCollectionActivity.kt" start="137" end="139" />
+      <line src="/app/src/main/java/com/etesync/syncadapter/ui/CreateCollectionActivity.kt" start="137" end="140" />
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountActivity.kt" start="171" end="171" />
     </callLines>
     <tags>
@@ -148,7 +148,7 @@
     <comment>AccountSettingsActivity.onCreate() -&gt; new AccountSettingsFragment() -&gt; FragmentTransaction.commit() -&gt; AccountSettingsActivity.AccountSettingsFragment.onLoadFinished() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onClick() -&gt; ChangeEncryptionPasswordActivity.newIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountSettingsActivity.kt" start="45" end="49" />
-      <line src="/app/src/main/java/com/etesync/syncadapter/ui/ChangeEncryptionPasswordActivity.kt" start="193" end="194" />
+      <line src="/app/src/main/java/com/etesync/syncadapter/ui/ChangeEncryptionPasswordActivity.kt" start="193" end="195" />
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountSettingsActivity.kt" start="108" end="108" />
     </callLines>
     <tags>
@@ -266,7 +266,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -275,7 +275,7 @@
     <callLines>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/ViewCollectionActivity.kt" start="122" end="122" />
       <line src="/app/src/main/res/menu/activity_view_collection.xml" start="20" end="20" />
-      <line src="/app/src/main/java/com/etesync/syncadapter/ui/CollectionMembersActivity.kt" start="111" end="113" />
+      <line src="/app/src/main/java/com/etesync/syncadapter/ui/CollectionMembersActivity.kt" start="111" end="114" />
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/ViewCollectionActivity.kt" start="157" end="157" />
     </callLines>
     <tags>
@@ -295,7 +295,7 @@
     <callLines>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/ViewCollectionActivity.kt" start="122" end="122" />
       <line src="/app/src/main/res/menu/activity_view_collection.xml" start="15" end="15" />
-      <line src="/app/src/main/java/com/etesync/syncadapter/ui/EditCollectionActivity.kt" start="85" end="87" />
+      <line src="/app/src/main/java/com/etesync/syncadapter/ui/EditCollectionActivity.kt" start="85" end="88" />
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/ViewCollectionActivity.kt" start="133" end="133" />
     </callLines>
     <tags>
@@ -316,7 +316,7 @@
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/ViewCollectionActivity.kt" start="104" end="104" />
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/journalviewer/ListEntriesFragment.kt" start="116" end="116" />
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/journalviewer/ListEntriesFragment.kt" start="81" end="81" />
-      <line src="/app/src/main/java/com/etesync/syncadapter/ui/JournalItemActivity.kt" start="496" end="499" />
+      <line src="/app/src/main/java/com/etesync/syncadapter/ui/JournalItemActivity.kt" start="496" end="500" />
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/journalviewer/ListEntriesFragment.kt" start="92" end="92" />
     </callLines>
     <tags>
@@ -332,10 +332,10 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.ViewCollectionActivity" destination="com.etesync.syncadapter.ui.importlocal.ImportActivity" method="">
-    <comment>*ViewCollectionActivity.onImport() -&gt; startActivity()</comment>
+    <comment>*ViewCollectionActivity.onImport() -&gt; ImportActivity.newIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/ViewCollectionActivity.kt" start="145" end="145" />
-      <line src="/app/src/main/java/com/etesync/syncadapter/ui/importlocal/ImportActivity.kt" start="160" end="162" />
+      <line src="/app/src/main/java/com/etesync/syncadapter/ui/importlocal/ImportActivity.kt" start="160" end="163" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
