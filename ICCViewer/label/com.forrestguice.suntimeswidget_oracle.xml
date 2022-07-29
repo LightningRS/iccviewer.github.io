@@ -24,8 +24,8 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="com.forrestguice.suntimeswidget.ClockWidget0ConfigActivity_3x1" destination="com.forrestguice.suntimeswidget.ClockWidget0_3x1" method="">
-    <comment>ClockWidget0ConfigActivity_3x1 extends ClockWidget0ConfigActivity extends ClockWidget0 -&gt; ClockWidget0.onCreate() -&gt; ClockWidget0ConfigActivity_3x1.initViews() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; ClockWidget0.initViews() -&gt; ClockWidget0.setOnClickListener() -&gt; *ClockWidget0.onClick() -&gt; ClockWidget0.addWidget() -&gt; ClockWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast() -&gt; ClockWidget0ConfigActivity_3x1 extends ClockWidget0ConfigActivity -&gt; sendBroadcast()</comment>
+  <OracleEdge source="com.forrestguice.suntimeswidget.ClockWidget0ConfigActivity_3x1" destination="com.forrestguice.suntimeswidget.ClockWidget0" method="">
+    <comment>ClockWidget0ConfigActivity_3x1 extends ClockWidget0ConfigActivity extends ClockWidget0 -&gt; ClockWidget0.onCreate() -&gt; ClockWidget0ConfigActivity_3x1.initViews() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; ClockWidget0.initViews() -&gt; ClockWidget0.setOnClickListener() -&gt; *ClockWidget0.onClick() -&gt; ClockWidget0.addWidget() -&gt; ClockWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/ClockWidget0ConfigActivity_3x1.java" start="29" end="29" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/ClockWidget0ConfigActivity.java" start="35" end="35" />
@@ -45,7 +45,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>

@@ -921,7 +921,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="rg.smssecure.smssecure.MediaPreviewActivity" destination="org.smssecure.smssecure.MediaOverviewActivity" method="">
+  <OracleEdge source="org.smssecure.smssecure.MediaPreviewActivity" destination="org.smssecure.smssecure.MediaOverviewActivity" method="">
     <comment>*MediaPreviewActivity.onOptionsItemSelected() -&gt; showOverview() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/smssecure/smssecure/MediaPreviewActivity.java" start="233" end="233" />
@@ -939,7 +939,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="rg.smssecure.smssecure.MediaPreviewActivity" destination="org.smssecure.smssecure.ShareActivity" method="">
+  <OracleEdge source="org.smssecure.smssecure.MediaPreviewActivity" destination="org.smssecure.smssecure.ShareActivity" method="">
     <comment>*MediaPreviewActivity.onOptionsItemSelected() -&gt; forward() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/smssecure/smssecure/MediaPreviewActivity.java" start="234" end="234" />

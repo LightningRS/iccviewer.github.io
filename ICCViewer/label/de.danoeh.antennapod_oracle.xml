@@ -358,9 +358,10 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="de.danoeh.antennapod.activity.OpmlImportBaseActivity" destination="de.danoeh.antennapod.activity.OpmlFeedChooserActivity" method="">
-    <comment>*OpmlImportBaseActivity.onRequestPermissionsResult() -&gt; startImport() -&gt; OpmlImportWorker.executeAsync() -&gt; onPostExecute() -&gt; OpmlImportBaseActivity.startActivityForResult()</comment>
+  <OracleEdge source="de.danoeh.antennapod.activity.OpmlImportFromIntentActivity" destination="de.danoeh.antennapod.activity.OpmlFeedChooserActivity" method="">
+    <comment>OpmlImportFromIntentActivity extends OpmlImportBaseActivity -&gt; *OpmlImportBaseActivity.onRequestPermissionsResult() -&gt; startImport() -&gt; OpmlImportWorker.executeAsync() -&gt; onPostExecute() -&gt; OpmlImportBaseActivity.startActivityForResult()</comment>
     <callLines>
+      <line src="/app/src/main/java/de/danoeh/antennapod/activity/OpmlImportFromIntentActivity.java" start="12" end="12" />
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/OpmlImportBaseActivity.java" start="104" end="104" />
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/OpmlImportBaseActivity.java" start="136" end="136" />
       <line src="/app/src/main/java/de/danoeh/antennapod/activity/OpmlImportBaseActivity.java" start="128" end="130" />
@@ -372,7 +373,7 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
