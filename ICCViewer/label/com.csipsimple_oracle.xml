@@ -27,7 +27,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.plugins.telephony.CallHandler" method="">
-    <comment>SipHome.onCreate() -&gt; new TabsAdapter() -&gt; TabsAdapter.addTab() -&gt; *TabsAdapter.getItem() -&gt; FragmentTransaction.commit() -&gt; DialerFragment.placeCall() -&gt; DialerFragment.placeCallWithOption() -&gt; CallHandlerPlugin.loadFrom() -&gt; Context.sendOrderedBroadcast()</comment>
+    <comment>SipHome.onCreate() -&gt; new TabsAdapter() -&gt; TabsAdapter.addTab() -&gt; *TabsAdapter.getItem() -&gt; FragmentTransaction.commit() -&gt; DialerFragment.placeCall() -&gt; placeCallWithOption() -&gt; CallHandlerPlugin.loadFrom() -&gt; Context.sendOrderedBroadcast()</comment>
     <callLines>
       <line src="/src/com/csipsimple/ui/SipHome.java" start="173" end="175" />
       <line src="/src/com/csipsimple/ui/SipHome.java" start="243" end="243" />
@@ -96,7 +96,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.ui.PickupSipUri" method="">
-    <comment>SipHome.onCreate() -&gt; ConversationsListFragment.onContextItemSelected() -&gt; ConversationsListFragment.viewDetails() -&gt; *FragmentTransaction.commit() -&gt; MessageFragment.chooseSipUri() -&gt; startActivityForResult()</comment>
+    <comment>SipHome.onCreate() -&gt; ConversationsListFragment.onContextItemSelected() -&gt; viewDetails() -&gt; *FragmentTransaction.commit() -&gt; MessageFragment.chooseSipUri() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/src/com/csipsimple/ui/SipHome.java" start="181" end="181" />
       <line src="/src/com/csipsimple/ui/messages/ConversationsListFragment.java" start="254" end="254" />

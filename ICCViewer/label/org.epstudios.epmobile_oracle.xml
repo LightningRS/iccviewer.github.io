@@ -41,7 +41,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ArvcList" destination="org.epstudios.epmobile.ArvcOld" method="">
-    <comment>ArvcList.onItemClick() -&gt; ArvcList.arvcOld() -&gt; startActivity()</comment>
+    <comment>ArvcList.onItemClick() -&gt; arvcOld() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/epstudios/epmobile/ArvcList.java" start="41" end="41" />
       <line src="/src/org/epstudios/epmobile/ArvcList.java" start="50" end="50" />

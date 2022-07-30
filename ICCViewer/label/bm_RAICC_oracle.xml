@@ -6,7 +6,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>MainActivity.onCreate() -&gt; PendingIntent.getActivity() -&gt; NotificationCompat.Builder.addAction() -&gt; NotificationCompat.Builder.build() -&gt; *NotificationManagerCompat.notify()</comment>
+    <comment>MainActivity.onCreate() -&gt; PendingIntent.getActivity() -&gt; NotificationCompat.Builder.addAction() -&gt; build() -&gt; *NotificationManagerCompat.notify()</comment>
     <callLines>
       <line src="/addAction1/main/java/lu/uni/trux/raicc/addAction1/MainActivity.java" start="25" end="26" />
       <line src="/addAction1/main/java/lu/uni/trux/raicc/addAction1/MainActivity.java" start="27" end="37" />
@@ -181,7 +181,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>MainActivity.onCreate() -&gt; PendingIntent.getActivity() -&gt; NotificationCompat.Builder.setDeleteIntent() -&gt; NotificationCompat.Builder.build() -&gt; *NotificationManagerCompat.notify()</comment>
+    <comment>MainActivity.onCreate() -&gt; PendingIntent.getActivity() -&gt; NotificationCompat.Builder.setDeleteIntent() -&gt; build() -&gt; *NotificationManagerCompat.notify()</comment>
     <callLines>
       <line src="/setDeleteIntent/main/java/lu/uni/trux/raicc/setDeleteIntent/MainActivity.java" start="25" end="26" />
       <line src="/setDeleteIntent/main/java/lu/uni/trux/raicc/setDeleteIntent/MainActivity.java" start="27" end="37" />
@@ -247,7 +247,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>MainActivity.onCreate() -&gt; PendingIntent.getActivity() -&gt; NotificationCompat.Builder.setFullScreenIntent() -&gt; NotificationCompat.Builder.build() -&gt; *NotificationManagerCompat.notify()</comment>
+    <comment>MainActivity.onCreate() -&gt; PendingIntent.getActivity() -&gt; NotificationCompat.Builder.setFullScreenIntent() -&gt; build() -&gt; *NotificationManagerCompat.notify()</comment>
     <callLines>
       <line src="/setFullScreenIntent/main/java/lu/uni/trux/raicc/setFullScreenIntent/MainActivity.java" start="25" end="26" />
       <line src="/setFullScreenIntent/main/java/lu/uni/trux/raicc/setFullScreenIntent/MainActivity.java" start="27" end="37" />
@@ -489,7 +489,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>SecondActivity.onCreate() -&gt; PendingIntent.getActivity() -&gt; PendingIntent.send()</comment>
+    <comment>SecondActivity.onCreate() -&gt; PendingIntent.getActivity() -&gt; send()</comment>
     <callLines>
       <line src="/startIntentSenderForResult/main/java/lu/uni/trux/raicc/startIntentSenderForResult/SecondActivity.java" start="17" end="18" />
       <line src="/startIntentSenderForResult/main/java/lu/uni/trux/raicc/startIntentSenderForResult/SecondActivity.java" start="19" end="21" />

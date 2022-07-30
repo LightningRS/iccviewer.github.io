@@ -108,7 +108,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.ligi.passandroid.ui.PassListActivity" destination="org.ligi.passandroid.ui.PassViewActivity" method="">
-    <comment>PassListActivity.onCreate() -&gt; new PassTopicFragmentPagerAdapter() -&gt; PassTopicFragmentPagerAdapter.getItem() -&gt; PassListFragment.newInstance() -&gt; PassListFragment.onCreateView() -&gt; new PassAdapter() -&gt; PassAdapter.onBindViewHolder() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PassListActivity.startActivityFromClass() -&gt; Context.startActivity()</comment>
+    <comment>PassListActivity.onCreate() -&gt; new PassTopicFragmentPagerAdapter() -&gt; PassTopicFragmentPagerAdapter.getItem() -&gt; PassListFragment.newInstance() -&gt; onCreateView() -&gt; new PassAdapter() -&gt; PassAdapter.onBindViewHolder() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PassListActivity.startActivityFromClass() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/android/src/main/java/org/ligi/passandroid/ui/PassListActivity.kt" start="53" end="53" />
       <line src="/android/src/main/java/org/ligi/passandroid/ui/PassTopicFragmentPagerAdapter.kt" start="22" end="22" />

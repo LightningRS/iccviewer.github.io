@@ -197,7 +197,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardTemplateEditor" destination="com.ichi2.anki.Previewer" method="">
-    <comment>CardTemplateEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; AnkiActivity.onCollectionLoaded() -&gt; CardTemplateEditor extends AnkiActivity -&gt; CardTemplateEditor.onCollectionLoaded() -&gt; ViewPager.addOnPageChangeListener() -&gt; ViewPager.OnPageChangeListener.onPageSelected() -&gt; FragmentPagerAdapter.instantiateItem() -&gt; *CardTemplateFragment.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
+    <comment>CardTemplateEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; onCollectionLoaded() -&gt; CardTemplateEditor extends AnkiActivity -&gt; CardTemplateEditor.onCollectionLoaded() -&gt; ViewPager.addOnPageChangeListener() -&gt; ViewPager.OnPageChangeListener.onPageSelected() -&gt; FragmentPagerAdapter.instantiateItem() -&gt; *CardTemplateFragment.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardTemplateEditor.java" start="68" end="68" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/AnkiActivity.java" start="286" end="286" />
@@ -244,7 +244,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.DeckOptions" method="">
-    <comment>DeckPicker.onCreate() -&gt; DeckAdapter.setDeckLongClickListener() -&gt; View.OnLongClickListener.onLongClick() -&gt; DeckPickerContextMenu.newInstance() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.showDialogFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; DeckPickerContextMenu.onCreateDialog() -&gt; MaterialDialog.Builder.itemsCallback() -&gt; *MaterialDialog.ListCallback.onSelection() -&gt; DeckPicker.showContextMenuDeckOptions() -&gt;  AnkiActivity.startActivityWithAnimation() -&gt; startActivity()</comment>
+    <comment>DeckPicker.onCreate() -&gt; DeckAdapter.setDeckLongClickListener() -&gt; View.OnLongClickListener.onLongClick() -&gt; DeckPickerContextMenu.newInstance() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.showDialogFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; DeckPickerContextMenu.onCreateDialog() -&gt; MaterialDialog.Builder.itemsCallback() -&gt; *MaterialDialog.ListCallback.onSelection() -&gt; DeckPicker.showContextMenuDeckOptions() -&gt; AnkiActivity.startActivityWithAnimation() -&gt; startActivity()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/DeckPicker.java" start="391" end="391" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/DeckPicker.java" start="237" end="237" />
@@ -573,7 +573,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelBrowser" destination="com.ichi2.anki.CardTemplateEditor" method="">
-    <comment>ModelBrowser extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; ModelBrowser.onCollectionLoaded() -&gt; DeckTask.launchDeckTask() -&gt; DeckTask.execute() -&gt; DeckTask.TaskListener.onPostExecute() -&gt; ModelBrowser.fillModelList() -&gt; ModelBrowserContextMenu.newInstance() -&gt; *MaterialDialog.ListCallback.onSelection() -&gt; ModelBrowser.openTemplateEditor() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
+    <comment>ModelBrowser extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; ModelBrowser.onCollectionLoaded() -&gt; DeckTask.launchDeckTask() -&gt; execute() -&gt; DeckTask.TaskListener.onPostExecute() -&gt; ModelBrowser.fillModelList() -&gt; ModelBrowserContextMenu.newInstance() -&gt; *MaterialDialog.ListCallback.onSelection() -&gt; ModelBrowser.openTemplateEditor() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/ModelBrowser.java" start="58" end="58" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/AnkiActivity.java" start="286" end="286" />
@@ -618,7 +618,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelBrowser" destination="com.ichi2.anki.ModelFieldEditor" method="">
-    <comment>ModelBrowser extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; ModelBrowser.onCollectionLoaded() -&gt; DeckTask.launchDeckTask() -&gt; DeckTask.execute() -&gt; DeckTask.TaskListener.onPostExecute() -&gt; ModelBrowser.fillModelList() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
+    <comment>ModelBrowser extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; ModelBrowser.onCollectionLoaded() -&gt; DeckTask.launchDeckTask() -&gt; execute() -&gt; DeckTask.TaskListener.onPostExecute() -&gt; ModelBrowser.fillModelList() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/ModelBrowser.java" start="58" end="58" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/AnkiActivity.java" start="286" end="286" />
@@ -1322,7 +1322,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.DeckPicker" method="">
-    <comment>StudyOptionsActivity extends NavigationDrawerActivity -&gt;  NavigationDrawerActivity extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; startActivityWithAnimation() -&gt; startActivity()</comment>
+    <comment>StudyOptionsActivity extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; startActivityWithAnimation() -&gt; startActivity()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsActivity.java" start="31" end="31" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/NavigationDrawerActivity.java" start="44" end="44" />

@@ -40,7 +40,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.HomePagerActivity" destination="es.usc.citius.servando.calendula.activities.ConfirmActivity" method="反射">
-    <comment>HomePagerActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; ViewPager.setCurrentItem() -&gt; HomePageAdapter.getItem() -&gt; HomePages.values() -&gt; HomePages.HOME -&gt; Constructor.newInstance() -&gt; DailyAgendaFragment.onCreateView() -&gt; setupRecyclerView() -&gt; RecyclerView.setAdapter() -&gt; DailyAgendaRecyclerAdapter.setListener() -&gt; *DailyAgendaRecyclerListener.onItemClick() -&gt; DailyAgendaFragment.showConfirmActivity() -&gt; startActivity()</comment>
+    <comment>HomePagerActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; setCurrentItem() -&gt; HomePageAdapter.getItem() -&gt; HomePages.values() -&gt; HomePages.HOME -&gt; Constructor.newInstance() -&gt; DailyAgendaFragment.onCreateView() -&gt; setupRecyclerView() -&gt; RecyclerView.setAdapter() -&gt; DailyAgendaRecyclerAdapter.setListener() -&gt; *DailyAgendaRecyclerListener.onItemClick() -&gt; DailyAgendaFragment.showConfirmActivity() -&gt; startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/HomePagerActivity.java" start="412" end="417" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/adapters/HomePageAdapter.java" start="54" end="54" />
@@ -85,7 +85,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.HomePagerActivity" destination="es.usc.citius.servando.calendula.activities.MedicineInfoActivity" method="">
-    <comment>HomePagerActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; HomePageAdapter.getItem() -&gt; HomePages.values() -&gt; HomePages.MEDICINES -&gt; Constructor.newInstance() -&gt; MedicinesListFragment.onAttach() -&gt; (OnMedicineSelectedListener) HomePagerActivity -&gt; MedicinesListFragment.onCreateView() -&gt; setupRecyclerView() -&gt; FastItemAdapter.withOnClickListener() -&gt; *FastAdapter.OnClickListener&lt;MedicineItem&gt;.onClick() -&gt; HomePagerActivity.onMedicineSelected() -&gt; launchActivity() -&gt; startActivity()</comment>
+    <comment>HomePagerActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; HomePageAdapter.getItem() -&gt; HomePages.values() -&gt; HomePages.MEDICINES -&gt; Constructor.newInstance() -&gt; MedicinesListFragment.onAttach() -&gt; (OnMedicineSelectedListener) HomePagerActivity -&gt; onCreateView() -&gt; setupRecyclerView() -&gt; FastItemAdapter.withOnClickListener() -&gt; *FastAdapter.OnClickListener&lt;MedicineItem&gt;.onClick() -&gt; HomePagerActivity.onMedicineSelected() -&gt; launchActivity() -&gt; startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/HomePagerActivity.java" start="412" end="417" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/adapters/HomePageAdapter.java" start="54" end="54" />
@@ -198,7 +198,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.HomePagerActivity" destination="es.usc.citius.servando.calendula.activities.ScheduleCreationActivity" method="">
-    <comment>HomePagerActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; HomePageAdapter.getItem() -&gt; HomePages.values() -&gt; HomePages.SCHEDULES -&gt; Constructor.newInstance() -&gt; ScheduleListFragment.onAttach() -&gt; (OnScheduleSelectedListener) HomePagerActivity -&gt; ScheduleListFragment.onCreateView() -&gt; setupRecyclerView() -&gt; FastItemAdapter&lt;ScheduleListItem&gt;.withOnClickListener() -&gt; *FastAdapter.OnClickListener&lt;ScheduleListItem&gt;.onClick() -&gt; HomePagerActivity.onScheduleSelected() -&gt; launchActivity() -&gt; startActivity()</comment>
+    <comment>HomePagerActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; HomePageAdapter.getItem() -&gt; HomePages.values() -&gt; HomePages.SCHEDULES -&gt; Constructor.newInstance() -&gt; ScheduleListFragment.onAttach() -&gt; (OnScheduleSelectedListener) HomePagerActivity -&gt; onCreateView() -&gt; setupRecyclerView() -&gt; FastItemAdapter&lt;ScheduleListItem&gt;.withOnClickListener() -&gt; *FastAdapter.OnClickListener&lt;ScheduleListItem&gt;.onClick() -&gt; HomePagerActivity.onScheduleSelected() -&gt; launchActivity() -&gt; startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/HomePagerActivity.java" start="412" end="417" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/adapters/HomePageAdapter.java" start="54" end="54" />
@@ -330,7 +330,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.activities.MedicineInfoActivity" destination="es.usc.citius.servando.calendula.activities.WebViewActivity" method="">
-    <comment>MedicineInfoActivity.onCreate() -&gt; new MedInfoPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ViewPager.setCurrentItem() -&gt; MedInfoPageAdapter.getItem() -&gt; MedInfoFragment.newInstance() -&gt; MedInfoFragment.onCreateView() -&gt; setupView() -&gt; ImageButton.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ProspectUtils.openProspect() -&gt; Context.startActivity()</comment>
+    <comment>MedicineInfoActivity.onCreate() -&gt; new MedInfoPageAdapter() -&gt; ViewPager.setAdapter() -&gt; setCurrentItem() -&gt; MedInfoPageAdapter.getItem() -&gt; MedInfoFragment.newInstance() -&gt; onCreateView() -&gt; setupView() -&gt; ImageButton.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ProspectUtils.openProspect() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/MedicineInfoActivity.java" start="204" end="207" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/adapters/MedInfoPageAdapter.java" start="42" end="42" />
@@ -447,7 +447,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.activities.ScheduleCreationActivity" destination="es.usc.citius.servando.calendula.activities.SummaryCalendarActivity" method="">
-    <comment>ScheduleCreationActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; ViewPager.setCurrentItem() -&gt; SectionsPagerAdapter.getItem() -&gt; new ScheduleSummaryFragment() -&gt; ScheduleSummaryFragment.setUserVisibleHint() -&gt; updateSummary() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ScheduleSummaryFragment.startActivity()</comment>
+    <comment>ScheduleCreationActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; setCurrentItem() -&gt; SectionsPagerAdapter.getItem() -&gt; new ScheduleSummaryFragment() -&gt; ScheduleSummaryFragment.setUserVisibleHint() -&gt; updateSummary() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ScheduleSummaryFragment.startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ScheduleCreationActivity.java" start="382" end="382" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ScheduleCreationActivity.java" start="390" end="390" />
@@ -569,7 +569,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.scheduling.AlarmIntentService" destination="es.usc.citius.servando.calendula.notifications.LockScreenAlarmActivity" method="">
-    <comment>*AlarmIntentService.onHandleWork() -&gt; AlarmScheduler.onAlarmReceived() -&gt; onRoutineTime() -&gt; ReminderNotification.notify() -&gt; ReminderNotification.notify() -&gt; showInsistentScreen() -&gt; Context.startActivity()</comment>
+    <comment>*AlarmIntentService.onHandleWork() -&gt; AlarmScheduler.onAlarmReceived() -&gt; onRoutineTime() -&gt; ReminderNotification.notify() -&gt; notify() -&gt; showInsistentScreen() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmIntentService.kt" start="68" end="71" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/scheduling/AlarmScheduler.java" start="124" end="124" />

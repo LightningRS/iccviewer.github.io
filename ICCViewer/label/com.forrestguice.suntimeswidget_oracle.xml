@@ -2,7 +2,7 @@
 
 <root srcCodeBase="/apps/com.forrestguice.suntimeswidget">
   <OracleEdge source="com.forrestguice.suntimeswidget.ClockWidget0ConfigActivity" destination="com.forrestguice.suntimeswidget.ClockWidget0" method="">
-    <comment>ClockWidget0ConfigActivity extends ClockWidget0 -&gt; ClockWidget0.onCreate() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; ClockWidget0.initViews() -&gt; ClockWidget0.setOnClickListener() -&gt; *ClockWidget0.onClick() -&gt; ClockWidget0.addWidget() -&gt; ClockWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>ClockWidget0ConfigActivity extends ClockWidget0 -&gt; ClockWidget0.onCreate() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; ClockWidget0.initViews() -&gt; setOnClickListener() -&gt; *ClockWidget0.onClick() -&gt; ClockWidget0.addWidget() -&gt; ClockWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/ClockWidget0ConfigActivity.java" start="35" end="35" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity0.java" start="177" end="177" />
@@ -25,7 +25,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.ClockWidget0ConfigActivity_3x1" destination="com.forrestguice.suntimeswidget.ClockWidget0" method="">
-    <comment>ClockWidget0ConfigActivity_3x1 extends ClockWidget0ConfigActivity extends ClockWidget0 -&gt; ClockWidget0.onCreate() -&gt; ClockWidget0ConfigActivity_3x1.initViews() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; ClockWidget0.initViews() -&gt; ClockWidget0.setOnClickListener() -&gt; *ClockWidget0.onClick() -&gt; ClockWidget0.addWidget() -&gt; ClockWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>ClockWidget0ConfigActivity_3x1 extends ClockWidget0ConfigActivity extends ClockWidget0 -&gt; ClockWidget0.onCreate() -&gt; ClockWidget0ConfigActivity_3x1.initViews() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; ClockWidget0.initViews() -&gt; setOnClickListener() -&gt; *ClockWidget0.onClick() -&gt; ClockWidget0.addWidget() -&gt; ClockWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/ClockWidget0ConfigActivity_3x1.java" start="29" end="29" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/ClockWidget0ConfigActivity.java" start="35" end="35" />
@@ -51,7 +51,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.MoonWidget0ConfigActivity" destination="com.forrestguice.suntimeswidget.MoonWidget0" method="">
-    <comment>MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity0.initViews() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast() </comment>
+    <comment>MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; initViews() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity.java" start="33" end="33" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity.java" start="43" end="43" />
@@ -75,7 +75,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.MoonWidget0ConfigActivity_2x1" destination="com.forrestguice.suntimeswidget.MoonWidget0_2x1" method="">
-    <comment>MoonWidget0ConfigActivity_2x1 extends MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; MoonWidget0ConfigActivity_2x1.initViews() -&gt; MoonWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity_2x1.updateWidgets() -&gt; sendBroadcast() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; sendBroadcast()</comment>
+    <comment>MoonWidget0ConfigActivity_2x1 extends MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; MoonWidget0ConfigActivity_2x1.initViews() -&gt; MoonWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity_2x1.updateWidgets() -&gt; sendBroadcast() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity_2x1.java" start="26" end="26" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity.java" start="33" end="33" />
@@ -94,7 +94,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.MoonWidget0ConfigActivity_3x1" destination="com.forrestguice.suntimeswidget.MoonWidget0_3x1" method="">
-    <comment>MoonWidget0ConfigActivity_3x1 extends MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; MoonWidget0ConfigActivity_3x1.initViews() -&gt; MoonWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity_3x1.updateWidgets() -&gt; sendBroadcast() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; sendBroadcast()</comment>
+    <comment>MoonWidget0ConfigActivity_3x1 extends MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; MoonWidget0ConfigActivity_3x1.initViews() -&gt; MoonWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity_3x1.updateWidgets() -&gt; sendBroadcast() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity_3x1.java" start="30" end="30" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/MoonWidget0ConfigActivity.java" start="33" end="33" />
@@ -113,7 +113,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SolsticeWidget0ConfigActivity" destination="com.forrestguice.suntimeswidget.SolsticeWidget0" method="">
-    <comment>SolsticeWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SolsticeWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SolsticeWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>SolsticeWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SolsticeWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SolsticeWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SolsticeWidget0ConfigActivity.java" start="36" end="36" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SolsticeWidget0ConfigActivity.java" start="66" end="69" />
@@ -149,7 +149,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity0" destination="com.forrestguice.suntimeswidget.SuntimesWidget0" method="">
-    <comment>SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity0.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity0.onCreate() -&gt; initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity0.java" start="177" end="177" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity0.java" start="331" end="331" />
@@ -170,7 +170,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity0_2x1" destination="com.forrestguice.suntimeswidget.SuntimesWidget0_2x1" method="">
-    <comment>SuntimesConfigActivity0_2x1 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity0_2x1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity0_2x1.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity0_2x1 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity0_2x1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity0_2x1.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity0_2x1.java" start="29" end="29" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity0_2x1.java" start="49" end="52" />
@@ -188,7 +188,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity1" destination="com.forrestguice.suntimeswidget.SuntimesWidget1" method="">
-    <comment>SuntimesConfigActivity1 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity1.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity1 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity1.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity1.java" start="30" end="30" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity1.java" start="77" end="80" />
@@ -206,7 +206,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity2" destination="com.forrestguice.suntimeswidget.SuntimesWidget2" method="">
-    <comment>SuntimesConfigActivity2extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity2extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2.java" start="37" end="37" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2.java" start="87" end="90" />
@@ -224,7 +224,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity2_3x1" destination="com.forrestguice.suntimeswidget.SuntimesWidget2_3x1" method="">
-    <comment>SuntimesConfigActivity2_3x1 extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x1.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x1 extends SuntimesConfigActivity2 -&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity2_3x1 extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x1.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x1 extends SuntimesConfigActivity2 -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2_3x1.java" start="30" end="30" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2.java" start="37" end="37" />
@@ -243,7 +243,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity2_3x2" destination="com.forrestguice.suntimeswidget.SuntimesWidget2_3x2" method="">
-    <comment>SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x2.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; SuntimesConfigActivity0.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2 -&gt; sendBroadcast()</comment>
+    <comment>SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x2.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2 -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2_3x2.java" start="30" end="30" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity2.java" start="37" end="37" />

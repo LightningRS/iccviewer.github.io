@@ -439,7 +439,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.liberty.android.fantastischmemo.ui.AnyMemo" destination="org.liberty.android.fantastischmemo.ui.QuizActivity" method="">
-    <comment>AnyMemo.onCreate() -&gt; Fragment.instantiate() -&gt; AnyMemo.initViewPager() -&gt; new PagerAdapter() -&gt; ViewPager.setAdapter() -&gt; PagerAdapter.getItem() -&gt; OpenTabFragment.onAttach() -&gt; setOnFileClickListener() -&gt; FileBrowserFragment.OnFileClickListener.onClick() -&gt; new OpenActionsFragment() -&gt; DialogFragment.show() -&gt; OpenActionsFragment.onCreateView() -&gt; Button.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; new QuizLauncherDialogFragment() -&gt; QuizLauncherDialogFragment.show() -&gt; QuizLauncherDialogFragment.onCreateView() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>AnyMemo.onCreate() -&gt; Fragment.instantiate() -&gt; AnyMemo.initViewPager() -&gt; new PagerAdapter() -&gt; ViewPager.setAdapter() -&gt; PagerAdapter.getItem() -&gt; OpenTabFragment.onAttach() -&gt; setOnFileClickListener() -&gt; FileBrowserFragment.OnFileClickListener.onClick() -&gt; new OpenActionsFragment() -&gt; DialogFragment.show() -&gt; OpenActionsFragment.onCreateView() -&gt; Button.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; new QuizLauncherDialogFragment() -&gt; QuizLauncherDialogFragment.show() -&gt; onCreateView() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/liberty/android/fantastischmemo/ui/AnyMemo.java" start="128" end="128" />
       <line src="/src/org/liberty/android/fantastischmemo/ui/AnyMemo.java" start="358" end="360" />

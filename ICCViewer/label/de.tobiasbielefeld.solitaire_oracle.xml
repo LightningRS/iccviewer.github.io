@@ -2,7 +2,7 @@
 
 <root srcCodeBase="/apps/de.tobiasbielefeld.solitaire">
   <OracleEdge source="de.tobiasbielefeld.solitaire.ui.GameManager" destination="de.tobiasbielefeld.solitaire.ui.manual.Manual" method="">
-    <comment>GameManager.onCreate() -&gt; setContentView() -&gt; R.layout.activity_game_manager.mainButtonHint.onClick -&gt; GameManager.menuClick() -&gt; showHelpDialog() -&gt; new DialogInGameHelpMenu() -&gt; DialogInGameHelpMenu.show() -&gt; DialogInGameHelpMenu.onCreateDialog() -&gt; AlertDialog.Builder.setItems() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; DialogInGameHelpMenu.startActivity()</comment>
+    <comment>GameManager.onCreate() -&gt; setContentView() -&gt; R.layout.activity_game_manager.mainButtonHint.onClick -&gt; GameManager.menuClick() -&gt; showHelpDialog() -&gt; new DialogInGameHelpMenu() -&gt; DialogInGameHelpMenu.show() -&gt; onCreateDialog() -&gt; AlertDialog.Builder.setItems() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; DialogInGameHelpMenu.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/de/tobiasbielefeld/solitaire/ui/GameManager.java" start="104" end="104" />
       <line src="/app/src/main/res/layout/activity_game_manager.xml" start="179" end="179" />

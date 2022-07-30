@@ -273,7 +273,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.ConferenceDetailsActivity" method="">
-    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; ConversationsActivity.openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onOptionsItemSelected() -&gt; startActivity()</comment>
+    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onOptionsItemSelected() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="366" end="366" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="555" end="556" />
@@ -298,7 +298,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.ContactDetailsActivity" method="">
-    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; ConversationsActivity.openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onOptionsItemSelected() -&gt; ConversationsActivity.switchToContactDetails() -&gt; ConversationsActivity extends XmppActivity -&gt; XmppActivity.switchToContactDetails() -&gt; startActivity()</comment>
+    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onOptionsItemSelected() -&gt; ConversationsActivity.switchToContactDetails() -&gt; ConversationsActivity extends XmppActivity -&gt; XmppActivity.switchToContactDetails() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="366" end="366" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="555" end="556" />
@@ -378,7 +378,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.RecordingActivity" method="">
-    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; ConversationsActivity.openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onRequestPermissionsResult() -&gt; attachFile() -&gt; invokeAttachFileIntent() -&gt; startActivityForResult()</comment>
+    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onRequestPermissionsResult() -&gt; attachFile() -&gt; invokeAttachFileIntent() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="366" end="366" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="555" end="556" />
@@ -445,7 +445,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.ShareLocationActivity" method="">
-    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; ConversationsActivity.openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onRequestPermissionsResult() -&gt; attachFile() -&gt; invokeAttachFileIntent() -&gt; GeoHelper.getFetchIntent() -&gt; startActivityForResult()</comment>
+    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onRequestPermissionsResult() -&gt; attachFile() -&gt; invokeAttachFileIntent() -&gt; GeoHelper.getFetchIntent() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="366" end="366" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="555" end="556" />
@@ -500,7 +500,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.TrustKeysActivity" method="">
-    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; ConversationsActivity.openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onRequestPermissionsResult() -&gt; commitAttachments() -&gt; trustKeysIfNeeded() -&gt; startActivityForResult()</comment>
+    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onRequestPermissionsResult() -&gt; commitAttachments() -&gt; trustKeysIfNeeded() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="366" end="366" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="555" end="556" />
@@ -697,7 +697,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ManageAccountActivity" destination="eu.siacs.conversations.ui.WelcomeActivity" method="">
-    <comment>ManageAccountActivity.onContextItemSelected() -&gt; ManageAccountActivity.deleteAccount() -&gt; AlertDialog.Builder.setPositiveButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; WelcomeActivity.launch() -&gt; Activity.startActivity()</comment>
+    <comment>ManageAccountActivity.onContextItemSelected() -&gt; deleteAccount() -&gt; AlertDialog.Builder.setPositiveButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; WelcomeActivity.launch() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/src/conversations/java/eu/siacs/conversations/ui/ManageAccountActivity.java" start="190" end="190" />
       <line src="/src/conversations/java/eu/siacs/conversations/ui/ManageAccountActivity.java" start="376" end="376" />
@@ -788,7 +788,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.SearchActivity" destination="eu.siacs.conversations.ui.ShowLocationActivity" method="">
-    <comment>SearchActivity.onCreate() -&gt; new MessageAdapter() -&gt; View.setAdapter() -&gt; MessageAdapter.getView() -&gt; MessageAdapter.displayLocationMessage() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MessageAdapter.showLocation() -&gt; GeoHelper.createGeoIntentsFromMessage() -&gt; Context.startActivity()</comment>
+    <comment>SearchActivity.onCreate() -&gt; new MessageAdapter() -&gt; View.setAdapter() -&gt; MessageAdapter.getView() -&gt; displayLocationMessage() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MessageAdapter.showLocation() -&gt; GeoHelper.createGeoIntentsFromMessage() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/SearchActivity.java" start="92" end="94" />
       <line src="/src/main/java/eu/siacs/conversations/ui/adapter/MessageAdapter.java" start="776" end="776" />
@@ -884,7 +884,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.StartConversationActivity" destination="eu.siacs.conversations.ui.ChooseContactActivity" method="">
-    <comment>StartConversationActivity.onCreate() -&gt; showCreatePrivateGroupChatDialog() -&gt; CreatePrivateGroupChatDialog.newInstance() -&gt; show() -&gt; CreatePrivateGroupChatDialog.onCreateDialog() -&gt; EditText.setOnEditorActionListener() -&gt; *EditText.OnEditorActionListener.onEditorAction() -&gt; CreateConferenceDialogListener.onCreateDialogPositiveClick() -&gt; StartConversationActivity implements CreateConferenceDialogListener -&gt; StartConversationActivity.onCreateDialogPositiveClick() -&gt; startActivityForResult()</comment>
+    <comment>StartConversationActivity.onCreate() -&gt; showCreatePrivateGroupChatDialog() -&gt; CreatePrivateGroupChatDialog.newInstance() -&gt; show() -&gt; onCreateDialog() -&gt; EditText.setOnEditorActionListener() -&gt; *EditText.OnEditorActionListener.onEditorAction() -&gt; CreateConferenceDialogListener.onCreateDialogPositiveClick() -&gt; StartConversationActivity implements CreateConferenceDialogListener -&gt; StartConversationActivity.onCreateDialogPositiveClick() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="325" end="325" />
       <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="552" end="553" />

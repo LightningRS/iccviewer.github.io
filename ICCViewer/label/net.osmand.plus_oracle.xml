@@ -2,7 +2,7 @@
 
 <root srcCodeBase="/apps/net.osmand.plus">
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.HelpActivity" method="">
-    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; MapActivityActions.createMainOptionsMenu() -&gt; MapActivityActions.createNormalOptionsMenu() -&gt; *ItemClickListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
+    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; createMainOptionsMenu() -&gt; createNormalOptionsMenu() -&gt; *ItemClickListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="322" end="322" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="155" end="155" />
@@ -52,7 +52,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.PluginsActivity" method="">
-    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; MapActivityActions.createMainOptionsMenu() -&gt; MapActivityActions.createNormalOptionsMenu() -&gt; *ItemClickListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
+    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; createMainOptionsMenu() -&gt; createNormalOptionsMenu() -&gt; *ItemClickListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="383" end="383" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="1134" end="1134" />
@@ -74,7 +74,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.PrintDialogActivity" method="">
-    <comment>new DashboardOnMap() -&gt; MapActivity.onResume() -&gt; DashboardOnMap.setDashboardVisibility() -&gt; addOrUpdateDashboardFragments()  -&gt; TransactionBuilder.addFragmentsData() -&gt; getFragmentTransaction() -&gt; DashNavigationFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; DashNavigationFragment.initView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ChooseRouteFragment.showInstance() -&gt; new ChooseRouteFragment() -&gt; FragmentTransaction.commit() -&gt; ChooseRouteFragment.onCreateView() -&gt; buildMenuButtons() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ChooseRouteFragment.startActivity()</comment>
+    <comment>new DashboardOnMap() -&gt; MapActivity.onResume() -&gt; DashboardOnMap.setDashboardVisibility() -&gt; addOrUpdateDashboardFragments() -&gt; TransactionBuilder.addFragmentsData() -&gt; getFragmentTransaction() -&gt; DashNavigationFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; DashNavigationFragment.initView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ChooseRouteFragment.showInstance() -&gt; new ChooseRouteFragment() -&gt; FragmentTransaction.commit() -&gt; ChooseRouteFragment.onCreateView() -&gt; buildMenuButtons() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ChooseRouteFragment.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="238" end="238" />
       <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="194" end="194" />
@@ -108,7 +108,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.TrackActivity" method="">
-    <comment>MapActivity.onResume() -&gt; MapMarkersDialogFragment.showInstance() -&gt; CoordinateInputDialogFragment.onCreateView()  -&gt; Fragment.setListener() -&gt; CoordinateInputDialogFragment.createSaveAsTrackFragmentListener() -&gt; Snackbar.setAction() -&gt; *View.OnClickListener.onClick() -&gt; CoordinateInputDialogFragment.getTrackActivity() -&gt; startActivity()</comment>
+    <comment>MapActivity.onResume() -&gt; MapMarkersDialogFragment.showInstance() -&gt; CoordinateInputDialogFragment.onCreateView() -&gt; Fragment.setListener() -&gt; CoordinateInputDialogFragment.createSaveAsTrackFragmentListener() -&gt; Snackbar.setAction() -&gt; *View.OnClickListener.onClick() -&gt; CoordinateInputDialogFragment.getTrackActivity() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="686" end="686" />
       <line src="/OsmAnd/src/net/osmand/plus/mapmarkers/MapMarkersDialogFragment.java" start="539" end="541" />
@@ -133,7 +133,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.download.DownloadActivity" method="">
-    <comment>MapActivity.onResume() -&gt; DashboardOnMap.setDashboardVisibility() -&gt; DashboardOnMap.updateDownloadBtn() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MapActivity.startActivity()</comment>
+    <comment>MapActivity.onResume() -&gt; DashboardOnMap.setDashboardVisibility() -&gt; updateDownloadBtn() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MapActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="238" end="238" />
       <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="193" end="193" />
@@ -157,7 +157,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.liveupdates.OsmLiveActivity" method="">
-    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; MapActivityActions.createMainOptionsMenu() -&gt; MapActivityActions.createNormalOptionsMenu() -&gt; *ItemClickListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
+    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; createMainOptionsMenu() -&gt; createNormalOptionsMenu() -&gt; *ItemClickListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="322" end="322" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="155" end="155" />
@@ -180,7 +180,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.myplaces.FavoritesActivity" method="">
-    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; MapActivityActions.createMainOptionsMenu() -&gt; MapActivityActions.createNormalOptionsMenu() -&gt; *MapActivityActions.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
+    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; createMainOptionsMenu() -&gt; createNormalOptionsMenu() -&gt; *MapActivityActions.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="383" end="383" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="1134" end="1134" />
@@ -202,7 +202,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.wikivoyage.explore.WikivoyageExploreActivity" method="">
-    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; MapActivityActions.createMainOptionsMenu() -&gt; MapActivityActions.createNormalOptionsMenu() -&gt; *MapActivityActions.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
+    <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; createMainOptionsMenu() -&gt; createNormalOptionsMenu() -&gt; *MapActivityActions.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="383" end="383" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="1134" end="1134" />
@@ -223,7 +223,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.access.SettingsAccessibilityActivity" method="">
-    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; OsmandPlugin.getId() -&gt; AccessibilityPlugin extends OsmandPlugin -&gt; AccessibilityPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AccessibilityPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
+    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; AccessibilityPlugin extends OsmandPlugin -&gt; AccessibilityPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AccessibilityPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/PluginActivity.java" start="126" end="126" />
       <line src="/OsmAnd/src/net/osmand/plus/OsmandApplication.java" start="199" end="199" />
@@ -253,7 +253,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.plus.audionotes.SettingsAudioVideoActivity" method="">
-    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; OsmandPlugin.getId() -&gt; AudioVideoNotesPlugin extends OsmandPlugin -&gt; AudioVideoNotesPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AudioVideoNotesPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
+    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; AudioVideoNotesPlugin extends OsmandPlugin -&gt; AudioVideoNotesPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AudioVideoNotesPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/PluginActivity.java" start="126" end="126" />
       <line src="/OsmAnd/src/net/osmand/plus/OsmandApplication.java" start="199" end="199" />
@@ -283,7 +283,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.plus.development.SettingsDevelopmentActivity" method="">
-    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; OsmandPlugin.getId() -&gt; OsmandDevelopmentPlugin extends OsmandPlugin -&gt; OsmandDevelopmentPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OsmandDevelopmentPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
+    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; OsmandDevelopmentPlugin extends OsmandPlugin -&gt; OsmandDevelopmentPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OsmandDevelopmentPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/PluginActivity.java" start="126" end="126" />
       <line src="/OsmAnd/src/net/osmand/plus/OsmandApplication.java" start="199" end="199" />
@@ -313,7 +313,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.plus.monitoring.SettingsMonitoringActivity" method="">
-    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; OsmandPlugin.getId() -&gt; OsmandMonitoringPlugin extends OsmandPlugin -&gt; OsmandMonitoringPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OsmandMonitoringPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
+    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; OsmandMonitoringPlugin extends OsmandPlugin -&gt; OsmandMonitoringPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OsmandMonitoringPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/PluginActivity.java" start="126" end="126" />
       <line src="/OsmAnd/src/net/osmand/plus/OsmandApplication.java" start="199" end="199" />
@@ -343,7 +343,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.plus.osmedit.SettingsOsmEditingActivity" method="">
-    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; OsmandPlugin.getId() -&gt; OsmEditingPlugin extends OsmandPlugin -&gt; OsmEditingPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OsmEditingPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
+    <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; OsmEditingPlugin extends OsmandPlugin -&gt; OsmEditingPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OsmEditingPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/PluginActivity.java" start="126" end="126" />
       <line src="/OsmAnd/src/net/osmand/plus/OsmandApplication.java" start="199" end="199" />
@@ -523,7 +523,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchActivity" destination="net.osmand.plus.activities.search.SearchPOIActivity" method="">
-    <comment>SearchActivity.onCreate() -&gt; SearchActivity.getFragment() -&gt; SearchPoiFilterFragment.onCreateView() -&gt; SearchPoiFilterFragment.setupOptions() -&gt; SearchPoiFilterFragment.showOptionsMenu() -&gt; View.setOnMenuItemClickListener() -&gt; *MenuItem.OnMenuItemClickListener.onMenuItemClick() -&gt;  SearchPoiFilterFragment.showFilterActivity() -&gt; startActivityForResult()</comment>
+    <comment>SearchActivity.onCreate() -&gt; getFragment() -&gt; SearchPoiFilterFragment.onCreateView() -&gt; setupOptions() -&gt; showOptionsMenu() -&gt; View.setOnMenuItemClickListener() -&gt; *MenuItem.OnMenuItemClickListener.onMenuItemClick() -&gt; SearchPoiFilterFragment.showFilterActivity() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="103" end="103" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="132" end="134" />

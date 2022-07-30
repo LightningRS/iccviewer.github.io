@@ -43,7 +43,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.DetailActivity" destination="net.mabako.steamgifts.activities.DetailActivity" method="">
-    <comment>DetailActivity.onCreate() -&gt; initLayout() -&gt; loadFragment() -&gt; SGToolsDetailFragment.newInstance() -&gt; new SGToolsDetailFragment() -&gt; *SGToolsDetailFragment.onCreateView() -&gt; LoadGiveawayTask.execute() -&gt; LoadGiveawayTask.onPostExecute() -&gt; SGToolsDetailFragment.onCheckSuccessful() -&gt; Activity.startActivityForResult()</comment>
+    <comment>DetailActivity.onCreate() -&gt; initLayout() -&gt; loadFragment() -&gt; SGToolsDetailFragment.newInstance() -&gt; new SGToolsDetailFragment() -&gt; *SGToolsDetailFragment.onCreateView() -&gt; LoadGiveawayTask.execute() -&gt; onPostExecute() -&gt; SGToolsDetailFragment.onCheckSuccessful() -&gt; Activity.startActivityForResult()</comment>
     <callLines>
       <line src="/core/src/main/java/net/mabako/steamgifts/activities/DetailActivity.java" start="63" end="63" />
       <line src="/core/src/main/java/net/mabako/steamgifts/activities/DetailActivity.java" start="115" end="115" />

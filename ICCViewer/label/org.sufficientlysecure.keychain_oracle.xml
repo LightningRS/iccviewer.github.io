@@ -2,7 +2,7 @@
 
 <root srcCodeBase="/apps/org.sufficientlysecure.keychain">
   <OracleEdge source="org.sufficientlysecure.keychain.remote.ui.RemoteBackupActivity" destination="org.sufficientlysecure.keychain.ui.HelpActivity" method="">
-    <comment>RemoteBackupActivity.onCreate()  -&gt; BackupCodeFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; BackupCodeFragment.onCreateView() -&gt; *BackupCodeFragment.setOnClickListener()  -&gt; HelpActivity.startHelpActivity() -&gt; Context.startActivity()</comment>
+    <comment>RemoteBackupActivity.onCreate() -&gt; BackupCodeFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; BackupCodeFragment.onCreateView() -&gt; *BackupCodeFragment.setOnClickListener() -&gt; HelpActivity.startHelpActivity() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/remote/ui/RemoteBackupActivity.java" start="51" end="57" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/BackupCodeFragment.java" start="144" end="144" />
@@ -42,7 +42,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.BackupActivity" destination="org.sufficientlysecure.keychain.ui.HelpActivity" method="">
-    <comment>BackupActivity.onCreate()  -&gt; BackupCodeFragment.onCreateView() -&gt; *BackupCodeFragment.setOnClickListener()  -&gt; HelpActivity.startHelpActivity() -&gt; Context.startActivity()</comment>
+    <comment>BackupActivity.onCreate() -&gt; BackupCodeFragment.onCreateView() -&gt; *BackupCodeFragment.setOnClickListener() -&gt; HelpActivity.startHelpActivity() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/BackupActivity.java" start="54" end="60" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/BackupCodeFragment.java" start="144" end="144" />
@@ -115,7 +115,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.LogDisplayActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; ManageSecurityTokenFragment.newInstance() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; *ManageSecurityTokenFragment.onOptionsItemSelected() -&gt; ManageSecurityTokenPresenter.onMenuClickViewLog() -&gt; ManageSecurityTokenMvpView.showDisplayLogActivity() -&gt; ManageSecurityTokenFragment.showDisplayLogActivity() -&gt; ManageSecurityTokenFragment.startActivity()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; ManageSecurityTokenFragment.newInstance() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; *ManageSecurityTokenFragment.onOptionsItemSelected() -&gt; ManageSecurityTokenPresenter.onMenuClickViewLog() -&gt; ManageSecurityTokenMvpView.showDisplayLogActivity() -&gt; ManageSecurityTokenFragment.showDisplayLogActivity() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="114" end="115" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
@@ -165,7 +165,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.SecurityTokenChangePinOperationActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; ManageSecurityTokenFragment.onCreate() -&gt; new ManageSecurityTokenPresenter() -&gt; ManageSecurityTokenPresenter.setView() -&gt; ManageSecurityTokenFragment.onClick() -&gt; ManageSecurityTokenPresenter.onClickUnlockToken() -&gt; ManageSecurityTokenMvpView.showAdminPinDialog() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.showAdminPinDialog() -&gt; ChangePinDialogHelper.createAdminPinDialog() -&gt; AlertDialog.setOnShowListener() -&gt; AlertDialog.show() -&gt; DialogInterface.OnShowListener.onShow() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ChangePinDialogHelper.checkAndHandleInput() -&gt; ManageSecurityTokenPresenter.onInputAdminPin() -&gt; ManageSecurityTokenMvpView.operationChangePinSecurityToken() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.operationChangePinSecurityToken() -&gt; startActivityForResult()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; loadFragment() -&gt; ManageSecurityTokenFragment.onCreate() -&gt; new ManageSecurityTokenPresenter() -&gt; ManageSecurityTokenPresenter.setView() -&gt; ManageSecurityTokenFragment.onClick() -&gt; ManageSecurityTokenPresenter.onClickUnlockToken() -&gt; ManageSecurityTokenMvpView.showAdminPinDialog() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.showAdminPinDialog() -&gt; ChangePinDialogHelper.createAdminPinDialog() -&gt; AlertDialog.setOnShowListener() -&gt; show() -&gt; DialogInterface.OnShowListener.onShow() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ChangePinDialogHelper.checkAndHandleInput() -&gt; ManageSecurityTokenPresenter.onInputAdminPin() -&gt; ManageSecurityTokenMvpView.operationChangePinSecurityToken() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.operationChangePinSecurityToken() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="114" end="115" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="215" end="217" />
@@ -198,7 +198,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.SecurityTokenOperationActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; ManageSecurityTokenFragment.onCreate() -&gt; new ManageSecurityTokenPresenter() -&gt; ManageSecurityTokenPresenter.setView() -&gt; ManageSecurityTokenFragment.onClick() -&gt; ManageSecurityTokenPresenter.onClickResetToken() -&gt; ManageSecurityTokenMvpView.showConfirmResetDialog() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.showConfirmResetDialog() -&gt; AlertDialog.Builder.setPositiveButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; ManageSecurityTokenPresenter.onClickConfirmReset() -&gt; ManageSecurityTokenMvpView.operationResetSecurityToken() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.operationResetSecurityToken() -&gt; startActivityForResult()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; loadFragment() -&gt; ManageSecurityTokenFragment.onCreate() -&gt; new ManageSecurityTokenPresenter() -&gt; ManageSecurityTokenPresenter.setView() -&gt; ManageSecurityTokenFragment.onClick() -&gt; ManageSecurityTokenPresenter.onClickResetToken() -&gt; ManageSecurityTokenMvpView.showConfirmResetDialog() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.showConfirmResetDialog() -&gt; AlertDialog.Builder.setPositiveButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; ManageSecurityTokenPresenter.onClickConfirmReset() -&gt; ManageSecurityTokenMvpView.operationResetSecurityToken() -&gt; ManageSecurityTokenFragment implements ManageSecurityTokenMvpView -&gt; ManageSecurityTokenFragment.operationResetSecurityToken() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="114" end="115" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="215" end="217" />
@@ -227,7 +227,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.ShowNfcSweetspotActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateKeyStartFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; new CreateSecurityTokenWaitFragment() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateSecurityTokenWaitFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CreateSecurityTokenWaitFragment.startActivityForResult()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateKeyStartFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; new CreateSecurityTokenWaitFragment() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; CreateSecurityTokenWaitFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CreateSecurityTokenWaitFragment.startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="123" end="124" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
@@ -250,7 +250,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.CreateKeyActivity" destination="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" method="">
-    <comment>CreateKeyActivity.onCreate() -&gt; CreateKeyActivity.loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; *ManageSecurityTokenFragment.finishAndShowKey()  -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
+    <comment>CreateKeyActivity.onCreate() -&gt; loadFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; *ManageSecurityTokenFragment.finishAndShowKey() -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="114" end="115" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/CreateKeyActivity.java" start="237" end="237" />
@@ -271,7 +271,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.RemoteRegisterActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createRegisterPendingIntent() -&gt; DebugActionsActivity.startPendingIntent() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createRegisterPendingIntent() -&gt; DebugActionsActivity.startPendingIntent() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="90" end="91" />
@@ -293,7 +293,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.RemoteSelectPubKeyActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectPublicKeyPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectPublicKeyPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="99" end="100" />
@@ -314,7 +314,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.RequestKeyPermissionActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createRequestKeyPermissionPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createRequestKeyPermissionPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="125" end="127" />
@@ -335,7 +335,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.SelectSignKeyIdActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectSignKeyIdLegacyPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectSignKeyIdLegacyPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="104" end="107" />
@@ -356,7 +356,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.dialog.RemoteDeduplicateActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createDeduplicatePendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createDeduplicatePendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="132" end="133" />
@@ -377,7 +377,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.dialog.RemoteSelectAuthenticationKeyActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectAuthenticationKeyIdPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectAuthenticationKeyIdPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="75" end="75" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="114" end="114" />
@@ -398,7 +398,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DebugActionsActivity" destination="org.sufficientlysecure.keychain.remote.ui.dialog.RemoteSelectIdKeyActivity" method="">
-    <comment>DebugActionsActivity.onCreate() -&gt; DebugActionsActivity.createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectSignKeyIdPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
+    <comment>DebugActionsActivity.onCreate() -&gt; createView() -&gt; *DebugActionsActivity.setOnClickListener() -&gt; ApiPendingIntentFactory.createSelectSignKeyIdPendingIntent() -&gt; createInternal() -&gt; startIntentSenderForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="71" end="71" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DebugActionsActivity.java" start="109" end="111" />
@@ -419,7 +419,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DecryptActivity" destination="org.sufficientlysecure.keychain.ui.DisplayTextActivity" method="">
-    <comment>DecryptActivity.onCreate() -&gt; DecryptActivity.handleActions() -&gt; DecryptActivity.displayListFragment() -&gt; *FragmentTransaction.commit() -&gt; DecryptListFragment.onBindViewHolder()  -&gt; DecryptListFragment.displayWithViewIntent() -&gt; startActivity()</comment>
+    <comment>DecryptActivity.onCreate() -&gt; handleActions() -&gt; displayListFragment() -&gt; *FragmentTransaction.commit() -&gt; DecryptListFragment.onBindViewHolder() -&gt; displayWithViewIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="57" end="57" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="195" end="195" />
@@ -442,7 +442,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DecryptActivity" destination="org.sufficientlysecure.keychain.ui.LogDisplayActivity" method="">
-    <comment>DecryptActivity.onCreate() -&gt; DecryptActivity.handleActions() -&gt; DecryptActivity.displayListFragment() -&gt; *FragmentTransaction.commit() -&gt; DecryptListFragment.onMenuItemClick() -&gt; Activity.startActivity()</comment>
+    <comment>DecryptActivity.onCreate() -&gt; handleActions() -&gt; displayListFragment() -&gt; *FragmentTransaction.commit() -&gt; DecryptListFragment.onMenuItemClick() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="57" end="57" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="195" end="195" />
@@ -462,7 +462,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DecryptActivity" destination="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" method="">
-    <comment>DecryptActivity.onCreate() -&gt; DecryptActivity.handleActions() -&gt; DecryptActivity.displayListFragment() -&gt; DecryptListFragment.onBindViewHolder() -&gt; DecryptListFragment.bindItemSuccess() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
+    <comment>DecryptActivity.onCreate() -&gt; handleActions() -&gt; displayListFragment() -&gt; DecryptListFragment.onBindViewHolder() -&gt; bindItemSuccess() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="57" end="57" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DecryptActivity.java" start="195" end="195" />
@@ -486,7 +486,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DisplayTextActivity" destination="org.sufficientlysecure.keychain.ui.LogDisplayActivity" method="">
-    <comment>DisplayTextActivity.onCreate() -&gt; DisplayTextActivity.handleActions() -&gt; DisplayTextActivity.loadFragment() -&gt; *FragmentManager.executePendingTransactions() -&gt; DisplayTextFragment.onOptionsItemSelected() -&gt; DisplayTextFragment extends DecryptFragment -&gt; DecryptFragment.startDisplayLogActivity() -&gt; Activity.startActivity()</comment>
+    <comment>DisplayTextActivity.onCreate() -&gt; handleActions() -&gt; loadFragment() -&gt; *FragmentManager.executePendingTransactions() -&gt; DisplayTextFragment.onOptionsItemSelected() -&gt; DisplayTextFragment extends DecryptFragment -&gt; DecryptFragment.startDisplayLogActivity() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DisplayTextActivity.java" start="50" end="50" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DisplayTextActivity.java" start="83" end="83" />
@@ -509,7 +509,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.DisplayTextActivity" destination="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" method="">
-    <comment>DisplayTextActivity.onCreate() -&gt; DisplayTextActivity.loadFragment() -&gt; *FragmentManager.executePendingTransactions() -&gt; DecryptFragment.onViewStateRestored()  -&gt; DecryptFragment.loadSignerKeyData() -&gt; DecryptFragment.setOnClickListener() -&gt; DecryptFragment.showKey() -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; DecryptFragment.startActivity()</comment>
+    <comment>DisplayTextActivity.onCreate() -&gt; loadFragment() -&gt; *FragmentManager.executePendingTransactions() -&gt; DecryptFragment.onViewStateRestored() -&gt; loadSignerKeyData() -&gt; setOnClickListener() -&gt; showKey() -&gt; ViewKeyActivity.getViewKeyActivityIntent() -&gt; DecryptFragment.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DisplayTextActivity.java" start="50" end="50" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/DisplayTextActivity.java" start="83" end="83" />
@@ -537,7 +537,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.EncryptFilesActivity" destination="org.sufficientlysecure.keychain.ui.DecryptActivity" method="">
-    <comment>EncryptFilesActivity.onCreate() -&gt; EncryptFilesFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; EncryptFilesFragment.onQueuedOperationSuccess() -&gt; DeleteFileDialogFragment.setOnDeletedListener() -&gt; *DeleteFileDialogFragment.OnDeletedListener.onDeleted() -&gt; EncryptFilesFragment.createSendIntent() -&gt; EncryptFilesFragment.startActivity()</comment>
+    <comment>EncryptFilesActivity.onCreate() -&gt; EncryptFilesFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; EncryptFilesFragment.onQueuedOperationSuccess() -&gt; DeleteFileDialogFragment.setOnDeletedListener() -&gt; *DeleteFileDialogFragment.OnDeletedListener.onDeleted() -&gt; EncryptFilesFragment.createSendIntent() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptFilesActivity.java" start="66" end="70" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/EncryptFilesFragment.java" start="517" end="520" />
@@ -580,7 +580,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.ImportKeysActivity" destination="org.sufficientlysecure.keychain.ui.keyview.ViewKeyActivity" method="">
-    <comment>ImportKeysActivity.onResumeFragments() -&gt; ImportKeysActivity.startListFragment() -&gt; FragmentTransaction.commit() -&gt; ImportKeysListFragment.onCreateView()  -&gt; ImportKeysAdapter.setOnClickListener()  -&gt; *ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
+    <comment>ImportKeysActivity.onResumeFragments() -&gt; startListFragment() -&gt; FragmentTransaction.commit() -&gt; ImportKeysListFragment.onCreateView() -&gt; ImportKeysAdapter.setOnClickListener() -&gt; *ViewKeyActivity.getViewKeyActivityIntent() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/ImportKeysActivity.java" start="112" end="112" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/ImportKeysActivity.java" start="161" end="161" />
@@ -639,7 +639,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.remote.ui.AppSettingsActivity" method="">
-    <comment>MainActivity.onCreate() -&gt; MainActivity.onAppsSelected() -&gt; new AppsListFragment() -&gt; MainActivity.setFragment() -&gt; FragmentTransaction.commit() -&gt; AppsListFragment.onCreateViewHolder() -&gt; new ApiAppViewHolder() -&gt; ApiAppViewHolder.ApiAppViewHolder() -&gt; View.setOnClickListener() -&gt; *AppsListFragment.onItemClick() -&gt; startActivity()</comment>
+    <comment>MainActivity.onCreate() -&gt; onAppsSelected() -&gt; new AppsListFragment() -&gt; MainActivity.setFragment() -&gt; FragmentTransaction.commit() -&gt; AppsListFragment.onCreateViewHolder() -&gt; new ApiAppViewHolder() -&gt; ApiAppViewHolder.ApiAppViewHolder() -&gt; View.setOnClickListener() -&gt; *AppsListFragment.onItemClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="195" end="195" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="232" end="233" />
@@ -661,7 +661,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.BackupActivity" method="">
-    <comment>MainActivity.onBackPressed() -&gt; MainActivity.onKeysSelected() -&gt; MainActivity.setFragment() -&gt; BackupRestoreFragment.onCreateView() -&gt; *BackupRestoreFragment.onClick() -&gt; BackupRestoreFragment.startBackup() -&gt; startActivity()</comment>
+    <comment>MainActivity.onBackPressed() -&gt; onKeysSelected() -&gt; setFragment() -&gt; BackupRestoreFragment.onCreateView() -&gt; *BackupRestoreFragment.onClick() -&gt; BackupRestoreFragment.startBackup() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="239" end="239" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="205" end="212" />
@@ -699,7 +699,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.DeleteKeyDialogActivity" method="">
-    <comment>MainActivity.onBackPressed() -&gt; MainActivity.onKeysSelected() -&gt; MainActivity.setFragment() -&gt; KeyListFragment.onItemLongClick() -&gt; Activity.startActionMode() -&gt; *ActionMode.Callback.onActionItemClicked() -&gt; KeyListFragment.multiSelectDelete() -&gt; startActivityForResult()</comment>
+    <comment>MainActivity.onBackPressed() -&gt; onKeysSelected() -&gt; setFragment() -&gt; KeyListFragment.onItemLongClick() -&gt; Activity.startActionMode() -&gt; *ActionMode.Callback.onActionItemClicked() -&gt; KeyListFragment.multiSelectDelete() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="218" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="205" end="212" />
@@ -719,7 +719,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.EncryptFilesActivity" method="">
-    <comment>MainActivity.onBackPressed() -&gt; MainActivity.onKeysSelected() -&gt; MainActivity.setFragment() -&gt; KeyListFragment.onItemLongClick() -&gt; Activity.startActionMode() -&gt; *ActionMode.Callback.onActionItemClicked() -&gt; KeyListFragment.multiSelectEncrypt() -&gt; startActivityForResult()</comment>
+    <comment>MainActivity.onBackPressed() -&gt; onKeysSelected() -&gt; setFragment() -&gt; KeyListFragment.onItemLongClick() -&gt; Activity.startActionMode() -&gt; *ActionMode.Callback.onActionItemClicked() -&gt; KeyListFragment.multiSelectEncrypt() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="218" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="205" end="212" />
@@ -779,7 +779,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.ImportKeysActivity" method="">
-    <comment>MainActivity.onBackPressed() -&gt; MainActivity.onKeysSelected() -&gt; MainActivity.setFragment() -&gt; FragmentTransaction.commit() -&gt; KeyListFragment.onItemLongClick() -&gt; Activity.startActionMode() -&gt; *ActionMode.Callback.onActionItemClicked() -&gt; KeyListFragment.startSearchForQuery() -&gt; startActivity()</comment>
+    <comment>MainActivity.onBackPressed() -&gt; onKeysSelected() -&gt; setFragment() -&gt; FragmentTransaction.commit() -&gt; KeyListFragment.onItemLongClick() -&gt; Activity.startActionMode() -&gt; *ActionMode.Callback.onActionItemClicked() -&gt; KeyListFragment.startSearchForQuery() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="218" end="219" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="205" end="212" />
@@ -799,7 +799,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.ImportKeysProxyActivity" method="">
-    <comment>MainActivity.onBackPressed() -&gt; MainActivity.onKeysSelected() -&gt; MainActivity.setFragment() -&gt; KeyListFragment.onCreateView() -&gt; *KeyListFragment.onClick() -&gt; KeyListFragment.scanQrCode() -&gt; startActivityForResult()</comment>
+    <comment>MainActivity.onBackPressed() -&gt; onKeysSelected() -&gt; setFragment() -&gt; KeyListFragment.onCreateView() -&gt; *KeyListFragment.onClick() -&gt; KeyListFragment.scanQrCode() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="272" end="272" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="218" end="219" />
@@ -839,7 +839,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.MainActivity" destination="org.sufficientlysecure.keychain.ui.QrCodeCaptureActivity" method="">
-    <comment>MainActivity.onNewIntent() -&gt; MainActivity.onTransferSelected() -&gt; MainActivity.setFragment() -&gt; TransferFragment.onCreateView() -&gt; new TransferPresenter() -&gt; TransferPresenter.onUiClickScan() -&gt; *TransferFragment.scanQrCode() -&gt; startActivityForResult()</comment>
+    <comment>MainActivity.onNewIntent() -&gt; onTransferSelected() -&gt; setFragment() -&gt; TransferFragment.onCreateView() -&gt; new TransferPresenter() -&gt; TransferPresenter.onUiClickScan() -&gt; *TransferFragment.scanQrCode() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="198" end="198" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/MainActivity.java" start="250" end="251" />
@@ -937,7 +937,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.RedirectImportKeysActivity" destination="org.sufficientlysecure.keychain.ui.ImportKeysProxyActivity" method="">
-    <comment>RedirectImportKeysActivity.onCreate() -&gt; RedirectImportKeysActivity.startQrCodeCaptureActivity() -&gt; AlertDialog.Builder.setPositiveButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; RedirectImportKeysActivity.startActivity()</comment>
+    <comment>RedirectImportKeysActivity.onCreate() -&gt; startQrCodeCaptureActivity() -&gt; AlertDialog.Builder.setPositiveButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; RedirectImportKeysActivity.startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/RedirectImportKeysActivity.java" start="34" end="34" />
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/RedirectImportKeysActivity.java" start="38" end="39" />

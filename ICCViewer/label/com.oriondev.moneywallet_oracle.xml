@@ -680,7 +680,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.NewEditDebtActivity" destination="com.oriondev.moneywallet.ui.activity.NewEditPersonActivity" method="">
-    <comment>NewEditDebtActivity.onCreateHeaderView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PersonPicker.showPicker() -&gt; PersonMultiPanelFragment.show() -&gt; PersonMultiPanelFragment.onCreateDialog() -&gt; MaterialDialog.onNeutral() -&gt; *MaterialDialog.SingleButtonCallback.onClick() -&gt; startActivity()</comment>
+    <comment>NewEditDebtActivity.onCreateHeaderView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PersonPicker.showPicker() -&gt; PersonMultiPanelFragment.show() -&gt; onCreateDialog() -&gt; MaterialDialog.onNeutral() -&gt; *MaterialDialog.SingleButtonCallback.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditDebtActivity.java" start="226" end="226" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditDebtActivity.java" start="230" end="230" />
@@ -702,7 +702,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.NewEditDebtActivity" destination="com.oriondev.moneywallet.ui.activity.NewEditPlaceActivity" method="">
-    <comment>NewEditDebtActivity.onCreateHeaderView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PlacePicker.showPicker() -&gt; PlacePickerDialog.show() -&gt; PlacePickerDialog.onCreateDialog() -&gt; MaterialDialog.onPositive() -&gt; *MaterialDialog.SingleButtonCallback.onClick() -&gt; startActivity()</comment>
+    <comment>NewEditDebtActivity.onCreateHeaderView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PlacePicker.showPicker() -&gt; PlacePickerDialog.show() -&gt; onCreateDialog() -&gt; MaterialDialog.onPositive() -&gt; *MaterialDialog.SingleButtonCallback.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditDebtActivity.java" start="243" end="243" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditDebtActivity.java" start="247" end="247" />

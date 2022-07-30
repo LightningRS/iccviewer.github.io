@@ -528,7 +528,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.tasks.activities.AddAttachmentActivity" destination="com.todoroo.astrid.files.FileExplore" method="">
-    <comment>*AddAttachmentActivity.onCreate() -&gt; new AddAttachmentDialog() -&gt; AddAttachmentDialog.show() -&gt; AddAttachmentDialog.onCreateDialog() -&gt; Runnable.run() -&gt; AddAttachmentDialog.AddAttachmentCallback.pickFromStorage() -&gt; AddAttachmentActivity implements AddAttachmentDialog.AddAttachmentCallback -&gt; AddAttachmentDialog.setAddAttachmentCallback() -&gt; AddAttachmentActivity.pickFromStorage() -&gt; startActivityForResult()</comment>
+    <comment>*AddAttachmentActivity.onCreate() -&gt; new AddAttachmentDialog() -&gt; AddAttachmentDialog.show() -&gt; onCreateDialog() -&gt; Runnable.run() -&gt; AddAttachmentDialog.AddAttachmentCallback.pickFromStorage() -&gt; AddAttachmentActivity implements AddAttachmentDialog.AddAttachmentCallback -&gt; AddAttachmentDialog.setAddAttachmentCallback() -&gt; AddAttachmentActivity.pickFromStorage() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/src/main/java/org/tasks/activities/AddAttachmentActivity.java" start="49" end="50" />
       <line src="/src/main/java/org/tasks/dialogs/AddAttachmentDialog.java" start="48" end="48" />
@@ -550,7 +550,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.tasks.activities.AddAttachmentActivity" destination="org.tasks.activities.CameraActivity" method="">
-    <comment>*AddAttachmentActivity.onCreate() -&gt; new AddAttachmentDialog() -&gt; AddAttachmentDialog.show() -&gt; AddAttachmentDialog.onCreateDialog() -&gt; Runnable.run() -&gt; AddAttachmentDialog.AddAttachmentCallback.takePicture() -&gt; AddAttachmentActivity implements AddAttachmentDialog.AddAttachmentCallback -&gt; AddAttachmentDialog.setAddAttachmentCallback() -&gt; AddAttachmentActivity.takePicture() -&gt; startActivityForResult()</comment>
+    <comment>*AddAttachmentActivity.onCreate() -&gt; new AddAttachmentDialog() -&gt; AddAttachmentDialog.show() -&gt; onCreateDialog() -&gt; Runnable.run() -&gt; AddAttachmentDialog.AddAttachmentCallback.takePicture() -&gt; AddAttachmentActivity implements AddAttachmentDialog.AddAttachmentCallback -&gt; AddAttachmentDialog.setAddAttachmentCallback() -&gt; AddAttachmentActivity.takePicture() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/src/main/java/org/tasks/activities/AddAttachmentActivity.java" start="49" end="50" />
       <line src="/src/main/java/org/tasks/dialogs/AddAttachmentDialog.java" start="39" end="39" />
@@ -1035,7 +1035,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.tasks.reminders.NotificationActivity" destination="org.tasks.receivers.CompleteTaskReceiver" method="">
-    <comment>NotificationActivity.onCreate() -&gt; setup() -&gt; new NotificationDialog() -&gt; NotificationDialog.show() -&gt; NotificationDialog.onCreateDialog() -&gt; DialogBuilder.setItems() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; NotificationDialog.NotificationHandler.complete() -&gt; NotificationActivity implements NotificationDialog.NotificationHandler -&gt; NotificationActivity.complete() -&gt; Broadcaster.completeTask() -&gt; sendOrderedBroadcast() -&gt; Context.sendOrderedBroadcast()</comment>
+    <comment>NotificationActivity.onCreate() -&gt; setup() -&gt; new NotificationDialog() -&gt; NotificationDialog.show() -&gt; onCreateDialog() -&gt; DialogBuilder.setItems() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; NotificationDialog.NotificationHandler.complete() -&gt; NotificationActivity implements NotificationDialog.NotificationHandler -&gt; NotificationActivity.complete() -&gt; Broadcaster.completeTask() -&gt; sendOrderedBroadcast() -&gt; Context.sendOrderedBroadcast()</comment>
     <callLines>
       <line src="/src/main/java/org/tasks/reminders/NotificationActivity.java" start="29" end="29" />
       <line src="/src/main/java/org/tasks/reminders/NotificationActivity.java" start="46" end="47" />
@@ -1060,7 +1060,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.tasks.reminders.NotificationActivity" destination="org.tasks.reminders.SnoozeActivity" method="">
-    <comment>NotificationActivity.onCreate() -&gt; setup() -&gt; new NotificationDialog() -&gt; NotificationDialog.show() -&gt; NotificationDialog.onCreateDialog() -&gt; DialogBuilder.setItems() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; NotificationDialog.NotificationHandler.snooze() -&gt; NotificationActivity implements NotificationDialog.NotificationHandler -&gt; NotificationActivity.snooze() -&gt; startActivity()</comment>
+    <comment>NotificationActivity.onCreate() -&gt; setup() -&gt; new NotificationDialog() -&gt; NotificationDialog.show() -&gt; onCreateDialog() -&gt; DialogBuilder.setItems() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; NotificationDialog.NotificationHandler.snooze() -&gt; NotificationActivity implements NotificationDialog.NotificationHandler -&gt; NotificationActivity.snooze() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/org/tasks/reminders/NotificationActivity.java" start="29" end="29" />
       <line src="/src/main/java/org/tasks/reminders/NotificationActivity.java" start="46" end="47" />

@@ -359,7 +359,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="me.blog.korn123.easydiary.activities.SettingsActivity" destination="me.blog.korn123.easydiary.activities.FingerprintLockActivity" method="">
-    <comment>SettingsActivity.onCreate() -&gt; new SettingsLockFragment() -&gt; new DotIndicatorPager2Adapter() -&gt; ViewPager.setAdapter() -&gt; SettingsLockFragment.onActivityCreated() -&gt; SettingsLockFragment.bindEvent() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SettingsActivity.startActivity()</comment>
+    <comment>SettingsActivity.onCreate() -&gt; new SettingsLockFragment() -&gt; new DotIndicatorPager2Adapter() -&gt; ViewPager.setAdapter() -&gt; SettingsLockFragment.onActivityCreated() -&gt; bindEvent() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SettingsActivity.startActivity()</comment>
     <callLines>
       <line src="/app/src/gms/java/me/blog/korn123/easydiary/activities/SettingsActivity.kt" start="19" end="19" />
       <line src="/app/src/gms/java/me/blog/korn123/easydiary/activities/SettingsActivity.kt" start="22" end="23" />
@@ -401,7 +401,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="me.blog.korn123.easydiary.activities.SettingsActivity" destination="me.blog.korn123.easydiary.activities.PinLockActivity" method="">
-    <comment>SettingsActivity.onCreate() -&gt; new SettingsLockFragment() -&gt; new DotIndicatorPager2Adapter() -&gt; ViewPager.setAdapter() -&gt; SettingsLockFragment.onActivityCreated() -&gt; SettingsLockFragment.bindEvent() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SettingsActivity.startActivity()</comment>
+    <comment>SettingsActivity.onCreate() -&gt; new SettingsLockFragment() -&gt; new DotIndicatorPager2Adapter() -&gt; ViewPager.setAdapter() -&gt; SettingsLockFragment.onActivityCreated() -&gt; bindEvent() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SettingsActivity.startActivity()</comment>
     <callLines>
       <line src="/app/src/gms/java/me/blog/korn123/easydiary/activities/SettingsActivity.kt" start="19" end="19" />
       <line src="/app/src/gms/java/me/blog/korn123/easydiary/activities/SettingsActivity.kt" start="22" end="23" />

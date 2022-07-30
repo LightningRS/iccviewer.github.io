@@ -1249,7 +1249,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.UserProfile" method="">
-    <comment>ObservationViewerActivity.onResume() -&gt; ObservationViewerActivity.refreshDataQuality() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
+    <comment>ObservationViewerActivity.onResume() -&gt; refreshDataQuality() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="447" end="447" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1579" end="1579" />
