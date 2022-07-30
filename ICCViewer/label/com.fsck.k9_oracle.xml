@@ -247,7 +247,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.ChooseFolder" method="">
-    <comment>MessageList.onCreate() -&gt; MessageList.initializeFragments() -&gt; *MessageListFragment.ActionModeCallback.onActionItemClicked() -&gt; MessageListFragment.displayFolderChoice() -&gt; startActivityForResult()</comment>
+    <comment>MessageList.onCreate() -&gt; initializeFragments() -&gt; *MessageListFragment.ActionModeCallback.onActionItemClicked() -&gt; MessageListFragment.displayFolderChoice() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="231" end="231" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="294" end="298" />
@@ -289,7 +289,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.MessageCompose" method="">
-    <comment>*MessageList.onCreate() -&gt; MessageList.initializeFragments() -&gt; MessageList.openMessage() -&gt; MessageActions.actionEditDraft() -&gt; Context.startActivity()</comment>
+    <comment>*MessageList.onCreate() -&gt; initializeFragments() -&gt; openMessage() -&gt; MessageActions.actionEditDraft() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="231" end="231" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="305" end="305" />
@@ -328,7 +328,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.setup.OpenPgpAppSelectDialog" method="">
-    <comment>MessageList.onCreate() -&gt; MessageList.initializeFragments() -&gt; MessageViewFragment.onCreate() -&gt; *MessageViewFragment.redisplayMessage() -&gt; MessageViewFragment.startOpenPgpChooserActivity() -&gt; startActivity()</comment>
+    <comment>MessageList.onCreate() -&gt; initializeFragments() -&gt; MessageViewFragment.onCreate() -&gt; *MessageViewFragment.redisplayMessage() -&gt; MessageViewFragment.startOpenPgpChooserActivity() -&gt; startActivity()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="231" end="231" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/MessageList.java" start="294" end="298" />

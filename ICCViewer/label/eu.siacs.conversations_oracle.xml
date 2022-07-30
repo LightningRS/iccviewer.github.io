@@ -406,7 +406,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.SearchActivity" method="">
-    <comment>ConversationsActivity.onCreate() -&gt; ConversationsActivity.initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationsOverviewFragment.onOptionsItemSelected() -&gt; startActivity()</comment>
+    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationsOverviewFragment.onOptionsItemSelected() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="366" end="366" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="572" end="572" />

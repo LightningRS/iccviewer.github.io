@@ -261,7 +261,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.SettingsActivity" destination="net.mabako.steamgifts.activities.SyncActivity" method="">
-    <comment>SettingsActivity.onCreate() -&gt; FragmentTransaction.replace() -&gt; new SettingsFragment() -&gt; FragmentTransaction.commit() -&gt; SettingsFragment.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; Activity.startActivity()</comment>
+    <comment>SettingsActivity.onCreate() -&gt; new SettingsFragment() -&gt; FragmentTransaction.commit() -&gt; SettingsFragment.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/core/src/main/java/net/mabako/steamgifts/activities/SettingsActivity.java" start="158" end="158" />
       <line src="/core/src/main/java/net/mabako/steamgifts/activities/SettingsActivity.java" start="36" end="36" />

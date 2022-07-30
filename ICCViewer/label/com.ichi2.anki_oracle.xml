@@ -197,10 +197,12 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardTemplateEditor" destination="com.ichi2.anki.Previewer" method="">
-    <comment>CardTemplateEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; CardTemplateEditor.onCollectionLoaded() -&gt; ViewPager.addOnPageChangeListener() -&gt; ViewPager.OnPageChangeListener.onPageSelected() -&gt; FragmentPagerAdapter.instantiateItem() -&gt; *CardTemplateFragment.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
+    <comment>CardTemplateEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; AnkiActivity.onCollectionLoaded() -&gt; CardTemplateEditor extends AnkiActivity -&gt; CardTemplateEditor.onCollectionLoaded() -&gt; ViewPager.addOnPageChangeListener() -&gt; ViewPager.OnPageChangeListener.onPageSelected() -&gt; FragmentPagerAdapter.instantiateItem() -&gt; *CardTemplateFragment.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardTemplateEditor.java" start="68" end="68" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/AnkiActivity.java" start="286" end="286" />
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/AnkiActivity.java" start="100" end="101" />
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardTemplateEditor.java" start="68" end="68" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardTemplateEditor.java" start="214" end="214" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardTemplateEditor.java" start="221" end="221" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardTemplateEditor.java" start="485" end="505" />
