@@ -1508,7 +1508,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectsActivity" destination="org.inaturalist.android.GuidesActivity" method="">
-    <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
+    <comment>ProjectsActivity.onCreate() -&gt; ProjectsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ProjectsActivity.java" start="29" end="29" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/BaseFragmentActivity.java" start="156" end="156" />

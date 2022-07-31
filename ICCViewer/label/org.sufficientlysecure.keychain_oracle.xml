@@ -620,7 +620,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.sufficientlysecure.keychain.ui.LogDisplayActivity" destination="org.sufficientlysecure.keychain.ui.LogDisplayActivity" method="">
-    <comment>ViewKeyActivity.initLayout() -&gt; R.layout.log_display_activity.list -&gt; *LogDisplayFragment.onSubEntryClicked() -&gt; startActivity()</comment>
+    <comment>LogDisplayActivity.initLayout() -&gt; R.layout.log_display_activity.list -&gt; *LogDisplayFragment.onSubEntryClicked() -&gt; startActivity()</comment>
     <callLines>
       <line src="/OpenKeychain/src/main/java/org/sufficientlysecure/keychain/ui/LogDisplayActivity.java" start="47" end="47" />
       <line src="/OpenKeychain/src/main/res/layout/log_display_activity.xml" start="13" end="13" />
