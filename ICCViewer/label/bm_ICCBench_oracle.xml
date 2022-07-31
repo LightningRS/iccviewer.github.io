@@ -70,7 +70,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>MainActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*MainActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/icc_explicit_nosrc_nosink/src/main/java/org/arguslab/icc_explicit_nosrc_nosink/MainActivity.java" start="28" end="31" />
     </callLines>
@@ -91,7 +91,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>MainActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*MainActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/icc_explicit_nosrc_sink/src/main/java/org/arguslab/icc_explicit_nosrc_sink/MainActivity.java" start="28" end="31" />
     </callLines>
@@ -242,7 +242,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>FooActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*FooActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/icc_implicit_mix1/src/main/java/org/arguslab/icc_implicit_mix1/FooActivity.java" start="15" end="22" />
       <line src="/icc_implicit_mix1/src/main/AndroidManifest.xml" start="31" end="41" />

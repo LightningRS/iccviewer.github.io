@@ -6,7 +6,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>OutFlowActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ActivityCommunication2/src/edu/mit/icc_action_string_operations/OutFlowActivity.java" start="27" end="30" />
     </callLines>
@@ -27,7 +27,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>OutFlowActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ActivityCommunication3/src/edu/mit/icc_componentname_class_constant/OutFlowActivity.java" start="28" end="32" />
     </callLines>
@@ -48,7 +48,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>OutFlowActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ActivityCommunication4/src/edu/mit/icc_concat_action_string/OutFlowActivity.java" start="28" end="31" />
       <line src="/ActivityCommunication4/AndroidManifest.xml" start="26" end="33" />
@@ -70,7 +70,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>OutFlowActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/EventOrdering1/src/edu/mit/icc_event_ordering/OutFlowActivity.java" start="22" end="24" />
       <line src="/EventOrdering1/AndroidManifest.xml" start="27" end="32" />
@@ -92,7 +92,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>OutFlowActivity.onCreate() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ActivityCommunication5/src/edu/mit/icc_intent_component_name/OutFlowActivity.java" start="29" end="35" />
     </callLines>
@@ -113,7 +113,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>OutFlowActivity.onCreate() -&gt; InFlowActivity.getClass() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; InFlowActivity.getClass() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ActivityCommunication7/src/edu/mit/icc_non_constant_class_object/OutFlowActivity.java" start="28" end="33" />
     </callLines>
@@ -134,7 +134,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>ActivityMessenger.onStart() -&gt; bindService()</comment>
+    <comment>*ActivityMessenger.onStart() -&gt; bindService()</comment>
     <callLines>
       <line src="/ServiceCommunication1/src/edu/mit/icc_service_messages/ActivityMessenger.java" start="78" end="79" />
     </callLines>
@@ -155,7 +155,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>OutFlowActivity.onCreate() -&gt; randomString() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; randomString() -&gt; startActivity()</comment>
     <callLines>
       <line src="/UnresolvableIntent1/src/edu/mit/icc_unresolvable_intent/OutFlowActivity.java" start="38" end="38" />
       <line src="/UnresolvableIntent1/src/edu/mit/icc_unresolvable_intent/OutFlowActivity.java" start="25" end="25" />
@@ -178,7 +178,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>OutFlowActivity.onCreate() -&gt; randomString() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; randomString() -&gt; startActivity()</comment>
     <callLines>
       <line src="/UnresolvableIntent1/src/edu/mit/icc_unresolvable_intent/OutFlowActivity.java" start="38" end="38" />
       <line src="/UnresolvableIntent1/src/edu/mit/icc_unresolvable_intent/OutFlowActivity.java" start="27" end="27" />
@@ -197,7 +197,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="(icc_intent_passed_through_api) edu.mit.icc_intent_passed_through_api.OutFlowActivity" destination="(icc_intent_passed_through_api) edu.mit.icc_intent_passed_through_api.InFlowActivity" method="xxx">
-    <comment>OutFlowActivity.onCreate() -&gt; List&lt;Intent&gt;.get() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; List&lt;Intent&gt;.get() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ActivityCommunication6/src/edu/mit/icc_intent_passed_through_api/OutFlowActivity.java" start="34" end="35" />
       <line src="/ActivityCommunication6/src/edu/mit/icc_intent_passed_through_api/OutFlowActivity.java" start="37" end="39" />
@@ -215,7 +215,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="(icc_pass_action_string_through_api) edu.mit.icc_pass_action_string_through_api.OutFlowActivity" destination="(icc_pass_action_string_through_api) edu.mit.icc_pass_action_string_through_api.InFlowActivity" method="xxx">
-    <comment>OutFlowActivity.onCreate() -&gt; List&lt;String&gt;.get() -&gt; startActivity()</comment>
+    <comment>*OutFlowActivity.onCreate() -&gt; List&lt;String&gt;.get() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ActivityCommunication8/src/edu/mit/icc_pass_action_string_through_api/OutFlowActivity.java" start="31" end="34" />
       <line src="/ActivityCommunication8/src/edu/mit/icc_pass_action_string_through_api/OutFlowActivity.java" start="36" end="39" />
@@ -234,7 +234,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="(icc_broadcast_programmatic_intentfilter) edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest" destination="(icc_broadcast_programmatic_intentfilter) edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest.BroadcastReceiver" method="xxx">
-    <comment>BroadcastTest.onCreate() -&gt; registerReceiver() -&gt; onDestroy() -&gt; sendBroadcast()</comment>
+    <comment>BroadcastTest.onCreate() -&gt; registerReceiver() -&gt; *onDestroy() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/BroadcastTaintAndLeak1/src/edu/mit/icc_broadcast_programmatic_intentfilter/BroadcastTest.java" start="25" end="34" />
       <line src="/BroadcastTaintAndLeak1/src/edu/mit/icc_broadcast_programmatic_intentfilter/BroadcastTest.java" start="42" end="45" />

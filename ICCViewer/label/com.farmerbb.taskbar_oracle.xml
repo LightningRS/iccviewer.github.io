@@ -573,7 +573,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.DashboardService" destination="com.farmerbb.taskbar.activity.DashboardActivity" method="">
-    <comment>DashboardService.onCreate() -&gt; drawDashboard() -&gt; LocalBroadcastManager.registerReceiver() -&gt; DashboardService.toggleReceiver.onReceive() -&gt; DashboardService.toggleDashboard() -&gt; showDashboard() -&gt; startActivity()</comment>
+    <comment>DashboardService.onCreate() -&gt; drawDashboard() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *DashboardService.toggleReceiver.onReceive() -&gt; DashboardService.toggleDashboard() -&gt; showDashboard() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="111" end="116" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="171" end="171" />
@@ -596,7 +596,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.DashboardService" destination="com.farmerbb.taskbar.activity.dark.DashboardActivityDark" method="">
-    <comment>DashboardService.onCreate() -&gt; drawDashboard() -&gt; LocalBroadcastManager.registerReceiver() -&gt; DashboardService.toggleReceiver.onReceive() -&gt; DashboardService.toggleDashboard() -&gt; showDashboard() -&gt; startActivity()</comment>
+    <comment>DashboardService.onCreate() -&gt; drawDashboard() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *DashboardService.toggleReceiver.onReceive() -&gt; DashboardService.toggleDashboard() -&gt; showDashboard() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="111" end="116" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="171" end="171" />

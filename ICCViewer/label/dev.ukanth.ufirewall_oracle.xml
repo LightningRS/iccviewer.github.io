@@ -239,7 +239,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.broadcast.OnBootReceiver" destination="dev.ukanth.ufirewall.service.ApplyOnBootService" method="">
-    <comment>OnBootReceiver.onReceive() -&gt; startService()</comment>
+    <comment>*OnBootReceiver.onReceive() -&gt; startService()</comment>
     <callLines>
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/broadcast/OnBootReceiver.java" start="19" end="19" />
     </callLines>
@@ -334,7 +334,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.service.ApplyOnBootService" destination="dev.ukanth.ufirewall.service.FirewallService" method="">
-    <comment>ApplyOnBootService.onStartCommand() -&gt; startService()</comment>
+    <comment>*ApplyOnBootService.onStartCommand() -&gt; startService()</comment>
     <callLines>
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/service/ApplyOnBootService.java" start="80" end="80" />
     </callLines>

@@ -139,7 +139,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.services.NotificationService" method="">
-    <comment>CardBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*CardBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardBrowser.java" start="533" end="533" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -158,7 +158,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.widget.AnkiDroidWidgetSmall$UpdateService" method="">
-    <comment>CardBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*CardBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/CardBrowser.java" start="533" end="533" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -497,7 +497,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.services.NotificationService" method="">
-    <comment>DeckPicker.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*DeckPicker.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/DeckPicker.java" start="755" end="755" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -516,7 +516,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.widget.AnkiDroidWidgetSmall$UpdateService" method="">
-    <comment>DeckPicker.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*DeckPicker.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/DeckPicker.java" start="755" end="755" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -642,7 +642,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelBrowser" destination="com.ichi2.anki.services.NotificationService" method="">
-    <comment>ModelBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*ModelBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/ModelBrowser.java" start="227" end="227" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -661,7 +661,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelBrowser" destination="com.ichi2.widget.AnkiDroidWidgetSmall$UpdateService" method="">
-    <comment>ModelBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*ModelBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/ModelBrowser.java" start="227" end="227" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -700,7 +700,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelFieldEditor" destination="com.ichi2.anki.services.NotificationService" method="">
-    <comment>ModelFieldEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*ModelFieldEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/ModelFieldEditor.java" start="102" end="102" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -719,7 +719,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelFieldEditor" destination="com.ichi2.widget.AnkiDroidWidgetSmall$UpdateService" method="">
-    <comment>ModelFieldEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*ModelFieldEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/ModelFieldEditor.java" start="102" end="102" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -844,7 +844,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.NoteEditor" destination="com.ichi2.anki.services.NotificationService" method="">
-    <comment>NoteEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*NoteEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/NoteEditor.java" start="546" end="546" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -863,7 +863,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.NoteEditor" destination="com.ichi2.widget.AnkiDroidWidgetSmall$UpdateService" method="">
-    <comment>NoteEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*NoteEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/NoteEditor.java" start="546" end="546" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -1146,7 +1146,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Reviewer" destination="com.ichi2.anki.services.NotificationService" method="">
-    <comment>Reviewer.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*Reviewer.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/Reviewer.java" start="464" end="464" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -1165,7 +1165,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Reviewer" destination="com.ichi2.widget.AnkiDroidWidgetSmall$UpdateService" method="">
-    <comment>Reviewer.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*Reviewer.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/Reviewer.java" start="464" end="464" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -1430,7 +1430,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.services.NotificationService" method="">
-    <comment>StudyOptionsActivity.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*StudyOptionsActivity.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsActivity.java" start="117" end="117" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -1449,7 +1449,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.widget.AnkiDroidWidgetSmall$UpdateService" method="">
-    <comment>StudyOptionsActivity.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*StudyOptionsActivity.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsActivity.java" start="117" end="117" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -1553,7 +1553,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.widget.AnkiDroidWidgetSmall" destination="com.ichi2.anki.services.NotificationService" method="">
-    <comment>AnkiDroidWidgetSmall.onUpdate() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*AnkiDroidWidgetSmall.onUpdate() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/AnkiDroidWidgetSmall.java" start="47" end="47" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />
@@ -1572,7 +1572,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.widget.AnkiDroidWidgetSmall" destination="com.ichi2.widget.AnkiDroidWidgetSmall$UpdateService" method="">
-    <comment>AnkiDroidWidgetSmall.onUpdate() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
+    <comment>*AnkiDroidWidgetSmall.onUpdate() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/AnkiDroidWidgetSmall.java" start="47" end="47" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/widget/WidgetStatus.java" start="60" end="61" />

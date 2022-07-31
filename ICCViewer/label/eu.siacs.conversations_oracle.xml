@@ -884,11 +884,12 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.StartConversationActivity" destination="eu.siacs.conversations.ui.ChooseContactActivity" method="">
-    <comment>StartConversationActivity.onCreate() -&gt; showCreatePrivateGroupChatDialog() -&gt; CreatePrivateGroupChatDialog.newInstance() -&gt; show() -&gt; onCreateDialog() -&gt; EditText.setOnEditorActionListener() -&gt; *EditText.OnEditorActionListener.onEditorAction() -&gt; CreateConferenceDialogListener.onCreateDialogPositiveClick() -&gt; StartConversationActivity implements CreateConferenceDialogListener -&gt; StartConversationActivity.onCreateDialogPositiveClick() -&gt; startActivityForResult()</comment>
+    <comment>StartConversationActivity.onCreate() -&gt; showCreatePrivateGroupChatDialog() -&gt; CreatePrivateGroupChatDialog.newInstance() -&gt; show() -&gt; onCreateDialog() -&gt; EditText.setOnEditorActionListener() -&gt; *EditText.OnEditorActionListener.onEditorAction() -&gt; CreatePrivateGroupChatDialog.CreateConferenceDialogListener.onCreateDialogPositiveClick() -&gt; StartConversationActivity implements CreateConferenceDialogListener -&gt; StartConversationActivity.onCreateDialogPositiveClick() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="325" end="325" />
       <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="552" end="553" />
       <line src="/src/main/java/eu/siacs/conversations/ui/CreatePrivateGroupChatDialog.java" start="50" end="51" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/CreatePrivateGroupChatDialog.java" start="66" end="66" />
       <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="992" end="998" />
     </callLines>
     <tags>
