@@ -336,7 +336,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.todoroo.astrid.gcal.CalendarAlarmListCreator" destination="org.tasks.preferences.BasicPreferences" method="">
-    <comment>CalendarAlarmListCreator.onCreate() -&gt; addListeners() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CalendarAlarmListCreator.startActivity()</comment>
+    <comment>CalendarAlarmListCreator.onCreate() -&gt; addListeners() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CalendarAlarmListCreator.startActivity()</comment>
     <callLines>
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarAlarmListCreator.java" start="78" end="78" />
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarAlarmListCreator.java" start="113" end="113" />
@@ -373,7 +373,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.todoroo.astrid.gcal.CalendarReminderActivity" destination="com.todoroo.astrid.activity.TaskListActivity" method="">
-    <comment>CalendarReminderActivity.onCreate() -&gt; addListeners() -&gt; Button.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; CalendarReminderActivity.listExists() -&gt; DialogBuilder.setNegativeButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; CalendarReminderActivity.startActivity()</comment>
+    <comment>CalendarReminderActivity.onCreate() -&gt; addListeners() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; CalendarReminderActivity.listExists() -&gt; DialogBuilder.setNegativeButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; CalendarReminderActivity.startActivity()</comment>
     <callLines>
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarReminderActivity.java" start="131" end="131" />
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarReminderActivity.java" start="177" end="177" />
@@ -394,7 +394,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.todoroo.astrid.gcal.CalendarReminderActivity" destination="com.todoroo.astrid.gcal.CalendarAlarmListCreator" method="">
-    <comment>CalendarReminderActivity.onCreate() -&gt; addListeners() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CalendarReminderActivity.createNewList() -&gt; startActivity()</comment>
+    <comment>CalendarReminderActivity.onCreate() -&gt; addListeners() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CalendarReminderActivity.createNewList() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarReminderActivity.java" start="131" end="131" />
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarReminderActivity.java" start="177" end="177" />
@@ -414,7 +414,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.todoroo.astrid.gcal.CalendarReminderActivity" destination="com.todoroo.astrid.gcal.CalendarAlarmReceiver" method="">
-    <comment>CalendarReminderActivity.onCreate() -&gt; addListeners() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CalendarReminderActivity.postpone() -&gt; AlarmManager.cancel()</comment>
+    <comment>CalendarReminderActivity.onCreate() -&gt; addListeners() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CalendarReminderActivity.postpone() -&gt; AlarmManager.cancel()</comment>
     <callLines>
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarReminderActivity.java" start="131" end="131" />
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarReminderActivity.java" start="169" end="169" />
@@ -452,7 +452,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.todoroo.astrid.gcal.CalendarReminderActivity" destination="org.tasks.preferences.BasicPreferences" method="">
-    <comment>CalendarReminderActivity.onCreate() -&gt; addListeners() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CalendarReminderActivity.startActivity()</comment>
+    <comment>CalendarReminderActivity.onCreate() -&gt; addListeners() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CalendarReminderActivity.startActivity()</comment>
     <callLines>
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarReminderActivity.java" start="131" end="131" />
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarReminderActivity.java" start="159" end="159" />

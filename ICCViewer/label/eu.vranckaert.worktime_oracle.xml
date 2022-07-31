@@ -158,7 +158,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.account.AccountLoginActivity" destination="eu.vranckaert.worktime.activities.account.AccountRegisterActivity" method="">
-    <comment>AccountLoginActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AccountLoginActivity.startActivityForResult()</comment>
+    <comment>AccountLoginActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AccountLoginActivity.startActivityForResult()</comment>
     <callLines>
       <line src="/src/eu/vranckaert/worktime/activities/account/AccountLoginActivity.java" start="99" end="99" />
       <line src="/src/eu/vranckaert/worktime/activities/account/AccountLoginActivity.java" start="102" end="103" />
@@ -176,7 +176,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.account.AccountProfileActivity" destination="eu.vranckaert.worktime.activities.account.AccountSyncHistoryActivity" method="">
-    <comment>AccountProfileActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AccountProfileActivity.startActivity()</comment>
+    <comment>AccountProfileActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AccountProfileActivity.startActivity()</comment>
     <callLines>
       <line src="/src/eu/vranckaert/worktime/activities/account/AccountProfileActivity.java" start="96" end="96" />
       <line src="/src/eu/vranckaert/worktime/activities/account/AccountProfileActivity.java" start="99" end="100" />

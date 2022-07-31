@@ -234,7 +234,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountsActivity" destination="com.etesync.syncadapter.ui.setup.LoginActivity" method="">
-    <comment>AccountsActivity.onCreate() -&gt; FloatingActionButton.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>AccountsActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/etesync/syncadapter/ui/AccountsActivity.kt" start="50" end="50" />
     </callLines>

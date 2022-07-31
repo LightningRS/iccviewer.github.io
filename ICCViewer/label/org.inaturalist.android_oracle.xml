@@ -704,7 +704,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationEditor" destination="org.inaturalist.android.LocationChooserActivity" method="">
-    <comment>ObservationEditor.onCreate() -&gt; Button.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; startActivityForResult()</comment>
+    <comment>ObservationEditor.onCreate() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationEditor.java" start="688" end="688" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationEditor.java" start="705" end="705" />
@@ -777,7 +777,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.ExploreActivity" method="">
-    <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ObservationsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ObservationsPageAdapter.instantiateItem() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationListActivity.startActivity()</comment>
+    <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ObservationsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ObservationsPageAdapter.instantiateItem() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationListActivity.startActivity()</comment>
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationListActivity.java" start="408" end="408" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationListActivity.java" start="1357" end="1358" />
@@ -1137,7 +1137,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.LocationDetailsActivity" method="">
-    <comment>ObservationViewerActivity.onResume() -&gt; setupMap() -&gt; GoogleMap.setOnClickListener() -&gt; *GoogleMap.OnMapClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
+    <comment>ObservationViewerActivity.onResume() -&gt; setupMap() -&gt; View.setOnClickListener() -&gt; *GoogleMap.OnMapClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="449" end="449" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1193" end="1193" />
@@ -1173,7 +1173,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.ObservationPhotosViewer" method="">
-    <comment>*ObservationViewerActivity.onCreate() -&gt; reloadPhotos() -&gt; new PhotosViewPagerAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationViewerActivity.instantiateItem() -&gt; ImageView.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
+    <comment>*ObservationViewerActivity.onCreate() -&gt; reloadPhotos() -&gt; new PhotosViewPagerAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationViewerActivity.instantiateItem() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="606" end="606" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="2259" end="2261" />
@@ -1358,7 +1358,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectDetails" destination="org.inaturalist.android.ObservationViewerActivity" method="">
-    <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ProjectDetailsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ProjectDetailsPageAdapter.instantiateItem() -&gt; Button.setOnClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ProjectDetails.startActivity()</comment>
+    <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ProjectDetailsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ProjectDetailsPageAdapter.instantiateItem() -&gt; View.setOnClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ProjectDetails.startActivity()</comment>
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ProjectDetails.java" start="174" end="174" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ProjectDetails.java" start="366" end="367" />
@@ -1414,7 +1414,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectDetails" destination="org.inaturalist.android.TaxonActivity" method="">
-    <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ProjectDetailsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ProjectDetailsPageAdapter.instantiateItem() -&gt; Button.setOnClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ProjectDetails.startActivity()</comment>
+    <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ProjectDetailsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ProjectDetailsPageAdapter.instantiateItem() -&gt; View.setOnClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ProjectDetails.startActivity()</comment>
     <callLines>
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ProjectDetails.java" start="174" end="174" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ProjectDetails.java" start="366" end="367" />

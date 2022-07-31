@@ -245,7 +245,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.ShareActivity" destination="com.nutomic.syncthingandroid.activities.FolderPickerActivity" method="">
-    <comment>ShareActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; FolderPickerActivity.createIntent() -&gt; startActivityForResult()</comment>
+    <comment>ShareActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; FolderPickerActivity.createIntent() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/ShareActivity.java" start="174" end="174" />
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/ShareActivity.java" start="177" end="177" />
@@ -265,7 +265,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.VersioningDialogActivity" destination="com.nutomic.syncthingandroid.activities.FolderPickerActivity" method="">
-    <comment>VersioningDialogActivity.onCreate() -&gt; updateFragmentView() -&gt; getFragment() -&gt; FragmentTransaction.commit() -&gt; StaggeredVersioningFragment.onCreateView() -&gt; initiateVersionsPathTextView() -&gt; TextView.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; FolderPickerActivity.createIntent() -&gt; StaggeredVersioningFragment.startActivityForResult()</comment>
+    <comment>VersioningDialogActivity.onCreate() -&gt; updateFragmentView() -&gt; getFragment() -&gt; FragmentTransaction.commit() -&gt; StaggeredVersioningFragment.onCreateView() -&gt; initiateVersionsPathTextView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; FolderPickerActivity.createIntent() -&gt; StaggeredVersioningFragment.startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/VersioningDialogActivity.java" start="88" end="88" />
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/VersioningDialogActivity.java" start="112" end="112" />

@@ -133,7 +133,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.download.DownloadActivity" method="">
-    <comment>MapActivity.onResume() -&gt; DashboardOnMap.setDashboardVisibility() -&gt; updateDownloadBtn() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MapActivity.startActivity()</comment>
+    <comment>MapActivity.onResume() -&gt; DashboardOnMap.setDashboardVisibility() -&gt; updateDownloadBtn() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MapActivity.startActivity()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivity.java" start="238" end="238" />
       <line src="/OsmAnd/src/net/osmand/plus/dashboard/DashboardOnMap.java" start="193" end="193" />

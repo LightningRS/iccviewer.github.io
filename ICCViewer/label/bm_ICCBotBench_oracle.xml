@@ -6,7 +6,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>Source1WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source1WithCtx.doWithAction() -&gt; addCategory() -&gt; startActivity()</comment>
+    <comment>Source1WithCtx.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source1WithCtx.doWithAction() -&gt; addCategory() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source1WithCtx.java" start="24" end="24" />
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source1WithCtx.java" start="29" end="29" />
@@ -32,7 +32,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>Source1WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source1WithCtx.doWithAction() -&gt; addCategory() -&gt; startActivity()</comment>
+    <comment>Source1WithCtx.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source1WithCtx.doWithAction() -&gt; addCategory() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source1WithCtx.java" start="24" end="24" />
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source1WithCtx.java" start="32" end="32" />
@@ -58,7 +58,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>Source2WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source2WithCtx.doWithAction() -&gt; startActivity()</comment>
+    <comment>Source2WithCtx.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source2WithCtx.doWithAction() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="24" end="24" />
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="29" end="29" />
@@ -82,7 +82,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>Source2WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source2WithCtx.doWithAction() -&gt; startActivity()</comment>
+    <comment>Source2WithCtx.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source2WithCtx.doWithAction() -&gt; startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="24" end="24" />
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source2WithCtx.java" start="29" end="29" />
@@ -106,7 +106,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>Source3WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
+    <comment>Source3WithCtx.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source3WithCtx.java" start="23" end="23" />
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source3WithCtx.java" start="27" end="30" />
@@ -130,7 +130,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>Source4WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
+    <comment>Source4WithCtx.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source4WithCtx.java" start="23" end="23" />
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source4WithCtx.java" start="27" end="30" />
@@ -154,7 +154,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>Source5WithCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source5WithCtx.addCategory() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
+    <comment>Source5WithCtx.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Source5WithCtx.addCategory() -&gt; Utils.startIntent() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="23" end="23" />
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="27" end="29" />
@@ -178,7 +178,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>Source1WithFrag.onCreate() -&gt; Button.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; *Frag1WithFrag.onAttach() -&gt; getActivity().startActivity()</comment>
+    <comment>Source1WithFrag.onCreate() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; *Frag1WithFrag.onAttach() -&gt; getActivity().startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withFrag/Source1WithFrag.java" start="23" end="23" />
       <line src="/ICCBotBench/src/com/iccbot/withFrag/Source1WithFrag.java" start="27" end="29" />
@@ -224,7 +224,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>SourceWithFragCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; *FragWithFragCtx.onAttach() -&gt; doWithAction() -&gt; addCategory() -&gt; getActivity().startActivity()</comment>
+    <comment>SourceWithFragCtx.onCreate() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; *FragWithFragCtx.onAttach() -&gt; doWithAction() -&gt; addCategory() -&gt; getActivity().startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withFragCtx/SourceWithFragCtx.java" start="23" end="23" />
       <line src="/ICCBotBench/src/com/iccbot/withFragCtx/SourceWithFragCtx.java" start="27" end="29" />
@@ -250,7 +250,7 @@
     <nodes>
       <node method="" type="" unit="" />
     </nodes>
-    <comment>SourceWithFragCtx.onCreate() -&gt; Button.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; *FragWithFragCtx.onAttach() -&gt; doWithAction() -&gt; addCategory() -&gt; getActivity().startActivity()</comment>
+    <comment>SourceWithFragCtx.onCreate() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; *FragWithFragCtx.onAttach() -&gt; doWithAction() -&gt; addCategory() -&gt; getActivity().startActivity()</comment>
     <callLines>
       <line src="/ICCBotBench/src/com/iccbot/withFragCtx/SourceWithFragCtx.java" start="23" end="23" />
       <line src="/ICCBotBench/src/com/iccbot/withFragCtx/SourceWithFragCtx.java" start="27" end="29" />

@@ -381,7 +381,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.NoteEditor" method="">
-    <comment>DeckPicker.onCreate() -&gt; configureFloatingActionsMenu() -&gt; FloatingActionButton.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; DeckPicker.addNote() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
+    <comment>DeckPicker.onCreate() -&gt; configureFloatingActionsMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; DeckPicker.addNote() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/DeckPicker.java" start="408" end="408" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/DeckPicker.java" start="508" end="514" />
@@ -758,7 +758,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.NoteEditor" destination="com.ichi2.anki.CardTemplateEditor" method="">
-    <comment>NoteEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; NoteEditor.onCollectionLoaded() -&gt; TextView.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NoteEditor.showCardTemplateEditor() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
+    <comment>NoteEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; NoteEditor.onCollectionLoaded() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NoteEditor.showCardTemplateEditor() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/NoteEditor.java" start="103" end="103" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/AnkiActivity.java" start="286" end="286" />
@@ -818,7 +818,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.NoteEditor" destination="com.ichi2.anki.multimediacard.activity.MultimediaEditFieldActivity" method="">
-    <comment>NoteEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; NoteEditor.onCollectionLoaded() -&gt; setNote() -&gt; populateEditFields() -&gt; setMMButtonListener() -&gt; ImageButton.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NoteEditor.startMultimediaFieldEditor() -&gt; AnkiActivity.startActivityForResultWithoutAnimation() -&gt; startActivityForResult()</comment>
+    <comment>NoteEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; NoteEditor.onCollectionLoaded() -&gt; setNote() -&gt; populateEditFields() -&gt; setMMButtonListener() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NoteEditor.startMultimediaFieldEditor() -&gt; AnkiActivity.startActivityForResultWithoutAnimation() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/NoteEditor.java" start="103" end="103" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/AnkiActivity.java" start="286" end="286" />
@@ -1488,7 +1488,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.multimediacard.activity.MultimediaEditFieldActivity" destination="com.ichi2.anki.multimediacard.activity.LoadPronounciationActivity" method="">
-    <comment>MultimediaEditFieldActivity.onCreate() -&gt; recreateEditingUi() -&gt; BasicControllerFactory.createControllerForField() -&gt; BasicTextFieldController.createUI() -&gt; createPronounceButton() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Activity.startActivityForResult()</comment>
+    <comment>MultimediaEditFieldActivity.onCreate() -&gt; recreateEditingUi() -&gt; BasicControllerFactory.createControllerForField() -&gt; BasicTextFieldController.createUI() -&gt; createPronounceButton() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Activity.startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/activity/MultimediaEditFieldActivity.java" start="98" end="98" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/activity/MultimediaEditFieldActivity.java" start="120" end="120" />
@@ -1510,16 +1510,20 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.multimediacard.activity.MultimediaEditFieldActivity" destination="com.ichi2.anki.multimediacard.activity.TranslationActivity" method="xxx">
-    <comment>MultimediaEditFieldActivity.onCreate() -&gt; recreateEditingUi() -&gt; BasicControllerFactory.createControllerForField() -&gt; BasicTextFieldController.createUI() -&gt; createTranslateButton() -&gt; Button.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; PickStringDialogFragment.setOnclickListener() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; startTranslationWithGlosbe() -&gt; MultimediaEditFieldActivity.startActivityForResult()</comment>
+    <comment>MultimediaEditFieldActivity.onCreate() -&gt; recreateEditingUi() -&gt; BasicControllerFactory.createControllerForField() -&gt; BasicTextFieldController.createUI() -&gt; createTranslateButton() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; PickStringDialogFragment.setOnClickListener() -&gt; onCreateDialog() -&gt; AlertDialog.Builder.setAdapter() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; startTranslationWithGlosbe() -&gt; MultimediaEditFieldActivity.startActivityForResult()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/activity/MultimediaEditFieldActivity.java" start="98" end="98" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/activity/MultimediaEditFieldActivity.java" start="120" end="120" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/fields/BasicControllerFactory.java" start="39" end="39" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/fields/BasicTextFieldController.java" start="92" end="92" />
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/fields/BasicTextFieldController.java" start="150" end="152" />
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/fields/BasicTextFieldController.java" start="176" end="179" />
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/activity/PickStringDialogFragment.java" start="66" end="66" />
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/activity/PickStringDialogFragment.java" start="49" end="49" />
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/fields/BasicTextFieldController.java" start="182" end="182" />
-      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/fields/BasicTextFieldController.java" start="396" end="398" />
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/multimediacard/fields/BasicTextFieldController.java" start="394" end="398" />
     </callLines>
-    <tags checkIgnore="undefinedisFragment, ">
+    <tags checkIgnore="undefinedisFragment, isAdapter, ">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />

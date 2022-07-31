@@ -645,7 +645,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.smssecure.smssecure.MediaOverviewActivity" destination="org.smssecure.smssecure.MediaPreviewActivity" method="">
-    <comment>MediaOverviewActivity.onLoadFinished() -&gt; new ImageMediaAdapter() -&gt; GridView.setAdapter() -&gt; ImageMediaAdapter.onBindItemViewHolder() -&gt; ImageView.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Context.startActivity()</comment>
+    <comment>MediaOverviewActivity.onLoadFinished() -&gt; new ImageMediaAdapter() -&gt; GridView.setAdapter() -&gt; ImageMediaAdapter.onBindItemViewHolder() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/src/org/smssecure/smssecure/MediaOverviewActivity.java" start="223" end="223" />
       <line src="/src/org/smssecure/smssecure/ImageMediaAdapter.java" start="78" end="78" />
@@ -798,7 +798,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.smssecure.smssecure.PromptMmsActivity" destination="org.smssecure.smssecure.preferences.MmsPreferencesActivity" method="">
-    <comment>PromptMmsActivity.onCreate() -&gt; initializeResources() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>PromptMmsActivity.onCreate() -&gt; initializeResources() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/smssecure/smssecure/PromptMmsActivity.java" start="20" end="20" />
       <line src="/src/org/smssecure/smssecure/PromptMmsActivity.java" start="27" end="27" />

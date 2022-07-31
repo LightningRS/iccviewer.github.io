@@ -788,7 +788,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.SearchActivity" destination="eu.siacs.conversations.ui.ShowLocationActivity" method="">
-    <comment>SearchActivity.onCreate() -&gt; new MessageAdapter() -&gt; View.setAdapter() -&gt; MessageAdapter.getView() -&gt; displayLocationMessage() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MessageAdapter.showLocation() -&gt; GeoHelper.createGeoIntentsFromMessage() -&gt; Context.startActivity()</comment>
+    <comment>SearchActivity.onCreate() -&gt; new MessageAdapter() -&gt; View.setAdapter() -&gt; MessageAdapter.getView() -&gt; displayLocationMessage() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MessageAdapter.showLocation() -&gt; GeoHelper.createGeoIntentsFromMessage() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/SearchActivity.java" start="92" end="94" />
       <line src="/src/main/java/eu/siacs/conversations/ui/adapter/MessageAdapter.java" start="776" end="776" />

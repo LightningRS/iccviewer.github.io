@@ -19,7 +19,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="pt.joaomneto.titancompanion.GamebookSelectionActivity" destination="pt.joaomneto.titancompanion.GamebookFullImageActivity" method="">
-    <comment>GamebookSelectionActivity.onCreate() -&gt; GamebookSelectionActivity.SectionsPagerAdapter.getItem() -&gt; GamebookSelectionActivity.GamebookSelectionFragment.onCreateView() -&gt; ImageView.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>GamebookSelectionActivity.onCreate() -&gt; GamebookSelectionActivity.SectionsPagerAdapter.getItem() -&gt; GamebookSelectionActivity.GamebookSelectionFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/pt/joaomneto/titancompanion/GamebookSelectionActivity.kt" start="48" end="52" />
       <line src="/src/main/java/pt/joaomneto/titancompanion/GamebookSelectionActivity.kt" start="144" end="148" />
@@ -38,7 +38,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="pt.joaomneto.titancompanion.GamebookSelectionActivity" destination="pt.joaomneto.titancompanion.GamebookWikiaActivity" method="">
-    <comment>GamebookSelectionActivity.onCreate() -&gt; GamebookSelectionActivity.SectionsPagerAdapter.getItem() -&gt; GamebookSelectionActivity.GamebookSelectionFragment.onCreateView() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; GamebookSelectionActivity.startActivity()</comment>
+    <comment>GamebookSelectionActivity.onCreate() -&gt; GamebookSelectionActivity.SectionsPagerAdapter.getItem() -&gt; GamebookSelectionActivity.GamebookSelectionFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; GamebookSelectionActivity.startActivity()</comment>
     <callLines>
       <line src="/src/main/java/pt/joaomneto/titancompanion/GamebookSelectionActivity.kt" start="48" end="52" />
       <line src="/src/main/java/pt/joaomneto/titancompanion/GamebookSelectionActivity.kt" start="144" end="148" />

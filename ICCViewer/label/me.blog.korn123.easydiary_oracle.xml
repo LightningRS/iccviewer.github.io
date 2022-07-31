@@ -94,7 +94,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="me.blog.korn123.easydiary.activities.DiaryMainActivity" destination="me.blog.korn123.easydiary.activities.DiaryInsertActivity" method="">
-    <comment>DiaryMainActivity.onCreate() -&gt; bindEvent() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TransitionHelper.startActivityWithTransition() -&gt; DiaryMainActivity.startActivity()</comment>
+    <comment>DiaryMainActivity.onCreate() -&gt; bindEvent() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TransitionHelper.startActivityWithTransition() -&gt; DiaryMainActivity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/me/blog/korn123/easydiary/activities/DiaryMainActivity.kt" start="82" end="82" />
       <line src="/app/src/main/java/me/blog/korn123/easydiary/activities/DiaryMainActivity.kt" start="492" end="497" />
@@ -208,7 +208,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="me.blog.korn123.easydiary.activities.DiaryReadActivity" destination="me.blog.korn123.easydiary.activities.PhotoViewPagerActivity" method="">
-    <comment>DiaryReadActivity.onCreate() -&gt; new SectionsPagerAdapter() -&gt; DiaryReadActivity.setupViewPager() -&gt; ViewPager.setAdapter() -&gt; SectionsPagerAdapter.getItem() -&gt; DiaryReadActivity.PlaceholderFragment.newInstance() -&gt; new DiaryReadActivity.PlaceholderFragment() -&gt; DiaryReadActivity.PlaceholderFragment.onActivityCreated() -&gt; initContents() -&gt; ImageView.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TransitionHelper.startActivityWithTransition() -&gt; DiaryMainActivity.startActivity()</comment>
+    <comment>DiaryReadActivity.onCreate() -&gt; new SectionsPagerAdapter() -&gt; DiaryReadActivity.setupViewPager() -&gt; ViewPager.setAdapter() -&gt; SectionsPagerAdapter.getItem() -&gt; DiaryReadActivity.PlaceholderFragment.newInstance() -&gt; new DiaryReadActivity.PlaceholderFragment() -&gt; DiaryReadActivity.PlaceholderFragment.onActivityCreated() -&gt; initContents() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TransitionHelper.startActivityWithTransition() -&gt; DiaryMainActivity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/me/blog/korn123/easydiary/activities/DiaryReadActivity.kt" start="79" end="79" />
       <line src="/app/src/main/java/me/blog/korn123/easydiary/activities/DiaryReadActivity.kt" start="319" end="319" />
@@ -249,7 +249,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="me.blog.korn123.easydiary.activities.FingerprintLockActivity" destination="me.blog.korn123.easydiary.activities.PinLockActivity" method="">
-    <comment>FingerprintLockActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; FingerprintLockActivity.startActivity()</comment>
+    <comment>FingerprintLockActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; FingerprintLockActivity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/me/blog/korn123/easydiary/activities/FingerprintLockActivity.kt" start="63" end="65" />
     </callLines>
@@ -284,7 +284,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="me.blog.korn123.easydiary.activities.PinLockActivity" destination="me.blog.korn123.easydiary.activities.FingerprintLockActivity" method="">
-    <comment>PinLockActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PinLockActivity.startActivity()</comment>
+    <comment>PinLockActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PinLockActivity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/me/blog/korn123/easydiary/activities/PinLockActivity.kt" start="46" end="48" />
     </callLines>
@@ -421,7 +421,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="me.blog.korn123.easydiary.activities.TimelineActivity" destination="me.blog.korn123.easydiary.activities.DiaryInsertActivity" method="">
-    <comment>TimelineActivity.onCreate() -&gt; bindEvent() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TransitionHelper.startActivityWithTransition() -&gt; TimelineActivity.startActivity()</comment>
+    <comment>TimelineActivity.onCreate() -&gt; bindEvent() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; TransitionHelper.startActivityWithTransition() -&gt; TimelineActivity.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/me/blog/korn123/easydiary/activities/TimelineActivity.kt" start="72" end="72" />
       <line src="/app/src/main/java/me/blog/korn123/easydiary/activities/TimelineActivity.kt" start="186" end="189" />

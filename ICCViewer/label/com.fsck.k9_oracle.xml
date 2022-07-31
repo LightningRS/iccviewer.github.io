@@ -496,7 +496,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupBasics" destination="com.fsck.k9.activity.setup.AccountSetupAccountType" method="">
-    <comment>AccountSetupBasics.onCreate() -&gt; Button.setOnClickListener() -&gt; *AccountSetupBasics.onClick() -&gt; AccountSetupBasics.onManualSetup() -&gt; AccountSetupAccountType.actionSelectAccountType() -&gt; Context.startActivity()</comment>
+    <comment>AccountSetupBasics.onCreate() -&gt; View.setOnClickListener() -&gt; *AccountSetupBasics.onClick() -&gt; AccountSetupBasics.onManualSetup() -&gt; AccountSetupAccountType.actionSelectAccountType() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/AccountSetupBasics.java" start="92" end="92" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/AccountSetupBasics.java" start="446" end="446" />
@@ -534,7 +534,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupIncoming" destination="com.fsck.k9.activity.setup.AccountSetupCheckSettings" method="">
-    <comment>AccountSetupIncoming.onCreate() -&gt; Button.setOnClickListener() -&gt; *AccountSetupIncoming.onClick() -&gt; onNext() -&gt; AccountSetupCheckSettings.actionCheckSettings() -&gt; Context.startActivityForResult()</comment>
+    <comment>AccountSetupIncoming.onCreate() -&gt; View.setOnClickListener() -&gt; *AccountSetupIncoming.onClick() -&gt; onNext() -&gt; AccountSetupCheckSettings.actionCheckSettings() -&gt; Context.startActivityForResult()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/AccountSetupIncoming.java" start="131" end="131" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/AccountSetupIncoming.java" start="606" end="606" />

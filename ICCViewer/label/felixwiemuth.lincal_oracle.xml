@@ -37,7 +37,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarListActivity" destination="felixwiemuth.lincal.NotificationService" method="">
-    <comment>CalendarListActivity.onCreate() -&gt; setupRecyclerView() -&gt; RecyclerView.setAdapter() -&gt; CalendarListActivity.SimpleItemRecyclerViewAdapter.onBindViewHolder() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; CalendarViewFragment.onCreateView() -&gt; CheckBox.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NotificationService.runWithCalendar() -&gt; Context.startService()</comment>
+    <comment>CalendarListActivity.onCreate() -&gt; setupRecyclerView() -&gt; RecyclerView.setAdapter() -&gt; CalendarListActivity.SimpleItemRecyclerViewAdapter.onBindViewHolder() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; CalendarViewFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NotificationService.runWithCalendar() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarListActivity.java" start="81" end="81" />
       <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarListActivity.java" start="106" end="107" />
@@ -60,7 +60,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarListActivity" destination="felixwiemuth.lincal.ui.AddCalendarActivity" method="">
-    <comment>CalendarListActivity.onCreate() -&gt; FloatingActionButton.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
+    <comment>CalendarListActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarListActivity.java" start="71" end="77" />
       <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarListActivity.java" start="75" end="75" />
@@ -116,7 +116,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarViewActivity" destination="felixwiemuth.lincal.NotificationService" method="">
-    <comment>CalendarViewActivity.onCreate() -&gt; FragmentTransaction.commit() -&gt; CalendarViewFragment.onCreateView() -&gt; CheckBox.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NotificationService.runWithCalendar() -&gt; Context.startService()</comment>
+    <comment>CalendarViewActivity.onCreate() -&gt; FragmentTransaction.commit() -&gt; CalendarViewFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NotificationService.runWithCalendar() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewActivity.java" start="63" end="67" />
       <line src="/app/src/main/java/felixwiemuth/lincal/ui/CalendarViewFragment.java" start="184" end="184" />

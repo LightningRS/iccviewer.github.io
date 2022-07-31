@@ -619,7 +619,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.StartMenuService" destination="com.farmerbb.taskbar.activity.ContextMenuActivity" method="xxx">
-    <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LinearLayout.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartMenuService.openContextMenu() -&gt; Handler.postDelayed() -&gt; StartMenuService.startActivity()</comment>
+    <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartMenuService.openContextMenu() -&gt; Handler.postDelayed() -&gt; StartMenuService.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="163" end="163" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="367" end="368" />
@@ -689,7 +689,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.StartMenuService" destination="com.farmerbb.taskbar.activity.dark.ContextMenuActivityDark" method="xxx">
-    <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LinearLayout.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartMenuService.openContextMenu() -&gt; Handler.postDelayed() -&gt; StartMenuService.startActivity()</comment>
+    <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartMenuService.openContextMenu() -&gt; Handler.postDelayed() -&gt; StartMenuService.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="163" end="163" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/StartMenuService.java" start="367" end="368" />

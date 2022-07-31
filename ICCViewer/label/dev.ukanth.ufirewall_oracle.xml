@@ -2,7 +2,7 @@
 
 <root srcCodeBase="/apps/dev.ukanth.ufirewall">
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.activity.AppDetailActivity" method="">
-    <comment>MainActivity.onCheckedChanged() -&gt; filterApps() -&gt; AppListArrayAdapter.getView() -&gt; TextView.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>MainActivity.onCheckedChanged() -&gt; filterApps() -&gt; AppListArrayAdapter.getView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/MainActivity.java" start="620" end="620" />
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/MainActivity.java" start="454" end="454" />
@@ -514,7 +514,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.widget.ToggleWidgetOldActivity" destination="dev.ukanth.ufirewall.widget.StatusWidget" method="">
-    <comment>ToggleWidgetOldActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; ToggleWidgetOldActivity.onClick() -&gt; switchAction() -&gt; startAction() -&gt; Thread.run() -&gt; RootCommand.setCallback() -&gt; *RootCommand.Callback.cbFunc() -&gt; Api.setEnabled() -&gt; sendBroadcast()</comment>
+    <comment>ToggleWidgetOldActivity.onCreate() -&gt; View.setOnClickListener() -&gt; ToggleWidgetOldActivity.onClick() -&gt; switchAction() -&gt; startAction() -&gt; Thread.run() -&gt; RootCommand.setCallback() -&gt; *RootCommand.Callback.cbFunc() -&gt; Api.setEnabled() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/widget/ToggleWidgetOldActivity.java" start="53" end="53" />
       <line src="/aFWall/src/main/java/dev/ukanth/ufirewall/widget/ToggleWidgetOldActivity.java" start="221" end="221" />

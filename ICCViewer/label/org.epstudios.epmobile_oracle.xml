@@ -178,7 +178,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Brugada" destination="org.epstudios.epmobile.BrugadaMorphologyCriteria" method="">
-    <comment>Brugada.onCreate() -&gt; Button.setOnClickListener() -&gt; *Brugada.onClick() -&gt; displayMorphologyCriteria() -&gt; startActivity()</comment>
+    <comment>Brugada.onCreate() -&gt; View.setOnClickListener() -&gt; *Brugada.onClick() -&gt; displayMorphologyCriteria() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/epstudios/epmobile/Brugada.java" start="38" end="38" />
       <line src="/src/org/epstudios/epmobile/Brugada.java" start="81" end="81" />
@@ -1782,7 +1782,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Warfarin" destination="org.epstudios.epmobile.DoseTable" method="">
-    <comment>Warfarin.onCreate() -&gt; Button.setOnClickListener() -&gt; *Warfarin.onClick() -&gt; calculateResult() -&gt; displayResult() -&gt; displayDoses() -&gt; startActivity()</comment>
+    <comment>Warfarin.onCreate() -&gt; View.setOnClickListener() -&gt; *Warfarin.onClick() -&gt; calculateResult() -&gt; displayResult() -&gt; displayDoses() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/epstudios/epmobile/Warfarin.java" start="42" end="42" />
       <line src="/src/org/epstudios/epmobile/Warfarin.java" start="110" end="110" />
@@ -1999,7 +1999,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WpwArruda" destination="org.epstudios.epmobile.AvAnnulusMap" method="">
-    <comment>WpwArruda.onCreate() -&gt; Button.setOnClickListener() -&gt; WpwArruda.onClick() -&gt; getYesResult() -&gt; gotoStep() -&gt; showResult() -&gt; AlertDialog.setButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; WpwArruda.showMap() -&gt; startActivity()</comment>
+    <comment>WpwArruda.onCreate() -&gt; View.setOnClickListener() -&gt; WpwArruda.onClick() -&gt; getYesResult() -&gt; gotoStep() -&gt; showResult() -&gt; AlertDialog.setButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; WpwArruda.showMap() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/org/epstudios/epmobile/WpwArruda.java" start="65" end="65" />
       <line src="/src/org/epstudios/epmobile/WpwArruda.java" start="96" end="96" />

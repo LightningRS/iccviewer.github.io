@@ -110,7 +110,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.HomePagerActivity" destination="es.usc.citius.servando.calendula.activities.MedicinesActivity" method="">
-    <comment>HomePagerActivity.onCreate() -&gt; FabMenuMgr.init() -&gt; ExpandableFAB.setOnClickListener() -&gt; *MedicinesActivity.onClick() -&gt; onClickAdd() -&gt; launchActivity() -&gt; Activity.startActivity()</comment>
+    <comment>HomePagerActivity.onCreate() -&gt; FabMenuMgr.init() -&gt; View.setOnClickListener() -&gt; *MedicinesActivity.onClick() -&gt; onClickAdd() -&gt; launchActivity() -&gt; Activity.startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/HomePagerActivity.java" start="427" end="428" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/FabMenuMgr.java" start="69" end="69" />
@@ -330,7 +330,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.activities.MedicineInfoActivity" destination="es.usc.citius.servando.calendula.activities.WebViewActivity" method="">
-    <comment>MedicineInfoActivity.onCreate() -&gt; new MedInfoPageAdapter() -&gt; ViewPager.setAdapter() -&gt; setCurrentItem() -&gt; MedInfoPageAdapter.getItem() -&gt; MedInfoFragment.newInstance() -&gt; onCreateView() -&gt; setupView() -&gt; ImageButton.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ProspectUtils.openProspect() -&gt; Context.startActivity()</comment>
+    <comment>MedicineInfoActivity.onCreate() -&gt; new MedInfoPageAdapter() -&gt; ViewPager.setAdapter() -&gt; setCurrentItem() -&gt; MedInfoPageAdapter.getItem() -&gt; MedInfoFragment.newInstance() -&gt; onCreateView() -&gt; setupView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ProspectUtils.openProspect() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/MedicineInfoActivity.java" start="204" end="207" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/adapters/MedInfoPageAdapter.java" start="42" end="42" />
@@ -427,7 +427,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.activities.ScheduleCreationActivity" destination="es.usc.citius.servando.calendula.activities.MedicinesActivity" method="">
-    <comment>ScheduleCreationActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; SectionsPagerAdapter.getItem() -&gt; new SelectMedicineListFragment() -&gt; SelectMedicineListFragment.onCreateView() -&gt; FloatingActionButton.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>ScheduleCreationActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; SectionsPagerAdapter.getItem() -&gt; new SelectMedicineListFragment() -&gt; SelectMedicineListFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ScheduleCreationActivity.java" start="382" end="382" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ScheduleCreationActivity.java" start="390" end="390" />
@@ -447,7 +447,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="es.usc.citius.servando.calendula.activities.ScheduleCreationActivity" destination="es.usc.citius.servando.calendula.activities.SummaryCalendarActivity" method="">
-    <comment>ScheduleCreationActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; setCurrentItem() -&gt; SectionsPagerAdapter.getItem() -&gt; new ScheduleSummaryFragment() -&gt; ScheduleSummaryFragment.setUserVisibleHint() -&gt; updateSummary() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ScheduleSummaryFragment.startActivity()</comment>
+    <comment>ScheduleCreationActivity.onCreate() -&gt; ViewPager.setAdapter() -&gt; setCurrentItem() -&gt; SectionsPagerAdapter.getItem() -&gt; new ScheduleSummaryFragment() -&gt; ScheduleSummaryFragment.setUserVisibleHint() -&gt; updateSummary() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ScheduleSummaryFragment.startActivity()</comment>
     <callLines>
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ScheduleCreationActivity.java" start="382" end="382" />
       <line src="/Calendula/src/main/java/es/usc/citius/servando/calendula/activities/ScheduleCreationActivity.java" start="390" end="390" />

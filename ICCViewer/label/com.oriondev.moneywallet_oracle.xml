@@ -58,7 +58,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.LauncherActivity" destination="com.oriondev.moneywallet.ui.activity.BackupListActivity" method="">
-    <comment>LauncherActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
+    <comment>LauncherActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/LauncherActivity.java" start="83" end="85" />
     </callLines>
@@ -93,7 +93,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.LauncherActivity" destination="com.oriondev.moneywallet.ui.activity.TutorialActivity" method="">
-    <comment>LauncherActivity.onCreate() -&gt; Button.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
+    <comment>LauncherActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/LauncherActivity.java" start="70" end="70" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/LauncherActivity.java" start="74" end="75" />
@@ -600,7 +600,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.NewEditBudgetActivity" destination="com.oriondev.moneywallet.ui.activity.CategoryPickerActivity" method="">
-    <comment>NewEditBudgetActivity.onCreatePanelView() -&gt; EditText.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CategoryPicker.showPicker() -&gt; startActivityForResult()</comment>
+    <comment>NewEditBudgetActivity.onCreatePanelView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CategoryPicker.showPicker() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditBudgetActivity.java" start="278" end="278" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditBudgetActivity.java" start="282" end="282" />
@@ -803,7 +803,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.NewEditRecurrentTransactionActivity" destination="com.oriondev.moneywallet.ui.activity.CategoryPickerActivity" method="">
-    <comment>NewEditRecurrentTransactionActivity.onCreatePanelView() -&gt; EditText.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CategoryPicker.showPicker() -&gt; startActivityForResult()</comment>
+    <comment>NewEditRecurrentTransactionActivity.onCreatePanelView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CategoryPicker.showPicker() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditRecurrentTransactionActivity.java" start="174" end="174" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditRecurrentTransactionActivity.java" start="178" end="178" />
@@ -843,7 +843,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.NewEditTransactionActivity" destination="com.oriondev.moneywallet.ui.activity.CalculatorActivity" method="">
-    <comment>NewEditTransactionActivity.onCreateHeaderView() -&gt; TextView.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MoneyPicker.showPicker() -&gt; startActivityForResult()</comment>
+    <comment>NewEditTransactionActivity.onCreateHeaderView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MoneyPicker.showPicker() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditTransactionActivity.java" start="159" end="159" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/picker/MoneyPicker.java" start="156" end="160" />
@@ -861,7 +861,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.NewEditTransactionActivity" destination="com.oriondev.moneywallet.ui.activity.CategoryPickerActivity" method="">
-    <comment>NewEditTransactionActivity.onCreatePanelView() -&gt; EditText.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CategoryPicker.showPicker() -&gt; startActivityForResult()</comment>
+    <comment>NewEditTransactionActivity.onCreatePanelView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CategoryPicker.showPicker() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditTransactionActivity.java" start="247" end="247" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditTransactionActivity.java" start="251" end="251" />
@@ -984,7 +984,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.NewEditTransactionModelActivity" destination="com.oriondev.moneywallet.ui.activity.CategoryPickerActivity" method="">
-    <comment>NewEditTransactionModelActivity.onCreatePanelView() -&gt; EditText.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CategoryPicker.showPicker() -&gt; startActivityForResult()</comment>
+    <comment>NewEditTransactionModelActivity.onCreatePanelView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CategoryPicker.showPicker() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditTransactionModelActivity.java" start="163" end="163" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditTransactionModelActivity.java" start="167" end="167" />
@@ -1047,7 +1047,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.oriondev.moneywallet.ui.activity.NewEditWalletActivity" destination="com.oriondev.moneywallet.ui.activity.CurrencyListActivity" method="">
-    <comment>NewEditWalletActivity.onCreatePanelView() -&gt; EditText.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CurrencyPicker.showPicker() -&gt; startActivityForResult()</comment>
+    <comment>NewEditWalletActivity.onCreatePanelView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CurrencyPicker.showPicker() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditWalletActivity.java" start="127" end="127" />
       <line src="/app/src/main/java/com/oriondev/moneywallet/ui/activity/NewEditWalletActivity.java" start="131" end="131" />
