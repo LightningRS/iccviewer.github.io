@@ -523,7 +523,7 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchActivity" destination="net.osmand.plus.activities.search.SearchPOIActivity" method="">
-    <comment>SearchActivity.onCreate() -&gt; getFragment() -&gt; SearchPoiFilterFragment.onCreateView() -&gt; setupOptions() -&gt; showOptionsMenu() -&gt; View.setOnMenuItemClickListener() -&gt; *MenuItem.OnMenuItemClickListener.onMenuItemClick() -&gt; SearchPoiFilterFragment.showFilterActivity() -&gt; startActivityForResult()</comment>
+    <comment>SearchActivity.onCreate() -&gt; getFragment() -&gt; SearchPoiFilterFragment.onCreateView() -&gt; setupOptions() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; showOptionsMenu() -&gt; View.setOnMenuItemClickListener() -&gt; *MenuItem.OnMenuItemClickListener.onMenuItemClick() -&gt; SearchPoiFilterFragment.showFilterActivity() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="132" end="134" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="173" end="173" />
