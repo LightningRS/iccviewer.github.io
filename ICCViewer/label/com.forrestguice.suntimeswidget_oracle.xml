@@ -170,7 +170,7 @@
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesConfigActivity0.java" start="1369" end="1372" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
@@ -274,20 +274,21 @@
     </tags>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesSettingsActivity" destination="com.forrestguice.suntimeswidget.SuntimesWidget0" method="">
-    <comment>*SuntimesSettingsActivity.onSharedPreferenceChanged() -&gt; updateLocale() -&gt; SuntimesWidget0.triggerWidgetUpdate() -&gt; Context.sendBroadcast()</comment>
+    <comment>SuntimesSettingsActivity.onResume() -&gt; SharedPreferences.registerOnSharedPreferenceChangeListener() -&gt; *SuntimesSettingsActivity.onSharedPreferenceChanged() -&gt; updateLocale() -&gt; SuntimesWidget0.triggerWidgetUpdate() -&gt; Context.sendBroadcast()</comment>
     <callLines>
+      <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesSettingsActivity.java" start="216" end="216" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesSettingsActivity.java" start="423" end="423" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesSettingsActivity.java" start="492" end="492" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesWidget0.java" start="547" end="553" />
     </callLines>
     <tags>
-      <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
+      <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
@@ -340,6 +341,7 @@
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesWidget1.java" start="95" end="95" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesWidget1.java" start="133" end="135" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesWidget1.java" start="137" end="137" />
+      <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesWidget1.java" start="99" end="99" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -349,7 +351,7 @@
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="true" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
   </OracleEdge>
