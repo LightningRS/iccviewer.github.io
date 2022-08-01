@@ -467,7 +467,7 @@ $.extend(window.ICCTagViewer, {
                 adj_ed += 1;
             }
             ct = ct + st;
-            const lineHeight = codeViewer.getOption(56);
+            const lineHeight = codeViewer.getOption(monaco.editor.EditorOption.lineHeight);
             const h = Math.max((adj_ed - adj_st + 1) * lineHeight, 5 * lineHeight)
             $codeViewer.css('height', h + 'px');
             codeViewer.layout();
@@ -802,6 +802,7 @@ $.extend(window.ICCTagViewer, {
                         start: $lineDiv.find('.call-line-st').val(),
                         end: $lineDiv.find('.call-line-ed').val(),
                     });
+                    _this.countCallLines($basicInfo);
                 });
                 _this.makeToast(_this._T('Successfully pasted call lines'), 2);
             }
@@ -1033,7 +1034,7 @@ $.extend(window.ICCTagViewer, {
 
         // Sort
         this.data.flows.sort(function(flow1, flow2) {
-            if (_this.getOption('sortBy') === 'source') {
+            if (_this.getOption('sortBy', 'source') === 'source') {
                 if (flow2.source < flow1.source) return 1;
                 else if (flow2.source > flow1.source) return -1;
                 else {
@@ -1304,7 +1305,7 @@ $.extend(window.ICCTagViewer, {
                     _this._T('Loading ICC XML for App {0}...').format(appName),
                     -1, 'bg-primary', 'bi-hourglass-split'
                 );
-                
+
                 let xmlUrl = $option.attr('oracle-file');
                 if (xmlUrl.indexOf('://') === -1) xmlUrl = _this.config.labelBasePath + '/' + xmlUrl;
                 window.setTimeout(function() {
