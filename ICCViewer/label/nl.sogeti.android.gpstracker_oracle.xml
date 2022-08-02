@@ -26,7 +26,7 @@
       <line src="/application/src/nl/sogeti/android/gpstracker/actions/DescribeTrack.java" start="225" end="225" />
       <line src="/application/src/nl/sogeti/android/gpstracker/breadcrumbs/BreadcrumbsService.java" start="216" end="227" />
     </callLines>
-    <tags checkIgnore="nullisService, ">
+    <tags checkIgnore="isService">
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -349,7 +349,7 @@
       <line src="/application/src/nl/sogeti/android/gpstracker/viewer/TrackList.java" start="281" end="281" />
       <line src="/application/src/nl/sogeti/android/gpstracker/breadcrumbs/BreadcrumbsService.java" start="216" end="227" />
     </callLines>
-    <tags checkIgnore="nullisService, ">
+    <tags checkIgnore="isService">
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />

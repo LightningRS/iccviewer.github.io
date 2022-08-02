@@ -48,7 +48,7 @@
       <line src="/src/main/java/com/todoroo/astrid/activity/AstridActivity.java" start="67" end="67" />
       <line src="/src/main/java/com/todoroo/astrid/service/StartupService.java" start="124" end="126" />
     </callLines>
-    <tags checkIgnore="nullisService, ">
+    <tags checkIgnore="isService">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -125,7 +125,7 @@
       <line src="/src/main/java/com/todoroo/astrid/activity/AstridActivity.java" start="67" end="67" />
       <line src="/src/main/java/com/todoroo/astrid/service/StartupService.java" start="124" end="126" />
     </callLines>
-    <tags checkIgnore="nullisService, ">
+    <tags checkIgnore="isService">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -196,7 +196,7 @@
       <line src="/src/main/java/com/todoroo/astrid/core/OldTaskPreferences.java" start="25" end="25" />
       <line src="/src/main/java/com/todoroo/astrid/service/StartupService.java" start="124" end="126" />
     </callLines>
-    <tags checkIgnore="nullisService, ">
+    <tags checkIgnore="isService">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -323,7 +323,7 @@
       <line src="/src/main/java/com/todoroo/astrid/service/StartupService.java" start="148" end="148" />
       <line src="/src/main/java/org/tasks/Broadcaster.java" start="59" end="59" />
     </callLines>
-    <tags checkIgnore="nullisService, ">
+    <tags checkIgnore="isService">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -439,7 +439,7 @@
       <line src="/src/main/java/com/todoroo/astrid/gcal/CalendarReminderActivity.java" start="112" end="112" />
       <line src="/src/main/java/com/todoroo/astrid/service/StartupService.java" start="124" end="126" />
     </callLines>
-    <tags checkIgnore="nullisService, ">
+    <tags checkIgnore="isService">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -515,7 +515,7 @@
       <line src="/src/main/java/com/todoroo/astrid/widget/WidgetConfigActivity.java" start="58" end="58" />
       <line src="/src/main/java/org/tasks/widget/WidgetHelper.java" start="59" end="61" />
     </callLines>
-    <tags checkIgnore="nullisWidget, ">
+    <tags checkIgnore="isWidget">
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="false" isAtypicalSendICC="true" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -1088,7 +1088,7 @@
       <line src="/src/main/java/org/tasks/reminders/SnoozeActivity.java" start="60" end="60" />
       <line src="/src/main/java/com/todoroo/astrid/service/StartupService.java" start="124" end="126" />
     </callLines>
-    <tags checkIgnore="nullisService, ">
+    <tags checkIgnore="isService">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />

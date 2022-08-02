@@ -784,7 +784,7 @@
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationListActivity.java" start="988" end="988" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationListActivity.java" start="1067" end="1067" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationListActivity.java" start="997" end="997" />
-      <line src="//iNaturalist/src/main/java/org/inaturalist/android/ObservationListActivity.java" start="1008" end="1019" />
+      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationListActivity.java" start="1008" end="1019" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -1122,7 +1122,7 @@
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="829" end="829" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1059" end="1059" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1062" end="1068" />
-      <line src="//iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1088" end="1088" />
+      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1088" end="1088" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -1615,7 +1615,7 @@
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/BaseFragmentActivity.java" start="519" end="519" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/BaseFragmentActivity.java" start="221" end="222" />
     </callLines>
-    <tags checkIgnore="isFragment, ">
+    <tags checkIgnore="isFragment">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />

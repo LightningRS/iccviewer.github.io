@@ -6,7 +6,7 @@
     <callLines>
       <line src="/android/src/main/java/org/ligi/passandroid/InstallListener.java" start="16" end="20" />
     </callLines>
-    <tags checkIgnore="isDynamicCallBack, ">
+    <tags checkIgnore="isDynamicCallBack">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -40,7 +40,7 @@
     <comment>FullscreenBarcodeActivity extends PassViewActivityBase -&gt; *PassViewActivityBase.onOptionsItemSelected() -&gt; PassMenuOptions.process() -&gt; Activity.startActivityFromClass() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/android/src/main/java/org/ligi/passandroid/ui/FullscreenBarcodeActivity.kt" start="13" end="13" />
-      <line src="//android/src/main/java/org/ligi/passandroid/ui/PassViewActivityBase.kt" start="114" end="114" />
+      <line src="/android/src/main/java/org/ligi/passandroid/ui/PassViewActivityBase.kt" start="114" end="114" />
       <line src="/android/src/main/java/org/ligi/passandroid/ui/PassMenuOptions.kt" start="80" end="80" />
     </callLines>
     <tags>
@@ -137,7 +137,7 @@
       <line src="/android/src/main/java/org/ligi/passandroid/ui/PassNavigationView.kt" start="45" end="45" />
       <line src="/android/src/main/java/org/ligi/passandroid/ui/PassNavigationView.kt" start="24" end="24" />
     </callLines>
-    <tags checkIgnore="isImplicitCallback, ">
+    <tags checkIgnore="isImplicitCallback">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="true" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />

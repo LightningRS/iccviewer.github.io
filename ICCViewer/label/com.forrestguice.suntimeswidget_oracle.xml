@@ -361,7 +361,7 @@
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesWidgetListActivity.java" start="530" end="530" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/SuntimesWidgetListActivity.java" start="265" end="267" />
     </callLines>
-    <tags checkIgnore="nullisWidget, ">
+    <tags checkIgnore="isWidget">
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -456,7 +456,7 @@
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/themes/WidgetThemeListActivity.java" start="548" end="548" />
       <line src="/app/src/main/java/com/forrestguice/suntimeswidget/themes/WidgetThemeListActivity.java" start="257" end="264" />
     </callLines>
-    <tags checkIgnore="nullisWidget, ">
+    <tags checkIgnore="isWidget">
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />

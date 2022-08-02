@@ -9,7 +9,7 @@
       <line src="/icc_dynregister1/src/main/java/org/arguslab/icc_dynregister1/MainActivity.java" start="51" end="51" />
       <line src="/icc_dynregister1/src/main/java/org/arguslab/icc_dynregister1/MainActivity.java" start="44" end="44" />
     </callLines>
-    <tags checkIgnore="nullisImplicitAndroidManifest, ">
+    <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />
@@ -30,7 +30,7 @@
       <line src="/icc_dynregister2/src/main/java/org/arguslab/icc_dynregister2/MainActivity.java" start="44" end="46" />
       <line src="/icc_dynregister2/src/main/java/org/arguslab/icc_dynregister2/MainActivity.java" start="47" end="49" />
     </callLines>
-    <tags checkIgnore="nullisImplicitAndroidManifest, ">
+    <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />

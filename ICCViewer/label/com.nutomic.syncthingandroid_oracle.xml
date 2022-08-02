@@ -325,7 +325,7 @@
   <OracleEdge source="com.nutomic.syncthingandroid.receiver.BootReceiver" destination="com.nutomic.syncthingandroid.service.SyncthingService" method="">
     <comment>*BootReceiver.onReceive() -&gt; startServiceCompat() -&gt; startService()</comment>
     <callLines>
-      <line src="//app/src/main/java/com/nutomic/syncthingandroid/receiver/BootReceiver.java" start="24" end="24" />
+      <line src="/app/src/main/java/com/nutomic/syncthingandroid/receiver/BootReceiver.java" start="24" end="24" />
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/receiver/BootReceiver.java" start="33" end="39" />
     </callLines>
     <tags>

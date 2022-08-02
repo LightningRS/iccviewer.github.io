@@ -491,7 +491,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="225" end="228" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="243" end="246" />
     </callLines>
-    <tags checkIgnore="isImplicitCallback, ">
+    <tags checkIgnore="isImplicitCallback">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -510,7 +510,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="225" end="228" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchActivity.java" start="249" end="252" />
     </callLines>
-    <tags checkIgnore="isImplicitCallback, ">
+    <tags checkIgnore="isImplicitCallback">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />

@@ -161,7 +161,7 @@
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="36" end="36" />
       <line src="/ICCBotBench/src/com/iccbot/withCtx/Source5WithCtx.java" start="30" end="30" />
     </callLines>
-    <tags checkIgnore="isImplicitAndroidManifest, ">
+    <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />
@@ -233,7 +233,7 @@
       <line src="/ICCBotBench/src/com/iccbot/withFragCtx/FragWithFragCtx.java" start="29" end="29" />
       <line src="/ICCBotBench/src/com/iccbot/withFragCtx/FragWithFragCtx.java" start="25" end="25" />
     </callLines>
-    <tags checkIgnore="isImplicitAndroidManifest, ">
+    <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />
@@ -259,7 +259,7 @@
       <line src="/ICCBotBench/src/com/iccbot/withFragCtx/FragWithFragCtx.java" start="29" end="29" />
       <line src="/ICCBotBench/src/com/iccbot/withFragCtx/FragWithFragCtx.java" start="25" end="25" />
     </callLines>
-    <tags checkIgnore="isImplicitAndroidManifest, ">
+    <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />

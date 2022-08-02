@@ -270,7 +270,7 @@
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ContextMenuActivity.java" start="592" end="592" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ContextMenuActivity.java" start="601" end="601" />
     </callLines>
-    <tags checkIgnore="nullisImplicitAndroidManifest, ">
+    <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />
@@ -488,7 +488,7 @@
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/ImportSettingsActivity.java" start="51" end="51" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/receiver/ReceiveSettingsReceiver.java" start="159" end="159" />
     </callLines>
-    <tags checkIgnore="nullisImplicitAndroidManifest, ">
+    <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="false" isImplicit="true" />

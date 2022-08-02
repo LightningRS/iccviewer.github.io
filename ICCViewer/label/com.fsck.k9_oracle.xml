@@ -373,7 +373,7 @@
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/UnreadWidgetConfiguration.java" start="80" end="87" />
     </callLines>
-    <tags checkIgnore="nullisWidget, ">
+    <tags checkIgnore="isWidget">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />
@@ -390,7 +390,7 @@
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/UnreadWidgetConfiguration.java" start="99" end="109" />
     </callLines>
-    <tags checkIgnore="nullisWidget, ">
+    <tags checkIgnore="isWidget">
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
       <exitMethod isNormalSendICC="true" isAtypicalSendICC="false" />
       <intentMatch isExplicit="true" isImplicit="false" />

@@ -81,7 +81,7 @@ $.extend(window.ICCTagViewer, {
             let msg = 'Reading ICC XML from localStorage...';
             this.makeToast(this._T(msg), -1, 'bg-primary', 'bi-hourglass-split');
             window.setTimeout(function() {
-                if (_this._importXML(xmlStr)) {
+                if (_this._importXML(xmlStr, true)) {
                     msg = 'Finished loading ICC XML from localStorage';
                     console.log('[INFO] {0}'.format(_this._T(msg)));
                     _this.makeToast(_this._T(msg));
@@ -162,8 +162,8 @@ $.extend(window.ICCTagViewer, {
             const result = checker.func(flowId, comment);
             if (result.error) {
                 if (result.type) {
-                    const checkIgnore = _this.data.flows[flowId].checkIgnore;
-                    if (checkIgnore && checkIgnore.indexOf(result.type + ',') !== -1) {
+                    const checkIgnores = _this.data.flows[flowId].checkIgnores;
+                    if (checkIgnores && checkIgnores.indexOf(result.type) !== -1) {
                         console.log("Ignored checker: {0}".format(result.type));
                         return;
                     }
@@ -206,7 +206,7 @@ $.extend(window.ICCTagViewer, {
                     const $ctrlIgnore = $('<a href="javascript:;" class="ms-1"></a>');
                     $ctrlIgnore.html(_this._T('Ignore'));
                     $ctrlIgnore.on('click', function() {
-                        _this.data.flows[flowId].checkIgnore += result.type + ', ';
+                        _this.data.flows[flowId].checkIgnores.push(result.type);
                         $span.remove();
                         warnCnt -= 1;
                         if (warnCnt < 1) {
@@ -821,7 +821,7 @@ $.extend(window.ICCTagViewer, {
 
         // Generate Selector
         const $div = $('<div class="accordion" />');
-        $div.attr('id', idPrefix);
+        $div.attr('id', idPrefix + '-tags');
         for (const i in this.config.tags) {
             if (!this.config.tags.hasOwnProperty(i)) continue;
             const tag = this.config.tags[i];
@@ -989,7 +989,7 @@ $.extend(window.ICCTagViewer, {
         $('#icc-flow-{0}'.format(flowId)).remove();
     },
 
-    _importXML: function(xmlStr) {
+    _importXML: function(xmlStr, isFromLocal = false) {
         const _this = this;
         const xml = this.parserStringToXMLDOM(xmlStr);
 
@@ -1000,7 +1000,7 @@ $.extend(window.ICCTagViewer, {
         }
 
         const srcCodeBase = xml.getElementsByTagName('root')[0].getAttribute('srcCodeBase');
-        this.setSrcRootPath(srcCodeBase);
+        this.setSrcRootPath(srcCodeBase, isFromLocal);
         const edges = xml.getElementsByTagName('OracleEdge');
 
         this.data.flows.length = 0;
@@ -1025,10 +1025,15 @@ $.extend(window.ICCTagViewer, {
                 dest: edge.getAttribute('destination'),
                 method: edge.getAttribute('method'),
                 comment: commentElem ? HTMLDecode(commentElem.innerHTML) : '',
-                metaData: metaData,
-                checkIgnore: edge.getElementsByTagName('tags')[0].getAttribute('checkIgnore'),
+                metaData: metaData
             };
-            if (!flowObj.checkIgnore) flowObj.checkIgnore = '';
+
+            const checkIgnoreStr = edge.getElementsByTagName('tags')[0].getAttribute('checkIgnore');
+            if (checkIgnoreStr) {
+                flowObj.checkIgnores = checkIgnoreStr.split(', ');
+            } else {
+                flowObj.checkIgnores = [];
+            }
             this.data.flows.push(flowObj);
         }
 
@@ -1124,7 +1129,9 @@ $.extend(window.ICCTagViewer, {
 
             // Tags
             const tagsNode = xml.createElement('tags');
-            if (flow.checkIgnore) tagsNode.setAttribute('checkIgnore', flow.checkIgnore);
+            if (flow.checkIgnores.length > 0) {
+                tagsNode.setAttribute('checkIgnore', flow.checkIgnores.join(", "));
+            }
             for (const j in this.config.tags) {
                 if (!this.config.tags.hasOwnProperty(j)) continue;
                 const tag = this.config.tags[j];
@@ -1303,7 +1310,7 @@ $.extend(window.ICCTagViewer, {
                 // Load XML
                 _this.makeToast(
                     _this._T('Loading ICC XML for App {0}...').format(appName),
-                    -1, 'bg-primary', 'bi-hourglass-split'
+                    3000, 'bg-primary', 'bi-hourglass-split'
                 );
 
                 let xmlUrl = $option.attr('oracle-file');
@@ -1500,8 +1507,9 @@ $.extend(window.ICCTagViewer, {
     /**
      * Set source code root path
      * @param srcPath {String} Source code root path
+     * @param isFromLocal {Boolean} is loading from localStorage
      */
-    setSrcRootPath: function(srcPath) {
+    setSrcRootPath: function(srcPath, isFromLocal = false) {
         const $selector = $('#app-selector');
         if (!srcPath) srcPath = '';
 
@@ -1513,7 +1521,7 @@ $.extend(window.ICCTagViewer, {
         if (option.length > 0) {
             if (!srcPath.endsWith($selector.val())) {
                 $selector.val(pkgName);
-                $selector.trigger('change');
+                if (!isFromLocal) $selector.trigger('change');
             }
             // $('.app-customRoot-container').hide();
         } else {
