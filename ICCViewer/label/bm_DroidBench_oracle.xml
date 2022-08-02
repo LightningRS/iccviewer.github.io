@@ -233,7 +233,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="(icc_broadcast_programmatic_intentfilter) edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest" destination="(icc_broadcast_programmatic_intentfilter) edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest.BroadcastReceiver" method="xxx">
+  <OracleEdge source="(icc_broadcast_programmatic_intentfilter) edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest" destination="(icc_broadcast_programmatic_intentfilter) edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest" method="xxx">
     <comment>BroadcastTest.onCreate() -&gt; registerReceiver() -&gt; *onDestroy() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/BroadcastTaintAndLeak1/src/edu/mit/icc_broadcast_programmatic_intentfilter/BroadcastTest.java" start="25" end="34" />

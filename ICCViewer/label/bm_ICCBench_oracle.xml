@@ -21,7 +21,7 @@
       </analyzeScope>
     </tags>
   </OracleEdge>
-  <OracleEdge source="(icc_dynregister2) org.arguslab.icc_dynregister2.MainActivity" destination="(icc_dynregister2) org.arguslab.icc_dynregister2.MainActivity" method="xxx">
+  <OracleEdge source="(icc_dynregister2) org.arguslab.icc_dynregister2.MainActivity" destination="(icc_dynregister2) org.arguslab.icc_dynregister2.MyReceiver" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; registerReceiver() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; StringBuilder.toString() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/icc_dynregister2/src/main/java/org/arguslab/icc_dynregister2/MainActivity.java" start="34" end="34" />
