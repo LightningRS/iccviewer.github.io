@@ -17,6 +17,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_data_quality_metrics" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="Integer-observation_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.ExploreFiltersActivity" method="">
     <comment>*ExploreActivity.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
@@ -34,6 +39,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-all_annotations, Serializable-search_filters" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.ExploreSearchActivity" method="">
     <comment>*ExploreActivity.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
@@ -51,6 +59,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-search_filters" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*ExploreActivity.onResume() -&gt; ContextCompat.startForegroundService()</comment>
@@ -65,9 +76,13 @@
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_all_attributes" />
+      <IntentField type="data" value="null" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.MissionsActivity" method="">
     <comment>ExploreActivity.onCreate() -&gt; ExploreActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -86,10 +101,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.ObservationViewerActivity" method="">
     <comment>ExploreActivity.onResume() -&gt; refreshViewState() -&gt; refreshObservations() -&gt; GridViewExtended.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ExploreActivity.startActivityForResult()</comment>
@@ -106,10 +124,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-observation, boolean-read_only, boolean-reload" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.ProfileEditor" method="">
     <comment>ExploreActivity.onCreate() -&gt; ExploreActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -128,10 +149,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.ProjectsActivity" method="">
     <comment>ExploreActivity.onCreate() -&gt; ExploreActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -150,10 +172,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.SettingsActivity" method="">
     <comment>ExploreActivity.onCreate() -&gt; ExploreActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -172,10 +197,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP, FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.TaxonActivity" method="">
     <comment>ExploreActivity.onCreate() -&gt; initializeTabs() -&gt; new ExploreActivity.ExplorePagerAdapter() -&gt; ViewPager.setAdapter() -&gt; ExploreActivity.ExplorePagerAdapter.instantiateItem() -&gt; View.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; startActivity()</comment>
@@ -193,10 +221,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-taxon, boolean-download_taxon" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreActivity" destination="org.inaturalist.android.UserProfile" method="">
     <comment>ExploreActivity.onCreate() -&gt; initializeTabs() -&gt; new ExploreActivity.ExplorePagerAdapter() -&gt; ViewPager.setAdapter() -&gt; ExploreActivity.ExplorePagerAdapter.instantiateItem() -&gt; View.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; startActivity()</comment>
@@ -214,10 +245,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-user" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreFiltersActivity" destination="org.inaturalist.android.ItemSearchActivity" method="">
     <comment>ExploreFiltersActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
@@ -236,6 +270,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-search_hint_text, String-search_url, boolean-is_user, boolean-return_result" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ExploreSearchActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>ExploreSearchActivity.onCreate() -&gt; EditText.addTextChangedListener() -&gt; *TextWatcher.afterTextChanged() -&gt; Handler.postDelayed() -&gt; Runnable.run() -&gt; ExploreSearchActivity.performSearch() -&gt; ContextCompat.startForegroundService()</comment>
@@ -250,10 +287,15 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="search_taxa, search_places" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="String-query, int-page_number" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.GuideDetails" destination="org.inaturalist.android.GuideTaxonActivity" method="">
     <comment>GuideDetails.onCreate() -&gt; GridViewExtended.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; startActivity()</comment>
@@ -272,6 +314,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-guide_id, String-guide_xml_filename, String-taxon_id, boolean-guide_taxon" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.GuideDetails" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*GuideDetails.onResume() -&gt; ContextCompat.startForegroundService()</comment>
@@ -289,6 +334,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="guide_xml" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="int-guide_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.GuideDetails" destination="org.inaturalist.android.OnboardingActivity" method="">
     <comment>GuideDetails.onCreate() -&gt; refreshGuideSideMenu() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; ActivityHelper.confirm() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -306,9 +356,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.GuideDetails" destination="org.inaturalist.android.TaxonTagPhotosViewer" method="">
     <comment>GuideDetails.onCreate() -&gt; updateSideMenu() -&gt; new GuideMenuListAdapter() -&gt; ListView.setAdapter() -&gt; GuideMenuListAdapter.getView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; GuideDetails.startActivity()</comment>
@@ -325,10 +378,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-guide_id, String-guide_xml_filename, String-tag_name, String-tag_value" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.GuideDetails" destination="org.inaturalist.android.UserProfile" method="">
     <comment>GuideDetails.onCreate() -&gt; refreshGuideSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -348,6 +404,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-user" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.GuidesActivity" destination="org.inaturalist.android.ItemSearchActivity" method="">
     <comment>*GuidesActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -365,6 +424,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-result_viewer_activity, String-result_viewer_activity_param_name, String-search_hint_text, String-search_url" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.GuidesActivity" destination="org.inaturalist.android.MissionsActivity" method="">
     <comment>GuidesActivity.onCreate() -&gt; GuidesActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -383,10 +445,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.GuidesActivity" destination="org.inaturalist.android.ProfileEditor" method="">
     <comment>GuidesActivity.onCreate() -&gt; GuidesActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -405,10 +470,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.GuidesActivity" destination="org.inaturalist.android.ProjectsActivity" method="">
     <comment>GuidesActivity.onCreate() -&gt; GuidesActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -427,10 +493,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.LoginSignupActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>LoginSignupActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ContextCompat.startForegroundService()</comment>
@@ -449,6 +518,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="register_user" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="String-email, String-license, String-password, String-username" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionDetails" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*MissionDetails.onCreate() -&gt; ContextCompat.startForegroundService()</comment>
@@ -466,6 +540,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_taxon ## nearby" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="int-taxon_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionDetails" destination="org.inaturalist.android.MissionDetailsMapActivity" method="">
     <comment>MissionDetails.onResume() -&gt; refreshViewState() -&gt; GoogleMap.setOnMapClickListener() -&gt; *GoogleMap.OnMapClickListener.onMapClick() -&gt; MissionDetails.startActivity()</comment>
@@ -481,10 +560,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-observations" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsActivity" destination="org.inaturalist.android.ExploreActivity" method="">
     <comment>MissionsActivity.onCreate() -&gt; MissionsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -503,10 +585,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsActivity" destination="org.inaturalist.android.GuidesActivity" method="">
     <comment>MissionsActivity.onCreate() -&gt; MissionsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -525,10 +610,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*MissionsActivity.onResume() -&gt; ContextCompat.startForegroundService()</comment>
@@ -546,6 +634,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_recommended_missions ## get_user_details ## update_user_network" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="String-username" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsActivity" destination="org.inaturalist.android.MissionDetails" method="">
     <comment>MissionsActivity.onResume() -&gt; refreshViewState() -&gt; new MissionsPagerAdapter() -&gt; ViewPager.setAdapter() -&gt; MissionsPagerAdapter.instantiateItem() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Context.startActivity()</comment>
@@ -562,10 +655,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-mission, float-location_expansion" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsActivity" destination="org.inaturalist.android.MissionsGridActivity" method="">
     <comment>MissionsActivity.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; startActivity()</comment>
@@ -584,6 +680,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-taxon_name, int-taxon_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsActivity" destination="org.inaturalist.android.MissionsOnboardingActivity" method="">
     <comment>*MissionsActivity.onCreate() -&gt; startActivityForResult()</comment>
@@ -601,6 +700,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsActivity" destination="org.inaturalist.android.ObservationEditor" method="">
     <comment>MissionsActivity.onCreate() -&gt; MissionsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; showNewObsMenu() -&gt; BottomSheet.listener() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
@@ -619,10 +719,15 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.intent.action.INSERT" />
+      <IntentField type="data" value="content://org.inaturalist.android.observation/observations" />
+      <IntentField type="extra" value="boolean-choose_photo" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsActivity" destination="org.inaturalist.android.ProjectsActivity" method="">
     <comment>MissionsActivity.onCreate() -&gt; MissionsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -641,10 +746,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsActivity" destination="org.inaturalist.android.SettingsActivity" method="">
     <comment>MissionsActivity.onCreate() -&gt; MissionsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -663,10 +771,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.MissionsGridActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*MissionsGridActivity.onResume() -&gt; loadMissions() -&gt; ContextCompat.startForegroundService()</comment>
@@ -685,6 +796,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_missions_by_taxon" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="String-username, float-expand_location_by_degrees" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationEditor" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*ObservationEditor.onCreate() -&gt; ContextCompat.startForegroundService()</comment>
@@ -702,6 +818,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_taxon_new" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="Serializable-taxon_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationEditor" destination="org.inaturalist.android.LocationChooserActivity" method="">
     <comment>ObservationEditor.onCreate() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; startActivityForResult()</comment>
@@ -721,12 +842,15 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-latitude, Serializable-longitude, String-iconic_taxon_name, double-accuracy" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationEditor" destination="org.inaturalist.android.ProjectSelectorActivity" method="">
     <comment>ObservationEditor.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
     <callLines>
-      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationEditor.java" start="526" end="529" />
-      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationEditor.java" start="552" end="552" />
+      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationEditor.java" start="526" end="532" />
+      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationEditor.java" start="550" end="552" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -739,6 +863,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="ArrayList-project_id, ArrayList-umbrella_project_ids, Serializable-observation_id, Serializable-project_fields, boolean-is_confirmation" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationEditor" destination="org.inaturalist.android.TaxonSearchActivity" method="">
     <comment>ObservationEditor.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
@@ -757,6 +884,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-observation_id, Serializable-observation_id_internal, String-observation_json, String-species_guess, boolean-show_unknown" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationEditor" destination="org.inaturalist.android.TaxonSuggestionsActivity" method="">
     <comment>ObservationEditor.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
@@ -775,6 +905,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-latitude, Serializable-longitude, Serializable-observation_id, Serializable-observation_id_internal, Serializable-observed_on, String-obs_photo_filename, String-obs_photo_url, String-observation" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.ExploreActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ObservationsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ObservationsPageAdapter.instantiateItem() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationListActivity.startActivity()</comment>
@@ -793,10 +926,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-search_filters, int-active_tab" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP, FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.GuidesActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -815,10 +952,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>ObservationListActivity.onResume() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; *BaseFragmentActivity.onResume() -&gt; refreshUserDetails() -&gt; ContextCompat.startForegroundService()</comment>
@@ -835,10 +975,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_user_details" />
+      <IntentField type="data" value="null" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.LoginSignupActivity" method="">
     <comment>ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onPostCreate() -&gt; safeRegisterReceiver() -&gt; Context.registerReceiver() -&gt; *BaseFragmentActivity.UserDetailsReceiver.onReceive() -&gt; startActivity()</comment>
@@ -856,10 +1000,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="true" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-password_changed, boolean-signup" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.MissionsActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -879,10 +1027,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.ObservationEditor" method="">
     <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; BaseFragmentActivity.showNewObsMenu() -&gt; BottomSheet.Builder.listener() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityForResult()</comment>
@@ -900,10 +1051,15 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.intent.action.INSERT" />
+      <IntentField type="data" value="content://org.inaturalist.android.observation/observations" />
+      <IntentField type="extra" value="boolean-take_photo" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.ObservationSearchActivity" method="">
     <comment>*ObservationListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -918,9 +1074,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.ObservationViewerActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ObservationsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ObservationsPageAdapter.instantiateItem() -&gt; View.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ObservationListActivity.startActivity()</comment>
@@ -943,6 +1102,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.intent.action.VIEW" />
+      <IntentField type="extra" value="String-observation, boolean-read_only, boolean-reload" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.OnboardingActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -961,10 +1124,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.ProfileEditor" method="">
     <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -983,10 +1149,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.ProjectsActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1005,10 +1172,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.SettingsActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1027,10 +1197,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.TutorialActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivity()</comment>
@@ -1046,10 +1219,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-first_time" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationListActivity" destination="org.inaturalist.android.UserActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; ObservationListActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1068,10 +1245,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.DataQualityAssessment" method="">
     <comment>ObservationViewerActivity.onOptionsItemSelected() -&gt; refreshDataQuality() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
@@ -1092,6 +1272,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-observation" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>ObservationViewerActivity.onCreate() -&gt; refreshAttributes() -&gt; new AnnotationsAdapter() -&gt; ListView.setAdapter() -&gt; AnnotationsAdapter.getView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OnAnnotationActions.onAnnotationVoteDelete() -&gt; ObservationViewerActivity implements AnnotationsAdapter.OnAnnotationActions -&gt; ObservationViewerActivity.onAnnotationVoteDelete() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1114,6 +1297,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="delete_annotation_vote" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="String-uuid" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.IdentificationActivity" method="">
     <comment>ObservationViewerActivity.onCreate() -&gt; refreshActivity() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivityForResult()</comment>
@@ -1122,7 +1310,8 @@
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="829" end="829" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1059" end="1059" />
       <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1062" end="1068" />
-      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1088" end="1088" />
+      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1075" end="1078" />
+      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ObservationViewerActivity.java" start="1087" end="1088" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -1135,6 +1324,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-latitude, Serializable-longitude, Serializable-observation_id, Serializable-observation_id_internal, Serializable-observed_on, String-obs_photo_filename, String-obs_photo_url, String-observation, boolean-suggest_id ## Serializable-latitude, Serializable-longitude, Serializable-observation_id, Serializable-observation_id_internal, Serializable-observed_on, String-observation, boolean-suggest_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.LocationDetailsActivity" method="">
     <comment>ObservationViewerActivity.onResume() -&gt; setupMap() -&gt; View.setOnClickListener() -&gt; *GoogleMap.OnMapClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
@@ -1154,6 +1346,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-observation, String-observation_json, boolean-read_only" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.ObservationEditor" method="">
     <comment>*ObservationViewerActivity.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
@@ -1168,9 +1363,13 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.intent.action.EDIT" />
+      <IntentField type="data" value="${mUri}" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.ObservationPhotosViewer" method="">
     <comment>*ObservationViewerActivity.onCreate() -&gt; reloadPhotos() -&gt; new PhotosViewPagerAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationViewerActivity.instantiateItem() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
@@ -1191,6 +1390,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-observation_id, Serializable-observation_id_internal, boolean-is_new_observation, boolean-read_only, int-current_photo_index ## String-observation, int-current_photo_index" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.ObservationProjectsViewer" method="">
     <comment>*ObservationViewerActivity.onResume() -&gt; loadObservationIntoUI() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
@@ -1210,6 +1412,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-projects" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.OnboardingActivity" method="">
     <comment>ObservationViewerActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivityForResult()</comment>
@@ -1247,6 +1452,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-taxon, Serializable-observation" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ObservationViewerActivity" destination="org.inaturalist.android.UserProfile" method="">
     <comment>ObservationViewerActivity.onResume() -&gt; refreshDataQuality() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ObservationViewerActivity.startActivity()</comment>
@@ -1267,6 +1475,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-user" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.OnboardingActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*OnboardingActivity.onActivityResult() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1281,9 +1492,13 @@
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="refresh_current_user_settings" />
+      <IntentField type="data" value="null" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.OnboardingActivity" destination="org.inaturalist.android.LoginSignupActivity" method="">
     <comment>OnboardingActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OnboardingActivity.startActivityForResult()</comment>
@@ -1302,6 +1517,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-signup, int-background_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProfileEditor" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*ProfileEditor.onOptionsItemSelected() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1320,6 +1538,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="update_user_details" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="String-user_pic, String-username, boolean-user_delete_pic" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProfileEditor" destination="org.inaturalist.android.UserProfile" method="">
     <comment>ProfileEditor.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ProfileEditor.startActivity()</comment>
@@ -1338,6 +1561,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-user" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectDetails" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*OnboardingActivity.onResume() -&gt; getProjectDetails() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1356,6 +1582,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_project_observations" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="Serializable-project_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectDetails" destination="org.inaturalist.android.ObservationViewerActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ProjectDetailsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ProjectDetailsPageAdapter.instantiateItem() -&gt; View.setOnClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ProjectDetails.startActivity()</comment>
@@ -1372,10 +1603,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-observation, boolean-read_only, boolean-reload" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectDetails" destination="org.inaturalist.android.ProjectDetailsAbout" method="">
     <comment>ProjectDetails.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ProjectDetails.startActivity()</comment>
@@ -1394,6 +1628,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-project" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectDetails" destination="org.inaturalist.android.ProjectNews" method="">
     <comment>ProjectDetails.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ProjectDetails.startActivity()</comment>
@@ -1412,6 +1649,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-project" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectDetails" destination="org.inaturalist.android.TaxonActivity" method="">
     <comment>ObservationListActivity.onCreate() -&gt; initializeTabs() -&gt; new ProjectDetailsPageAdapter() -&gt; ViewPager.setAdapter() -&gt; ObservationListActivity.ProjectDetailsPageAdapter.instantiateItem() -&gt; View.setOnClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ProjectDetails.startActivity()</comment>
@@ -1428,15 +1668,18 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-taxon, boolean-download_taxon" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectNews" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*ProjectNews.onResume() -&gt; ContextCompat.startForegroundService()</comment>
     <callLines>
-      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ProjectNews.java" start="183" end="189" />
+      <line src="/iNaturalist/src/main/java/org/inaturalist/android/ProjectNews.java" start="185" end="187" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -1446,9 +1689,14 @@
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_project_news" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="Serializable-project_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectNews" destination="org.inaturalist.android.NewsArticle" method="">
     <comment>ProjectNews.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ProjectNews.startActivity()</comment>
@@ -1467,6 +1715,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-article, Serializable-is_user_feed" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectSelectorActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*ProjectSelectorActivity.onResume() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1484,6 +1735,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_joined_projects" />
+      <IntentField type="data" value="null" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectsActivity" destination="org.inaturalist.android.ExploreActivity" method="">
     <comment>ProjectsActivity.onCreate() -&gt; ProjectsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1502,10 +1757,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectsActivity" destination="org.inaturalist.android.GuidesActivity" method="">
     <comment>ProjectsActivity.onCreate() -&gt; ProjectsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1524,10 +1782,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectsActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>ProjectsActivity extends BaseFragmentActivity -&gt; *BaseFragmentActivity.onResume() -&gt; refreshUserDetails() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1543,10 +1804,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_user_details" />
+      <IntentField type="data" value="null" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectsActivity" destination="org.inaturalist.android.ItemSearchActivity" method="">
     <comment>*ProjectsActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1564,6 +1829,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-result_viewer_activity, String-result_viewer_activity_param_name, String-search_hint_text, String-search_url" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.ProjectsActivity" destination="org.inaturalist.android.MissionsActivity" method="">
     <comment>ProjectsActivity.onCreate() -&gt; ProjectsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1582,10 +1850,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.SettingsActivity" destination="org.inaturalist.android.About" method="">
     <comment>SettingsActivity.onCreate() -&gt; setContentView() -&gt; R.layout.settings.fragment -&gt; SettingsFragment.onCreate() -&gt; refreshSettings() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; SettingsFragment.startActivity()</comment>
@@ -1603,10 +1874,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.SettingsActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*SettingsActivity.onResume() -&gt; SettingsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onResume() -&gt; refreshUserDetails() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1626,6 +1900,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_user_details" />
+      <IntentField type="data" value="null" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.SettingsActivity" destination="org.inaturalist.android.MissionsActivity" method="">
     <comment>SettingsActivity.onCreate() -&gt; SettingsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1644,10 +1922,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.SettingsActivity" destination="org.inaturalist.android.NetworkSettings" method="">
     <comment>SettingsActivity.onCreate() -&gt; setContentView() -&gt; R.layout.settings.fragment -&gt; SettingsFragment.onCreate() -&gt; refreshSettings() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; SettingsFragment.startActivity()</comment>
@@ -1665,10 +1946,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.SettingsActivity" destination="org.inaturalist.android.OnboardingActivity" method="">
     <comment>SettingsActivity.onCreate() -&gt; SettingsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1685,10 +1969,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.SettingsActivity" destination="org.inaturalist.android.ProjectsActivity" method="">
     <comment>SettingsActivity.onCreate() -&gt; SettingsActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1707,10 +1994,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.TaxonActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*TaxonActivity.onResume() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1728,6 +2018,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_taxon_observation_bounds" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="Serializable-taxon_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.TaxonActivity" destination="org.inaturalist.android.ObservationPhotosViewer" method="">
     <comment>TaxonActivity.onCreate() -&gt; loadTaxon() -&gt; new TaxonPhotosPagerAdapter() -&gt; ViewPager.setAdapter() -&gt; TaxonActivity.TaxonPhotosPagerAdapter.instantiateItem() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Context.startActivity()</comment>
@@ -1744,10 +2039,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-observation, boolean-is_taxon, int-current_photo_index" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.TaxonActivity" destination="org.inaturalist.android.TaxonMapActivity" method="">
     <comment>TaxonActivity.onCreate() -&gt; GoogleMapView.getMapAsync() -&gt; GoogleMap.OnMapReadyCallback.onMapReady() -&gt; GoogleMap.setOnMapClickListener() -&gt; *GoogleMap.OnMapClickListener.onMapClick() -&gt; startActivity()</comment>
@@ -1762,10 +2060,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="true" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="true" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="CharSequence-taxon_name, Serializable-observation, Serializable-taxon_id, double-map_latitude, float-map_zoom" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.TaxonSearchActivity" destination="org.inaturalist.android.CompareSuggestionActivity" method="">
     <comment>*TaxonSearchActivity.onActivityResult() -&gt; compareTaxon() -&gt; startActivityForResult()</comment>
@@ -1784,6 +2085,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-observation_json, int-observation_id, int-observation_id_internal, int-suggestion_index" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.TaxonSearchActivity" destination="org.inaturalist.android.TaxonActivity" method="">
     <comment>TaxonSearchActivity.onCreate() -&gt; new TaxonAutoCompleteAdapter() -&gt; TaxonSearchActivity.setListAdapter() -&gt; ListView.setAdapter() -&gt; TaxonAutoCompleteAdapter.getView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
@@ -1800,10 +2104,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-taxon, boolean-download_taxon, int-taxon_suggestion" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.TaxonSuggestionsActivity" destination="org.inaturalist.android.CompareSuggestionActivity" method="">
     <comment>*TaxonSuggestionsActivity.onActivityResult() -&gt; showTaxonComparison() -&gt; startActivityForResult()</comment>
@@ -1822,6 +2129,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-observation_json, int-observation_id, int-observation_id_internal, int-suggestion_index" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.TaxonSuggestionsActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*TaxonSuggestionsActivity.onResume() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1839,6 +2149,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_taxon_suggestions" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="Serializable-observed_on, String-obs_photo_filename, String-obs_photo_url, double-latitude, double-longitude" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.TaxonSuggestionsActivity" destination="org.inaturalist.android.TaxonSearchActivity" method="">
     <comment>TaxonSuggestionsActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
@@ -1857,6 +2172,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-observation_json, String-species_guess, boolean-show_unknown, int-observation_id, int-observation_id_internal" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserActivity" destination="org.inaturalist.android.ExploreActivity" method="">
     <comment>UserActivity.onCreate() -&gt; UserActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1875,10 +2193,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserActivity" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*UserActivity.onResume() -&gt; ContextCompat.startForegroundService()</comment>
@@ -1896,6 +2217,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_user_udpates ## get_news ## update_user_network ## get_user_details" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="boolean-following" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserActivity" destination="org.inaturalist.android.MissionsActivity" method="">
     <comment>UserActivity.onCreate() -&gt; UserActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1914,10 +2240,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserActivity" destination="org.inaturalist.android.NewsArticle" method="">
     <comment>UserActivity.onCreate() -&gt; initializeTabs() -&gt; new UserActivity.ActivityPageAdapter() -&gt; ViewPager.setAdapter() -&gt; UserActivity.ActivityPageAdapter.instantiateItem() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; startActivity()</comment>
@@ -1934,10 +2263,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-article, boolean-is_user_feed" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserActivity" destination="org.inaturalist.android.ProjectsActivity" method="">
     <comment>UserActivity.onCreate() -&gt; UserActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1956,10 +2288,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserActivity" destination="org.inaturalist.android.SettingsActivity" method="">
     <comment>UserActivity.onCreate() -&gt; UserActivity extends BaseFragmentActivity -&gt; BaseFragmentActivity.onDrawerCreate() -&gt; buildSideMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; BaseFragmentActivity.startActivityIfNew() -&gt; startActivity()</comment>
@@ -1978,10 +2313,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserActivity" destination="org.inaturalist.android.UserProfile" method="">
     <comment>UserActivity.onCreate() -&gt; refreshViewState() -&gt; new UserActivitiesAdapter() -&gt; ListView.setAdapter() -&gt; UserActivitiesAdapter.getView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Context.startActivity()</comment>
@@ -1999,8 +2337,8 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -2021,6 +2359,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-search_filters, int-active_tab" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserProfile" destination="org.inaturalist.android.INaturalistService" method="">
     <comment>*UserProfile.onResume() -&gt; getUserDetails() -&gt; ContextCompat.startForegroundService()</comment>
@@ -2039,6 +2380,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="get_specific_user_details" />
+      <IntentField type="data" value="null" />
+      <IntentField type="extra" value="String-username" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserProfile" destination="org.inaturalist.android.ObservationViewerActivity" method="">
     <comment>UserProfile.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; UserProfile.startActivity()</comment>
@@ -2057,6 +2403,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-observation, boolean-read_only, boolean-reload" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserProfile" destination="org.inaturalist.android.ProfilePhotoViewer" method="">
     <comment>UserProfile.onCreate() -&gt; refreshUserDetails() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; UserProfile.startActivity()</comment>
@@ -2076,6 +2425,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-observation" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.UserProfile" destination="org.inaturalist.android.TaxonActivity" method="">
     <comment>UserProfile.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; startActivity()</comment>
@@ -2094,6 +2446,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-taxon, boolean-download_taxon" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.inaturalist.android.WebActivity" destination="org.inaturalist.android.OnboardingActivity" method="">
     <comment>WebActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
@@ -2108,8 +2463,11 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
 </root>

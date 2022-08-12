@@ -19,6 +19,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-package, int-id" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.activity.CustomScriptActivity" method="">
     <comment>*MainActivity.onOptionsItemSelected() -&gt; setCustomScript() -&gt; startActivityForResult()</comment>
@@ -37,6 +41,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.activity.HelpActivity" method="">
     <comment>*MainActivity.onOptionsItemSelected() -&gt; showAbout() -&gt; startActivityForResult()</comment>
@@ -55,6 +60,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.activity.LogActivity" method="">
     <comment>*MainActivity.onOptionsItemSelected() -&gt; showLog() -&gt; startActivityForResult()</comment>
@@ -73,6 +79,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.activity.OldLogActivity" method="">
     <comment>*MainActivity.onOptionsItemSelected() -&gt; showLog() -&gt; startActivityForResult()</comment>
@@ -91,6 +98,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.activity.RulesActivity" method="">
     <comment>*MainActivity.onOptionsItemSelected() -&gt; showRules() -&gt; startActivityForResult()</comment>
@@ -109,6 +117,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.preferences.PreferencesActivity" method="">
     <comment>*MainActivity.onOptionsItemSelected() -&gt; showPreferences() -&gt; startActivityForResult()</comment>
@@ -127,6 +136,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.service.FirewallService" method="">
     <comment>*MainActivity.onCreate() -&gt; registerNetworkObserver() -&gt; startService()</comment>
@@ -145,6 +155,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.service.RootShellService" method="">
     <comment>*MainActivity.onCreate() -&gt; startRootShell() -&gt; RootCommand.run() -&gt; RootShellService.runScriptAsRoot() -&gt; reOpenShell() -&gt; startService()</comment>
@@ -163,9 +174,10 @@
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.MainActivity" destination="dev.ukanth.ufirewall.widget.StatusWidget" method="">
     <comment>*MainActivity.onOptionsItemSelected() -&gt; disableOrEnable() -&gt; Api.setEnabled() -&gt; sendBroadcast()</comment>
@@ -185,6 +197,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="dev.ukanth.ufirewall.intent.action.STATUS_CHANGED" />
+      <IntentField type="extra" value="boolean-dev.ukanth.ufirewall.intent.extra.STATUS" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.activity.LogActivity" destination="dev.ukanth.ufirewall.activity.LogDetailActivity" method="">
     <comment>LogActivity.onCreate() -&gt; initializeRecyclerView() -&gt; *LogRecyclerViewAdapter.recyclerItemClickListener.onItemClick() -&gt; startActivity()</comment>
@@ -203,6 +219,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-DATA" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.activity.LogActivity" destination="dev.ukanth.ufirewall.activity.OldLogActivity" method="">
     <comment>*LogActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -220,6 +239,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.activity.OldLogActivity" destination="dev.ukanth.ufirewall.activity.LogActivity" method="">
     <comment>*OldLogActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -237,6 +257,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.broadcast.OnBootReceiver" destination="dev.ukanth.ufirewall.service.ApplyOnBootService" method="">
     <comment>*OnBootReceiver.onReceive() -&gt; startService()</comment>
@@ -254,6 +275,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.plugin.FireReceiver" destination="dev.ukanth.ufirewall.widget.StatusWidget" method="">
     <comment>FireReceiver.onReceive() -&gt; RootCommand.setCallback() -&gt; *RootCommand.Callback.cbFunc() -&gt; Api.setEnabled() -&gt; sendBroadcast()</comment>
@@ -272,6 +294,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="dev.ukanth.ufirewall.intent.action.STATUS_CHANGED" />
+      <IntentField type="extra" value="boolean-dev.ukanth.ufirewall.intent.extra.STATUS" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.preferences.PreferencesActivity" destination="dev.ukanth.ufirewall.activity.ProfileActivity" method="">
     <comment>PreferencesActivity.onBuildHeaders() -&gt; loadHeadersFromResource() -&gt; R.xml.preferences_headers.header -&gt; MultiProfilePreferenceFragment.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; startActivity()</comment>
@@ -291,6 +317,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.preferences.PreferencesActivity" destination="dev.ukanth.ufirewall.service.LogService" method="">
     <comment>*PreferencesActivity.onCreate() -&gt; subscribe() -&gt; RxEvent.subscribe() -&gt; logDmesgChangeApplyRules() -&gt; startService()</comment>
@@ -312,6 +339,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.preferences.PreferencesActivity" destination="haibison.android.lockpattern.LockPatternActivity" method="">
     <comment>PreferencesActivity.onBuildHeaders() -&gt; loadHeadersFromResource() -&gt; R.xml.preferences_headers.header -&gt; *SecPreferenceFragment.onSharedPreferenceChanged() -&gt; showPatternActivity() -&gt; startActivityForResult()</comment>
@@ -332,6 +360,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="haibison.android.lockpattern.LockPatternActivity.COMPARE_PATTERN ## haibison.android.lockpattern.LockPatternActivity.CREATE_PATTERN" />
+      <IntentField type="data" value="null" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.service.ApplyOnBootService" destination="dev.ukanth.ufirewall.service.FirewallService" method="">
     <comment>*ApplyOnBootService.onStartCommand() -&gt; startService()</comment>
@@ -349,6 +381,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.service.ApplyOnBootService" destination="dev.ukanth.ufirewall.service.LogService" method="">
     <comment>*ApplyOnBootService.onStartCommand() -&gt; startService()</comment>
@@ -366,6 +399,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.service.LogService" destination="dev.ukanth.ufirewall.service.LogService" method="">
     <comment>*LogService.onTaskRemoved() -&gt; AlarmManager.set()</comment>
@@ -380,9 +414,10 @@
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.service.RootShellService" destination="dev.ukanth.ufirewall.service.RootShellService" method="">
     <comment>*RootShellService.onStartCommand() -&gt; RootCommand.run() -&gt; RootShellService.runScriptAsRoot() -&gt; reOpenShell() -&gt; startService()</comment>
@@ -403,6 +438,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.service.RulesApplyService" destination="dev.ukanth.ufirewall.service.LogService" method="">
     <comment>*RulesApplyService.onHandleIntent() -&gt; startService()</comment>
@@ -421,6 +457,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.service.ToggleTileService" destination="dev.ukanth.ufirewall.widget.StatusWidget" method="">
     <comment>ToggleTileService.onClick() -&gt; RootCommand.setCallback() -&gt; *RootCommand.Callback.cbFunc() -&gt; Api.setEnabled() -&gt; sendBroadcast()</comment>
@@ -439,6 +476,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="dev.ukanth.ufirewall.intent.action.STATUS_CHANGED" />
+      <IntentField type="extra" value="boolean-dev.ukanth.ufirewall.intent.extra.STATUS" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.widget.StatusWidget" destination="dev.ukanth.ufirewall.widget.StatusWidget" method="">
     <comment>StatusWidget.onReceive() -&gt; RootCommand.setCallback() -&gt; *RootCommand.Callback.cbFunc() -&gt; Api.setEnabled() -&gt; sendBroadcast()</comment>
@@ -457,6 +498,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="dev.ukanth.ufirewall.intent.action.STATUS_CHANGED ## dev.ukanth.ufirewall.intent.action.TOGGLE_REQUEST" />
+      <IntentField type="extra" value="boolean-dev.ukanth.ufirewall.intent.extra.STATUS" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.widget.ToggleWidget" destination="dev.ukanth.ufirewall.widget.ToggleWidgetActivity" method="">
     <comment>*ToggleWidget.onUpdate() -&gt; AppWidgetManager.updateAppWidget()</comment>
@@ -474,6 +519,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.widget.ToggleWidgetActivity" destination="dev.ukanth.ufirewall.widget.StatusWidget" method="">
     <comment>ToggleWidgetActivity.onActivityResult() -&gt; invokeAction() -&gt; Thread.run() -&gt; RootCommand.setCallback() -&gt; *RootCommand.Callback.cbFunc() -&gt; Api.setEnabled() -&gt; sendBroadcast()</comment>
@@ -495,6 +541,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="dev.ukanth.ufirewall.intent.action.STATUS_CHANGED" />
+      <IntentField type="extra" value="boolean-dev.ukanth.ufirewall.intent.extra.STATUS" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.widget.ToggleWidgetOld" destination="dev.ukanth.ufirewall.widget.ToggleWidgetOldActivity" method="">
     <comment>*ToggleWidgetOld.onUpdate() -&gt; AppWidgetManager.updateAppWidget()</comment>
@@ -512,6 +562,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="dev.ukanth.ufirewall.widget.ToggleWidgetOldActivity" destination="dev.ukanth.ufirewall.widget.StatusWidget" method="">
     <comment>ToggleWidgetOldActivity.onCreate() -&gt; View.setOnClickListener() -&gt; ToggleWidgetOldActivity.onClick() -&gt; switchAction() -&gt; startAction() -&gt; Thread.run() -&gt; RootCommand.setCallback() -&gt; *RootCommand.Callback.cbFunc() -&gt; Api.setEnabled() -&gt; sendBroadcast()</comment>
@@ -533,5 +584,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="dev.ukanth.ufirewall.intent.action.STATUS_CHANGED" />
+      <IntentField type="extra" value="boolean-dev.ukanth.ufirewall.intent.extra.STATUS" />
+    </IntentFields>
   </OracleEdge>
 </root>

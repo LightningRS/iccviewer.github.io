@@ -23,6 +23,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.ClockWidget0ConfigActivity_3x1" destination="com.forrestguice.suntimeswidget.ClockWidget0" method="">
     <comment>ClockWidget0ConfigActivity_3x1 extends ClockWidget0ConfigActivity extends ClockWidget0 -&gt; ClockWidget0.onCreate() -&gt; ClockWidget0ConfigActivity_3x1.initViews() -&gt; ClockWidget0ConfigActivity.initViews() -&gt; ClockWidget0.initViews() -&gt; View.setOnClickListener() -&gt; *ClockWidget0.onClick() -&gt; ClockWidget0.addWidget() -&gt; ClockWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
@@ -49,6 +53,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.MoonWidget0ConfigActivity" destination="com.forrestguice.suntimeswidget.MoonWidget0" method="">
     <comment>MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; initViews() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; MoonWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
@@ -73,6 +81,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.MoonWidget0ConfigActivity_2x1" destination="com.forrestguice.suntimeswidget.MoonWidget0_2x1" method="">
     <comment>MoonWidget0ConfigActivity_2x1 extends MoonWidget0ConfigActivity -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; initViews() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; MoonWidget0ConfigActivity_2x1 extends MoonWidget0ConfigActivity -&gt;MoonWidget0ConfigActivity_2x1.updateWidgets() -&gt; sendBroadcast()</comment>
@@ -98,6 +110,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.MoonWidget0ConfigActivity_3x1" destination="com.forrestguice.suntimeswidget.MoonWidget0_3x1" method="">
     <comment>MoonWidget0ConfigActivity_3x1 extends MoonWidget0ConfigActivity -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; initViews() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; MoonWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; MoonWidget0ConfigActivity_3x1 extends MoonWidget0ConfigActivity -&gt;MoonWidget0ConfigActivity_3x1.updateWidgets() -&gt; sendBroadcast()</comment>
@@ -123,6 +139,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SolsticeWidget0ConfigActivity" destination="com.forrestguice.suntimeswidget.SolsticeWidget0" method="">
     <comment>SolsticeWidget0ConfigActivity extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SolsticeWidget0ConfigActivity.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; View.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SolsticeWidget0ConfigActivity.updateWidgets() -&gt; sendBroadcast()</comment>
@@ -141,6 +161,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesActivity" destination="com.forrestguice.suntimeswidget.SuntimesSettingsActivity" method="">
     <comment>*SuntimesActivity.onOptionsItemSelected() -&gt; showSettings() -&gt; startActivityForResult()</comment>
@@ -156,7 +180,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -180,6 +204,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity0_2x1" destination="com.forrestguice.suntimeswidget.SuntimesWidget0_2x1" method="">
     <comment>SuntimesConfigActivity0_2x1 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity0_2x1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; View.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity0_2x1.updateWidgets() -&gt; sendBroadcast()</comment>
@@ -198,6 +226,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity1" destination="com.forrestguice.suntimeswidget.SuntimesWidget1" method="">
     <comment>SuntimesConfigActivity1 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity1.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; View.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity1.updateWidgets() -&gt; sendBroadcast()</comment>
@@ -216,6 +248,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity2" destination="com.forrestguice.suntimeswidget.SuntimesWidget2" method="">
     <comment>SuntimesConfigActivity2extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; View.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast()</comment>
@@ -234,6 +270,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity2_3x1" destination="com.forrestguice.suntimeswidget.SuntimesWidget2_3x1" method="">
     <comment>SuntimesConfigActivity2_3x1 extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x1.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; View.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x1 extends SuntimesConfigActivity2 -&gt; sendBroadcast()</comment>
@@ -253,6 +293,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesConfigActivity2_3x2" destination="com.forrestguice.suntimeswidget.SuntimesWidget2_3x2" method="">
     <comment>SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2 extends SuntimesConfigActivity0 -&gt; SuntimesConfigActivity0.onCreate() -&gt; SuntimesConfigActivity2_3x2.initViews() -&gt; SuntimesConfigActivity2.initViews() -&gt; SuntimesConfigActivity0.initViews() -&gt; View.setOnClickListener() -&gt; *SuntimesConfigActivity0.onClick() -&gt; SuntimesConfigActivity0.addWidget() -&gt; SuntimesConfigActivity2.updateWidgets() -&gt; sendBroadcast() -&gt; SuntimesConfigActivity2_3x2 extends SuntimesConfigActivity2 -&gt; sendBroadcast()</comment>
@@ -272,6 +316,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesSettingsActivity" destination="com.forrestguice.suntimeswidget.SuntimesWidget0" method="">
     <comment>SuntimesSettingsActivity.onResume() -&gt; SharedPreferences.registerOnSharedPreferenceChangeListener() -&gt; *SuntimesSettingsActivity.onSharedPreferenceChanged() -&gt; updateLocale() -&gt; SuntimesWidget0.triggerWidgetUpdate() -&gt; Context.sendBroadcast()</comment>
@@ -292,6 +340,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.appwidget.action.APPWIDGET_UPDATE" />
+      <IntentField type="extra" value="int[]-appWidgetIds" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesSettingsActivity" destination="com.forrestguice.suntimeswidget.SuntimesWidgetListActivity" method="">
     <comment>*SuntimesSettingsActivity.onCreate() -&gt; initLegacyPrefs() -&gt; startActivity()</comment>
@@ -310,6 +362,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesSettingsActivity" destination="com.forrestguice.suntimeswidget.themes.WidgetThemeListActivity" method="">
     <comment>SuntimesSettingsActivity.onCreate() -&gt; initLegacyPrefs() -&gt; initPref_ui() -&gt; loadPref_ui_themeOverride() -&gt; createThemeListPreferenceListener() -&gt; ThemePreference.setThemePreferenceListener() -&gt; *ThemePreference.ThemePreferenceListener.onActionButtonClicked() -&gt; Activity.startActivityForResult()</comment>
@@ -331,6 +384,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-selected, boolean-noselect" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesWidget1" destination="com.forrestguice.suntimeswidget.SuntimesWidget1Service" method="">
     <comment>SuntimesWidget1 extends SuntimesWidget0 -&gt; *SuntimesWidget0.onAppWidgetOptionsChanged() -&gt; SuntimesWidget1.updateAppWidget() -&gt; getWidgetViews() -&gt; RemoteViews.setRemoteAdapter() -&gt; AppWidgetManager.updateAppWidget()</comment>
@@ -354,6 +410,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="data" value="intent:#Intent;component=com.forrestguice.suntimeswidget/.SuntimesWidget1Service;S.appWidgetId=${appWidgetId};end" />
+      <IntentField type="extra" value="int-appWidgetId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.SuntimesWidgetListActivity" destination="com.forrestguice.suntimeswidget.themes.WidgetThemeListActivity" method="">
     <comment>*SuntimesWidgetListActivity.onOptionsItemSelected() -&gt; launchThemeEditor() -&gt; startActivity()</comment>
@@ -372,6 +432,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-noselect" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.alarmclock.ui.AlarmClockActivity" destination="com.forrestguice.suntimeswidget.SuntimesActivity" method="">
     <comment>*AlarmClockActivity.onOptionsItemSelected() -&gt; onHomePressed() -&gt; startActivity()</comment>
@@ -387,9 +450,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.alarmclock.ui.AlarmClockActivity" destination="com.forrestguice.suntimeswidget.SuntimesSettingsActivity" method="">
     <comment>*AlarmClockActivity.onOptionsItemSelected() -&gt; showSettings() -&gt; startActivityForResult()</comment>
@@ -408,6 +474,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.alarmclock.ui.AlarmClockActivity" destination="com.forrestguice.suntimeswidget.alarmclock.AlarmNotifications" method="">
     <comment>AlarmClockActivity.onCreate() -&gt; handleIntent() -&gt; addAlarm() -&gt; AlarmDatabaseAdapter.AlarmUpdateTask.setTaskListener() -&gt; *AlarmDatabaseAdapter.AlarmUpdateTask.AlarmClockUpdateTaskListener.onFinished() -&gt; AlarmNotifications.getAlarmIntent() -&gt; sendBroadcast()</comment>
@@ -428,6 +495,12 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="suntimeswidget.alarm.schedule" />
+      <IntentField type="data" value="content://com.forrestguice.suntimeswidget.alarmclock/alarms/${rowID}" />
+      <IntentField type="extra" value="Serializable-notificationID" />
+      <IntentField type="flag" value="FLAG_RECEIVER_FOREGROUND" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.alarmclock.ui.AlarmDismissActivity" destination="com.forrestguice.suntimeswidget.alarmclock.AlarmNotifications" method="">
     <comment>AlarmDismissActivity.onCreate() -&gt; initViews() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AlarmNotifications.getAlarmIntent() -&gt; sendBroadcast()</comment>
@@ -449,6 +522,12 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="suntimeswidget.alarm.dismiss" />
+      <IntentField type="data" value="content://com.forrestguice.suntimeswidget.alarmclock/alarms/${rowID}" />
+      <IntentField type="extra" value="Serializable-notificationID" />
+      <IntentField type="flag" value="FLAG_RECEIVER_FOREGROUND" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.forrestguice.suntimeswidget.themes.WidgetThemeListActivity" destination="com.forrestguice.suntimeswidget.themes.WidgetThemeConfigActivity" method="">
     <comment>*WidgetThemeListActivity.onOptionsItemSelected() -&gt; addTheme() -&gt; startActivityForResult()</comment>
@@ -467,5 +546,8 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-mode, boolean-useWallpaper, int-previewID" />
+    </IntentFields>
   </OracleEdge>
 </root>

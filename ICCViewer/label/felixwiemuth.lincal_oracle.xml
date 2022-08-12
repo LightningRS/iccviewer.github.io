@@ -17,6 +17,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.AddCalendarActivity" destination="felixwiemuth.lincal.ui.SettingsActivity" method="">
     <comment>AddCalendarActivity extends LinCalMenuAppCompatActivity -&gt; *LinCalMenuAppCompatActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -35,6 +36,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarListActivity" destination="felixwiemuth.lincal.NotificationService" method="">
     <comment>CalendarListActivity.onCreate() -&gt; setupRecyclerView() -&gt; RecyclerView.setAdapter() -&gt; CalendarListActivity.SimpleItemRecyclerViewAdapter.onBindViewHolder() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; FragmentTransaction.commit() -&gt; CalendarViewFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NotificationService.runWithCalendar() -&gt; Context.startService()</comment>
@@ -58,6 +60,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-felixwiemuth.lincal.NotificationService.CALENDAR_ID" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarListActivity" destination="felixwiemuth.lincal.ui.AddCalendarActivity" method="">
     <comment>CalendarListActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivityForResult()</comment>
@@ -76,6 +81,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarListActivity" destination="felixwiemuth.lincal.ui.CalendarViewActivity" method="">
     <comment>CalendarListActivity.onCreate() -&gt; setupRecyclerView() -&gt; RecyclerView.setAdapter() -&gt; CalendarListActivity.SimpleItemRecyclerViewAdapter.onBindViewHolder() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CalendarListActivity.startActivityForResult()</comment>
@@ -96,6 +102,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-felixwiemuth.lincal.CalendarListActivity.EXTRA_ARG_CALENDAR_POS" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarListActivity" destination="felixwiemuth.lincal.ui.SettingsActivity" method="">
     <comment>CalendarListActivity extends LinCalMenuAppCompatActivity -&gt; *LinCalMenuAppCompatActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -114,6 +123,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarViewActivity" destination="felixwiemuth.lincal.NotificationService" method="">
     <comment>CalendarViewActivity.onCreate() -&gt; FragmentTransaction.commit() -&gt; CalendarViewFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NotificationService.runWithCalendar() -&gt; Context.startService()</comment>
@@ -135,6 +145,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-felixwiemuth.lincal.NotificationService.CALENDAR_ID" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.CalendarViewActivity" destination="felixwiemuth.lincal.ui.SettingsActivity" method="">
     <comment>CalendarViewActivity extends LinCalMenuAppCompatActivity -&gt; *LinCalMenuAppCompatActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -153,6 +166,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="felixwiemuth.lincal.ui.SettingsActivity" destination="felixwiemuth.lincal.ui.SettingsActivity" method="">
     <comment>*SettingsActivity extends LinCalMenuAppCompatActivity -&gt; LinCalMenuAppCompatActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -171,5 +185,6 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
 </root>

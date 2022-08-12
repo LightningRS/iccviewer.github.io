@@ -18,6 +18,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.FirstStartActivity" destination="com.nutomic.syncthingandroid.activities.MainActivity" method="">
     <comment>*FirstStartActivity.onCreate() -&gt; startApp() -&gt; startActivity()</comment>
@@ -36,6 +37,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-com.nutomic.syncthing-android.SyncthingActivity.KEY_GENERATION_IN_PROGRESS" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.FirstStartActivity" destination="com.nutomic.syncthingandroid.activities.WebGuiActivity" method="">
     <comment>*FirstStartActivity.onCreate() -&gt; startApp() -&gt; startActivities()</comment>
@@ -51,7 +55,7 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
   </OracleEdge>
@@ -72,6 +76,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.nutomic.syncthinandroid.activities.FolderTypeDialogActivity.FOLDER_TYPE" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.FolderActivity" destination="com.nutomic.syncthingandroid.activities.PullOrderDialogActivity" method="">
     <comment>FolderActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; showPullOrderDialog() -&gt; startActivityForResult()</comment>
@@ -90,12 +97,17 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.nutomic.syncthinandroid.activities.PullOrderDialogActivity.PULL_ORDER" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.FolderActivity" destination="com.nutomic.syncthingandroid.activities.VersioningDialogActivity" method="">
     <comment>FolderActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; showVersioningDialog() -&gt; startActivityForResult()</comment>
     <callLines>
       <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/FolderActivity.java" start="177" end="177" />
-      <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/FolderActivity.java" start="295" end="297" />
+      <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/FolderActivity.java" start="295" end="296" />
+      <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/FolderActivity.java" start="301" end="312" />
+      <line src="/app/src/main/java/com/nutomic/syncthingandroid/activities/FolderActivity.java" start="297" end="297" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -108,6 +120,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true">
+      <IntentField type="extra" value="String-type" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.MainActivity" destination="com.nutomic.syncthingandroid.activities.DeviceActivity" method="">
     <comment>MainActivity.onCreate() -&gt; new DeviceListFragment() -&gt; ViewPager.setAdapter() -&gt; FragmentPagerAdapter.getItem() -&gt; DeviceListFragment.onViewCreated() -&gt; ListView.setOnItemClickListener() -&gt; *DeviceListFragment.onItemClick() -&gt; startActivity()</comment>
@@ -129,6 +144,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-com.nutomic.syncthingandroid.activities.DeviceActivity.IS_CREATE, String-com.nutomic.syncthingandroid.activities.DeviceActivity.DEVICE_ID" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.MainActivity" destination="com.nutomic.syncthingandroid.activities.FolderActivity" method="">
     <comment>MainActivity.onCreate() -&gt; new DeviceListFragment() -&gt; ViewPager.setAdapter() -&gt; FragmentPagerAdapter.getItem() -&gt; *FolderListFragment.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -149,6 +167,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-com.nutomic.syncthingandroid.activities.DeviceActivity.IS_CREATE" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.MainActivity" destination="com.nutomic.syncthingandroid.activities.SettingsActivity" method="">
     <comment>MainActivity.onCreate() -&gt; new DrawerFragment() -&gt; FragmentTransaction.commit() -&gt; DrawerFragment.onViewCreated() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; DrawerFragment.startActivity()</comment>
@@ -189,6 +210,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.MainActivity" destination="com.nutomic.syncthingandroid.service.SyncthingService" method="">
     <comment>*MainActivity.onCreate() -&gt; startService()</comment>
@@ -226,6 +248,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.SettingsActivity" destination="com.nutomic.syncthingandroid.service.SyncthingService" method="">
     <comment>*SettingsActivity.onRequestPermissionsResult() -&gt; startService()</comment>
@@ -240,9 +263,12 @@
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.nutomic.syncthingandroid.service.SyncthingService.REFRESH_NETWORK_INFO" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.ShareActivity" destination="com.nutomic.syncthingandroid.activities.FolderPickerActivity" method="">
     <comment>ShareActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; FolderPickerActivity.createIntent() -&gt; startActivityForResult()</comment>
@@ -263,6 +289,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.nutomic.syncthingandroid.activities.FolderPickerActivity.INITIAL_DIRECTORY, String-com.nutomic.syncthingandroid.activities.FolderPickerActivity.INITIAL_DIRECTORY, String-com.nutomic.syncthingandroid.activities.FolderPickerActivity.ROOT_DIRECTORY ## String-com.nutomic.syncthingandroid.activities.FolderPickerActivity.ROOT_DIRECTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.VersioningDialogActivity" destination="com.nutomic.syncthingandroid.activities.FolderPickerActivity" method="">
     <comment>VersioningDialogActivity.onCreate() -&gt; updateFragmentView() -&gt; getFragment() -&gt; FragmentTransaction.commit() -&gt; StaggeredVersioningFragment.onCreateView() -&gt; initiateVersionsPathTextView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; FolderPickerActivity.createIntent() -&gt; StaggeredVersioningFragment.startActivityForResult()</comment>
@@ -286,6 +315,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.nutomic.syncthingandroid.activities.FolderPickerActivity.INITIAL_DIRECTORY, String-com.nutomic.syncthingandroid.activities.FolderPickerActivity.INITIAL_DIRECTORY, String-com.nutomic.syncthingandroid.activities.FolderPickerActivity.ROOT_DIRECTORY ## String-com.nutomic.syncthingandroid.activities.FolderPickerActivity.ROOT_DIRECTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.activities.WebGuiActivity" destination="com.nutomic.syncthingandroid.service.SyncthingService" method="">
     <comment>*WebGuiActivity.onCreate() -&gt; startService()</comment>
@@ -321,6 +353,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.receiver.BootReceiver" destination="com.nutomic.syncthingandroid.service.SyncthingService" method="">
     <comment>*BootReceiver.onReceive() -&gt; startServiceCompat() -&gt; startService()</comment>
@@ -339,6 +372,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.nutomic.syncthingandroid.service.SyncthingService" destination="com.nutomic.syncthingandroid.activities.LogActivity" method="">
     <comment>*SyncthingService.onStartCommand() -&gt; shutdown() -&gt; launchStartupTask() -&gt; new StartupTask() -&gt; StartupTask.executeOnExecutor() -&gt; doInBackground() -&gt; NotificationHandler.showCrashedNotification() -&gt; NotificationManager.notify()</comment>
@@ -359,5 +393,6 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
 </root>

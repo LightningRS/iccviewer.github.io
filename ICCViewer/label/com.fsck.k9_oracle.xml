@@ -17,10 +17,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, String-fromShortcut" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.Accounts" destination="com.fsck.k9.activity.MessageList" method="">
     <comment>Accounts.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *Accounts.onItemClick() -&gt; Accounts.onOpenAccount() -&gt; MessageList.actionDisplaySearch() -&gt; intentDisplaySearch() -&gt; Context.startActivity()</comment>
@@ -38,10 +42,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-no_threading, byte[]-search_bytes" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP, FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK, FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.Accounts" destination="com.fsck.k9.activity.UpgradeDatabases" method="">
     <comment>*Accounts.onCreate() -&gt; UpgradeDatabases.actionUpgradeDatabases() -&gt; Context.startActivity()</comment>
@@ -56,10 +64,15 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="upgrade_databases" />
+      <IntentField type="extra" value="Parcelable-start_intent" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_SINGLE_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.Accounts" destination="com.fsck.k9.activity.setup.AccountSettings" method="">
     <comment>*Accounts.onContextItemSelected() -&gt; onEditAccount() -&gt; AccountSettings.actionSettings() -&gt; Context.startActivity()</comment>
@@ -75,10 +88,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.Accounts" destination="com.fsck.k9.activity.setup.AccountSetupBasics" method="">
     <comment>*Accounts.onOptionsItemSelected() -&gt; onAddNewAccount() -&gt; AccountSetupBasics.actionNewAccount() -&gt; Context.startActivity()</comment>
@@ -94,10 +110,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.Accounts" destination="com.fsck.k9.activity.setup.Prefs" method="">
     <comment>*Accounts.onOptionsItemSelected() -&gt; Accounts.onEditPrefs() -&gt; Prefs.actionPrefs() -&gt; Context.startActivity()</comment>
@@ -113,10 +130,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.Accounts" destination="com.fsck.k9.activity.setup.WelcomeMessage" method="">
     <comment>*Accounts.onCreate() -&gt; WelcomeMessage.showWelcomeMessage() -&gt; Context.startActivity()</comment>
@@ -131,10 +149,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.FolderList" destination="com.fsck.k9.activity.MessageCompose" method="">
     <comment>*FolderList.onOptionsItemSelected() -&gt; MessageActions.actionCompose() -&gt; Context.startActivity()</comment>
@@ -149,10 +168,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.COMPOSE" />
+      <IntentField type="extra" value="String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.FolderList" destination="com.fsck.k9.activity.setup.AccountSettings" method="">
     <comment>*FolderList.onOptionsItemSelected() -&gt; onEditAccount() -&gt; AccountSettings.actionSettings() -&gt; Context.startActivity()</comment>
@@ -168,10 +191,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.FolderList" destination="com.fsck.k9.activity.setup.FolderSettings" method="">
     <comment>*FolderList.onContextItemSelected() -&gt; FolderSettings.actionSettings() -&gt; Context.startActivity()</comment>
@@ -186,10 +212,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.fsck.k9.account, String-com.fsck.k9.folderName" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.FolderList" destination="com.fsck.k9.activity.setup.Prefs" method="">
     <comment>*FolderList.onOptionsItemSelected() -&gt; onEditPrefs() -&gt; Prefs.actionPrefs() -&gt; Context.startActivity()</comment>
@@ -205,17 +234,21 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.FolderList" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*FolderList.onOptionsItemSelected() -&gt; setDisplayMode() -&gt; MailService.actionRestartPushers() -&gt; Context.startService()</comment>
+    <comment>*FolderList.onOptionsItemSelected() -&gt; setDisplayMode() -&gt; MailService.actionRestartPushers() -&gt; MailService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/FolderList.java" start="540" end="540" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/FolderList.java" start="448" end="448" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="55" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="54" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="25" end="25" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="55" end="55" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -224,10 +257,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.MAIL_SERVICE_RESTART_PUSHERS" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreService.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.ManageIdentities" destination="com.fsck.k9.activity.EditIdentity" method="">
     <comment>*ManageIdentities.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
@@ -241,10 +278,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.fsck.k9.EditIdentity_account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.ChooseFolder" method="">
     <comment>MessageList.onCreate() -&gt; initializeFragments() -&gt; *MessageListFragment.ActionModeCallback.onActionItemClicked() -&gt; MessageListFragment.displayFolderChoice() -&gt; startActivityForResult()</comment>
@@ -263,10 +303,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.fsck.k9.ChooseFolder_account, String-com.fsck.k9.ChooseFolder_selfolder, String-com.fsck.k9.ChooseFolder_showcurrent, String-com.fsck.k9.ChooseFolder_curfolder" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.FolderList" method="">
     <comment>*MessageList.onOptionsItemSelected() -&gt; MessageList.onShowFolderList() -&gt; FolderList.actionHandleAccount() -&gt; actionHandleAccountIntent() -&gt; Context.startActivity()</comment>
@@ -283,10 +326,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, Boolean-fromShortcut" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.MessageCompose" method="">
     <comment>*MessageList.onCreate() -&gt; initializeFragments() -&gt; openMessage() -&gt; MessageActions.actionEditDraft() -&gt; Context.startActivity()</comment>
@@ -303,10 +350,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.EDIT_DRAFT" />
+      <IntentField type="extra" value="String-message_reference" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.setup.AccountSettings" method="">
     <comment>*MessageList.onOptionsItemSelected() -&gt; MessageList.onEditAccount() -&gt; AccountSettings.actionSettings() -&gt; Context.startActivity()</comment>
@@ -322,10 +373,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.setup.OpenPgpAppSelectDialog" method="">
     <comment>MessageList.onCreate() -&gt; initializeFragments() -&gt; MessageViewFragment.onCreate() -&gt; *MessageViewFragment.redisplayMessage() -&gt; MessageViewFragment.startOpenPgpChooserActivity() -&gt; startActivity()</comment>
@@ -344,10 +398,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.MessageList" destination="com.fsck.k9.activity.setup.Prefs" method="">
     <comment>*MessageList.onOptionsItemSelected() -&gt; MessageList.onEditPrefs() -&gt; Prefs.actionPrefs() -&gt; Context.startActivity()</comment>
@@ -363,10 +418,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.UnreadWidgetConfiguration" destination="com.fsck.k9.activity.ChooseAccount" method="">
     <comment>UnreadWidgetConfiguration.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; startActivityForResult()</comment>
@@ -384,6 +440,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.UnreadWidgetConfiguration" destination="com.fsck.k9.activity.ChooseFolder" method="">
     <comment>UnreadWidgetConfiguration.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; startActivityForResult()</comment>
@@ -401,6 +458,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.fsck.k9.ChooseFolder_account, String-com.fsck.k9.ChooseFolder_showDisplayableOnly" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.UpgradeDatabases" destination="com.fsck.k9.service.DatabaseUpgradeService" method="">
     <comment>*UpgradeDatabases.onResume() -&gt; DatabaseUpgradeService.startService() -&gt; Context.startService()</comment>
@@ -415,10 +475,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.service.DatabaseUpgradeService.startService" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSettings" destination="com.fsck.k9.activity.ManageIdentities" method="">
     <comment>AccountSettings.onCreate() -&gt; Preference.OnPreferenceClickListener -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; AccountSettings.onManageIdentities() -&gt; startActivityForResult()</comment>
@@ -433,10 +496,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.fsck.k9.ChooseIdentity_account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSettings" destination="com.fsck.k9.activity.setup.AccountSetupComposition" method="">
     <comment>AccountSettings.onCreate() -&gt; Preference.OnPreferenceClickListener -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; AccountSettings.onCompositionSettings() -&gt; AccountSetupComposition.actionEditCompositionSettings() -&gt; Context.startActivity()</comment>
@@ -452,17 +518,24 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.intent.action.EDIT" />
+      <IntentField type="extra" value="String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSettings" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*AccountSettings.onPause() -&gt; AccountSettings.saveSettings() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
+    <comment>*AccountSettings.onPause() -&gt; AccountSettings.saveSettings() -&gt; MailService.actionReset() -&gt; MailService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/AccountSettings.java" start="891" end="891" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/AccountSettings.java" start="863" end="863" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="44" end="47" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="43" end="46" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="25" end="25" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="47" end="47" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -471,10 +544,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.MAIL_SERVICE_RESET" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreService.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupAccountType" destination="com.fsck.k9.activity.setup.AccountSetupIncoming" method="">
     <comment>AccountSetupAccountType.onCreate() -&gt; View.setOnClickListener() -&gt; *AccountSetupAccountType.onClick() -&gt; AccountSetupIncoming.actionIncomingSettings() -&gt; Context.startActivity()</comment>
@@ -490,10 +567,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, boolean-makeDefault" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupBasics" destination="com.fsck.k9.activity.setup.AccountSetupAccountType" method="">
     <comment>AccountSetupBasics.onCreate() -&gt; View.setOnClickListener() -&gt; *AccountSetupBasics.onClick() -&gt; AccountSetupBasics.onManualSetup() -&gt; AccountSetupAccountType.actionSelectAccountType() -&gt; Context.startActivity()</comment>
@@ -510,10 +590,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, boolean-makeDefault" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupBasics" destination="com.fsck.k9.activity.setup.AccountSetupCheckSettings" method="">
     <comment>*AccountSetupBasics.onActivityResult() -&gt; AccountSetupCheckSettings.actionCheckSettings() -&gt; Context.startActivityForResult()</comment>
@@ -528,10 +611,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-checkDirection, String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupIncoming" destination="com.fsck.k9.activity.setup.AccountSetupCheckSettings" method="">
     <comment>AccountSetupIncoming.onCreate() -&gt; View.setOnClickListener() -&gt; *AccountSetupIncoming.onClick() -&gt; onNext() -&gt; AccountSetupCheckSettings.actionCheckSettings() -&gt; Context.startActivityForResult()</comment>
@@ -548,10 +634,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-checkDirection, String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupIncoming" destination="com.fsck.k9.activity.setup.AccountSetupOutgoing" method="">
     <comment>*AccountSetupIncoming.onActivityResult() -&gt; AccountSetupOutgoing.actionOutgoingSettings() -&gt; Context.startActivity()</comment>
@@ -566,16 +655,22 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, boolean-makeDefault" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupIncoming" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*AccountSetupIncoming.onActivityResult() -&gt; MailService.actionRestartPushers() -&gt; Context.startService()</comment>
+    <comment>*AccountSetupIncoming.onActivityResult() -&gt; MailService.actionRestartPushers() -&gt; MailService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/AccountSetupIncoming.java" start="510" end="510" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="55" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="54" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="25" end="25" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="55" end="55" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -584,10 +679,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.MAIL_SERVICE_RESTART_PUSHERS" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreReceiver.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupOptions" destination="com.fsck.k9.activity.setup.AccountSetupNames" method="">
     <comment>AccountSetupOptions.onCreate() -&gt; View.setOnClickListener() -&gt; *AccountSetupAccountType.onClick() -&gt; AccountSetupAccountType.onDone() -&gt; AccountSetupNames.actionSetNames() -&gt; Context.startActivity()</comment>
@@ -604,10 +703,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupOutgoing" destination="com.fsck.k9.activity.setup.AccountSetupCheckSettings" method="">
     <comment>*AccountSetupBasics.onCreate() -&gt; AccountSetupCheckSettings.actionCheckSettings() -&gt; Context.startActivityForResult()</comment>
@@ -622,10 +724,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-checkDirection, String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.AccountSetupOutgoing" destination="com.fsck.k9.activity.setup.AccountSetupOptions" method="">
     <comment>*AccountSetupOutgoing.onActivityResult() -&gt; AccountSetupOptions.actionOptions() -&gt; Context.startActivity()</comment>
@@ -640,17 +745,23 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, boolean-makeDefault" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.FolderSettings" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*FolderSettings.onPause() -&gt; FolderSettings.saveSettings() -&gt; MailService.actionRestartPushers() -&gt; Context.startService()</comment>
+    <comment>*FolderSettings.onPause() -&gt; FolderSettings.saveSettings() -&gt; MailService.actionRestartPushers() -&gt; MailService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/FolderSettings.java" start="168" end="168" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/FolderSettings.java" start="161" end="161" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="55" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="54" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="25" end="25" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="55" end="55" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -659,10 +770,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.MAIL_SERVICE_RESTART_PUSHERS" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreReceiver.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.Prefs" destination="com.fsck.k9.activity.setup.FontSizeSettings" method="">
     <comment>Prefs.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; Prefs.onFontSizeSettings() -&gt; FontSizeSettings.actionEditSettings() -&gt; Context.startActivity()</comment>
@@ -678,17 +793,21 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.Prefs" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*Prefs.onPause() -&gt; Prefs.saveSettings() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
+    <comment>*Prefs.onPause() -&gt; Prefs.saveSettings() -&gt; MailService.actionReset() -&gt; MailService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/Prefs.java" start="583" end="583" />
       <line src="/k9mail/src/main/java/com/fsck/k9/activity/setup/Prefs.java" start="577" end="577" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="44" end="47" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="44" end="46" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="25" end="25" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="47" end="47" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -697,10 +816,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.MAIL_SERVICE_RESET" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreService.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.activity.setup.WelcomeMessage" destination="com.fsck.k9.activity.setup.AccountSetupBasics" method="">
     <comment>WelcomeMessage.onCreate() -&gt; View.setOnClickListener() -&gt; *WelcomeMessage.onClick() -&gt; AccountSetupBasics.actionNewAccount() -&gt; Context.startActivity()</comment>
@@ -716,16 +839,20 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.power.DeviceIdleReceiver" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*DeviceIdleReceiver.onReceive() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
+    <comment>*DeviceIdleReceiver.onReceive() -&gt; MailService.actionReset() -&gt; MailService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/power/DeviceIdleReceiver.java" start="30" end="30" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="43" end="47" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="43" end="46" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="25" end="25" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="47" end="47" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -734,10 +861,14 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.MAIL_SERVICE_RESET" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreService.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.provider.UnreadWidgetProvider" destination="com.fsck.k9.activity.UnreadWidgetConfiguration" method="">
     <comment>*UnreadWidgetProvider.onUpdate() -&gt; UnreadWidgetProvider.updateWidget() -&gt; AppWidgetManager.updateAppWidget()</comment>
@@ -752,18 +883,25 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="false" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-appWidgetId" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.service.BootReceiver" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*BootReceiver.onReceive() -&gt; BootReceiver extends CoreReceiver -&gt; CoreReceiver.onReceive() -&gt; BootReceiver.receive() -&gt; MailService.actionReset() -&gt; Context.startService()</comment>
+    <comment>*BootReceiver.onReceive() -&gt; BootReceiver extends CoreReceiver -&gt; CoreReceiver.onReceive() -&gt; BootReceiver.receive() -&gt; MailService.actionReset() -&gt; MailService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/service/BootReceiver.java" start="15" end="15" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreReceiver.java" start="62" end="62" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/BootReceiver.java" start="44" end="44" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="43" end="47" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="43" end="46" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="25" end="25" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="47" end="47" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -772,10 +910,14 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.MAIL_SERVICE_RESET" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreReceiver.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.service.CoreReceiver" destination="com.fsck.k9.service.CoreReceiver" method="">
     <comment>*CoreReceiver.onStartCommand() -&gt; CoreReceiver.releaseWakeLock() -&gt; Context.sendBroadcast()</comment>
@@ -790,20 +932,27 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.service.CoreReceiver.wakeLockRelease" />
+      <IntentField type="extra" value="int-com.fsck.k9.service.CoreReceiver.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.service.PollService" destination="com.fsck.k9.service.MailService" method="">
-    <comment>PollService.startService() -&gt; MessagingController.setCheckMailListener() -&gt; *PollService.Listener.checkMailFinished() -&gt; PollService.release() -&gt; MailService.actionReschedulePoll() -&gt; Context.startService()</comment>
+    <comment>PollService.startService() -&gt; MessagingController.setCheckMailListener() -&gt; *PollService.Listener.checkMailFinished() -&gt; PollService.release() -&gt; MailService.actionReschedulePoll() -&gt; MailService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="21" end="21" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="56" end="56" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="76" end="76" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="138" end="138" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/PollService.java" start="128" end="128" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="59" end="63" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="59" end="62" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="25" end="25" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="63" end="63" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -812,18 +961,25 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.MAIL_SERVICE_RESCHEDULE_POLL" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreReceiver.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.service.RemoteControlReceiver" destination="com.fsck.k9.service.RemoteControlService" method="">
-    <comment>RemoteControlReceiver extends CoreReceiver -&gt; *CoreReceiver.onReceive() -&gt; RemoteControlReceiver.receive() -&gt; RemoteControlService.set() -&gt; Context.startService()</comment>
+    <comment>RemoteControlReceiver extends CoreReceiver -&gt; *CoreReceiver.onReceive() -&gt; RemoteControlReceiver.receive() -&gt; RemoteControlService.set() -&gt; RemoteControlService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/service/RemoteControlReceiver.java" start="17" end="17" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreReceiver.java" start="62" end="62" />
       <line src="/k9mail/src/main/java/com/fsck/k9/service/RemoteControlReceiver.java" start="23" end="23" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/RemoteControlService.java" start="30" end="33" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/RemoteControlService.java" start="30" end="32" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/RemoteControlService.java" start="22" end="22" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/RemoteControlService.java" start="33" end="33" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -832,16 +988,23 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.service.RemoteControlService.SET_ACTION" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreReceiver.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.service.RemoteControlService" destination="com.fsck.k9.service.MailService" method="">
-    <comment>*RemoteControlService.startService() -&gt; MailService.actionRestartPushers() -&gt; Context.startService()</comment>
+    <comment>*RemoteControlService.startService() -&gt; MailService.actionRestartPushers() -&gt; MailService extends CoreService -&gt; CoreService.addWakeLockId() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/k9mail/src/main/java/com/fsck/k9/service/RemoteControlService.java" start="49" end="49" />
-      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="55" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="51" end="54" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="25" end="25" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/CoreService.java" start="124" end="124" />
+      <line src="/k9mail/src/main/java/com/fsck/k9/service/MailService.java" start="55" end="55" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -850,10 +1013,14 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fsck.k9.intent.action.MAIL_SERVICE_RESCHEDULE_POLL ## com.fsck.k9.intent.action.MAIL_SERVICE_RESTART_PUSHERS" />
+      <IntentField type="extra" value="Serializable-com.fsck.k9.service.CoreService.wakeLockId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.fsck.k9.widget.list.MessageListWidgetProvider" destination="com.fsck.k9.widget.list.MessageListWidgetService" method="">
     <comment>*MessageListWidgetProvider.onUpdate() -&gt; MessageListWidgetProvider.updateAppWidget() -&gt; AppWidgetManager.updateAppWidget()</comment>
@@ -868,9 +1035,13 @@
       <analyzeScope>
         <componentScope isActivity="false" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="true" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="data" value="intent:#Intent;component=com.fsck.k9/.widget.list.MessageListWidgetService;S.appWidgetId={appWidgetId};end" />
+      <IntentField type="extra" value="int-appWidgetId" />
+    </IntentFields>
   </OracleEdge>
 </root>

@@ -5,7 +5,7 @@
     <comment>*ContactChooserTargetService.onGetChooserTargets() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/services/ContactChooserTargetService.java" start="45" end="47" />
-      <line src="/src/main/java/eu/siacs/conversations/utils/Compatibility.java" start="127" end="127" />
+      <line src="/src/main/java/eu/siacs/conversations/utils/Compatibility.java" start="124" end="125" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -18,13 +18,18 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="contact_chooser" />
+      <IntentField type="extra" value="boolean-needs_foreground_service" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.services.EventReceiver" destination="eu.siacs.conversations.services.XmppConnectionService" method="">
     <comment>*EventReceiver.onReceive() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/services/EventReceiver.java" start="21" end="21" />
+      <line src="/src/main/java/eu/siacs/conversations/services/EventReceiver.java" start="29" end="29" />
       <line src="/src/main/java/eu/siacs/conversations/services/EventReceiver.java" start="33" end="33" />
-      <line src="/src/main/java/eu/siacs/conversations/utils/Compatibility.java" start="127" end="127" />
+      <line src="/src/main/java/eu/siacs/conversations/utils/Compatibility.java" start="124" end="125" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -37,6 +42,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="other" />
+      <IntentField type="extra" value="boolean-needs_foreground_service" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.services.ImportBackupService" destination="eu.siacs.conversations.ui.ManageAccountActivity" method="">
     <comment>*ImportBackupService.onStartCommand() -&gt; SerialSingleThreadExecutor.execute() -&gt; ImportBackupService.notifySuccess() -&gt; NotificationManager.notify()</comment>
@@ -56,6 +65,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.services.MaintenanceReceiver" destination="eu.siacs.conversations.services.XmppConnectionService" method="">
     <comment>*MaintenanceReceiver.onReceive() -&gt; renewInstanceToken() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
@@ -72,16 +82,19 @@
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="fcm_token_refresh" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.services.PushMessageReceiver" destination="eu.siacs.conversations.services.XmppConnectionService" method="firebase UI  framework">
     <comment>*PushMessageReceiver.onMessageReceived() -&gt; Compatibility.startService() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/src/playstore/java/eu/siacs/conversations/services/PushMessageReceiver.java" start="15" end="15" />
       <line src="/src/playstore/java/eu/siacs/conversations/services/PushMessageReceiver.java" start="24" end="27" />
-      <line src="/src/main/java/eu/siacs/conversations/utils/Compatibility.java" start="127" end="127" />
+      <line src="/src/main/java/eu/siacs/conversations/utils/Compatibility.java" start="124" end="125" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -94,6 +107,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="fcm_message_received" />
+      <IntentField type="extra" value="String-account, boolean-needs_foreground_service" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ChooseContactActivity" destination="eu.siacs.conversations.ui.ScanActivity" method="">
     <comment>*ChooseContactActivity.onOptionsItemSelected() -&gt; Activity.startActivityForResult()</comment>
@@ -112,6 +129,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConferenceDetailsActivity" destination="eu.siacs.conversations.ui.MediaBrowserActivity" method="">
     <comment>ConferenceDetailsActivity.onStart() -&gt; ConferenceDetailsActivity extends XmppActivity -&gt; XmppActivity.connectToBackend() -&gt; bindService() -&gt; ServiceConnection.onServiceConnected() -&gt; ConferenceDetailsActivity.onBackendConnected() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MediaBrowserActivity.launch() -&gt; Context.startActivity()</comment>
@@ -136,6 +154,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, String-jid" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConferenceDetailsActivity" destination="eu.siacs.conversations.ui.MucUsersActivity" method="">
     <comment>ConferenceDetailsActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -153,6 +174,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-uuid" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConferenceDetailsActivity" destination="eu.siacs.conversations.ui.PublishGroupChatProfilePictureActivity" method="">
     <comment>ConferenceDetailsActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -171,6 +195,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-uuid" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConferenceDetailsActivity" destination="eu.siacs.conversations.ui.SettingsActivity" method="">
     <comment>*ConferenceDetailsActivity.onOptionsItemSelected() -&gt; ConferenceDetailsActivity extends XmppActivity -&gt; XmppActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -189,6 +216,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ContactDetailsActivity" destination="eu.siacs.conversations.ui.MediaBrowserActivity" method="">
     <comment>ContactDetailsActivity.onStart() -&gt; ContactDetailsActivity extends OmemoActivity -&gt; OmemoActivity extends XmppActivity -&gt; XmppActivity.connectToBackend() -&gt; bindService() -&gt; ServiceConnection.onServiceConnected() -&gt; ContactDetailsActivity.onBackendConnected() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MediaBrowserActivity.launch() -&gt; Context.startActivity()</comment>
@@ -214,6 +242,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, String-jid" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ContactDetailsActivity" destination="eu.siacs.conversations.ui.ScanActivity" method="">
     <comment>ContactDetailsActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ContactDetailsActivity.populateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ScanActivity.scan() -&gt; Activity.startActivityForResult()</comment>
@@ -234,6 +265,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ContactDetailsActivity" destination="eu.siacs.conversations.ui.SettingsActivity" method="">
     <comment>*ContactDetailsActivity.onOptionsItemSelected() -&gt; ContactDetailsActivity extends OmemoActivity -&gt; OmemoActivity extends XmppActivity -&gt; XmppActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -254,6 +286,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationActivity" destination="eu.siacs.conversations.ui.ConversationsActivity" method="">
     <comment>*ConversationActivity.onCreate() -&gt; startActivity()</comment>
@@ -271,6 +304,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.ConferenceDetailsActivity" method="">
     <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -296,6 +330,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="view_muc" />
+      <IntentField type="extra" value="String-uuid" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.ContactDetailsActivity" method="">
     <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onOptionsItemSelected() -&gt; ConversationsActivity.switchToContactDetails() -&gt; ConversationsActivity extends XmppActivity -&gt; XmppActivity.switchToContactDetails() -&gt; startActivity()</comment>
@@ -324,6 +362,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="view_contact" />
+      <IntentField type="extra" value="String-account, String-contact, String-fingerprint" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.EditAccountActivity" method="">
     <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; OnConversationArchived.onConversationArchived() -&gt; ConversationsActivity implements OnConversationArchived -&gt; *ConversationsActivity.onConversationArchived() -&gt; ConversationsActivity.performRedirectIfNecessary() -&gt; SignupUtils.getRedirectionIntent() -&gt; ConversationsActivity.runOnUiThread() -&gt; startActivity()</comment>
@@ -336,7 +378,10 @@
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="91" end="91" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="599" end="599" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="184" end="184" />
-      <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="50" end="50" />
+      <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="38" end="39" />
+      <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="41" end="41" />
+      <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="56" end="58" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="186" end="186" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="188" end="189" />
     </callLines>
     <tags>
@@ -350,6 +395,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-fingerprint, String-jid, boolean-force_register, boolean-init" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK, FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.ManageAccountActivity" method="">
     <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; OnConversationArchived.onConversationArchived() -&gt; ConversationsActivity implements OnConversationArchived -&gt; *ConversationsActivity.onConversationArchived() -&gt; ConversationsActivity.performRedirectIfNecessary() -&gt; SignupUtils.getRedirectionIntent() -&gt; ConversationsActivity.runOnUiThread() -&gt; startActivity()</comment>
@@ -363,6 +412,8 @@
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="599" end="599" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="184" end="184" />
       <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="46" end="46" />
+      <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="56" end="58" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="186" end="186" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="188" end="189" />
     </callLines>
     <tags>
@@ -376,6 +427,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-init" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK, FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.RecordingActivity" method="">
     <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onRequestPermissionsResult() -&gt; attachFile() -&gt; invokeAttachFileIntent() -&gt; startActivityForResult()</comment>
@@ -404,6 +459,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.SearchActivity" method="">
     <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationsOverviewFragment.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -424,6 +480,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.SettingsActivity" method="">
     <comment>*ConversationsActivity.onOptionsItemSelected() -&gt; ConversationsActivity extends XmppActivity -&gt; XmppActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -443,6 +500,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.ShareLocationActivity" method="">
     <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onRequestPermissionsResult() -&gt; attachFile() -&gt; invokeAttachFileIntent() -&gt; GeoHelper.getFetchIntent() -&gt; startActivityForResult()</comment>
@@ -472,6 +530,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.StartConversationActivity" method="">
     <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; OnConversationArchived.onConversationArchived() -&gt; ConversationsActivity implements OnConversationArchived -&gt; *ConversationsActivity.onConversationArchived() -&gt; ConversationsActivity.performRedirectIfNecessary() -&gt; SignupUtils.getRedirectionIntent() -&gt; ConversationsActivity.runOnUiThread() -&gt; startActivity()</comment>
@@ -485,6 +544,8 @@
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="599" end="599" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="184" end="184" />
       <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="53" end="53" />
+      <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="56" end="58" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="186" end="186" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="188" end="189" />
     </callLines>
     <tags>
@@ -498,6 +559,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true">
+      <IntentField type="extra" value="boolean-init" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK, FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.TrustKeysActivity" method="">
     <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; Snackbar.setAction() -&gt; OnConversationSelected.onConversationSelected() -&gt; ConversationsActivity implements OnConversationSelected -&gt; ConversationsActivity.onConversationSelected() -&gt; openConversation() -&gt; new ConversationFragment() -&gt; FragmentTransaction.commit() -&gt; *ConversationFragment.onRequestPermissionsResult() -&gt; commitAttachments() -&gt; trustKeysIfNeeded() -&gt; startActivityForResult()</comment>
@@ -525,6 +590,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, String-conversation, String[]-contacts" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.UriHandlerActivity" method="">
     <comment>*ConversationsActivity.onOptionsItemSelected() -&gt; UriHandlerActivity.scan() -&gt; Activity.startActivity()</comment>
@@ -540,12 +608,16 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="scan_qr_code" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ConversationsActivity" destination="eu.siacs.conversations.ui.WelcomeActivity" method="">
-    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; OnConversationArchived.onConversationArchived() -&gt; ConversationsActivity implements OnConversationArchived -&gt; *ConversationsActivity.onConversationArchived() -&gt; ConversationsActivity.performRedirectIfNecessary() -&gt; SignupUtils.getRedirectionIntent() -&gt; getSignUpIntent() -&gt; ConversationsActivity.runOnUiThread() -&gt; startActivity()</comment>
+    <comment>ConversationsActivity.onCreate() -&gt; initializeFragments() -&gt; new ConversationsOverviewFragment() -&gt; FragmentTransaction.commit() -&gt; new ItemTouchHelper() -&gt; ConversationsOverviewFragment.onCreateView() -&gt; ItemTouchHelper.attachToRecyclerView() -&gt; ItemTouchHelper.SimpleCallback.onSwiped() -&gt; OnConversationArchived.onConversationArchived() -&gt; ConversationsActivity implements OnConversationArchived -&gt; *ConversationsActivity.onConversationArchived() -&gt; ConversationsActivity.performRedirectIfNecessary() -&gt; SignupUtils.getRedirectionIntent() -&gt; getSignUpIntent() -&gt; StartConversationActivity.addInviteUri() -&gt; ConversationsActivity.runOnUiThread() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="366" end="366" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="555" end="556" />
@@ -557,6 +629,9 @@
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="184" end="184" />
       <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="48" end="48" />
       <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="27" end="27" />
+      <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="29" end="29" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="1268" end="1268" />
+      <line src="/src/conversations/java/eu/siacs/conversations/utils/SignupUtils.java" start="30" end="30" />
       <line src="/src/main/java/eu/siacs/conversations/ui/ConversationsActivity.java" start="188" end="189" />
     </callLines>
     <tags>
@@ -570,6 +645,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-eu.siacs.conversations.invite_uri" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.EditAccountActivity" destination="eu.siacs.conversations.ui.BlocklistActivity" method="">
     <comment>*EditAccountActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -587,6 +665,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.EditAccountActivity" destination="eu.siacs.conversations.ui.ChangePasswordActivity" method="">
     <comment>*EditAccountActivity.onOptionsItemSelected() -&gt; gotoChangePassword() -&gt; startActivity()</comment>
@@ -605,6 +686,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, String-password" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.EditAccountActivity" destination="eu.siacs.conversations.ui.PublishProfilePictureActivity" method="">
     <comment>*EditAccountActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -623,6 +707,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.EditAccountActivity" destination="eu.siacs.conversations.ui.SettingsActivity" method="">
     <comment>*EditAccountActivity.onOptionsItemSelected() -&gt; EditAccountActivity extends OmemoActivity -&gt; OmemoActivity extends XmppActivity -&gt; XmppActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -643,12 +730,15 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.MagicCreateActivity" destination="eu.siacs.conversations.ui.EditAccountActivity" method="">
-    <comment>MagicCreateActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>MagicCreateActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartConversationActivity.addInviteUri() -&gt; MagicCreateActivity.startActivity()</comment>
     <callLines>
       <line src="/src/conversations/java/eu/siacs/conversations/ui/MagicCreateActivity.java" start="58" end="58" />
-      <line src="/src/conversations/java/eu/siacs/conversations/ui/MagicCreateActivity.java" start="75" end="81" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/MagicCreateActivity.java" start="75" end="80" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="1268" end="1268" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/MagicCreateActivity.java" start="81" end="81" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -661,6 +751,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-jid, boolean-init, String-eu.siacs.conversations.invite_uri" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ManageAccountActivity" destination="eu.siacs.conversations.ui.EditAccountActivity" method="">
     <comment>*ManageAccountActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -695,6 +789,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.ManageAccountActivity" destination="eu.siacs.conversations.ui.WelcomeActivity" method="">
     <comment>ManageAccountActivity.onContextItemSelected() -&gt; deleteAccount() -&gt; AlertDialog.Builder.setPositiveButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; WelcomeActivity.launch() -&gt; Activity.startActivity()</comment>
@@ -712,15 +807,21 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.PickServerActivity" destination="eu.siacs.conversations.ui.EditAccountActivity" method="">
-    <comment>*PickServerActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>*PickServerActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PickServerActivity.addInviteUri() -&gt; StartConversationActivity.addInviteUri() -&gt; PickServerActivity.startActivity()</comment>
     <callLines>
       <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="77" end="77" />
-      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="79" end="88" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="79" end="87" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="94" end="94" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="1268" end="1268" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="88" end="88" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -729,15 +830,21 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value=" String-jid, boolean-force_register, boolean-init, String-eu.siacs.conversations.invite_uri" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.PickServerActivity" destination="eu.siacs.conversations.ui.MagicCreateActivity" method="">
-    <comment>*PickServerActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>*PickServerActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; PickServerActivity.addInviteUri() -&gt; StartConversationActivity.addInviteUri() -&gt; PickServerActivity.startActivity()</comment>
     <callLines>
-      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="71" end="75" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="71" end="74" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="94" end="94" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="1268" end="1268" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="75" end="75" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -746,16 +853,23 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-eu.siacs.conversations.invite_uri" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.PickServerActivity" destination="eu.siacs.conversations.ui.ManageAccountActivity" method="">
     <comment>*PickServerActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="77" end="77" />
-      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="85" end="88" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="85" end="87" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="94" end="94" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="1268" end="1268" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/PickServerActivity.java" start="88" end="88" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -768,12 +882,18 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-eu.siacs.conversations.invite_uri" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.PublishProfilePictureActivity" destination="eu.siacs.conversations.ui.StartConversationActivity" method="">
-    <comment>*PublishProfilePictureActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>*PublishProfilePictureActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartConversationActivity.addInviteUri() -&gt; PublishProfilePictureActivity.startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/PublishProfilePictureActivity.java" start="96" end="96" />
-      <line src="/src/main/java/eu/siacs/conversations/ui/PublishProfilePictureActivity.java" start="98" end="103" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/PublishProfilePictureActivity.java" start="98" end="100" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="1268" end="1268" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/PublishProfilePictureActivity.java" start="101" end="101" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/PublishProfilePictureActivity.java" start="103" end="103" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -786,6 +906,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-eu.siacs.conversations.invite_uri, boolean-init" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.SearchActivity" destination="eu.siacs.conversations.ui.ShowLocationActivity" method="">
     <comment>SearchActivity.onCreate() -&gt; new MessageAdapter() -&gt; View.setAdapter() -&gt; MessageAdapter.getView() -&gt; displayLocationMessage() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MessageAdapter.showLocation() -&gt; GeoHelper.createGeoIntentsFromMessage() -&gt; Context.startActivity()</comment>
@@ -794,7 +917,7 @@
       <line src="/src/main/java/eu/siacs/conversations/ui/adapter/MessageAdapter.java" start="776" end="776" />
       <line src="/src/main/java/eu/siacs/conversations/ui/adapter/MessageAdapter.java" start="531" end="531" />
       <line src="/src/main/java/eu/siacs/conversations/ui/adapter/MessageAdapter.java" start="903" end="903" />
-      <line src="/src/main/java/eu/siacs/conversations/utils/GeoHelper.java" start="102" end="102" />
+      <line src="/src/main/java/eu/siacs/conversations/utils/GeoHelper.java" start="102" end="106" />
       <line src="/src/main/java/eu/siacs/conversations/utils/GeoHelper.java" start="114" end="114" />
       <line src="/src/main/java/eu/siacs/conversations/ui/adapter/MessageAdapter.java" start="905" end="905" />
     </callLines>
@@ -809,6 +932,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="eu.siacs.conversations.location.show" />
+      <IntentField type="extra" value="double-latitude, double-longitude" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.SettingsActivity" destination="eu.siacs.conversations.services.ExportBackupService" method="">
     <comment>*SettingsActivity.onRequestPermissionsResult() -&gt; createBackup() -&gt; ContextCompat.startForegroundService()</comment>
@@ -827,6 +954,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.SettingsActivity" destination="eu.siacs.conversations.ui.AboutActivity" method="PreferenceScreen">
     <comment>SettingsActivity.onCreate() -&gt; new SettingsFragment() -&gt; FragmentTransaction.commit() -&gt; SettingsFragment.onCreate() -&gt; addPreferencesFromResource() -&gt; R.xml.preferences.AboutPreference -&gt; *AboutPreference.onClick() -&gt; Context.startActivity()</comment>
@@ -864,6 +992,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-direct_search" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.StartConversationActivity" destination="eu.siacs.conversations.ui.ChannelDiscoveryActivity" method="">
     <comment>StartConversationActivity.onCreate() -&gt; SpeedDialView.setOnActionSelectedListener() -&gt; *SpeedDialView.OnActionSelectedListener.onActionSelected() -&gt; startActivity()</comment>
@@ -882,6 +1013,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.StartConversationActivity" destination="eu.siacs.conversations.ui.ChooseContactActivity" method="">
     <comment>StartConversationActivity.onCreate() -&gt; showCreatePrivateGroupChatDialog() -&gt; CreatePrivateGroupChatDialog.newInstance() -&gt; show() -&gt; onCreateDialog() -&gt; EditText.setOnEditorActionListener() -&gt; *EditText.OnEditorActionListener.onEditorAction() -&gt; CreatePrivateGroupChatDialog.CreateConferenceDialogListener.onCreateDialogPositiveClick() -&gt; StartConversationActivity implements CreateConferenceDialogListener -&gt; StartConversationActivity.onCreateDialogPositiveClick() -&gt; startActivityForResult()</comment>
@@ -903,6 +1035,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-account, String-extra_group_chat_name, boolean-extra_select_multiple, boolean-extra_show_enter_jid, int-extra_title_res_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.StartConversationActivity" destination="eu.siacs.conversations.ui.SettingsActivity" method="">
     <comment>*StartConversationActivity.onOptionsItemSelected() -&gt; StartConversationActivity extends XmppActivity -&gt; XmppActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -922,6 +1057,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.StartConversationActivity" destination="eu.siacs.conversations.ui.UriHandlerActivity" method="">
     <comment>*StartConversationActivity.onOptionsItemSelected() -&gt; UriHandlerActivity.scan() -&gt; Activity.startActivity()</comment>
@@ -937,9 +1073,13 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="scan_qr_code" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.TrustKeysActivity" destination="eu.siacs.conversations.ui.ScanActivity" method="">
     <comment>*TrustKeysActivity.onOptionsItemSelected() -&gt; ScanActivity.scan() -&gt; Activity.startActivityForResult()</comment>
@@ -958,6 +1098,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.UriHandlerActivity" destination="eu.siacs.conversations.ui.EditAccountActivity" method="">
     <comment>*UriHandlerActivity.onStart() -&gt; handleIntent() -&gt; handleUri() -&gt; startActivity()</comment>
@@ -979,6 +1120,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.intent.action.VIEW" />
+      <IntentField type="data" value="${uri}" />
+      <IntentField type="extra" value="String-jid, boolean-scanned" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.UriHandlerActivity" destination="eu.siacs.conversations.ui.ScanActivity" method="">
     <comment>*UriHandlerActivity.onStart() -&gt; handleIntent() -&gt; startActivityForResult()</comment>
@@ -997,6 +1143,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.UriHandlerActivity" destination="eu.siacs.conversations.ui.ShareViaAccountActivity" method="反射">
     <comment>*UriHandlerActivity.onStart() -&gt; handleIntent() -&gt; handleUri() -&gt; startActivity()</comment>
@@ -1004,7 +1151,7 @@
       <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="67" end="67" />
       <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="165" end="165" />
       <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="109" end="109" />
-      <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="115" end="115" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="115" end="117" />
       <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="148" end="148" />
     </callLines>
     <tags>
@@ -1018,6 +1165,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-body, String-contact" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.UriHandlerActivity" destination="eu.siacs.conversations.ui.ShareWithActivity" method="">
     <comment>*UriHandlerActivity.onStart() -&gt; handleIntent() -&gt; handleUri() -&gt; startActivity()</comment>
@@ -1038,13 +1188,18 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.intent.action.SEND" />
+      <IntentField type="extra" value="String-android.intent.extra.TEXT" />
+      <IntentField type="type" value="text/plain" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.UriHandlerActivity" destination="eu.siacs.conversations.ui.StartConversationActivity" method="">
     <comment>*UriHandlerActivity.onStart() -&gt; handleIntent() -&gt; handleUri() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="67" end="67" />
       <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="165" end="165" />
-      <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="119" end="119" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="119" end="122" />
       <line src="/src/main/java/eu/siacs/conversations/ui/UriHandlerActivity.java" start="148" end="148" />
     </callLines>
     <tags>
@@ -1058,12 +1213,20 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.intent.action.VIEW" />
+      <IntentField type="data" value="${uri}" />
+      <IntentField type="extra" value="String-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.WelcomeActivity" destination="eu.siacs.conversations.ui.EditAccountActivity" method="">
-    <comment>*WelcomeActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.onClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>*WelcomeActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.onClickListener.onClick() -&gt; WelcomeActivity.addInviteUri() -&gt; StartConversationActivity.addInviteUri() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="67" end="67" />
-      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="69" end="78" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="69" end="77" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="121" end="121" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="1268" end="1268" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="78" end="78" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -1076,6 +1239,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-eu.siacs.conversations.invite_uri, String-jid, boolean-force_register, boolean-init" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.WelcomeActivity" destination="eu.siacs.conversations.ui.ImportBackupActivity" method="">
     <comment>*WelcomeActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1093,12 +1259,16 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.WelcomeActivity" destination="eu.siacs.conversations.ui.ManageAccountActivity" method="">
-    <comment>*WelcomeActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.onClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>*WelcomeActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.onClickListener.onClick() -&gt; WelcomeActivity.addInviteUri() -&gt; StartConversationActivity.addInviteUri() -&gt; WelcomeActivity.startActivity()</comment>
     <callLines>
       <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="67" end="67" />
-      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="75" end="78" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="75" end="77" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="121" end="121" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="1268" end="1268" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="78" end="78" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -1111,12 +1281,18 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-eu.siacs.conversations.invite_uri" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.siacs.conversations.ui.WelcomeActivity" destination="eu.siacs.conversations.ui.PickServerActivity" method="">
-    <comment>*WelcomeActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.onClickListener.onClick() -&gt; startActivity()</comment>
+    <comment>*WelcomeActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.onClickListener.onClick() -&gt; WelcomeActivity.addInviteUri() -&gt; StartConversationActivity.addInviteUri() -&gt; WelcomeActivity.startActivity()</comment>
     <callLines>
       <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="62" end="62" />
-      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="63" end="65" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="63" end="64" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="121" end="121" />
+      <line src="/src/main/java/eu/siacs/conversations/ui/StartConversationActivity.java" start="1268" end="1268" />
+      <line src="/src/conversations/java/eu/siacs/conversations/ui/WelcomeActivity.java" start="65" end="65" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -1129,5 +1305,8 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-eu.siacs.conversations.invite_uri" />
+    </IntentFields>
   </OracleEdge>
 </root>

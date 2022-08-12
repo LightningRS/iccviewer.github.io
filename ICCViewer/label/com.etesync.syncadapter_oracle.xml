@@ -18,6 +18,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true">
+      <IntentField type="extra" value="${extras}" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.syncadapter.SyncNotification$NotificationHandlerActivity" destination="com.etesync.syncadapter.ui.DebugInfoActivity" method="">
     <comment>*SyncNotification.NotificationHandlerActivity.onCreate() -&gt; startActivity()</comment>
@@ -36,6 +39,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true">
+      <IntentField type="extra" value="${extras}" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.syncadapter.SyncNotification$NotificationHandlerActivity" destination="com.etesync.syncadapter.ui.WebViewActivity" method="">
     <comment>*SyncNotification.NotificationHandlerActivity.onCreate() -&gt; WebViewActivity.openUrl() -&gt; Context.startActivity()</comment>
@@ -54,6 +60,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-url" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.AccountUpdateService" method="">
     <comment>AccountActivity.onCreateLoader() -&gt; *AccountActivity.AccountLoader.onStartLoading() -&gt; Context.bindService()</comment>
@@ -72,6 +81,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.ui.AccountSettingsActivity" method="">
     <comment>*AccountActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -89,6 +99,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.ui.CreateCollectionActivity" method="">
     <comment>*AccountActivity.onMenuItemClick() -&gt; CreateCollectionActivity.newIntent() -&gt; startActivity()</comment>
@@ -107,6 +120,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-account, Serializable-collectionInfo" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountActivity" destination="com.etesync.syncadapter.ui.ViewCollectionActivity" method="">
     <comment>AccountActivity.onLoadFinished() -&gt; AdapterView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; ViewCollectionActivity.newIntent() -&gt; startActivity()</comment>
@@ -126,6 +142,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-account, Serializable-collectionInfo" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountSettingsActivity" destination="com.etesync.syncadapter.ui.AccountActivity" method="">
     <comment>*AccountSettingsActivity.onOptionsItemSelected() -&gt; NavUtils.navigateUpTo()</comment>
@@ -143,6 +162,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountSettingsActivity" destination="com.etesync.syncadapter.ui.ChangeEncryptionPasswordActivity" method="">
     <comment>AccountSettingsActivity.onCreate() -&gt; new AccountSettingsFragment() -&gt; FragmentTransaction.commit() -&gt; AccountSettingsActivity.AccountSettingsFragment.onLoadFinished() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onClick() -&gt; ChangeEncryptionPasswordActivity.newIntent() -&gt; startActivity()</comment>
@@ -162,6 +184,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-account" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountSettingsActivity" destination="com.etesync.syncadapter.ui.WebViewActivity" method="">
     <comment>*AccountSettingsActivity.onLoadFinished() -&gt; WebViewActivity.openUrl() -&gt; Context.startActivity()</comment>
@@ -180,6 +205,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-url" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountsActivity" destination="com.etesync.syncadapter.ui.AboutActivity" method="">
     <comment>*AccountsActivity.onNavigationItemSelected() -&gt; startActivity()</comment>
@@ -197,6 +225,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountsActivity" destination="com.etesync.syncadapter.ui.AppSettingsActivity" method="">
     <comment>*AccountsActivity.onNavigationItemSelected() -&gt; startActivity()</comment>
@@ -214,6 +243,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountsActivity" destination="com.etesync.syncadapter.ui.WebViewActivity" method="">
     <comment>*AccountsActivity.onNavigationItemSelected() -&gt; WebViewActivity.openUrl() -&gt; startActivity()</comment>
@@ -229,9 +259,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-url" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AccountsActivity" destination="com.etesync.syncadapter.ui.setup.LoginActivity" method="">
     <comment>AccountsActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -249,6 +282,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.AppSettingsActivity" destination="com.etesync.syncadapter.ui.AccountsActivity" method="">
     <comment>AppSettingsActivity.onCreate() -&gt; new AppSettingsActivity.SettingsFragment() -&gt; FragmentTransaction.commit() -&gt; AppSettingsActivity.SettingsFragment.onCreatePreferences() -&gt; initSelectLanguageList() -&gt; new AppSettingsActivity.SettingsFragment.LanguageTask() -&gt; AppSettingsActivity.SettingsFragment.LanguageTask.execute() -&gt; onPostExecute() -&gt; Preference.setOnPreferenceChangeListener() -&gt; *Preference.OnPreferenceChangeListener.onChange() -&gt; startActivity()</comment>
@@ -266,9 +300,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="true" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.ViewCollectionActivity" destination="com.etesync.syncadapter.ui.CollectionMembersActivity" method="">
     <comment>ViewCollectionActivity.onCreateOptionsMenu() -&gt; MenuInflator.inflate() -&gt; R.menu.activity_view_collection.item.onClick -&gt; *ViewCollectionActivity.onManageMembers() -&gt; CollectionMembersActivity.newIntent() -&gt; startActivity()</comment>
@@ -289,6 +326,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-account, Serializable-collectionInfo" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.ViewCollectionActivity" destination="com.etesync.syncadapter.ui.EditCollectionActivity" method="">
     <comment>ViewCollectionActivity.onCreateOptionsMenu() -&gt; MenuInflator.inflate() -&gt; R.menu.activity_view_collection.item.onClick -&gt; *ViewCollectionActivity.onEditCollection() -&gt; EditCollectionActivity.newIntent() -&gt; startActivity()</comment>
@@ -309,6 +349,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-account, Serializable-collectionInfo" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.ViewCollectionActivity" destination="com.etesync.syncadapter.ui.JournalItemActivity" method="">
     <comment>ViewCollectionActivity.onCreate() -&gt; ListEntriesFragment.newInstance() -&gt; new ListEntriesFragment() -&gt; FragmentTransaction.commit() -&gt; ListEntriesFragment.onViewCreated() -&gt; ListView.setOnItemClickListener() -&gt; *ListEntriesFragment.onItemClick() -&gt; JournalItemActivity.newIntent() -&gt; startActivity()</comment>
@@ -330,6 +373,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-account, Serializable-collectionInfo, Serializable-syncEntry" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.ViewCollectionActivity" destination="com.etesync.syncadapter.ui.importlocal.ImportActivity" method="">
     <comment>*ViewCollectionActivity.onImport() -&gt; ImportActivity.newIntent() -&gt; startActivity()</comment>
@@ -348,6 +394,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-account, Serializable-collectionInfo" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.etesync.syncadapter.ui.setup.LoginActivity" destination="com.etesync.syncadapter.ui.WebViewActivity" method="">
     <comment>LoginActivity.onCreateOptionsMenu() -&gt; MenuInflater.inflate() -&gt; R.menu.activity_login.item.onClick -&gt; *LoginActivity.showHelp() -&gt; WebViewActivity.openUrl() -&gt; startActivity()</comment>
@@ -368,5 +417,8 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Parcelable-url" />
+    </IntentFields>
   </OracleEdge>
 </root>

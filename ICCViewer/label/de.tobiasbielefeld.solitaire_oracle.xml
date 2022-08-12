@@ -21,6 +21,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-game" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="de.tobiasbielefeld.solitaire.ui.GameManager" destination="de.tobiasbielefeld.solitaire.ui.settings.Settings" method="">
     <comment>GameManager.onCreate() -&gt; setContentView() -&gt; R.layout.activity_game_manager.mainButtonSettings.onClick -&gt; *GameManager.menuClick() -&gt; GameManager.startActivityForResult()</comment>
@@ -40,6 +43,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="de.tobiasbielefeld.solitaire.ui.GameManager" destination="de.tobiasbielefeld.solitaire.ui.statistics.StatisticsActivity" method="">
     <comment>GameManager.onCreate() -&gt; setContentView() -&gt; R.layout.activity_game_manager.mainButtonScores.onClick -&gt; *GameManager.menuClick() -&gt; startActivity()</comment>
@@ -59,6 +63,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="de.tobiasbielefeld.solitaire.ui.GameSelector" destination="de.tobiasbielefeld.solitaire.ui.GameManager" method="">
     <comment>*GameSelector.onCreate() -&gt; startActivityForResult()</comment>
@@ -76,6 +81,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-game" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="de.tobiasbielefeld.solitaire.ui.GameSelector" destination="de.tobiasbielefeld.solitaire.ui.about.AboutActivity" method="">
     <comment>*GameSelector.onNavigationItemSelected() -&gt; startActivity()</comment>
@@ -93,6 +101,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="de.tobiasbielefeld.solitaire.ui.GameSelector" destination="de.tobiasbielefeld.solitaire.ui.manual.Manual" method="">
     <comment>*GameSelector.onNavigationItemSelected() -&gt; startActivity()</comment>
@@ -110,6 +119,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="de.tobiasbielefeld.solitaire.ui.GameSelector" destination="de.tobiasbielefeld.solitaire.ui.settings.Settings" method="">
     <comment>*GameSelector.onNavigationItemSelected() -&gt; startActivity()</comment>
@@ -127,6 +137,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="de.tobiasbielefeld.solitaire.ui.settings.Settings" destination="de.tobiasbielefeld.solitaire.ui.settings.Settings" method="">
     <comment>*Settings.onSharedPreferenceChanged() -&gt; startActivity()</comment>
@@ -141,8 +152,11 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
 </root>

@@ -19,10 +19,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.PluginActivity" method="">
     <comment>MapActivity.onResume() -&gt; DashboardOnMap.updateDashboard() -&gt; refreshContent() -&gt; updateListAdapter() -&gt; new ConfigureMapMenu() -&gt; ConfigureMapMenu.createListAdapter() -&gt; createLayersItems() -&gt; ContextMenuAdapter.setListener() -&gt; *ConfigureMapMenu.LayerMenuListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
@@ -46,10 +49,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-plugin_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.PluginsActivity" method="">
     <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; createMainOptionsMenu() -&gt; createNormalOptionsMenu() -&gt; *ItemClickListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
@@ -68,10 +74,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.PrintDialogActivity" method="">
     <comment>new DashboardOnMap() -&gt; MapActivity.onResume() -&gt; DashboardOnMap.setDashboardVisibility() -&gt; addOrUpdateDashboardFragments() -&gt; TransactionBuilder.addFragmentsData() -&gt; getFragmentTransaction() -&gt; DashNavigationFragment.newInstance() -&gt; FragmentTransaction.commit() -&gt; DashNavigationFragment.initView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ChooseRouteFragment.showInstance() -&gt; new ChooseRouteFragment() -&gt; FragmentTransaction.commit() -&gt; ChooseRouteFragment.onCreateView() -&gt; buildMenuButtons() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; ChooseRouteFragment.startActivity()</comment>
@@ -106,6 +115,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="data" value="${uri}" />
+      <IntentField type="flag" value="FLAG_GRANT_READ_URI_PERMISSION" />
+      <IntentField type="type" value="text/html" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.activities.TrackActivity" method="">
     <comment>MapActivity.onResume() -&gt; MapMarkersDialogFragment.showInstance() -&gt; CoordinateInputDialogFragment.onCreateView() -&gt; Fragment.setListener() -&gt; CoordinateInputDialogFragment.createSaveAsTrackFragmentListener() -&gt; Snackbar.setAction() -&gt; *View.OnClickListener.onClick() -&gt; CoordinateInputDialogFragment.getTrackActivity() -&gt; startActivity()</comment>
@@ -127,10 +141,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-TRACK_FILE_NAME, boolean-OPEN_POINTS_TAB" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.download.DownloadActivity" method="">
     <comment>MapActivity.onResume() -&gt; DashboardOnMap.setDashboardVisibility() -&gt; updateDownloadBtn() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; MapActivity.startActivity()</comment>
@@ -151,10 +169,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-Tab_to_open, String-filter" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.liveupdates.OsmLiveActivity" method="">
     <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; createMainOptionsMenu() -&gt; createNormalOptionsMenu() -&gt; *ItemClickListener.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
@@ -174,10 +196,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.myplaces.FavoritesActivity" method="">
     <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; createMainOptionsMenu() -&gt; createNormalOptionsMenu() -&gt; *MapActivityActions.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
@@ -196,10 +221,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.MapActivity" destination="net.osmand.plus.wikivoyage.explore.WikivoyageExploreActivity" method="">
     <comment>MapActivity.onCreate() -&gt; MapActivityActions.updateDrawerMenu() -&gt; createMainOptionsMenu() -&gt; createNormalOptionsMenu() -&gt; *MapActivityActions.onContextMenuClick() -&gt; MapActivity.startActivity()</comment>
@@ -208,7 +236,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="1134" end="1134" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="661" end="661" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="960" end="962" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="866" end="868" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/MapActivityActions.java" start="867" end="869" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -217,10 +245,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="true" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.access.SettingsAccessibilityActivity" method="">
     <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; AccessibilityPlugin extends OsmandPlugin -&gt; AccessibilityPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AccessibilityPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
@@ -248,9 +279,10 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.plus.audionotes.SettingsAudioVideoActivity" method="">
     <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; AudioVideoNotesPlugin extends OsmandPlugin -&gt; AudioVideoNotesPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AudioVideoNotesPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
@@ -278,9 +310,10 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.plus.development.SettingsDevelopmentActivity" method="">
     <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; OsmandDevelopmentPlugin extends OsmandPlugin -&gt; OsmandDevelopmentPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OsmandDevelopmentPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
@@ -308,9 +341,10 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.plus.monitoring.SettingsMonitoringActivity" method="">
     <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; OsmandMonitoringPlugin extends OsmandPlugin -&gt; OsmandMonitoringPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OsmandMonitoringPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
@@ -338,9 +372,10 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginActivity" destination="net.osmand.plus.osmedit.SettingsOsmEditingActivity" method="">
     <comment>PluginActivity.omResume() -&gt; OsmandApplication.onCreate() -&gt; OsmandPlugin.initPlugins() -&gt; PluginActivity.onCreate() -&gt; OsmandPlugin.getAvailablePlugins() -&gt; getId() -&gt; OsmEditingPlugin extends OsmandPlugin -&gt; OsmEditingPlugin.getId() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; OsmEditingPlugin.getSettingsActivity() -&gt; PluginActivity.startActivity()</comment>
@@ -368,9 +403,10 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.PluginsActivity" destination="net.osmand.plus.activities.PluginActivity" method="">
     <comment>PluginsActivity.onCreate() -&gt; setListAdapter() -&gt; PluginsActivity extends OsmandListActivity -&gt; OsmandListActivity.setListAdapter() -&gt; setOnItemClickListener() -&gt; View.setOnItemClickListener() -&gt; *OsmandListActivity.onItemClick() -&gt; startActivity()</comment>
@@ -379,7 +415,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/PluginsActivity.java" start="29" end="29" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/OsmandListActivity.java" start="74" end="75" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/OsmandListActivity.java" start="93" end="93" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/PluginsActivity.java" start="50" end="55" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/PluginsActivity.java" start="53" end="55" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -388,10 +424,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="true" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-plugin_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.SettingsActivity" destination="net.osmand.plus.activities.PrivacyAndSecurityActivity" method="">
     <comment>*SettingsActivity.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *SettingsActivity.onPreferenceClick() -&gt; startActivity()</comment>
@@ -410,6 +449,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.SettingsActivity" destination="net.osmand.plus.activities.SettingsGeneralActivity" method="">
     <comment>*SettingsActivity.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *SettingsActivity.onPreferenceClick() -&gt; startActivity()</comment>
@@ -428,6 +468,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.SettingsActivity" destination="net.osmand.plus.activities.SettingsNavigationActivity" method="">
     <comment>*SettingsActivity.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *SettingsActivity.onPreferenceClick() -&gt; startActivity()</comment>
@@ -446,6 +487,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.SettingsActivity" destination="net.osmand.plus.liveupdates.OsmLiveActivity" method="">
     <comment>*SettingsActivity.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *SettingsActivity.onPreferenceClick() -&gt; startActivity()</comment>
@@ -459,11 +501,14 @@
       <intentMatch isExplicit="true" isImplicit="false" />
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
-        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
+        <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-show_settings_only_intent_param" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.TrackActivity" destination="net.osmand.plus.myplaces.FavoritesActivity" method="">
     <comment>*TrackActivity.onOptionsItemSelected() -&gt; OsmAndAppCustomization.getFavoritesActivity() -&gt; TrackActivity.startActivity()</comment>
@@ -480,9 +525,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchActivity" destination="net.osmand.plus.activities.FavoritesListActivity" method="">
     <comment>SearchActivity.onCreate() -&gt; setTopSpinner() -&gt; ActionBar.setListNavigationCallbacks() -&gt; *OnNavigationListener.onNavigationItemSelected() -&gt; SearchActivity.startActivityForResult()</comment>
@@ -498,10 +546,14 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="true" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-SELECT_FAVORITE_POINT_INTENT_KEY" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchActivity" destination="net.osmand.plus.activities.search.SearchAddressActivity" method="">
     <comment>*SearchActivity.onCreate() -&gt; setTopSpinner() -&gt; ActionBar.setListNavigationCallbacks() -&gt; *OnNavigationListener.onNavigationItemSelected() -&gt; SearchActivity.startActivityForResult()</comment>
@@ -521,6 +573,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-SELECT_ADDRESS_POINT_INTENT_KEY" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchActivity" destination="net.osmand.plus.activities.search.SearchPOIActivity" method="">
     <comment>SearchActivity.onCreate() -&gt; getFragment() -&gt; SearchPoiFilterFragment.onCreateView() -&gt; setupOptions() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; showOptionsMenu() -&gt; View.setOnMenuItemClickListener() -&gt; *MenuItem.OnMenuItemClickListener.onMenuItemClick() -&gt; SearchPoiFilterFragment.showFilterActivity() -&gt; startActivityForResult()</comment>
@@ -545,6 +601,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-net.osmand.amenity_filter" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchAddressActivity" destination="net.osmand.plus.activities.search.SearchBuildingByNameActivity" method="">
     <comment>SearchAddressActivity.onCreate() -&gt; new SearchAddressFragment() -&gt; FragmentTransaction.commit() -&gt; SearchAddressFragment.onCreateView() -&gt; attachListeners() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SearchAddressFragment.createIntent() -&gt; startActivity()</comment>
@@ -553,8 +613,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="69" end="69" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="171" end="173" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="175" end="175" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="140" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="149" end="149" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="149" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -567,6 +626,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="double-net.osmand.search_lat, double-net.osmand.search_lon, boolean-SEQUENTIAL_SEARCH" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchAddressActivity" destination="net.osmand.plus.activities.search.SearchCityByNameActivity" method="">
     <comment>SearchAddressActivity.onCreate() -&gt; new SearchAddressFragment() -&gt; FragmentTransaction.commit() -&gt; SearchAddressFragment.onCreateView() -&gt; attachListeners() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SearchAddressFragment.createIntent() -&gt; startActivity()</comment>
@@ -575,8 +637,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="69" end="69" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="159" end="161" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="162" end="162" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="140" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="149" end="149" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="149" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -589,6 +650,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="double-net.osmand.search_lat, double-net.osmand.search_lon, boolean-SEQUENTIAL_SEARCH" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchAddressActivity" destination="net.osmand.plus.activities.search.SearchRegionByNameActivity" method="">
     <comment>SearchAddressActivity.onCreate() -&gt; new SearchAddressFragment() -&gt; FragmentTransaction.commit() -&gt; SearchAddressFragment.onCreateView() -&gt; attachListeners() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SearchAddressFragment.createIntent() -&gt; startActivity()</comment>
@@ -597,8 +661,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="69" end="69" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="153" end="155" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="156" end="156" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="140" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="149" end="149" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="149" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -611,6 +674,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="double-net.osmand.search_lat, double-net.osmand.search_lon, boolean-SEQUENTIAL_SEARCH" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchAddressActivity" destination="net.osmand.plus.activities.search.SearchStreet2ByNameActivity" method="">
     <comment>SearchAddressActivity.onCreate() -&gt; new SearchAddressFragment() -&gt; FragmentTransaction.commit() -&gt; SearchAddressFragment.onCreateView() -&gt; attachListeners() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SearchAddressFragment.createIntent() -&gt; startActivity()</comment>
@@ -619,8 +685,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="69" end="69" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="171" end="173" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="177" end="177" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="140" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="149" end="149" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="149" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -633,6 +698,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="double-net.osmand.search_lat, double-net.osmand.search_lon, boolean-SEQUENTIAL_SEARCH" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchAddressActivity" destination="net.osmand.plus.activities.search.SearchStreetByNameActivity" method="">
     <comment>SearchAddressActivity.onCreate() -&gt; new SearchAddressFragment() -&gt; FragmentTransaction.commit() -&gt; SearchAddressFragment.onCreateView() -&gt; attachListeners() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; SearchAddressFragment.createIntent() -&gt; startActivity()</comment>
@@ -641,8 +709,7 @@
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="69" end="69" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="165" end="167" />
       <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="168" end="168" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="140" />
-      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="149" end="149" />
+      <line src="/OsmAnd/src/net/osmand/plus/activities/search/SearchAddressFragment.java" start="140" end="149" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -655,6 +722,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="double-net.osmand.search_lat, double-net.osmand.search_lon, boolean-SEQUENTIAL_SEARCH" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchPOIActivity" destination="net.osmand.plus.activities.EditPOIFilterActivity" method="">
     <comment>*SearchPOIActivity.onCreate() -&gt; updateIntent() -&gt; showEditActivity() -&gt; startActivityForResult()</comment>
@@ -674,6 +744,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="double-net.osmand.search_lat, double-net.osmand.search_lon, boolean-net.osmand.search_nearby" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.activities.search.SearchPOIActivity" destination="net.osmand.plus.activities.search.SearchActivity" method="">
     <comment>*SearchPOIActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -691,6 +764,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="double-net.osmand.search_lat, double-net.osmand.search_lon, boolean-net.osmand.search_nearby" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_REORDER_TO_FRONT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.development.SettingsDevelopmentActivity" destination="net.osmand.plus.development.LogcatActivity" method="">
     <comment>SettingsDevelopmentActivity.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *OnPreferenceClickListener.onPreferenceClick() -&gt; SettingsDevelopmentActivity.startActivity()</comment>
@@ -709,6 +786,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.osmand.plus.development.SettingsDevelopmentActivity" destination="net.osmand.plus.development.TestVoiceActivity" method="">
     <comment>SettingsDevelopmentActivity.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *OnPreferenceClickListener.onPreferenceClick() -&gt; SettingsDevelopmentActivity.startActivity()</comment>
@@ -727,5 +805,6 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
 </root>

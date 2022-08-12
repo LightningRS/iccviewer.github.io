@@ -20,6 +20,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ArvcList" destination="org.epstudios.epmobile.Arvc" method="">
     <comment>*ArvcList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; ArvcList.arvc2010() -&gt; startActivity()</comment>
@@ -35,10 +36,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ArvcList" destination="org.epstudios.epmobile.ArvcOld" method="">
     <comment>*ArvcList.onItemClick() -&gt; arvcOld() -&gt; startActivity()</comment>
@@ -54,10 +56,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ArvcList" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*ArvcList.onOptionsItemSelected() -&gt; ArvcList extends EpDiagnosisListActivity -&gt; EpDiagnosisListActivity extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -78,6 +81,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ArvcOld" destination="org.epstudios.epmobile.About" method="">
     <comment>*ArvcOld.onOptionsItemSelected() -&gt; ArvcOld extends DiagnosticScore -&gt; DiagnosticScore extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -98,6 +102,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ArvcOld" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*ArvcOld.onOptionsItemSelected() -&gt; ArvcOld extends DiagnosticScore -&gt; DiagnosticScore extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -118,6 +123,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.AtrialTachLocalization" destination="org.epstudios.epmobile.About" method="">
     <comment>*AtrialTachLocalization.onOptionsItemSelected() -&gt; AtrialTachLocalization extends LocationAlgorithm -&gt; LocationAlgorithm extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -138,6 +144,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.AvAnnulusMap" destination="org.epstudios.epmobile.About" method="">
     <comment>*AvAnnulusMap.onOptionsItemSelected() -&gt; AvAnnulusMap extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -157,6 +164,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Brugada" destination="org.epstudios.epmobile.About" method="">
     <comment>*Brugada.onOptionsItemSelected() -&gt; Brugada extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -176,6 +184,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Brugada" destination="org.epstudios.epmobile.BrugadaMorphologyCriteria" method="">
     <comment>Brugada.onCreate() -&gt; View.setOnClickListener() -&gt; *Brugada.onClick() -&gt; displayMorphologyCriteria() -&gt; startActivity()</comment>
@@ -191,10 +200,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Brugada" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*Brugada.onOptionsItemSelected() -&gt; Brugada extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -214,6 +224,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.BrugadaEcg" destination="org.epstudios.epmobile.About" method="">
     <comment>*BrugadaEcg.onOptionsItemSelected() -&gt; BrugadaEcg extends EpDiagnosisListActivity -&gt; EpDiagnosisListActivity extends EpListActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -234,6 +245,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.BrugadaEcg" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*BrugadaEcg.onOptionsItemSelected() -&gt; BrugadaEcg extends EpDiagnosisListActivity -&gt; EpDiagnosisListActivity extends EpListActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -254,6 +266,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CalculatorList" destination="org.epstudios.epmobile.About" method="">
     <comment>*CalculatorList.onOptionsItemSelected() -&gt; CalculatorList extends EpListActivity -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -274,6 +287,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CalculatorList" destination="org.epstudios.epmobile.CycleLength" method="">
     <comment>CalculatorList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; CalculatorList.intervalRateCalculator() -&gt; startActivity()</comment>
@@ -289,10 +303,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CalculatorList" destination="org.epstudios.epmobile.DayCalculator" method="">
     <comment>CalculatorList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; CalculatorList.icdDayCalculator() -&gt; startActivity()</comment>
@@ -308,10 +323,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CalculatorList" destination="org.epstudios.epmobile.DrugDoseCalculatorList" method="">
     <comment>CalculatorList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; CalculatorList.drugDoseCalculators() -&gt; startActivity()</comment>
@@ -327,10 +343,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CalculatorList" destination="org.epstudios.epmobile.IbwCalculator" method="">
     <comment>CalculatorList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; CalculatorList.ibwCalculator() -&gt; startActivity()</comment>
@@ -346,10 +363,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CalculatorList" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*CalculatorList.onOptionsItemSelected() -&gt; CalculatorList extends EpListActivity -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -370,6 +388,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CalculatorList" destination="org.epstudios.epmobile.Qtc" method="">
     <comment>CalculatorList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; CalculatorList.qtcCalculator() -&gt; startActivity()</comment>
@@ -385,10 +404,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CmsIcd" destination="org.epstudios.epmobile.About" method="">
     <comment>*CmsIcd.onOptionsItemSelected() -&gt; CmsIcd extends RiskScore -&gt; RiskScore extends DiagnosticScore -&gt; DiagnosticScore extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -410,6 +430,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CmsIcd" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*CmsIcd.onOptionsItemSelected() -&gt; CmsIcd extends RiskScore -&gt; RiskScore extends DiagnosticScore -&gt; DiagnosticScore extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -431,6 +452,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CycleLength" destination="org.epstudios.epmobile.About" method="">
     <comment>*CycleLength.onOptionsItemSelected() -&gt; CycleLength extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -450,6 +472,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.CycleLength" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*CycleLength.onOptionsItemSelected() -&gt; CycleLength extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -469,6 +492,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DayCalculator" destination="org.epstudios.epmobile.About" method="">
     <comment>*DayCalculator.onOptionsItemSelected() -&gt; DayCalculator extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -488,6 +512,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DayCalculator" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*DayCalculator.onOptionsItemSelected() -&gt; DayCalculator extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -507,6 +532,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.About" method="">
     <comment>*DiagnosisList.onOptionsItemSelected() -&gt; DiagnosisList extends EpListActivity -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -527,6 +553,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.ArvcList" method="">
     <comment>DiagnosisList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DiagnosisList.arvc() -&gt; startActivity()</comment>
@@ -542,10 +569,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.AtrialTachLocalization" method="">
     <comment>DiagnosisList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DiagnosisList.atrialTachLocalization() -&gt; startActivity()</comment>
@@ -561,10 +589,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.BrugadaEcg" method="">
     <comment>DiagnosisList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DiagnosisList.brugadaEcg() -&gt; startActivity()</comment>
@@ -580,10 +609,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.LongQtList" method="">
     <comment>DiagnosisList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DiagnosisList.longQt() -&gt; startActivity()</comment>
@@ -599,10 +629,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.LvhList" method="">
     <comment>DiagnosisList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DiagnosisList.lvhList() -&gt; startActivity()</comment>
@@ -618,10 +649,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*DiagnosisList.onOptionsItemSelected() -&gt; DiagnosisList extends EpListActivity -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -642,6 +674,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.ShortQt" method="">
     <comment>DiagnosisList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DiagnosisList.shortQt() -&gt; startActivity()</comment>
@@ -657,10 +690,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.VtList" method="">
     <comment>DiagnosisList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DiagnosisList.vtList() -&gt; startActivity()</comment>
@@ -676,10 +710,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.WctAlgorithmList" method="">
     <comment>DiagnosisList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DiagnosisList.wctAlgorithm() -&gt; startActivity()</comment>
@@ -695,10 +730,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DiagnosisList" destination="org.epstudios.epmobile.WpwAlgorithmList" method="">
     <comment>DiagnosisList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DiagnosisList.wpw() -&gt; startActivity()</comment>
@@ -714,10 +750,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DrugDoseCalculatorList" destination="org.epstudios.epmobile.About" method="">
     <comment>*DrugDoseCalculatorList.onOptionsItemSelected() -&gt; DrugDoseCalculatorList extends EpCalculatorListActivity -&gt; EpCalculatorListActivity.onOptionsItemSelected() -&gt; EpCalculatorListActivity extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -740,6 +777,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DrugDoseCalculatorList" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*DrugDoseCalculatorList.onOptionsItemSelected() -&gt; DrugDoseCalculatorList extends EpCalculatorListActivity -&gt; EpCalculatorListActivity.onOptionsItemSelected() -&gt; EpCalculatorListActivity extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -762,6 +800,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.DrugDoseCalculatorList" destination="org.epstudios.epmobile.Warfarin" method="">
     <comment>DrugDoseCalculatorList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; DrugDoseCalculatorList.warfarinCalculator() -&gt; startActivity()</comment>
@@ -777,10 +816,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Entrainment" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*Entrainment.onOptionsItemSelected() -&gt; Entrainment extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -800,6 +840,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.EpMobile" destination="org.epstudios.epmobile.CalculatorList" method="">
     <comment>EpMobile.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; EpMobile.calculatorList() -&gt; startActivity()</comment>
@@ -815,10 +856,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.EpMobile" destination="org.epstudios.epmobile.DiagnosisList" method="">
     <comment>EpMobile.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; EpMobile.diagnosisList() -&gt; startActivity()</comment>
@@ -834,10 +876,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.EpMobile" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*EpMobile.onOptionsItemSelected() -&gt; EpMobile extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -856,6 +899,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.EpMobile" destination="org.epstudios.epmobile.ReferenceList" method="">
     <comment>EpMobile.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; EpMobile.referenceList() -&gt; startActivity()</comment>
@@ -871,10 +915,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.EpMobile" destination="org.epstudios.epmobile.RiskScoreList" method="">
     <comment>EpMobile.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; EpMobile.riskScores() -&gt; startActivity()</comment>
@@ -890,10 +935,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.EpiVt" destination="org.epstudios.epmobile.About" method="">
     <comment>*EpiVt.onOptionsItemSelected() -&gt; EpiVt extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -913,6 +959,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.EpiVt" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*EpiVt.onOptionsItemSelected() -&gt; EpiVt extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -932,6 +979,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Estes" destination="org.epstudios.epmobile.About" method="">
     <comment>*Estes.onOptionsItemSelected() -&gt; Estes extends RiskScore -&gt; RiskScore.onOptionsItemSelected() -&gt; RiskScore extends DiagnosticScore -&gt; DiagnosticScore extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -954,6 +1002,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Hcm" destination="org.epstudios.epmobile.About" method="">
     <comment>*Hcm.onOptionsItemSelected() -&gt; Hcm extends RiskScore -&gt; RiskScore.onOptionsItemSelected() -&gt; RiskScore extends DiagnosticScore -&gt; DiagnosticScore extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -975,6 +1024,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Hcm" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*Hcm.onOptionsItemSelected() -&gt; Hcm extends RiskScore -&gt; RiskScore.onOptionsItemSelected() -&gt; RiskScore extends DiagnosticScore -&gt; DiagnosticScore extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -996,6 +1046,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.IbwCalculator" destination="org.epstudios.epmobile.About" method="">
     <comment>*IbwCalculator.onOptionsItemSelected() -&gt; IbwCalculator extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1015,6 +1066,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.IbwCalculator" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*IbwCalculator.onOptionsItemSelected() -&gt; IbwCalculator extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1034,6 +1086,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.IcdRisk" destination="org.epstudios.epmobile.About" method="">
     <comment>*IcdRisk.onOptionsItemSelected() -&gt; IcdRisk extends DiagnosticScore -&gt; DiagnosticScore extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1054,6 +1107,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.IcdRisk" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*IcdRisk.onOptionsItemSelected() -&gt; IcdRisk extends DiagnosticScore -&gt; DiagnosticScore extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1074,6 +1128,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LongQt" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*LongQt.onOptionsItemSelected() -&gt; LongQt extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1092,6 +1147,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LongQtEcg" destination="org.epstudios.epmobile.About" method="">
     <comment>*LongQtEcg.onOptionsItemSelected() -&gt; LongQtEcg extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1111,6 +1167,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LongQtList" destination="org.epstudios.epmobile.LongQt" method="">
     <comment>LongQtList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; LongQtList.lqtsDiagnosis() -&gt; startActivity()</comment>
@@ -1126,10 +1183,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LongQtList" destination="org.epstudios.epmobile.LongQtEcg" method="">
     <comment>LongQtList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; LongQtList.lqtEcg() -&gt; startActivity()</comment>
@@ -1145,10 +1203,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LongQtList" destination="org.epstudios.epmobile.LongQtSubtypes" method="">
     <comment>LongQtList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; LongQtList.lqtSubtypes() -&gt; startActivity()</comment>
@@ -1164,10 +1223,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LongQtList" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*LongQtList.onOptionsItemSelected() -&gt; LongQtList extends EpDiagnosisListActivity -&gt; EpDiagnosisListActivity.onOptionsItemSelected() -&gt; EpDiagnosisListActivity extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1190,6 +1250,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LongQtSubtypes" destination="org.epstudios.epmobile.About" method="">
     <comment>*LongQtSubtypes.onOptionsItemSelected() -&gt; LongQtSubtypes extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1209,6 +1270,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LvhList" destination="org.epstudios.epmobile.Estes" method="">
     <comment>LvhList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; LvhList.estes() -&gt; startActivity()</comment>
@@ -1224,10 +1286,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LvhList" destination="org.epstudios.epmobile.LvhVoltage" method="">
     <comment>LvhList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; LvhList.otherLvh() -&gt; startActivity()</comment>
@@ -1243,10 +1306,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LvhList" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*LvhList.onOptionsItemSelected() -&gt; LvhList extends EpDiagnosisListActivity -&gt; EpDiagnosisListActivity.onOptionsItemSelected() -&gt; EpDiagnosisListActivity extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1269,6 +1333,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LvhVoltage" destination="org.epstudios.epmobile.About" method="">
     <comment>*LvhVoltage.onOptionsItemSelected() -&gt; LvhVoltage extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1288,6 +1353,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.LvhVoltage" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*LvhVoltage.onOptionsItemSelected() -&gt; LvhVoltage extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1307,6 +1373,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.MitralAnnularVt" destination="org.epstudios.epmobile.About" method="">
     <comment>*MitralAnnularVt.onOptionsItemSelected() -&gt; MitralAnnularVt extends LocationAlgorithm -&gt; LocationAlgorithm extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1327,6 +1394,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.NormalEpValues" destination="org.epstudios.epmobile.About" method="">
     <comment>*NormalEpValues.onOptionsItemSelected() -&gt; NormalEpValues extends EpReferenceActivity -&gt; EpReferenceActivity extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1347,6 +1415,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.OutflowVt" destination="org.epstudios.epmobile.About" method="">
     <comment>*OutflowVt.onOptionsItemSelected() -&gt; OutflowVt extends LocationAlgorithm -&gt; LocationAlgorithm extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1367,6 +1436,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.OutflowVt" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*OutflowVt.onOptionsItemSelected() -&gt; OutflowVt extends LocationAlgorithm -&gt; LocationAlgorithm extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1387,6 +1457,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Qtc" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*Qtc.onOptionsItemSelected() -&gt; Qtc extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1406,6 +1477,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ReferenceList" destination="org.epstudios.epmobile.About" method="">
     <comment>*ReferenceList.onOptionsItemSelected() -&gt; ReferenceList extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1426,6 +1498,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ReferenceList" destination="org.epstudios.epmobile.CmsIcd" method="">
     <comment>ReferenceList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; ReferenceList.icdCalculator() -&gt; startActivity()</comment>
@@ -1441,10 +1514,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ReferenceList" destination="org.epstudios.epmobile.Entrainment" method="">
     <comment>ReferenceList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; ReferenceList.entrainment() -&gt; startActivity()</comment>
@@ -1460,10 +1534,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ReferenceList" destination="org.epstudios.epmobile.NormalEpValues" method="">
     <comment>ReferenceList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; ReferenceList.normalEpValues() -&gt; startActivity()</comment>
@@ -1479,10 +1554,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ReferenceList" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*ReferenceList.onOptionsItemSelected() -&gt; ReferenceList extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1503,6 +1579,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.RiskScoreList" destination="org.epstudios.epmobile.About" method="">
     <comment>*RiskScoreList.onOptionsItemSelected() -&gt; RiskScoreList extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1523,6 +1600,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.RiskScoreList" destination="org.epstudios.epmobile.Hcm" method="">
     <comment>RiskScoreList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; RiskScoreList.hcmScore() -&gt; startActivity()</comment>
@@ -1538,10 +1616,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.RiskScoreList" destination="org.epstudios.epmobile.IcdRisk" method="">
     <comment>RiskScoreList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; RiskScoreList.IcdRiskScore() -&gt; startActivity()</comment>
@@ -1557,10 +1636,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.RiskScoreList" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*RiskScoreList.onOptionsItemSelected() -&gt; RiskScoreList extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1581,6 +1661,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.RiskScoreList" destination="org.epstudios.epmobile.SyncopeRiskScoreList" method="">
     <comment>RiskScoreList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; RiskScoreList.syncopeRiskScores() -&gt; startActivity()</comment>
@@ -1596,10 +1677,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Rwpt" destination="org.epstudios.epmobile.About" method="">
     <comment>*Rwpt.onOptionsItemSelected() -&gt; Rwpt extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1619,6 +1701,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.ShortQt" destination="org.epstudios.epmobile.About" method="">
     <comment>*ShortQt.onOptionsItemSelected() -&gt; extends EpDiagnosisActivity -&gt; EpDiagnosisActivity.onOptionsItemSelected() -&gt; EpDiagnosisActivity extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1639,6 +1722,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.SyncopeRiskScoreList" destination="org.epstudios.epmobile.About" method="">
     <comment>*SyncopeRiskScoreList.onOptionsItemSelected() -&gt; SyncopeRiskScoreList extends EpRiskScoreListActivity -&gt; EpRiskScoreListActivity.onOptionsItemSelected() -&gt; EpRiskScoreListActivity extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1661,6 +1745,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.SyncopeRiskScoreList" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*SyncopeRiskScoreList.onOptionsItemSelected() -&gt; SyncopeRiskScoreList extends EpRiskScoreListActivity -&gt; EpRiskScoreListActivity.onOptionsItemSelected() -&gt; EpRiskScoreListActivity extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1683,6 +1768,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Vereckei" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*Vereckei.onOptionsItemSelected() -&gt; Vereckei extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1702,6 +1788,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.VtList" destination="org.epstudios.epmobile.EpiVt" method="">
     <comment>VtList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; VtList.epicardialVt() -&gt; startActivity()</comment>
@@ -1717,10 +1804,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.VtList" destination="org.epstudios.epmobile.MitralAnnularVt" method="">
     <comment>VtList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; VtList.mitralAnnularVt() -&gt; startActivity()</comment>
@@ -1736,10 +1824,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.VtList" destination="org.epstudios.epmobile.OutflowVt" method="">
     <comment>VtList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; VtList.outflowTractVt() -&gt; startActivity()</comment>
@@ -1755,10 +1844,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Warfarin" destination="org.epstudios.epmobile.About" method="">
     <comment>*Warfarin.onOptionsItemSelected() -&gt; Warfarin extends EpDrugCalculatorActivity -&gt; EpDrugCalculatorActivity.onOptionsItemSelected() -&gt; EpDrugCalculatorActivity extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1780,6 +1870,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Warfarin" destination="org.epstudios.epmobile.DoseTable" method="">
     <comment>Warfarin.onCreate() -&gt; View.setOnClickListener() -&gt; *Warfarin.onClick() -&gt; calculateResult() -&gt; displayResult() -&gt; displayDoses() -&gt; startActivity()</comment>
@@ -1797,10 +1888,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.Warfarin" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*Warfarin.onOptionsItemSelected() -&gt; Warfarin extends EpDrugCalculatorActivity -&gt; EpDrugCalculatorActivity.onOptionsItemSelected() -&gt; EpDrugCalculatorActivity extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1822,6 +1914,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WctAlgorithmList" destination="org.epstudios.epmobile.About" method="">
     <comment>*WctAlgorithmList.onOptionsItemSelected() -&gt; WctAlgorithmList extends EpDiagnosisListActivity -&gt; EpDiagnosisListActivity.onOptionsItemSelected() -&gt; EpDiagnosisListActivity extends EpListActivity -&gt; EpListActivity.onOptionsItemSelected() -&gt; EpListActivity extends EpMainListActivity -&gt; EpMainListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1844,6 +1937,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WctAlgorithmList" destination="org.epstudios.epmobile.Brugada" method="">
     <comment>WpwAlgorithmList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; WpwAlgorithmList.brugadaAlgorithm() -&gt; startActivity()</comment>
@@ -1859,10 +1953,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WctAlgorithmList" destination="org.epstudios.epmobile.Rwpt" method="">
     <comment>WpwAlgorithmList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; WpwAlgorithmList.ultraSimpleBrugadaAlgorithm() -&gt; startActivity()</comment>
@@ -1878,10 +1973,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WctAlgorithmList" destination="org.epstudios.epmobile.Vereckei" method="">
     <comment>WpwAlgorithmList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; WpwAlgorithmList.vereckiAlgorithm() -&gt; startActivity()</comment>
@@ -1897,10 +1993,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WctAlgorithmList" destination="org.epstudios.epmobile.WctMorphologyCriteria" method="">
     <comment>WpwAlgorithmList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; WpwAlgorithmList.morphologyCriteria() -&gt; startActivity()</comment>
@@ -1916,10 +2013,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WctMorphologyCriteria" destination="org.epstudios.epmobile.About" method="">
     <comment>*WctMorphologyCriteria.onOptionsItemSelected() -&gt; WctMorphologyCriteria extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1939,6 +2037,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WpwAlgorithmList" destination="org.epstudios.epmobile.AvAnnulusMap" method="">
     <comment>WpwAlgorithmList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; WpwAlgorithmList.avAnnulusMap() -&gt; startActivity()</comment>
@@ -1954,10 +2053,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WpwAlgorithmList" destination="org.epstudios.epmobile.WpwArruda" method="">
     <comment>WpwAlgorithmList.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; WpwAlgorithmList.arrudaAlgorithm() -&gt; startActivity()</comment>
@@ -1973,10 +2073,11 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WpwArruda" destination="org.epstudios.epmobile.About" method="">
     <comment>*WpwArruda.onOptionsItemSelected() -&gt; WpwArruda extends LocationAlgorithm -&gt; LocationAlgorithm extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -1997,6 +2098,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WpwArruda" destination="org.epstudios.epmobile.AvAnnulusMap" method="">
     <comment>WpwArruda.onCreate() -&gt; View.setOnClickListener() -&gt; WpwArruda.onClick() -&gt; getYesResult() -&gt; gotoStep() -&gt; showResult() -&gt; AlertDialog.setButton() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; WpwArruda.showMap() -&gt; startActivity()</comment>
@@ -2016,10 +2118,13 @@
       <analyzeScope>
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
-        <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
+        <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-location1, String-location2, String-message" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="org.epstudios.epmobile.WpwArruda" destination="org.epstudios.epmobile.Prefs" method="">
     <comment>*WpwArruda.onOptionsItemSelected() -&gt; WpwArruda extends LocationAlgorithm -&gt; LocationAlgorithm extends EpActivity -&gt; EpActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -2040,5 +2145,6 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
 </root>

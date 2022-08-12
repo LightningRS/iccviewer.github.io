@@ -20,9 +20,10 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="true" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.HomeActivity" method="xxx">
     <comment>HomeActivity.onCreate() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *MainActivity.onCreate() -&gt; LocalBroadcastManager.sendBroadcast()</comment>
@@ -42,6 +43,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.farmerbb.taskbar.KILL_HOME_ACTIVITY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.IconPackActivity" method="xxx">
     <comment>MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; new AppearanceFragment() -&gt; FragmentTransaction.commit() -&gt; AppearanceFragment.onActivityCreated() -&gt; Preference.setOnPreferenceClickListener() -&gt; *AppearanceFragment.onPreferenceClick() -&gt; startActivityForResult()</comment>
@@ -63,6 +67,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.ImportSettingsActivity" method="xxx">
     <comment>*MainActivity.onCreate() -&gt; startActivity()</comment>
@@ -80,6 +85,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.InvisibleActivityFreeform" method="xxx">
     <comment>MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; SwitchCompat.setOnCheckedChangeListener() -&gt; *SwitchCompat.OnCheckedChangeListener.onChecked() -&gt; MainActivity.startTaskbarService() -&gt; U.startFreeformHack() -&gt; launchAppLowerRight() -&gt; Context.startActivity()</comment>
@@ -102,6 +108,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-check_multiwindow" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_LAUNCH_ADJACENT; FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_LAUNCH_ADJACENT | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.SelectAppActivity" method="xxx">
     <comment>MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; new AboutFragment() -&gt; FragmentTransaction.commit() -&gt; AboutFragment.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; AboutFragment.onPreferenceClick() -&gt; new GeneralFragment() -&gt; FragmentTransaction.commit() -&gt; GeneralFragment.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *GeneralFragment.onPreferenceClick() -&gt; startActivity()</comment>
@@ -125,6 +135,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.ShortcutActivity" method="xxx">
     <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; ShortcutInfo.Builder.setIntent() -&gt; ShortcutManager.setDynamicShortcuts()</comment>
@@ -145,6 +156,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="android.intent.action.MAIN" />
+      <IntentField type="extra" value="boolean-is_launching_shortcut" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.activity.StartTaskbarActivity" method="xxx">
     <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; ShortcutInfo.Builder.setIntent() -&gt; ShortcutManager.setDynamicShortcuts()</comment>
@@ -165,6 +180,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Boolean-is_launching_shortcut" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.service.DashboardService" method="xxx">
     <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; startTaskbarService() -&gt; startService()</comment>
@@ -184,6 +202,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.service.NotificationService" method="xxx">
     <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; startTaskbarService() -&gt; startService()</comment>
@@ -203,6 +222,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.service.StartMenuService" method="xxx">
     <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; startTaskbarService() -&gt; startService()</comment>
@@ -222,6 +242,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.MainActivity" destination="com.farmerbb.taskbar.service.TaskbarService" method="xxx">
     <comment>*MainActivity.onCreate() -&gt; proceedWithAppLaunch() -&gt; startTaskbarService() -&gt; startService()</comment>
@@ -241,6 +262,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.ContextMenuActivity" destination="com.farmerbb.taskbar.activity.DummyActivity" method="">
     <comment>ContextMenuActivity.onBackPressed() -&gt; generateMenu() -&gt; Preference.setOnPreferenceClickListener() -&gt; *ContextMenuActivity.onPreferenceClick() -&gt; startActivity()</comment>
@@ -261,6 +283,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-uninstall, long-user_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.ContextMenuActivity" destination="com.farmerbb.taskbar.service.StartMenuService" method="">
     <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *ContextMenuActivity.onPause() -&gt; finish() -&gt; LocalBroadcastManager.sendBroadcast()</comment>
@@ -281,6 +306,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.farmerbb.taskbar.TOGGLE_START_MENU_ALT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.HomeActivity" destination="com.farmerbb.taskbar.activity.DummyActivity" method="">
     <comment>HomeActivity.onCreate() -&gt; GestureDetector.setOnDoubleTapListener() -&gt; *GestureDetector.OnDoubleTapListener.onDoubleTap() -&gt; U.lockDevice() -&gt; Context.startActivity()</comment>
@@ -300,6 +328,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-device_admin" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.ImportSettingsActivity" destination="com.farmerbb.taskbar.MainActivity" method="">
     <comment>ImportSettingsActivity.onCreate() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *ImportSettingsActivity.onReceive() -&gt; startActivity()</comment>
@@ -318,6 +350,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.ImportSettingsActivity" destination="com.farmerbb.taskbar.receiver.SendSettingsReceiver" method="">
     <comment>*ImportSettingsActivity.onCreate() -&gt; sendBroadcast()</comment>
@@ -337,12 +372,16 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.farmerbb.taskbar.RECEIVE_SETTINGS" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.InvisibleActivityFreeform" destination="com.farmerbb.taskbar.activity.InvisibleActivityAlt" method="">
     <comment>*InvisibleActivityFreeform.onCreate() -&gt; Handler.postDelayed() -&gt; U.launchAppMaximized() -&gt; launchMode2() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/InvisibleActivityFreeform.java" start="117" end="117" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/InvisibleActivityFreeform.java" start="123" end="123" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/InvisibleActivityFreeform.java" start="131" end="132" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/InvisibleActivityFreeform.java" start="135" end="135" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/util/U.java" start="514" end="514" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/util/U.java" start="448" end="448" />
@@ -358,12 +397,17 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-power_button_warning" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.InvisibleActivityFreeform" destination="com.farmerbb.taskbar.activity.dark.InvisibleActivityAltDark" method="">
     <comment>*InvisibleActivityFreeform.onCreate() -&gt; Handler.postDelayed() -&gt; U.launchAppMaximized() -&gt; launchMode2() -&gt; Context.startActivity()</comment>
     <callLines>
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/InvisibleActivityFreeform.java" start="117" end="117" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/InvisibleActivityFreeform.java" start="126" end="126" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/activity/InvisibleActivityFreeform.java" start="131" end="132" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/activity/InvisibleActivityFreeform.java" start="135" end="135" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/util/U.java" start="514" end="514" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/util/U.java" start="448" end="448" />
@@ -379,6 +423,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-power_button_warning" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.InvisibleActivityFreeform" destination="com.farmerbb.taskbar.service.DashboardService" method="">
     <comment>*InvisibleActivityFreeform.onStart() -&gt; startService()</comment>
@@ -396,6 +444,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.InvisibleActivityFreeform" destination="com.farmerbb.taskbar.service.StartMenuService" method="">
     <comment>*InvisibleActivityFreeform.onStart() -&gt; startService()</comment>
@@ -413,6 +462,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.activity.InvisibleActivityFreeform" destination="com.farmerbb.taskbar.service.TaskbarService" method="">
     <comment>*InvisibleActivityFreeform.onStart() -&gt; startService()</comment>
@@ -430,6 +480,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.BootReceiver" destination="com.farmerbb.taskbar.service.NotificationService" method="">
     <comment>*BootReceiver.onReceive() -&gt; Context.startService()</comment>
@@ -447,6 +498,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.BootReceiver" destination="com.farmerbb.taskbar.service.TaskbarService" method="">
     <comment>*BootReceiver.onReceive() -&gt; Context.startService()</comment>
@@ -464,6 +516,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.PackageUpgradeReceiver" destination="com.farmerbb.taskbar.service.NotificationService" method="">
     <comment>*PackageUpgradeReceiver.onReceive() -&gt; Context.startService()</comment>
@@ -481,6 +534,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.ReceiveSettingsReceiver" destination="com.farmerbb.taskbar.activity.ImportSettingsActivity" method="">
     <comment>ImportSettingsActivity.onCreate() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *ReceiveSettingsReceiver.onReceive() -&gt; LocalBroadcastManager.sendBroadcast()</comment>
@@ -499,6 +553,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.farmerbb.taskbar.IMPORT_FINISHED" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.SendSettingsReceiver" destination="com.farmerbb.taskbar.receiver.ReceiveSettingsReceiver" method="">
     <comment>*SendSettingsReceiver.onReceive() -&gt; Context.sendBroadcast()</comment>
@@ -519,6 +576,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.farmerbb.taskbar.SEND_SETTINGS" />
+      <IntentField type="extra" value="String-preferences, String[]-blacklist_labels, String[]-blacklist_package_names, String[]-blocked_apps_component_names, String[]-blocked_apps_labels, String[]-blocked_apps_package_names, String[]-pinned_apps_component_names, String[]-pinned_apps_labels, String[]-pinned_apps_package_names, String[]-top_apps_labels, String[]-top_apps_package_names, long[]-pinned_apps_user_ids" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.ShowHideTaskbarReceiver" destination="com.farmerbb.taskbar.activity.InvisibleActivity" method="">
     <comment>InvisibleActivity.onCreate() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *ShowHideTaskbarReceiver.onReceive() -&gt; LocalBroadcastManager.sendBroadcast()</comment>
@@ -537,6 +598,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.farmerbb.taskbar.START_MENU_DISAPPEARING" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.StartReceiver" destination="com.farmerbb.taskbar.service.DashboardService" method="">
     <comment>*StartReceiver.onReceive() -&gt; Context.startService()</comment>
@@ -554,6 +618,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.receiver.StartReceiver" destination="com.farmerbb.taskbar.service.NotificationService" method="">
     <comment>*StartReceiver.onReceive() -&gt; Context.stopService()</comment>
@@ -571,6 +636,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.DashboardService" destination="com.farmerbb.taskbar.activity.DashboardActivity" method="">
     <comment>DashboardService.onCreate() -&gt; drawDashboard() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *DashboardService.toggleReceiver.onReceive() -&gt; DashboardService.toggleDashboard() -&gt; showDashboard() -&gt; startActivity()</comment>
@@ -581,6 +647,7 @@
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="114" end="114" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="303" end="303" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="325" end="325" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="333" end="334" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="340" end="340" />
     </callLines>
     <tags>
@@ -594,6 +661,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.DashboardService" destination="com.farmerbb.taskbar.activity.dark.DashboardActivityDark" method="">
     <comment>DashboardService.onCreate() -&gt; drawDashboard() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *DashboardService.toggleReceiver.onReceive() -&gt; DashboardService.toggleDashboard() -&gt; showDashboard() -&gt; startActivity()</comment>
@@ -604,6 +672,7 @@
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="114" end="114" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="303" end="303" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="328" end="328" />
+      <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="333" end="334" />
       <line src="/app/src/main/java/com/farmerbb/taskbar/service/DashboardService.java" start="340" end="340" />
     </callLines>
     <tags>
@@ -617,6 +686,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.StartMenuService" destination="com.farmerbb.taskbar.activity.ContextMenuActivity" method="xxx">
     <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartMenuService.openContextMenu() -&gt; Handler.postDelayed() -&gt; StartMenuService.startActivity()</comment>
@@ -639,6 +711,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-is_overflow_menu, boolean-launched_from_start_menu, int-x, int-y" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.StartMenuService" destination="com.farmerbb.taskbar.activity.InvisibleActivity" method="xxx">
     <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *StartMenuService.toggleReceiver.onReceive() -&gt; StartMenuService.toggleStartMenu() -&gt; showStartMenu() -&gt; U.launchAppMaximized() -&gt; launchMode2() -&gt; Context.startActivity()</comment>
@@ -663,6 +739,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.StartMenuService" destination="com.farmerbb.taskbar.activity.InvisibleActivityAlt" method="xxx">
     <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; LocalBroadcastManager.registerReceiver() -&gt; *StartMenuService.toggleReceiver.onReceive() -&gt; StartMenuService.toggleStartMenu() -&gt; showStartMenu() -&gt; U.launchAppMaximized() -&gt; launchMode2() -&gt; Context.startActivity()</comment>
@@ -687,6 +766,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.farmerbb.taskbar.service.StartMenuService" destination="com.farmerbb.taskbar.activity.dark.ContextMenuActivityDark" method="xxx">
     <comment>StartMenuService.onCreate() -&gt; drawStartMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; StartMenuService.openContextMenu() -&gt; Handler.postDelayed() -&gt; StartMenuService.startActivity()</comment>
@@ -709,5 +791,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true">
+      <IntentField type="extra" value="boolean-is_overflow_menu, boolean-launched_from_start_menu, int-x, int-y" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
 </root>

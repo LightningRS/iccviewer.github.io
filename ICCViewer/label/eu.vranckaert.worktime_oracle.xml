@@ -18,6 +18,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.HomeActivity" destination="eu.vranckaert.worktime.activities.account.AccountLoginActivity" method="">
     <comment>*HomeActivity.onOptionsItemSelected() -&gt; launchActivity() -&gt; startActivity()</comment>
@@ -36,6 +37,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.HomeActivity" destination="eu.vranckaert.worktime.activities.preferences.PreferencesActivity" method="">
     <comment>HomeActivity.onCreate() -&gt; setContentView() -&gt; R.layout.activity_home.home_activity_module_preferences.onClick -&gt; *HomeActivity.onPreferencesClick() -&gt; launchActivity() -&gt; startActivity()</comment>
@@ -56,6 +58,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.HomeActivity" destination="eu.vranckaert.worktime.activities.projects.ManageProjectsActivity" method="">
     <comment>HomeActivity.onCreate() -&gt; setContentView() -&gt; R.layout.activity_home.home_activity_module_projects_tasks.onClick -&gt; *HomeActivity.onProjectsClick() -&gt; launchActivity() -&gt; startActivity()</comment>
@@ -76,6 +79,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.HomeActivity" destination="eu.vranckaert.worktime.activities.reporting.ReportingCriteriaActivity" method="">
     <comment>HomeActivity.onCreate() -&gt; setContentView() -&gt; R.layout.activity_home.home_activity_module_reporting.onClick -&gt; *HomeActivity.onReportingClick() -&gt; launchActivity() -&gt; startActivity()</comment>
@@ -96,6 +100,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.HomeActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationListActivity" method="">
     <comment>HomeActivity.onCreate() -&gt; setContentView() -&gt; R.layout.activity_home.home_activity_module_time_registrations.onClick -&gt; *HomeActivity.onTimeRegistrationsClick() -&gt; launchActivity() -&gt; startActivity()</comment>
@@ -116,6 +121,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.about.AboutActivity" destination="eu.vranckaert.worktime.utils.donations.DonationsActivity" method="">
     <comment>AboutActivity.onCreate() -&gt; createElementList() -&gt; new AboutListElement() -&gt; AboutActivity.addClickEvent() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; AboutListElement.getIntent() -&gt; AboutActivity.startActivity()</comment>
@@ -156,6 +162,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.account.AccountLoginActivity" destination="eu.vranckaert.worktime.activities.account.AccountRegisterActivity" method="">
     <comment>AccountLoginActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AccountLoginActivity.startActivityForResult()</comment>
@@ -174,6 +181,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.account.AccountProfileActivity" destination="eu.vranckaert.worktime.activities.account.AccountSyncHistoryActivity" method="">
     <comment>AccountProfileActivity.onCreate() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; AccountProfileActivity.startActivity()</comment>
@@ -192,6 +200,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.account.AccountProfileActivity" destination="eu.vranckaert.worktime.activities.account.AccountSyncService" method="">
     <comment>*AccountProfileActivity.onOptionsItemSelected() -&gt; startService()</comment>
@@ -209,6 +218,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.account.AccountProfileActivity" destination="eu.vranckaert.worktime.activities.preferences.AccountSyncPreferencesActivity" method="">
     <comment>*AccountProfileActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -226,12 +236,13 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.notifcationbar.StatusBarSplitActionHandleActivity" destination="eu.vranckaert.worktime.broadcastreceiver.SplitBroadCastReceiver" method="">
     <comment>*StatusBarSplitActionHandleActivity.onCreate() -&gt; launchTimeRegistrationActionsDialog() -&gt; sendBroadcast()</comment>
     <callLines>
       <line src="/src/eu/vranckaert/worktime/activities/notifcationbar/StatusBarSplitActionHandleActivity.java" start="44" end="44" />
-      <line src="/src/eu/vranckaert/worktime/activities/notifcationbar/StatusBarSplitActionHandleActivity.java" start="50" end="51" />
+      <line src="/src/eu/vranckaert/worktime/activities/notifcationbar/StatusBarSplitActionHandleActivity.java" start="50" end="52" />
       <line src="/src/eu/vranckaert/worktime/constants/Constants.java" start="243" end="243" />
       <line src="/AndroidManifest.xml" start="60" end="64" />
       <line src="/src/eu/vranckaert/worktime/activities/notifcationbar/StatusBarSplitActionHandleActivity.java" start="53" end="53" />
@@ -247,6 +258,10 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="eu.vranckaert.worktime.time_registration_action_split" />
+      <IntentField type="extra" value="Serializable-timeRegistration" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.preferences.BackupPreferencesActivity" destination="eu.vranckaert.worktime.activities.backup.BackupRestoreInfoActivity" method="">
     <comment>BackupPreferencesActivity.onCreate() -&gt; BackupPreferencesActivity extends GenericPreferencesActivity -&gt; GenericPreferencesActivity.onCreate() -&gt; addPreferencesFromResource() -&gt; getPreferenceResourceId() -&gt; BackupPreferencesActivity.getPreferenceResourceId() -&gt; *R.xml.preference_backup.PreferenceScreen.intent</comment>
@@ -266,9 +281,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="eu.vranckaert.worktime.BACKUP_DOC" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.preferences.BackupPreferencesActivity" destination="eu.vranckaert.worktime.activities.backup.BackupSendFromSDActivity" method="">
     <comment>BackupPreferencesActivity.onCreate() -&gt; BackupPreferencesActivity extends GenericPreferencesActivity -&gt; GenericPreferencesActivity.onCreate() -&gt; addPreferencesFromResource() -&gt; getPreferenceResourceId() -&gt; BackupPreferencesActivity.getPreferenceResourceId() -&gt; *R.xml.preference_backup.PreferenceScreen.intent</comment>
@@ -288,9 +306,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="eu.vranckaert.worktime.SD_BACKUP_SEND" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.preferences.BackupPreferencesActivity" destination="eu.vranckaert.worktime.activities.backup.BackupToSDActivity" method="">
     <comment>BackupPreferencesActivity.onCreate() -&gt; BackupPreferencesActivity extends GenericPreferencesActivity -&gt; GenericPreferencesActivity.onCreate() -&gt; addPreferencesFromResource() -&gt; getPreferenceResourceId() -&gt; BackupPreferencesActivity.getPreferenceResourceId() -&gt; *R.xml.preference_backup.PreferenceScreen.intent</comment>
@@ -310,9 +331,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="eu.vranckaert.worktime.SD_BACKUP_DATA" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.preferences.BackupPreferencesActivity" destination="eu.vranckaert.worktime.activities.backup.RestoreFromSDActivity" method="">
     <comment>BackupPreferencesActivity.onCreate() -&gt; BackupPreferencesActivity extends GenericPreferencesActivity -&gt; GenericPreferencesActivity.onCreate() -&gt; addPreferencesFromResource() -&gt; getPreferenceResourceId() -&gt; BackupPreferencesActivity.getPreferenceResourceId() -&gt; *R.xml.preference_backup.PreferenceScreen.intent</comment>
@@ -332,9 +356,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="true" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="eu.vranckaert.worktime.SD_RESTORE_DATA" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.preferences.BackupPreferencesActivity" destination="eu.vranckaert.worktime.utils.file.DirectoryPicker" method="">
     <comment>BackupPreferencesActivity.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; startActivityForResult()</comment>
@@ -352,6 +379,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-startDir, boolean-allowCreateDir, boolean-onlyDirs" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.preferences.PreferencesActivity" destination="eu.vranckaert.worktime.activities.preferences.BackupPreferencesActivity" method="">
     <comment>PreferencesActivity.onCreate() -&gt; createPreferences() -&gt; createCategoryButton() -&gt; new Preference() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; PreferencesActivity.startActivity()</comment>
@@ -455,6 +485,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.preferences.PreferencesActivity" destination="eu.vranckaert.worktime.activities.preferences.ResetPreferencesActivity" method="">
     <comment>PreferencesActivity.onCreate() -&gt; createPreferences() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; PreferencesActivity.startActivity()</comment>
@@ -474,6 +505,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.preferences.PreferencesActivity" destination="eu.vranckaert.worktime.activities.preferences.TimeRegistrationsPreferencesActivity" method="">
     <comment>PreferencesActivity.onCreate() -&gt; createPreferences() -&gt; createCategoryButton() -&gt; new Preference() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; PreferencesActivity.startActivity()</comment>
@@ -513,6 +545,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-project" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.projects.ManageProjectsActivity" destination="eu.vranckaert.worktime.activities.projects.CopyProjectActivity" method="">
     <comment>*ManageProjectsActivity.onContextItemSelected() -&gt; openCopyProjectActivity() -&gt; startActivityForResult()</comment>
@@ -531,6 +566,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-project" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.projects.ManageProjectsActivity" destination="eu.vranckaert.worktime.activities.projects.ProjectDetailsActivity" method="">
     <comment>*ManageProjectsActivity.onContextItemSelected() -&gt; openProjectDetailActivity() -&gt; startActivityForResult()</comment>
@@ -549,6 +587,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-project" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.projects.ProjectDetailsActivity" destination="eu.vranckaert.worktime.activities.projects.AddEditProjectActivity" method="">
     <comment>*ProjectDetailsActivity.onOptionsItemSelected() -&gt; openAddTaskActivity() -&gt; startActivityForResult()</comment>
@@ -567,6 +608,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-project" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.projects.ProjectDetailsActivity" destination="eu.vranckaert.worktime.activities.reporting.ReportingCriteriaActivity" method="">
     <comment>*ProjectDetailsActivity.onOptionsItemSelected() -&gt; openAddTaskActivity() -&gt; startActivityForResult()</comment>
@@ -585,6 +629,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-project" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.projects.ProjectDetailsActivity" destination="eu.vranckaert.worktime.activities.tasks.AddEditTaskActivity" method="">
     <comment>*ProjectDetailsActivity.onOptionsItemSelected() -&gt; openAddTaskActivity() -&gt; startActivityForResult()</comment>
@@ -603,6 +650,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-project" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.projects.SelectProjectActivity" destination="eu.vranckaert.worktime.activities.projects.AddEditProjectActivity" method="">
     <comment>SelectProjectActivity.onCreate() -&gt; showSelectionDialog() -&gt; AlertDialog.Builder.setSingleChoiceItems() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; SelectProjectActivity.startActivityForResult()</comment>
@@ -622,6 +672,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.reporting.ReportingCriteriaActivity" destination="eu.vranckaert.worktime.activities.reporting.ReportingResultActivity" method="">
     <comment>*ReportingCriteriaActivity.onOptionsItemSelected() -&gt; generateReport() -&gt; startActivity()</comment>
@@ -640,6 +691,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-dataGrouping, Serializable-dataOrder, Serializable-displayDuration, Serializable-project, Serializable-task, Serializable-timeRegistrationEndDate, Serializable-timeRegistrationStartDate" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.reporting.ReportingResultActivity" destination="eu.vranckaert.worktime.activities.reporting.ReportingExportActivity" method="">
     <comment>*ReportingResultActivity.onOptionsItemSelected() -&gt; save() -&gt; startActivity()</comment>
@@ -658,6 +712,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-exportDTO" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationDeleteActivity" method="">
     <comment>*TimeRegistrationActionActivity.onCreate() -&gt; handleTimeRegistrationAction() -&gt; startActivityForResult()</comment>
@@ -676,6 +733,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationDetailActivity" method="">
     <comment>*TimeRegistrationActionActivity.onCreate() -&gt; handleTimeRegistrationAction() -&gt; startActivityForResult()</comment>
@@ -694,6 +754,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration, Serializable-timeRegistrationNext, Serializable-timeRegistrationPrevious" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationEditEndTimeActivity" method="">
     <comment>*TimeRegistrationActionActivity.onCreate() -&gt; handleTimeRegistrationAction() -&gt; startActivityForResult()</comment>
@@ -712,6 +775,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration, Serializable-timeRegistrationNext" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationEditProjectAndTaskActivity" method="">
     <comment>*TimeRegistrationActionActivity.onCreate() -&gt; handleTimeRegistrationAction() -&gt; startActivityForResult()</comment>
@@ -730,6 +796,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationEditStartTimeActivity" method="">
     <comment>*TimeRegistrationActionActivity.onCreate() -&gt; handleTimeRegistrationAction() -&gt; startActivityForResult()</comment>
@@ -748,6 +817,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration, Serializable-timeRegistrationPrevious" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationPunchOutActivity" method="">
     <comment>*TimeRegistrationActionActivity.onCreate() -&gt; handleTimeRegistrationAction() -&gt; startActivityForResult()</comment>
@@ -766,6 +838,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration, boolean-timeRegistrationStartNew" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationRestartActivity" method="">
     <comment>*TimeRegistrationActionActivity.onCreate() -&gt; handleTimeRegistrationAction() -&gt; startActivityForResult()</comment>
@@ -784,6 +859,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationSetCommentActivity" method="">
     <comment>*TimeRegistrationActionActivity.onCreate() -&gt; handleTimeRegistrationAction() -&gt; startActivityForResult()</comment>
@@ -802,6 +880,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration, String-timeRegistrationComment" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationSplitActivity" method="">
     <comment>*TimeRegistrationActionActivity.onCreate() -&gt; handleTimeRegistrationAction() -&gt; startActivityForResult()</comment>
@@ -820,6 +901,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationDetailActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationActionActivity" method="">
     <comment>*TimeRegistrationDetailActivity.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
@@ -837,6 +921,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationEditProjectAndTaskActivity" destination="eu.vranckaert.worktime.activities.tasks.AddEditTaskActivity" method="">
     <comment>TimeRegistrationEditProjectAndTaskActivity.onCreateDialog() -&gt; AlertDialog.Builder.setSingleChoiceItems() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; TimeRegistrationEditProjectAndTaskActivity.startActivityForResult()</comment>
@@ -856,6 +943,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-project" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationListActivity" destination="eu.vranckaert.worktime.activities.reporting.ReportingCriteriaActivity" method="">
     <comment>*TimeRegistrationListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -873,6 +963,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationListActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationAddActivity" method="">
     <comment>*TimeRegistrationListActivity.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -890,6 +981,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationListActivity" destination="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationDetailActivity" method="">
     <comment>TimeRegistrationListActivity.onCreate() -&gt; ListView.setOnItemClickListener() -&gt; *ListView.OnItemClickListener.onItemClick() -&gt; TimeRegistrationListActivity.startActivityForResult()</comment>
@@ -908,6 +1000,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-timeRegistration, Serializable-timeRegistrationNext, Serializable-timeRegistrationPrevious" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationPunchInActivity" destination="eu.vranckaert.worktime.activities.projects.SelectProjectActivity" method="">
     <comment>*TimeRegistrationPunchInActivity.onCreate() -&gt; showProjectChooser() -&gt; startActivityForResult()</comment>
@@ -926,6 +1021,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-widgetId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.timeregistrations.TimeRegistrationPunchInActivity" destination="eu.vranckaert.worktime.activities.tasks.SelectTaskActivity" method="">
     <comment>*TimeRegistrationPunchInActivity.onCreate() -&gt; showTaskChooser() -&gt; startActivityForResult()</comment>
@@ -944,6 +1042,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-widgetId, boolean-onlySelect" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.widget.Configuration2x1Activity" destination="eu.vranckaert.worktime.activities.projects.SelectProjectActivity" method="">
     <comment>*Configuration2x1Activity.onCreate() -&gt; startActivityForResult()</comment>
@@ -961,6 +1062,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-widgetId" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.activities.widget.Configuration2x1Activity" destination="eu.vranckaert.worktime.activities.tasks.SelectTaskActivity" method="">
     <comment>*Configuration2x1Activity.onActivityResult() -&gt; startActivityForResult()</comment>
@@ -978,6 +1082,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-widgetId, boolean-enableSelectNoneOption" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x1_ProjectTask" destination="eu.vranckaert.worktime.activities.HomeActivity" method="">
     <comment>*WorkTimeWidgetProvider_2x1_ProjectTask.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.setContentIntent() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
@@ -1022,6 +1129,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_HISTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x1_ProjectTask" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarPunchOutHandleActivity" method="">
     <comment>*WorkTimeWidgetProvider_2x1_ProjectTask.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
@@ -1044,6 +1154,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_HISTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x1_ProjectTask" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarSplitActionHandleActivity" method="">
     <comment>*WorkTimeWidgetProvider_2x1_ProjectTask.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
@@ -1066,6 +1179,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_HISTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x2_Project" destination="eu.vranckaert.worktime.activities.HomeActivity" method="">
     <comment>*WorkTimeWidgetProvider_2x2_Project.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.setContentIntent() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
@@ -1111,6 +1227,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_HISTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x2_Project" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarPunchOutHandleActivity" method="">
     <comment>*WorkTimeWidgetProvider_2x2_Project.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
@@ -1133,6 +1252,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_HISTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="eu.vranckaert.worktime.providers.WorkTimeWidgetProvider_2x2_Project" destination="eu.vranckaert.worktime.activities.notifcationbar.StatusBarSplitActionHandleActivity" method="">
     <comment>*WorkTimeWidgetProvider_2x2_Project.onUpdate() -&gt; new StatusBarNotificationServiceImpl() -&gt; StatusBarNotificationServiceImpl.addOrUpdateNotification() -&gt; setStatusBarNotification() -&gt; NotificationCompat2.Builder.addAction() -&gt; NotificationCompat2.BigTextStyle() -&gt; NotificationManager.notify()</comment>
@@ -1155,5 +1277,8 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_HISTORY" />
+    </IntentFields>
   </OracleEdge>
 </root>

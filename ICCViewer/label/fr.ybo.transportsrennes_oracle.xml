@@ -19,6 +19,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.TransportsRennes" destination="fr.ybo.transportsrennes.activity.bus.BusRennes" method="">
     <comment>TransportsRennes.onCreate() -&gt; setContentView() -&gt; R.layout.main.fragment_dashboard -&gt; DashboardFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -38,6 +39,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.TransportsRennes" destination="fr.ybo.transportsrennes.activity.bus.ListArretByPosition" method="">
     <comment>TransportsRennes.onCreate() -&gt; setContentView() -&gt; R.layout.main.fragment_dashboard -&gt; DashboardFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -57,6 +59,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.TransportsRennes" destination="fr.ybo.transportsrennes.activity.itineraires.ItineraireRequete" method="">
     <comment>TransportsRennes.onCreate() -&gt; setContentView() -&gt; R.layout.main.fragment_dashboard -&gt; DashboardFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -76,6 +79,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.TransportsRennes" destination="fr.ybo.transportsrennes.activity.parkrelais.ListParkRelais" method="">
     <comment>TransportsRennes.onCreate() -&gt; setContentView() -&gt; R.layout.main.fragment_dashboard -&gt; DashboardFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -95,6 +99,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.TransportsRennes" destination="fr.ybo.transportsrennes.activity.pointsdevente.ListPointsDeVente" method="">
     <comment>*TransportsRennes.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -112,6 +117,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.TransportsRennes" destination="fr.ybo.transportsrennes.activity.velos.ListStationsByPosition" method="">
     <comment>TransportsRennes.onCreate() -&gt; setContentView() -&gt; R.layout.main.fragment_dashboard -&gt; DashboardFragment.onCreateView() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; startActivity()</comment>
@@ -131,6 +137,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.alerts.DetailAlert" destination="fr.ybo.transportsrennes.activity.velos.ListStationsFavoris" method="">
     <comment>*DetailAlert.onOptionsItemSelected() -&gt; DetailAlert extends BaseSimpleActivity -&gt; BaseSimpleActivity.onOptionsItemSelected() -&gt; BaseActivity.onOptionsItemSelected() -&gt; AbstractTransportsApplication.onOptionsItemSelected() -&gt; TransportsRennesApplication.onOptionsItemSelected() -&gt; Activity.startActivity()</comment>
@@ -160,7 +167,7 @@
       <line src="/TransportsCommun/src/fr/ybo/transportscommun/activity/commun/BaseActivity.java" start="182" end="182" />
       <line src="/TransportsCommun/src/fr/ybo/transportscommun/activity/commun/BaseActivity.java" start="39" end="40" />
       <line src="/TransportsRennes/AndroidManifest.xml" start="32" end="32" />
-      <line src="/TransportsRennes/AndroidManifest.xml" start="213" end="213" />
+      <line src="/TransportsRennes/src/fr/ybo/transportsrennes/application/TransportsRennesApplication.java" start="213" end="213" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -232,6 +239,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.bus.ListFavorisForNoGroup" destination="fr.ybo.transportsrennes.activity.velos.ListStationsFavoris" method="">
     <comment>*ListFavorisForNoGroup.onOptionsItemSelected() -&gt; ListFavorisForNoGroup extends BaseSimpleActivity -&gt; BaseSimpleActivity.onOptionsItemSelected() -&gt; BaseActivity.onOptionsItemSelected() -&gt; AbstractTransportsApplication.onOptionsItemSelected() -&gt; TransportsRennesApplication.onOptionsItemSelected() -&gt; Activity.startActivity()</comment>
@@ -271,6 +279,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-ligne, Serializable-macroDirection, String-direction, String-idArret, String-nomArret" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.bus.ListNotif" destination="fr.ybo.transportsrennes.activity.velos.ListStationsFavoris" method="">
     <comment>*ListNotif.onOptionsItemSelected() -&gt; ListNotif extends BaseSimpleActivity -&gt; BaseSimpleActivity.onOptionsItemSelected() -&gt; BaseActivity.onOptionsItemSelected() -&gt; AbstractTransportsApplication.onOptionsItemSelected() -&gt; TransportsRennesApplication.onOptionsItemSelected() -&gt; Activity.startActivity()</comment>
@@ -313,6 +324,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.bus.TabFavoris" destination="fr.ybo.transportsrennes.activity.loading.LoadingActivity" method="">
     <comment>*TabFavoris.onCreate() -&gt; TabFavoris extends AbstractTabFavoris -&gt; AbstractTabFavoris.loadFavoris() -&gt; startActivity()</comment>
@@ -332,6 +344,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-operation" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.itineraires.ItineraireRequete" destination="fr.ybo.transportsrennes.activity.bus.TabFavoris" method="">
     <comment>*ItineraireRequete.onOptionsItemSelected() -&gt; ItineraireRequete extends BaseSimpleActivity -&gt; BaseSimpleActivity.onOptionsItemSelected() -&gt; BaseActivity.onOptionsItemSelected() -&gt; AbstractTransportsApplication.onOptionsItemSelected() -&gt; TransportsRennesApplication.onOptionsItemSelected() -&gt; Activity.startActivity()</comment>
@@ -373,6 +388,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-itinerairesReponse, int-heureDepart" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.itineraires.ItineraireRequete" destination="fr.ybo.transportsrennes.activity.velos.ListStationsFavoris" method="">
     <comment>*ItineraireRequete.onOptionsItemSelected() -&gt; ItineraireRequete extends BaseSimpleActivity -&gt; BaseSimpleActivity.onOptionsItemSelected() -&gt; BaseActivity.onOptionsItemSelected() -&gt; AbstractTransportsApplication.onOptionsItemSelected() -&gt; TransportsRennesApplication.onOptionsItemSelected() -&gt; Activity.startActivity()</comment>
@@ -398,7 +416,7 @@
   <OracleEdge source="fr.ybo.transportsrennes.activity.timeo.TimeoActivity" destination="fr.ybo.transportsrennes.activity.bus.DetailArret" method="">
     <comment>*TimeoActivity.onCreate() -&gt; startActivity()</comment>
     <callLines>
-      <line src="/TransportsRennes/src/fr/ybo/transportsrennes/activity/timeo/TimeoActivity.java" start="58" end="61" />
+      <line src="/TransportsRennes/src/fr/ybo/transportsrennes/activity/timeo/TimeoActivity.java" start="58" end="60" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -411,6 +429,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-favori" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.velos.ListStationsByPosition" destination="fr.ybo.transportsrennes.activity.bus.TabFavoris" method="">
     <comment>*ListStationsByPosition.onOptionsItemSelected() -&gt; ListStationsByPosition extends BaseSimpleActivity -&gt; BaseSimpleActivity.onOptionsItemSelected() -&gt; BaseActivity.onOptionsItemSelected() -&gt; AbstractTransportsApplication.onOptionsItemSelected() -&gt; TransportsRennesApplication.onOptionsItemSelected() -&gt; Activity.startActivity()</comment>
@@ -491,13 +512,17 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-favori" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_BROUGHT_TO_FRONT | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_HISTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.widgets.TransportsWidget" destination="fr.ybo.transportsrennes.services.UpdateTimeService" method="">
     <comment>*TransportsWidget.onUpdate() -&gt; Context.startService()</comment>
     <callLines>
       <line src="/TransportsRennes/src/fr/ybo/transportsrennes/activity/widgets/TransportsWidget.java" start="40" end="40" />
       <line src="/TransportsRennes/src/fr/ybo/transportsrennes/services/UpdateTimeService.java" start="56" end="56" />
-      <line src="/TransportsRennes/AndroidManifest.xml" start="163" end="165" />
+      <line src="/TransportsRennes/AndroidManifest.xml" start="158" end="166" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="false" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -510,6 +535,9 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="fr.ybo.transportsrennes.action.UPDATE" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.widgets.TransportsWidget11" destination="fr.ybo.transportsrennes.activity.bus.DetailArret" method="">
     <comment>*TransportsWidget11.onReceive() -&gt; Context.startActivity()</comment>
@@ -527,6 +555,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-favori" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_BROUGHT_TO_FRONT | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_HISTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.widgets.TransportsWidget11" destination="fr.ybo.transportsrennes.services.UpdateTimeService" method="">
     <comment>*TransportsWidget11.onUpdate() -&gt; Context.startService()</comment>
@@ -546,6 +578,9 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="fr.ybo.transportsrennes.action.UPDATE" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.widgets.TransportsWidget21" destination="fr.ybo.transportsrennes.activity.bus.DetailArret" method="">
     <comment>*TransportsWidget21.onReceive() -&gt; Context.startActivity()</comment>
@@ -563,6 +598,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-favori" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_BROUGHT_TO_FRONT, FLAG_ACTIVITY_NEW_TASK;, FLAG_ACTIVITY_NO_HISTORY;" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.widgets.TransportsWidget21" destination="fr.ybo.transportsrennes.services.UpdateTimeService" method="">
     <comment>*TransportsWidget21.onUpdate() -&gt; Context.startService()</comment>
@@ -582,6 +621,9 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="fr.ybo.transportsrennes.action.UPDATE" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.widgets.TransportsWidgetLowRes" destination="fr.ybo.transportsrennes.activity.bus.DetailArret" method="">
     <comment>*TransportsWidgetLowRes.onReceive() -&gt; Context.startActivity()</comment>
@@ -599,6 +641,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-favori" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_BROUGHT_TO_FRONT | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_HISTORY" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.activity.widgets.TransportsWidgetLowRes" destination="fr.ybo.transportsrennes.services.UpdateTimeService" method="">
     <comment>*TransportsWidgetLowRes.onUpdate() -&gt; Context.startService()</comment>
@@ -618,6 +664,9 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="fr.ybo.transportsrennes.action.UPDATE" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.services.UpdateTimeService" destination="fr.ybo.transportsrennes.activity.bus.DetailArret" method="">
     <comment>UpdateTimeService.onCreate() -&gt; registerReceiver() -&gt; *BroadcastReceiver.onReceive() -&gt; UpdateTimeService.updateNotifs() -&gt; createNotification() -&gt; NotificationManager.notify()</comment>
@@ -638,6 +687,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-ligne, Serializable-macroDirection, String-direction, String-idArret, String-nomArret" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="fr.ybo.transportsrennes.services.UpdateTimeServiceReceiver" destination="fr.ybo.transportsrennes.services.UpdateTimeService" method="">
     <comment>*UpdateTimeServiceReceiver.onReceive() -&gt; Context.startService()</comment>
@@ -657,5 +709,8 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="fr.ybo.transportsrennes.action.UPDATE" />
+    </IntentFields>
   </OracleEdge>
 </root>

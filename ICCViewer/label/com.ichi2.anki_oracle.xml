@@ -24,6 +24,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.DeckPicker" method="">
     <comment>CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -45,6 +49,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.NoteEditor" method="">
     <comment>*CardBrowser.onOptionsItemSelected() -&gt; startActivityForResultWithAnimation() -&gt; CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -65,6 +73,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-CALLER, long-CARD_ID" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.Preferences" method="">
     <comment>CardBrowser.onCreate() -&gt; initNavigationDrawer() -&gt; CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -113,6 +125,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-index, long[]-cardList" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.Statistics" method="">
     <comment>CardBrowser.onCreate() -&gt; initNavigationDrawer() -&gt; CardBrowser extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -137,6 +153,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardBrowser" destination="com.ichi2.anki.services.NotificationService" method="">
     <comment>*CardBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
@@ -195,6 +215,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.CardTemplateEditor" destination="com.ichi2.anki.Previewer" method="">
     <comment>CardTemplateEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; onCollectionLoaded() -&gt; CardTemplateEditor extends AnkiActivity -&gt; CardTemplateEditor.onCollectionLoaded() -&gt; ViewPager.addOnPageChangeListener() -&gt; ViewPager.OnPageChangeListener.onPageSelected() -&gt; FragmentPagerAdapter.instantiateItem() -&gt; *CardTemplateFragment.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
@@ -218,6 +242,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-index, long[]-cardList" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.CardBrowser" method="">
     <comment>DeckPicker.onCreate() -&gt; initNavigationDrawer() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; DeckPicker.openCardBrowser() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -242,6 +269,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-defaultDeckId, long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.DeckOptions" method="">
     <comment>DeckPicker.onCreate() -&gt; DeckAdapter.setDeckLongClickListener() -&gt; View.OnLongClickListener.onLongClick() -&gt; DeckPickerContextMenu.newInstance() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.showDialogFragment() -&gt; FragmentManager.executePendingTransactions() -&gt; DeckPickerContextMenu.onCreateDialog() -&gt; MaterialDialog.Builder.itemsCallback() -&gt; *MaterialDialog.ListCallback.onSelection() -&gt; DeckPicker.showContextMenuDeckOptions() -&gt; AnkiActivity.startActivityWithAnimation() -&gt; startActivity()</comment>
@@ -267,6 +298,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-did" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.DeckPicker" method="">
     <comment>DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; startActivityWithAnimation() -&gt; startActivity()</comment>
@@ -288,6 +323,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.FilteredDeckOptions" method="">
     <comment>DeckPicker.onCreate() -&gt; DeckAdapter.setDeckLongClickListener() -&gt; View.OnLongClickListener.onLongClick() -&gt; DeckPickerContextMenu.newInstance() -&gt; AnkiActivity.showDialogFragment() -&gt; DeckPickerContextMenu.onCreateDialog() -&gt; MaterialDialog.Builder.itemsCallback() -&gt; *MaterialDialog.ListCallback.onSelection() -&gt; DeckPicker.showContextMenuDeckOptions() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityWithAnimation() -&gt; startActivity()</comment>
@@ -312,6 +351,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-did" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.Info" method="xxx">
     <comment>*DeckPicker.onCreate() -&gt; showStartupScreensAndDialogs() -&gt; startActivityForResultWithoutAnimation() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithoutAnimation() -&gt; startActivityForResult()</comment>
@@ -334,6 +377,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-infoType" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.ModelBrowser" method="">
     <comment>*DeckPicker.onOptionsItemSelected() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -354,6 +401,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.MyAccount" method="">
     <comment>DeckPicker.onResume() -&gt; sync() -&gt; showSyncErrorDialog() -&gt; AnkiActivity.showAsyncDialogFragment() -&gt; SyncErrorDialog.onCreateDialog() -&gt; MaterialDialog.Builder.callback() -&gt; *MaterialDialog.ButtonCallback.onPositive() -&gt; DeckPicker.loginToSyncServer() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -379,6 +429,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-notLoggedIn" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.NoteEditor" method="">
     <comment>DeckPicker.onCreate() -&gt; configureFloatingActionsMenu() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; DeckPicker.addNote() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -401,6 +455,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-CALLER" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.Preferences" method="">
     <comment>DeckPicker.onCreate() -&gt; initNavigationDrawer() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -448,6 +506,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.Statistics" method="">
     <comment>DeckPicker.onCreate() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -472,6 +533,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.StudyOptionsActivity" method="">
     <comment>DeckPicker.onOptionsItemSelected() -&gt; MaterialDialog.Builder.callback() -&gt; *MaterialDialog.ButtonCallback.onPositive() -&gt; DeckPicker.openStudyOptions() -&gt; DeckPicker extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -495,6 +559,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-withDeckOptions" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.DeckPicker" destination="com.ichi2.anki.services.NotificationService" method="">
     <comment>*DeckPicker.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
@@ -553,6 +621,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.IntentHandler" destination="com.ichi2.anki.DeckPicker" method="">
     <comment>*IntentHandler.onCreate() -&gt; startActivity()</comment>
@@ -568,9 +640,13 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="false" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="${action}" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelBrowser" destination="com.ichi2.anki.CardTemplateEditor" method="">
     <comment>ModelBrowser extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; ModelBrowser.onCollectionLoaded() -&gt; DeckTask.launchDeckTask() -&gt; execute() -&gt; DeckTask.TaskListener.onPostExecute() -&gt; ModelBrowser.fillModelList() -&gt; ModelBrowserContextMenu.newInstance() -&gt; *MaterialDialog.ListCallback.onSelection() -&gt; ModelBrowser.openTemplateEditor() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -596,6 +672,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-modelId" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelBrowser" destination="com.ichi2.anki.DeckPicker" method="">
     <comment>ModelBrowser extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; startActivityWithAnimation() -&gt; startActivity()</comment>
@@ -616,6 +696,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelBrowser" destination="com.ichi2.anki.ModelFieldEditor" method="">
     <comment>ModelBrowser extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; ModelBrowser.onCollectionLoaded() -&gt; DeckTask.launchDeckTask() -&gt; execute() -&gt; DeckTask.TaskListener.onPostExecute() -&gt; ModelBrowser.fillModelList() -&gt; ListView.setOnItemClickListener() -&gt; *AdapterView.OnItemClickListener.onItemClick() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -640,6 +724,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-title, long-noteTypeID" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelBrowser" destination="com.ichi2.anki.services.NotificationService" method="">
     <comment>*ModelBrowser.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
@@ -698,6 +786,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.ModelFieldEditor" destination="com.ichi2.anki.services.NotificationService" method="">
     <comment>*ModelFieldEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
@@ -756,6 +848,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.NoteEditor" destination="com.ichi2.anki.CardTemplateEditor" method="">
     <comment>NoteEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; NoteEditor.onCollectionLoaded() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NoteEditor.showCardTemplateEditor() -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -777,6 +873,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-modelId, long-noteId" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.NoteEditor" destination="com.ichi2.anki.DeckPicker" method="">
     <comment>NoteEditor extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; startActivityWithAnimation() -&gt; startActivity()</comment>
@@ -797,6 +897,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.NoteEditor" destination="com.ichi2.anki.NoteEditor" method="">
     <comment>*NoteEditor.onOptionsItemSelected() -&gt; NoteEditor extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -816,6 +920,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-CALLER, String-CONTENTS" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.NoteEditor" destination="com.ichi2.anki.multimediacard.activity.MultimediaEditFieldActivity" method="">
     <comment>NoteEditor extends AnkiActivity -&gt; AnkiActivity.onLoadFinished() -&gt; NoteEditor.onCollectionLoaded() -&gt; setNote() -&gt; populateEditFields() -&gt; setMMButtonListener() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; NoteEditor.startMultimediaFieldEditor() -&gt; AnkiActivity.startActivityForResultWithoutAnimation() -&gt; startActivityForResult()</comment>
@@ -842,6 +950,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-multim.card.ed.extra.field, Serializable-multim.card.ed.extra.whole.note, int-multim.card.ed.extra.field.index" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.NoteEditor" destination="com.ichi2.anki.services.NotificationService" method="">
     <comment>*NoteEditor.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
@@ -906,6 +1018,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Previewer" destination="com.ichi2.anki.DeckPicker" method="">
     <comment>Previewer extends AbstractFlashcardViewer -&gt; AbstractFlashcardViewer extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; startActivityWithAnimation() -&gt; startActivity()</comment>
@@ -928,6 +1044,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Previewer" destination="com.ichi2.anki.NoteEditor" method="">
     <comment>Previewer extends AbstractFlashcardViewer -&gt; AbstractFlashcardViewer.onCollectionLoaded() -&gt; initLayout() -&gt; *AbstractFlashcardViewer.MyGestureDetector.onFling() -&gt; AbstractFlashcardViewer.executeCommand() -&gt; editCard() -&gt; AbstractFlashcardViewer extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -953,6 +1073,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-CALLER" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Previewer" destination="com.ichi2.anki.Preferences" method="">
     <comment>Previewer extends AbstractFlashcardViewer -&gt; AbstractFlashcardViewer.onCreate() -&gt; AbstractFlashcardViewer extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1003,6 +1127,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Reviewer" destination="com.ichi2.anki.CardBrowser" method="">
     <comment>Reviewer extends AbstractFlashcardViewer -&gt; AbstractFlashcardViewer.onCreate() -&gt; AbstractFlashcardViewer extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; Reviewer.openCardBrowser() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1029,6 +1157,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-currentCard, long-defaultDeckId, long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Reviewer" destination="com.ichi2.anki.DeckOptions" method="">
     <comment>*Reviewer.onOptionsItemSelected() -&gt; Reviewer extends AbstractFlashcardViewer -&gt; AbstractFlashcardViewer extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1050,6 +1182,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Reviewer" destination="com.ichi2.anki.DeckPicker" method="">
     <comment>Reviewer extends AbstractFlashcardViewer -&gt; AbstractFlashcardViewer extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; startActivityWithAnimation() -&gt; startActivity()</comment>
@@ -1072,6 +1207,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Reviewer" destination="com.ichi2.anki.NoteEditor" method="">
     <comment>*Reviewer.onOptionsItemSelected() -&gt; addNote() -&gt; Reviewer extends AbstractFlashcardViewer -&gt; AbstractFlashcardViewer extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1094,6 +1233,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-CALLER" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Reviewer" destination="com.ichi2.anki.Preferences" method="">
     <comment>Reviewer extends AbstractFlashcardViewer -&gt; AbstractFlashcardViewer.onCreate() -&gt; AbstractFlashcardViewer extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1119,6 +1262,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Reviewer" destination="com.ichi2.anki.Statistics" method="">
     <comment>Reviewer extends AbstractFlashcardViewer -&gt; AbstractFlashcardViewer.onCreate() -&gt; AbstractFlashcardViewer extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1144,6 +1290,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Reviewer" destination="com.ichi2.anki.services.NotificationService" method="">
     <comment>*Reviewer.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
@@ -1207,6 +1357,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Statistics" destination="com.ichi2.anki.DeckPicker" method="">
     <comment>Statistics extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; startActivityWithAnimation() -&gt; startActivity()</comment>
@@ -1228,6 +1382,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Statistics" destination="com.ichi2.anki.Preferences" method="">
     <comment>Statistics.onCreate() -&gt; Statistics extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1252,6 +1410,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.Statistics" destination="com.ichi2.anki.Statistics" method="">
     <comment>Statistics.onCreate() -&gt; Statistics extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1276,6 +1437,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.CardBrowser" method="">
     <comment>StudyOptionsActivity.onCreate() -&gt; StudyOptionsActivity extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity.openCardBrowser() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1301,6 +1466,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.DeckOptions" method="">
     <comment>StudyOptionsActivity.onCreate() -&gt; loadStudyOptionsFragment() -&gt; StudyOptionsFragment.newInstance() -&gt; *onMenuItemClick() -&gt; Activity.startActivityForResult()</comment>
@@ -1320,6 +1489,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.DeckPicker" method="">
     <comment>StudyOptionsActivity extends NavigationDrawerActivity -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; *AnkiActivity.onLoadFinished() -&gt; onCollectionLoadError() -&gt; startActivityWithAnimation() -&gt; startActivity()</comment>
@@ -1341,6 +1511,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.FilteredDeckOptions" method="">
     <comment>*StudyOptionsActivity.onCreate() -&gt; loadStudyOptionsFragment() -&gt; StudyOptionsFragment.onMenuItemClick() -&gt; openFilteredDeckOptions() -&gt; startActivityForResult()</comment>
@@ -1362,6 +1536,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-defaultConfig" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.Preferences" method="">
     <comment>StudyOptionsActivity.onCreate() -&gt; StudyOptionsActivity extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1386,12 +1563,16 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.Reviewer" method="">
     <comment>*StudyOptionsActivity.onMenuItemClick() -&gt; openReviewer() -&gt; startActivity()</comment>
     <callLines>
       <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsFragment.java" start="292" end="292" />
-      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsFragment.java" start="234" end="234" />
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsFragment.java" start="228" end="228" />
+      <line src="/AnkiDroid/src/main/java/com/ichi2/anki/StudyOptionsFragment.java" start="233" end="234" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -1401,9 +1582,12 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="false" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="flag" value="FLAG_ACTIVITY_FORWARD_RESULT" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.Statistics" method="">
     <comment>StudyOptionsActivity.onCreate() -&gt; StudyOptionsActivity extends NavigationDrawerActivity -&gt; NavigationDrawerActivity.initNavigationDrawer() -&gt; DrawerLayout.addDrawerListener() -&gt; NavigationDrawerActivity.onNavigationItemSelected() -&gt; *ActionBarDrawerToggle.onDrawerClosed() -&gt; Handler.post() -&gt; NavigationDrawerActivity extends AnkiActivity -&gt; AnkiActivity.startActivityForResultWithAnimation() -&gt; startActivityForResult()</comment>
@@ -1428,6 +1612,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-selectedDeck" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.StudyOptionsActivity" destination="com.ichi2.anki.services.NotificationService" method="">
     <comment>*StudyOptionsActivity.onStop() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>
@@ -1486,6 +1674,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="boolean-collectionLoadError" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_CLEAR_TOP | FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_NO_ANIMATION" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.multimediacard.activity.MultimediaEditFieldActivity" destination="com.ichi2.anki.multimediacard.activity.LoadPronounciationActivity" method="">
     <comment>MultimediaEditFieldActivity.onCreate() -&gt; recreateEditingUi() -&gt; BasicControllerFactory.createControllerForField() -&gt; BasicTextFieldController.createUI() -&gt; createPronounceButton() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Activity.startActivityForResult()</comment>
@@ -1508,6 +1700,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-com.ichi2.anki.LoadPronounciationActivity.extra.source" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.anki.multimediacard.activity.MultimediaEditFieldActivity" destination="com.ichi2.anki.multimediacard.activity.TranslationActivity" method="xxx">
     <comment>MultimediaEditFieldActivity.onCreate() -&gt; recreateEditingUi() -&gt; BasicControllerFactory.createControllerForField() -&gt; BasicTextFieldController.createUI() -&gt; createTranslateButton() -&gt; View.setOnClickListener() -&gt; View.OnClickListener.onClick() -&gt; PickStringDialogFragment.setOnClickListener() -&gt; PickStringDialogFragment.show() -&gt; onCreateDialog() -&gt; AlertDialog.Builder.setAdapter() -&gt; *DialogInterface.OnClickListener.onClick() -&gt; startTranslationWithGlosbe() -&gt; MultimediaEditFieldActivity.startActivityForResult()</comment>
@@ -1535,6 +1730,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-translation.activity.extra.source" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.widget.AddNoteWidget" destination="com.ichi2.anki.NoteEditor" method="">
     <comment>*AddNoteWidget.onUpdate() -&gt; AppWidgetManager.updateAppWidget()</comment>
@@ -1552,6 +1750,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-CALLER" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.ichi2.widget.AnkiDroidWidgetSmall" destination="com.ichi2.anki.services.NotificationService" method="">
     <comment>*AnkiDroidWidgetSmall.onUpdate() -&gt; WidgetStatus.update() -&gt; UpdateDeckStatusAsyncTask.execute() -&gt; onPostExecute() -&gt; startService()</comment>

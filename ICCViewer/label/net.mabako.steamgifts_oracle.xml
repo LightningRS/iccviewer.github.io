@@ -19,6 +19,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-discussion" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.DetailActivity" destination="net.mabako.sgtools.SGToolsLoginActivity" method="">
     <comment>*DetailActivity.onCreate() -&gt; initLayout() -&gt; loadFragment() -&gt; SGToolsDetailFragment.newInstance() -&gt; onCreateView() -&gt; LoadGiveawayTask.execute() -&gt; onPostExecute() -&gt; SGToolsDetailFragment.requestLogin() -&gt; startActivityForResult()</comment>
@@ -38,9 +41,10 @@
         <componentScope isActivity="true" isService="false" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="true" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.DetailActivity" destination="net.mabako.steamgifts.activities.DetailActivity" method="">
     <comment>DetailActivity.onCreate() -&gt; initLayout() -&gt; loadFragment() -&gt; SGToolsDetailFragment.newInstance() -&gt; new SGToolsDetailFragment() -&gt; *SGToolsDetailFragment.onCreateView() -&gt; LoadGiveawayTask.execute() -&gt; onPostExecute() -&gt; SGToolsDetailFragment.onCheckSuccessful() -&gt; Activity.startActivityForResult()</comment>
@@ -62,6 +66,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-giveaway" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.DetailActivity" destination="net.mabako.steamgifts.activities.LoginActivity" method="">
     <comment>DetailActivity.onCreate() -&gt; initLayout() -&gt; loadFragment() -&gt; DiscussionDetailFragment.newInstance() -&gt; new DiscussionDetailFragment() -&gt; DetailActivity extends CommonActivity -&gt; CommonActivity.loadFragment() -&gt; CommonActivity extends BaseActivity -&gt; BaseActivity.loadFragment() -&gt; FragmentTransaction.commitAllowingStateLoss() -&gt; DiscussionDetailFragment.onCreate() -&gt; DiscussionDetailFragment extends DetailFragment -&gt; DetailFragment.onCreate() -&gt; DetailFragment extends ListFragment -&gt; ListFragment.onCreate() -&gt; DetailFragment.createAdapter() -&gt; new CommentAdapter() -&gt; ListFragment.onCreateView() -&gt; setupListViewAdapter() -&gt; RecyclerView.setAdapter() -&gt; CommentAdapter extends EndlessAdapter -&gt; EndlessAdapter.onCreateViewHolder() -&gt; CommentAdapter.onCreateActualViewHolder() -&gt; new GiveawayCardViewHolder() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; CommonActivity.requestLogin() -&gt; startActivityForResult()</comment>
@@ -98,6 +105,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.DetailActivity" destination="net.mabako.steamgifts.activities.SyncActivity" method="">
     <comment>DetailActivity.onCreate() -&gt; initLayout() -&gt; loadFragment() -&gt; DiscussionDetailFragment.newInstance() -&gt; new DiscussionDetailFragment() -&gt; DetailActivity extends CommonActivity -&gt; CommonActivity.loadFragment() -&gt; CommonActivity extends BaseActivity -&gt; BaseActivity.loadFragment() -&gt; FragmentTransaction.commitAllowingStateLoss() -&gt; DiscussionDetailFragment.onCreate() -&gt; DiscussionDetailFragment extends DetailFragment -&gt; DetailFragment.onCreate() -&gt; DetailFragment extends ListFragment -&gt; ListFragment.onCreate() -&gt; DetailFragment.createAdapter() -&gt; new CommentAdapter() -&gt; ListFragment.onCreateView() -&gt; setupListViewAdapter() -&gt; RecyclerView.setAdapter() -&gt; CommentAdapter extends EndlessAdapter -&gt; EndlessAdapter.onCreateViewHolder() -&gt; CommentAdapter.onCreateActualViewHolder() -&gt; new GiveawayCardViewHolder() -&gt; CommentAdapter.onBindActualViewHolder() -&gt; GiveawayCardViewHolder.setFrom() -&gt; View.setOnClickListener() -&gt; *View.OnClickListener.onClick() -&gt; Activity.startActivityForResult()</comment>
@@ -134,6 +142,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.DetailActivity" destination="net.mabako.steamgifts.activities.WriteCommentActivity" method="">
     <comment>DetailActivity.onCreate() -&gt; initLayout() -&gt; loadFragment() -&gt; DiscussionDetailFragment.newInstance() -&gt; new DiscussionDetailFragment() -&gt; DiscussionDetailFragment.onCreateOptionsMenu() -&gt; MenuItem.setOnMenuItemClickListener() -&gt; *MenuItem.OnMenuItemClickListener.onMenuItemClick() -&gt; DiscussionDetailFragment extends DetailFragment -&gt; DetailFragment.requestComment() -&gt; Activity.startActivityForResult()</comment>
@@ -144,7 +153,9 @@
       <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DiscussionDetailFragment.java" start="217" end="217" />
       <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DiscussionDetailFragment.java" start="220" end="220" />
       <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DiscussionDetailFragment.java" start="41" end="41" />
-      <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DetailFragment.java" start="200" end="206" />
+      <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DetailFragment.java" start="200" end="205" />
+      <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DetailFragment.java" start="222" end="223" />
+      <line src="/core/src/main/java/net/mabako/steamgifts/fragments/DetailFragment.java" start="206" end="206" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="true" isImplicitCallback="true" isDynamicCallBack="true" isStaticCallBack="false" />
@@ -157,6 +168,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="Serializable-parent, String-giveaway-id, String-path, String-title, String-xsrf-token" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.MainActivity" destination="net.mabako.steamgifts.activities.AboutActivity" method="">
     <comment>MainActivity.onCreate() -&gt; new Navbar() -&gt; MainActivity extends CommonActivity -&gt; DrawerBuilder.withOnDrawerItemClickListener() -&gt; *Drawer.OnDrawerItemClickListener.onItemClick() -&gt; Activity.startActivity()</comment>
@@ -177,6 +191,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.MainActivity" destination="net.mabako.steamgifts.activities.DetailActivity" method="">
     <comment>MainActivity.onCreate() -&gt; new Navbar() -&gt; MainActivity extends CommonActivity -&gt; CustomAccountHeaderBuilder.withOnAccountHeaderProfileImageListener() -&gt; *AccountHeader.OnAccountHeaderProfileImageListener.onProfileImageClick() -&gt; Activity.startActivity()</comment>
@@ -197,6 +212,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-user" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.MainActivity" destination="net.mabako.steamgifts.activities.LoginActivity" method="">
     <comment>MainActivity.onCreate() -&gt; new Navbar() -&gt; MainActivity extends CommonActivity -&gt; DrawerBuilder.withOnDrawerItemClickListener() -&gt; *Drawer.OnDrawerItemClickListener.onItemClick() -&gt; CommonActivity.requestLogin() -&gt; startActivityForResult()</comment>
@@ -218,6 +236,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.MainActivity" destination="net.mabako.steamgifts.activities.SettingsActivity" method="">
     <comment>MainActivity.onCreate() -&gt; new Navbar() -&gt; MainActivity extends CommonActivity -&gt; DrawerBuilder.withOnDrawerItemClickListener() -&gt; *Drawer.OnDrawerItemClickListener.onItemClick() -&gt; Activity.startActivityForResult()</comment>
@@ -238,6 +257,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.MainActivity" destination="net.mabako.steamgifts.intro.IntroActivity" method="">
     <comment>MainActivity.onCreate() -&gt; new Navbar() -&gt; MainActivity extends CommonActivity -&gt; DrawerBuilder.withOnDrawerItemClickListener() -&gt; *Drawer.OnDrawerItemClickListener.onItemClick() -&gt; IntroActivity.showIntro() -&gt; Activity.startActivity()</comment>
@@ -259,6 +279,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-type" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.activities.SettingsActivity" destination="net.mabako.steamgifts.activities.SyncActivity" method="">
     <comment>SettingsActivity.onCreate() -&gt; new SettingsFragment() -&gt; FragmentTransaction.commit() -&gt; SettingsFragment.onCreate() -&gt; Preference.setOnPreferenceClickListener() -&gt; *Preference.OnPreferenceClickListener.onPreferenceClick() -&gt; Activity.startActivity()</comment>
@@ -278,6 +301,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="net.mabako.steamgifts.receivers.CheckForNewMessages" destination="net.mabako.steamgifts.receivers.CheckForWonGiveaways" method="">
     <comment>*CheckForNewMessages.onReceive() -&gt; new LoadMessagesTask() -&gt; new Check() -&gt; LoadMessagesTask.execute() -&gt; onPostExecute() -&gt; ILoadItemsListener.addItems() -&gt; Check implements ILoadItemsListener -&gt; Check.addItems() -&gt; Context.sendBroadcast()</comment>
@@ -297,5 +321,6 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
 </root>

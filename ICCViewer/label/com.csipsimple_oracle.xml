@@ -22,9 +22,12 @@
         <componentScope isActivity="false" isService="true" isBroadCast="true" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="true" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="false" isContext="true" />
+        <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.csipsimple.codecs.action.REGISTER_CODEC" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.plugins.telephony.CallHandler" method="">
     <comment>SipHome.onCreate() -&gt; new TabsAdapter() -&gt; TabsAdapter.addTab() -&gt; *TabsAdapter.getItem() -&gt; FragmentTransaction.commit() -&gt; DialerFragment.placeCall() -&gt; placeCallWithOption() -&gt; CallHandlerPlugin.loadFrom() -&gt; Context.sendOrderedBroadcast()</comment>
@@ -51,6 +54,10 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.csipsimple.phone.action.HANDLE_CALL" />
+      <IntentField type="extra" value="String-android.intent.extra.PHONE_NUMBER" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.service.Downloader" method="">
     <comment>SipHome.onCreate() -&gt; Thread.start() -&gt; SipHome.asyncSanityCheck() -&gt; NightlyUpdater.getUpdaterPopup() -&gt; new UpdaterPopupLauncher() -&gt; runOnUiThread() -&gt; NightlyUpdater.UpdaterPopupLauncher.run() -&gt; AlertDialog.Builder.setPositiveButton() -&gt; *View.OnClickListener.onClick() -&gt; startService()</comment>
@@ -74,6 +81,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="data" value="http://nightlies.csipsimple.com/trunk/CSipSimple-r${version}-trunk.apk" />
+      <IntentField type="extra" value="Parcelable-pendingIntent, String-outpath, String-title, boolean-checkMd5, int-icon" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.service.SipService" method="">
     <comment>*SipHome.onResume() -&gt; startSipService() -&gt; Thread.start() -&gt; Thread.run() -&gt; SipHome.startService()</comment>
@@ -94,6 +105,10 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.csipsimple.service.SipService" />
+      <IntentField type="extra" value="Parcelable-outgoing_activity" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.ui.PickupSipUri" method="">
     <comment>SipHome.onCreate() -&gt; ConversationsListFragment.onContextItemSelected() -&gt; viewDetails() -&gt; *FragmentTransaction.commit() -&gt; MessageFragment.chooseSipUri() -&gt; startActivityForResult()</comment>
@@ -116,6 +131,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.ui.account.AccountsEditList" method="">
     <comment>*SipHome.onOptionsItemSelected() -&gt; startActivity()</comment>
@@ -142,6 +158,7 @@
       <line src="/src/com/csipsimple/ui/calllog/CallLogListFragment.java" start="184" end="184" />
       <line src="/src/com/csipsimple/ui/calllog/CallLogListFragment.java" start="187" end="187" />
       <line src="/src/com/csipsimple/ui/calllog/CallLogListFragment.java" start="280" end="282" />
+      <line src="/src/com/csipsimple/ui/calllog/CallLogDetailsFragment.java" start="66" end="66" />
     </callLines>
     <tags>
       <entryMethod isLifeCycle="false" isImplicitCallback="true" isDynamicCallBack="false" isStaticCallBack="false" />
@@ -154,14 +171,19 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long[]-EXTRA_CALL_LOG_IDS" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.ui.messages.MessageActivity" method="">
-    <comment>SipHome.onAttachFragment() -&gt; *ConversationsListFragment.onVisibilityChanged() -&gt; Thread.start() -&gt; Thread.run() -&gt; runOnUiThread() -&gt; Thread.run() -&gt; ConversationsListFragment.viewDetails() -&gt; startActivity()</comment>
+    <comment>SipHome.onAttachFragment() -&gt; *ConversationsListFragment.onVisibilityChanged() -&gt; Thread.start() -&gt; Thread.run() -&gt; runOnUiThread() -&gt; Thread.run() -&gt; ConversationsListFragment.viewDetails() -&gt; MessageFragment.getArguments() -&gt; startActivity()</comment>
     <callLines>
       <line src="/src/com/csipsimple/ui/SipHome.java" start="432" end="432" />
       <line src="/src/com/csipsimple/ui/messages/ConversationsListFragment.java" start="380" end="380" />
       <line src="/src/com/csipsimple/ui/messages/ConversationsListFragment.java" start="371" end="371" />
       <line src="/src/com/csipsimple/ui/messages/ConversationsListFragment.java" start="374" end="374" />
+      <line src="/src/com/csipsimple/ui/messages/ConversationsListFragment.java" start="169" end="169" />
+      <line src="/src/com/csipsimple/ui/messages/MessageFragment.java" start="235" end="241" />
       <line src="/src/com/csipsimple/ui/messages/ConversationsListFragment.java" start="185" end="187" />
     </callLines>
     <tags>
@@ -175,6 +197,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true">
+      <IntentField type="extra" value="String-sender, String-full_sender" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.ui.prefs.PrefsFast" method="">
     <comment>SipHome.onResume() -&gt; startSipService() -&gt; Thread.run() -&gt; *SipHome.postStartSipService() -&gt; startActivity()</comment>
@@ -193,9 +218,13 @@
         <componentScope isActivity="true" isService="true" isBroadCast="false" isDynamicBroadCast="false" />
         <nonComponentScope isFragment="false" isAdapter="false" isWidget="false" isOtherClass="false" />
         <methodScope isLibraryInvocation="false" isBasicInvocation="true" isAsyncInvocation="true" isListenerInvocation="false" isPolymorphic="false" />
-        <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="false" isContext="false" />
+        <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.csipsimple.ui.action.PREFS_FAST" />
+      <IntentField type="flag" value="FLAG_ACTIVITY_NEW_TASK" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.SipHome" destination="com.csipsimple.ui.prefs.hc.MainPrefs" method="">
     <comment>*SipHome.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
@@ -214,6 +243,9 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.csipsimple.ui.action.PREFS_GLOBAL" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.account.AccountsEditList" destination="com.csipsimple.wizards.BasePrefsWizard" method="">
     <comment>AccountsEditList.onCreate() -&gt; setContentView() -&gt; R.layout.accounts_view.list -&gt; *AccountsEditListFragment.onContextItemSelected() -&gt; showDetails() -&gt; startActivity()</comment>
@@ -233,6 +265,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-wizard, long-id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.account.AccountsEditList" destination="com.csipsimple.wizards.WizardChooser" method="">
     <comment>AccountsEditList.onCreate() -&gt; setContentView() -&gt; R.layout.accounts_view.list -&gt; *AccountsEditListFragment.onContextItemSelected() -&gt; startActivityForResult()</comment>
@@ -252,6 +287,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-android.intent.extra.UID" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.filters.AccountFilters" destination="com.csipsimple.ui.filters.EditFilter" method="">
     <comment>AccountFilters.onCreate() -&gt; setContentView() -&gt; R.layout.account_filters_view.list -&gt; *AccountFiltersListFragment.onContextItemSelected() -&gt; showDetails() -&gt; startActivity()</comment>
@@ -271,6 +309,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-account, long-android.intent.extra.UID" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.incall.InCallActivity" destination="com.csipsimple.service.SipService" method="">
     <comment>*InCallActivity.onCreate() -&gt; bindService()</comment>
@@ -288,6 +329,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.incall.InCallActivity" destination="com.csipsimple.ui.PickupSipUri" method="">
     <comment>InCallActivity.onCreate() -&gt; InCallControls.setOnTriggerListener() -&gt; *InCallActivity.onTrigger() -&gt; startActivityForResult()</comment>
@@ -306,6 +348,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-call_id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.incall.InCallActivity" destination="com.csipsimple.ui.incall.InCallMediaControl" method="">
     <comment>InCallActivity.onCreate() -&gt; InCallControls.setOnTriggerListener() -&gt; *InCallActivity.onTrigger() -&gt; startActivity()</comment>
@@ -324,6 +369,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.messages.MessageActivity" destination="com.csipsimple.ui.PickupSipUri" method="">
     <comment>MessageActivity.onCreate() -&gt; new MessageFragment() -&gt; FragmentTransaction.commit() -&gt; *MessageFragment.onClick() -&gt; chooseSipUri() -&gt; startActivityForResult()</comment>
@@ -344,6 +390,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.prefs.AudioTester" destination="com.csipsimple.service.SipService" method="">
     <comment>*AudioTester.onResume() -&gt; bindService()</comment>
@@ -361,6 +408,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.prefs.PrefsFilters" destination="com.csipsimple.ui.filters.AccountFilters" method="">
     <comment>PrefsFilters.onCreate() -&gt; PrefsFilters extends AccountsChooserListActivity -&gt; AccountsChooserListActivity.onCreate() -&gt; setContentView() -&gt; R.layout.accounts_chooser_view.listFragment -&gt; AccountsChooserListFragment.setOnAccountClickListener() -&gt; *AccountsChooserListFragment.onListItemClick() -&gt; AccountsChooserListFragment.OnAccountClickListener.onAccountClicked() -&gt; AccountsChooserListActivity implements AccountsChooserListFragment.OnAccountClickListener -&gt; PrefsFilters extends AccountsChooserListActivity -&gt; PrefsFilters.onAccountClicked() -&gt; startActivity()</comment>
@@ -387,6 +435,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-id, String-display_name, String-wizard" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.prefs.cupcake.MainPrefs" destination="com.csipsimple.ui.prefs.cupcake.PrefsLoaderActivity" method="">
     <comment>MainPrefs.onCreate() -&gt; getIntentForType() -&gt; new PrefGroup() -&gt; new PrefGroupAdapter() -&gt; MainPrefs.setListAdapter() -&gt; *MainPrefs.onListItemClick() -&gt; startActivity()</comment>
@@ -408,6 +459,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="int-preference_type" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.prefs.hc.MainPrefs" destination="com.csipsimple.ui.prefs.AudioTester" method="">
     <comment>*MainPrefs.onOptionsItemSelected() -&gt; PrefsLogic.onMainActivityOptionsItemSelected() -&gt; Context.startActivity()</comment>
@@ -426,6 +480,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.prefs.hc.MainPrefs" destination="com.csipsimple.ui.prefs.PrefsFast" method="">
     <comment>*MainPrefs.onBuildHeaders() -&gt; Header.intent</comment>
@@ -445,6 +500,9 @@
         <intentFieldScope isStaticVal="true" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.csipsimple.ui.action.PREFS_FAST" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.ui.prefs.hc.MainPrefs" destination="com.csipsimple.ui.prefs.PrefsFilters" method="">
     <comment>*MainPrefs.onBuildHeaders() -&gt; Header.intent</comment>
@@ -479,6 +537,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="long-id, String-display_name, String-wizard" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.csipsimple.wizards.BasePrefsWizard" destination="com.csipsimple.wizards.WizardChooser" method="">
     <comment>*BasePrefsWizard.onOptionsItemSelected() -&gt; startActivityForResult()</comment>
@@ -496,5 +557,6 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
 </root>

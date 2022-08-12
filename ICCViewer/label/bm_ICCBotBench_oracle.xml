@@ -26,6 +26,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="action.first.ctx" />
+      <IntentField type="category" value="category.ctx" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.iccbot.withCtx.Source1WithCtx" destination="com.iccbot.withCtx.Des2WithCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -52,6 +56,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="action.second.ctx" />
+      <IntentField type="category" value="category.ctx" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.iccbot.withCtx.Source2WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -76,6 +84,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="action.first.ctx" />
+      <IntentField type="category" value="category.ctx" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.iccbot.withCtx.Source2WithCtx" destination="com.iccbot.withCtx.Des2WithCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -100,6 +112,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="action.second.ctx" />
+      <IntentField type="category" value="category.ctx" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.iccbot.withCtx.Source3WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -124,6 +140,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="action.first.ctx" />
+      <IntentField type="category" value="category.ctx" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.iccbot.withCtx.Source4WithCtx" destination="com.iccbot.withCtx.Des2WithCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -148,6 +168,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="action.second.ctx" />
+      <IntentField type="category" value="category.ctx" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.iccbot.withCtx.Source5WithCtx" destination="com.iccbot.withCtx.Des1WithCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -172,6 +196,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="action.first.ctx" />
+      <IntentField type="category" value="category.ctx" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.iccbot.withFrag.Source1WithFrag" destination="com.iccbot.withFrag.Des1WithFrag" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -195,6 +223,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.iccbot.withFrag.Source2WithFrag" destination="com.iccbot.withFrag.Des2WithFrag" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -218,6 +247,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="com.iccbot.withFragCtx.SourceWithFragCtx" destination="com.iccbot.withFragCtx.Des1WithFragCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -244,6 +274,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="action.first.fragctx" />
+      <IntentField type="category" value="category.fragctx" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="com.iccbot.withFragCtx.SourceWithFragCtx" destination="com.iccbot.withFragCtx.Des2WithFragCtx" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -270,5 +304,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="true" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="action.second.fragctx" />
+      <IntentField type="category" value="category.fragctx" />
+    </IntentFields>
   </OracleEdge>
 </root>

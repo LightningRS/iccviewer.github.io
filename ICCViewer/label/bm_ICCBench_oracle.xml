@@ -20,6 +20,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.fgwei" />
+      <IntentField type="extra" value="String-id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_dynregister2) org.arguslab.icc_dynregister2.MainActivity" destination="(icc_dynregister2) org.arguslab.icc_dynregister2.MyReceiver" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; registerReceiver() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; StringBuilder.toString() -&gt; sendBroadcast()</comment>
@@ -41,6 +45,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="true" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="com.ksu" />
+      <IntentField type="extra" value="String-id" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_explicit1) org.arguslab.icc_explicit1.MainActivity" destination="(icc_explicit1) org.arguslab.icc_explicit1.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -64,6 +72,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_explicit_nosrc_nosink) org.arguslab.icc_explicit_nosrc_nosink.MainActivity" destination="(icc_explicit_nosrc_nosink) org.arguslab.icc_explicit_nosrc_nosink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -85,6 +96,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_explicit_nosrc_sink) org.arguslab.icc_explicit_nosrc_sink.MainActivity" destination="(icc_explicit_nosrc_sink) org.arguslab.icc_explicit_nosrc_sink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -106,6 +120,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_explicit_src_nosink) org.arguslab.icc_explicit_src_nosink.MainActivity" destination="(icc_explicit_src_nosink) org.arguslab.icc_explicit_src_nosink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -129,6 +146,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_explicit_src_sink) org.arguslab.icc_explicit_src_sink.MainActivity" destination="(icc_explicit_src_sink) org.arguslab.icc_explicit_src_sink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -152,6 +172,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_action) org.arguslab.icc_implicit_action.MainActivity" destination="(icc_implicit_action) org.arguslab.icc_implicit_action.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -176,6 +199,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="amandroid.impliciticctest_action.testaction" />
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_category) org.arguslab.icc_implicit_category.MainActivity" destination="(icc_implicit_category) org.arguslab.icc_implicit_category.FooActivity" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; startActivity()</comment>
@@ -196,6 +223,11 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="test" />
+      <IntentField type="category" value="amandroid.impliciticctest_Categories.testcategory1" />
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_data1) org.arguslab.icc_implicit_data1.MainActivity" destination="(icc_implicit_data1) org.arguslab.icc_implicit_data1.FooActivity" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; startActivity()</comment>
@@ -216,6 +248,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="data" value="amandroid://fgwei:4444" />
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_data2) org.arguslab.icc_implicit_data2.MainActivity" destination="(icc_implicit_data2) org.arguslab.icc_implicit_data2.FooActivity" method="xxx">
     <comment>MainActivity.onCreate() -&gt; requestPermissions() -&gt; *onRequestPermissionsResult() -&gt; leakImei() -&gt; startActivity()</comment>
@@ -236,6 +272,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-data" />
+      <IntentField type="type" value="test/type" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_mix1) org.arguslab.icc_implicit_mix1.FooActivity" destination="(icc_implicit_mix1) org.arguslab.icc_implicit_mix1.HookActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -258,6 +298,13 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="test_action2" />
+      <IntentField type="category" value="test_category3, test_category4" />
+      <IntentField type="data" value="amandroid://fgwei:8888/xxx/xxx.com" />
+      <IntentField type="extra" value="String-data" />
+      <IntentField type="type" value="test/type" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_mix1) org.arguslab.icc_implicit_mix1.MainActivity" destination="(icc_implicit_mix1) org.arguslab.icc_implicit_mix1.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -282,6 +329,13 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="test_action" />
+      <IntentField type="category" value="test_category1, test_category2" />
+      <IntentField type="data" value="amandroid://fgwei:8888/abc/def" />
+      <IntentField type="extra" value="String-data" />
+      <IntentField type="type" value="test/type" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_mix2) org.arguslab.icc_implicit_mix2.MainActivity" destination="(icc_implicit_mix2) org.arguslab.icc_implicit_mix2.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -306,6 +360,13 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="test_action" />
+      <IntentField type="category" value="test_category1, test_category2" />
+      <IntentField type="data" value="amandroid://fgwei:8888/abc/def" />
+      <IntentField type="extra" value="String-data" />
+      <IntentField type="type" value="test/type" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_nosrc_nosink) org.arguslab.icc_implicit_nosrc_nosink.MainActivity" destination="(icc_implicit_nosrc_nosink) org.arguslab.icc_implicit_nosrc_nosink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -328,6 +389,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="amandroid.impliciticctest_action.testaction" />
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_nosrc_sink) org.arguslab.icc_implicit_nosrc_sink.MainActivity" destination="(icc_implicit_nosrc_sink) org.arguslab.icc_implicit_nosrc_sink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -350,6 +415,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="amandroid.impliciticctest_action.testaction" />
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_src_nosink) org.arguslab.icc_implicit_src_nosink.MainActivity" destination="(icc_implicit_src_nosink) org.arguslab.icc_implicit_src_nosink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -374,6 +443,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="amandroid.impliciticctest_action.testaction" />
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_implicit_src_sink) org.arguslab.icc_implicit_src_sink.MainActivity" destination="(icc_implicit_src_sink) org.arguslab.icc_implicit_src_sink.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -398,6 +471,10 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="action" value="amandroid.impliciticctest_action.testaction" />
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_intentservice) org.arguslab.icc_intentservice.MainActivity" destination="(icc_intentservice) org.arguslab.icc_intentservice.MyIntentService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -421,6 +498,9 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="false" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields>
+      <IntentField type="extra" value="String-data" />
+    </IntentFields>
   </OracleEdge>
   <OracleEdge source="(icc_rpc_comprehensive) org.arguslab.icc_rpc_comprehensive.BarActivity" destination="(icc_rpc_comprehensive) org.arguslab.icc_rpc_comprehensive.RemoteService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -442,6 +522,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="(icc_rpc_comprehensive) org.arguslab.icc_rpc_comprehensive.FooActivity" destination="(icc_rpc_comprehensive) org.arguslab.icc_rpc_comprehensive.BarActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -464,6 +545,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="(icc_stateful) org.arguslab.icc_stateful.MainActivity" destination="(icc_stateful) org.arguslab.icc_stateful.FooActivity" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -486,6 +568,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="(rpc_localservice) org.arguslab.rpc_localservice.MainActivity" destination="(rpc_localservice) org.arguslab.rpc_localservice.LocalService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -507,6 +590,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="(rpc_messengerservice) org.arguslab.rpc_messengerservice.MainActivity" destination="(rpc_messengerservice) org.arguslab.rpc_messengerservice.MessengerService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -528,6 +612,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="(rpc_remoteservice) org.arguslab.rpc_remoteservice.MainActivity" destination="(rpc_remoteservice) org.arguslab.rpc_remoteservice.RemoteService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -549,6 +634,7 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
   <OracleEdge source="(rpc_returnsensitive) org.arguslab.rpc_returnsensitive.MainActivity" destination="(rpc_returnsensitive) org.arguslab.rpc_returnsensitive.LocalService" method="xxx">
     <correctness correctness="true" incorrectType="No." incorrectReason="" />
@@ -570,5 +656,6 @@
         <intentFieldScope isStaticVal="false" isStringOp="false" isNoExtra="true" isContext="false" />
       </analyzeScope>
     </tags>
+    <IntentFields isICCBotNoResult="true" />
   </OracleEdge>
 </root>
