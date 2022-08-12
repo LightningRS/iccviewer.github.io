@@ -363,6 +363,33 @@ $.extend(window.ICCTagViewer, {
                 return countEquals(flowId, [tagPath1, tagPath2], 1);
             }
         },
+        {
+            id: 'isNoExtra',
+            name: "Checker of no extra",
+            desc: "Whether extra appears in intent fields",
+            func: (flowId, comment) => {
+                const tagPath = 'analyzeScope.intentFieldScope.isNoExtra';
+                const sel = ICCTagViewer.tagSelect(flowId, tagPath);
+                const ifLines = $('#icc-flow-{0} .intent-field-line'.format(flowId));
+                let hasExtraFields = false;
+                ifLines.toArray().some(function(elem, i){
+                    const $elem = $(elem);
+                    const ifType = $elem.find('.intent-field-sel').val().trim();
+                    const ifVal = $elem.find('.intent-field-val').val().trim();
+                    if (ifType === 'extra' && ifVal !== '') {
+                        hasExtraFields = true;
+                        return true;
+                    }
+                });
+                return {
+                    autoFix: false,
+                    ignorable: false,
+                    error: sel === hasExtraFields,
+                    errorTags: [tagPath],
+                    type: 'isNoExtra'
+                }
+            }
+        },
 
         // {
         //     id: 'isListenerInvocation',

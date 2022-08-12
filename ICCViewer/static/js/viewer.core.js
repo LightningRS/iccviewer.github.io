@@ -15,8 +15,10 @@
  * @property {String} dest Destination of OracleEdge
  * @property {String} method Method name of OracleEdge
  * @property {String} comment Comment of OracleEdge
- * @property {null|HTMLElement} metaData Extra node(s) under OracleEdge
+ * @property {Boolean} intentFieldsIsICCBotNoResult is ICCBot has no intent fields resolution result
+ * @property {Object} intentFields Intent fields
  * @property {String} checkIgnore Ignored checkers' name
+ * @property {null|HTMLElement} metaData Extra node(s) under OracleEdge
  */
 
 /**
@@ -38,7 +40,10 @@ $.extend(window.ICCTagViewer.config, {
     supportLang: [
         { id: 'en-US', name: 'English' },
         { id: 'zh-CN', name: 'Chinese Simplified' },
-    ]
+    ],
+    allIntentFields: {
+        'action': "Action", 'category': "Category", 'flag': "Flag", 'data': "Data", 'type': "Type", 'extra': "Extra"
+    }
 });
 $.extend(window.ICCTagViewer, {
     tagsCnt: 0,
@@ -138,13 +143,16 @@ $.extend(window.ICCTagViewer, {
     /**
      * Check edge tag by comment
      * @param flowId {String} ICC flow ID
-     * @param $commentInput {jQuery} jQuery selector of ICC flow comment input
-     * @param $commentCheckDiv {jQuery} jQuery selector of ICC flow comment check div
+     * @param $container {jQuery} jQuery selector of ICC flow container
      */
-    checkTags: function(flowId, $commentInput, $commentCheckDiv) {
+    checkTags: function(flowId, $container) {
         const _this = this;
         if (!_this.checkers) return;
         if (!_this.getOption('checkTags', true)) return;
+
+        const $commentInput = $container.find('.icc-comment-edit');
+        const $commentCheckDiv = $container.find('.icc-tag-check-result');
+
         if (!_this.hasOption('enabledCheckers')) {
             if (_this.enabledCheckers.length < 1) {
                 $.each(_this.checkers, function(i, checker) {
@@ -273,6 +281,7 @@ $.extend(window.ICCTagViewer, {
             .attr('data-bs-target', '#{0}-content'.format(idPrefix))
             .attr('aria-expanded', false)
             .attr('aria-controls', '{0}-content'.format(idPrefix));
+        if (extraClass) $btn.addClass(extraClass + '-accordion-btn');
 
         if (extraClass === 'icc-flow') {
             // Update the height of comment textarea
@@ -293,6 +302,16 @@ $.extend(window.ICCTagViewer, {
             const $tagWarningIcon = $('<i class="text-danger ms-2 bi bi-exclamation-triangle-fill tag-warning-icon" />');
             $b.append($tagWarningIcon.hide());
             $btn.append('&nbsp;/&nbsp;').append($b);
+        } else if (extraClass === 'intent-fields') {
+            const $titleSpan = $('<span />');
+            $titleSpan.html(itemTitle);
+            $btn.append($titleSpan);
+            const $b = $('<b />');
+            $b.append($('<span class="fields-num text-primary">0</span>'));
+            $b.append("/" + Object.keys(this.config.allIntentFields).length);
+
+            const $noResultTip = $('<span class="text-primary iccbot-no-res-tip">(ICCBot has no result)</span>');
+            $btn.append('&nbsp;(').append($b).append(")&nbsp;").append($noResultTip.hide());
         } else {
             $btn.html(itemTitle);
         }
@@ -339,6 +358,124 @@ $.extend(window.ICCTagViewer, {
             $thisTagDiv = this.initSingleTag(tag);
         }
         $rootDiv.append($thisTagDiv);
+    },
+
+    updateIntentFieldSel: function($rootDiv) {
+        const noFields = Object.keys(this.config.allIntentFields);
+        $.each(this.config.allIntentFields, function(cFieldId, cFieldName) {
+            const cFieldHasSel = $rootDiv.find('option[value="' + cFieldId + '"]:selected').length > 0;
+            if (cFieldHasSel) noFields.splice($.inArray(cFieldId, noFields), 1);
+            $rootDiv.find('select').each(function(i, elem) {
+                const $sel = $(elem);
+                const $option = $sel.find('option[value="' + cFieldId +'"]');
+                if ($sel.val() !== cFieldId && cFieldHasSel) {
+                    $option.hide();
+                } else {
+                    $option.show();
+                }
+            });
+        });
+        $rootDiv.find('.has-if-input-hidden').val(
+            noFields.length < Object.keys(this.config.allIntentFields).length ? 'true' : 'false'
+        );
+        $rootDiv.find('.btn-add-field').prop('disabled', noFields.length < 1);
+        $rootDiv.find('.fields-num').html($rootDiv.find('select').length);
+
+        const $container = $rootDiv.closest('.basic-info').parent();
+        if ($container.find('.icc-tag-label').length > 0) {
+            const flowId = $container.attr('data-flow-id');
+            this.checkTags(flowId, $container);
+        }
+    },
+
+    buildIntentFieldRow: function($rootDiv, fieldId, fieldName, fieldVal = '') {
+        const _this = this;
+        if (!this.config.allIntentFields.hasOwnProperty(fieldId)) {
+            console.error("Invalid intent field id: " + fieldId);
+            return null;
+        }
+        const $fieldDiv = $('<div class="row align-items-center intent-field-line" />');
+        const $fieldDelBtn = $('<button class="btn btn-sm btn-danger ms-1 btn-intent-field-del" type="button"><i class="bi bi-dash-circle" /></button>');
+        $fieldDelBtn.attr('title', this._T('Delete this field'));
+        $fieldDelBtn.on('click', function() {
+            $fieldDiv.remove();
+            _this.updateIntentFieldSel($rootDiv);
+        });
+
+        const $fieldSel = $('<select class="form-select w-75 float-end intent-field-sel"/>');
+        $.each(this.config.allIntentFields, function (cFieldId, cFieldName) {
+            $fieldSel.append($('<option />')
+                .attr('value', cFieldId)
+                .prop('selected', cFieldId === fieldId)
+                .html(cFieldName)
+            );
+        });
+        $fieldSel.on('change', function() {
+            _this.updateIntentFieldSel($rootDiv);
+        });
+        $fieldDiv.append($('<div class="col-2" />').append($fieldDelBtn).append($fieldSel));
+        const $fieldInput = $('<input class="form-control align-items-end intent-field-val" type="text" />').val(fieldVal);
+
+        const $container = $rootDiv.closest('.basic-info').parent();
+        const flowId = $container.attr('data-flow-id');
+        $fieldInput.on('blur', function() {
+            _this.checkTags(flowId, $container);
+        });
+
+        $fieldDiv.append($('<div class="col-10" />').append($fieldInput));
+        $rootDiv.find('.intent-fields-form').append($fieldDiv);
+        return $fieldDiv;
+    },
+
+    initIntentFieldDiv: function(idPrefix, $rootDiv, flowObj) {
+        const _this = this;
+        const $innerDiv = this.initAccordionItem(
+            idPrefix + '-intent-fields', this._T("Intent Fields"), idPrefix, 'intent-fields'
+        );
+        $rootDiv.append($innerDiv);
+        const $innerContentDiv = $innerDiv.find('.accordion-collapse');
+        const $formDiv = $('<div class="container p-3 intent-fields-form" />');
+        $innerContentDiv.append($formDiv);
+
+        const $ctrlDiv = $('<div class="row align-items-center mb-2 ps-2" />');
+        $formDiv.append($ctrlDiv);
+
+        const $addFieldBtn = $('<button class="col-auto btn btn-sm btn-success btn-add-field ms-1"></button>');
+        $addFieldBtn.html(this._T("Add Field")).on('click', function() {
+            const noFields = Object.keys(_this.config.allIntentFields);
+            $rootDiv.find('select').each(function(i, elem) {
+                noFields.splice($.inArray($(elem).val(), noFields), 1);
+            });
+            $addFieldBtn.prop('disabled', noFields.length <= 1);
+            if (noFields.length > 0) {
+                _this.buildIntentFieldRow($innerDiv, noFields[0], _this.config.allIntentFields[noFields[0]])
+                _this.updateIntentFieldSel($innerDiv);
+            }
+        });
+        $ctrlDiv.append($addFieldBtn);
+        $formDiv.append($ctrlDiv);
+
+        const $clearFieldBtn = $('<button class="col-auto btn btn-sm btn-danger btn-clear-field ms-1"></button>');
+        $clearFieldBtn.html(this._T("Clear Fields")).on('click', function() {
+            $rootDiv.find('.intent-field-line').remove();
+            _this.updateIntentFieldSel($innerDiv);
+        });
+        $ctrlDiv.append($clearFieldBtn);
+
+        const $hasIFInputHidden = $('<input class="has-if-input-hidden" type="hidden" value="true" />')
+        if (flowObj.intentFieldsIsICCBotNoResult) {
+            $innerDiv.find('.iccbot-no-res-tip').show();
+        }
+        if (Object.keys(flowObj.intentFields).length > 0) {
+            $formDiv.append($hasIFInputHidden);
+        }
+        else {
+            $formDiv.append($hasIFInputHidden.attr('value', 'false'));
+        }
+        $.each(flowObj.intentFields, function(fieldId, fieldVal) {
+            _this.buildIntentFieldRow($innerDiv, fieldId, _this.config.allIntentFields[fieldId], fieldVal);
+        });
+        this.updateIntentFieldSel($innerDiv);
     },
 
     /**
@@ -565,8 +702,9 @@ $.extend(window.ICCTagViewer, {
     initTagSelector: function(idPrefix, flowId, flowObj) {
         const _this = this;
         const $container = $('<div class="container pb-3" />');
-
+        $container.attr('data-flow-id', flowId);
         const $basicInfo = $('<div class="basic-info mb-3"/>');
+        $container.append($basicInfo);
         const $ctrlDiv = $('<div class="row mb-3 align-items-center" />');
 
         // Controller
@@ -808,6 +946,12 @@ $.extend(window.ICCTagViewer, {
             }
         });
 
+        // Intent fields
+        const $intentFieldDiv = $('<div class="accordion" />');
+        $basicInfo.append($intentFieldDiv);
+        $intentFieldDiv.attr('id', idPrefix + '-intent-fields-accordion');
+        this.initIntentFieldDiv(idPrefix, $intentFieldDiv, flowObj);
+
         // Counter
         const $counterDiv = $('<div class="row align-items-center mt-2" />');
         const $counterCol = $('<div class="col-auto"></div>');
@@ -816,8 +960,6 @@ $.extend(window.ICCTagViewer, {
         ));
         $counterCol.append($counter);
         $basicInfo.append($counterDiv.append($counterCol));
-
-        $container.append($basicInfo);
 
         // Generate Selector
         const $div = $('<div class="accordion" />');
@@ -833,13 +975,13 @@ $.extend(window.ICCTagViewer, {
         const $commentCheckDiv = $('<div class="icc-tag-check-result row align-items-start mt-1 text-danger" />');
         $container.append($commentCheckDiv.hide());
         $commentInput.on('blur', function() {
-            _this.checkTags(flowId, $commentInput, $commentCheckDiv);
+            _this.checkTags(flowId, $container);
         });
         $div.find(':checkbox').on('change', function() {
-            _this.checkTags(flowId, $commentInput, $commentCheckDiv);
+            _this.checkTags(flowId, $container);
         });
         window.setTimeout(function() {
-            _this.checkTags(flowId, $commentInput, $commentCheckDiv);
+            _this.checkTags(flowId, $container);
         }, 500);
         return $container;
     },
@@ -1003,11 +1145,8 @@ $.extend(window.ICCTagViewer, {
         this.setSrcRootPath(srcCodeBase, isFromLocal);
         const edges = xml.getElementsByTagName('OracleEdge');
 
-        this.data.flows.length = 0;
-        for (const i in edges) {
-            if (!edges.hasOwnProperty(i)) continue;
-            const edge = edges[i];
-
+        _this.data.flows.length = 0;
+        $.each(edges, function(i, edge) {
             // Put into data
             const metaData = [];
             let commentElem = null;
@@ -1017,6 +1156,8 @@ $.extend(window.ICCTagViewer, {
                 if (child.tagName === 'comment') {
                     commentElem = child;
                     continue;
+                } else if (child.tagName === 'IntentFields') {
+                    continue;
                 }
                 metaData.push(child);
             }
@@ -1025,8 +1166,17 @@ $.extend(window.ICCTagViewer, {
                 dest: edge.getAttribute('destination'),
                 method: edge.getAttribute('method'),
                 comment: commentElem ? HTMLDecode(commentElem.innerHTML) : '',
+                intentFields: {},
                 metaData: metaData
             };
+
+            // Load Intent Fields
+            const intentFieldsElem = edge.getElementsByTagName('IntentFields')[0];
+            flowObj.intentFieldsIsICCBotNoResult = intentFieldsElem ? intentFieldsElem.getAttribute('isICCBotNoResult') === 'true' : false;
+            const intentFieldElems = edge.getElementsByTagName('IntentField');
+            $.each(intentFieldElems, function(i, ifElem) {
+                flowObj.intentFields[ifElem.getAttribute('type')] = ifElem.getAttribute('value');
+            });
 
             const checkIgnoreStr = edge.getElementsByTagName('tags')[0].getAttribute('checkIgnore');
             if (checkIgnoreStr) {
@@ -1034,8 +1184,8 @@ $.extend(window.ICCTagViewer, {
             } else {
                 flowObj.checkIgnores = [];
             }
-            this.data.flows.push(flowObj);
-        }
+            _this.data.flows.push(flowObj);
+        });
 
         // Sort
         this.data.flows.sort(function(flow1, flow2) {
@@ -1138,6 +1288,28 @@ $.extend(window.ICCTagViewer, {
                 this.exportTagsXML(tag, xml, [flowDomId], tagsNode);
             }
             edgeNode.appendChild(tagsNode);
+
+            // Intent Fields
+            const $ifLines = $flowDiv.find('.intent-field-line').toArray().sort(function(ifElem1, ifElem2) {
+                const val1 = $(ifElem1).find('select').val();
+                const val2 = $(ifElem2).find('select').val();
+                return val1 > val2 ? 1 : (val1 === val2 ? 0 : -1);
+            });
+            const ifsNode = xml.createElement('IntentFields');
+            if (flow.intentFieldsIsICCBotNoResult) {
+                ifsNode.setAttribute('isICCBotNoResult', 'true');
+                edgeNode.appendChild(ifsNode);
+            }
+            if ($ifLines.length > 0) {
+                $.each($ifLines, function(i, elem) {
+                    const $elem = $(elem);
+                    const ifNode = xml.createElement('IntentField');
+                    ifNode.setAttribute('type', $elem.find('select').val());
+                    ifNode.setAttribute('value', $elem.find('input').val());
+                    ifsNode.appendChild(ifNode);
+                });
+                edgeNode.appendChild(ifsNode);
+            }
             rootNode.appendChild(edgeNode);
         }
         return this.parserXMLToString(xml);
@@ -1322,6 +1494,7 @@ $.extend(window.ICCTagViewer, {
                         dataType: 'text',
                         success: function(data) {
                             _this._importXML(data);
+                            _this.applyFilter();
                             _this.makeToast(_this._T('Finished loading ICC XML of App {0}').format(appName));
                         },
                         error: function(event, xhr, options, exc) {
@@ -1354,7 +1527,7 @@ $.extend(window.ICCTagViewer, {
             }
             // console.log('$parent', $parent);
             if (!$btn.hasClass('j-collapse-show')) {
-                $parent.find('.accordion-collapse').collapse('show');
+                $parent.find('.accordion-item:visible .accordion-collapse').collapse('show');
                 $btn.addClass('j-collapse-show')
                     .removeClass('btn-primary')
                     .addClass('btn-danger')
@@ -1364,7 +1537,7 @@ $.extend(window.ICCTagViewer, {
                     .addClass('btn-danger')
                     .html(_this._T('Collapse All'));
             } else {
-                $parent.find('.accordion-collapse').collapse('hide');
+                $parent.find('.accordion-item:visible .accordion-collapse').collapse('hide');
                 $btn.removeClass('j-collapse-show')
                     .removeClass('btn-danger')
                     .addClass('btn-primary')
@@ -1552,7 +1725,9 @@ $.extend(window.ICCTagViewer, {
             $title.append($('<b />').append($cntSpan));
             if (isFilter) {
                 const chk = (_this.filterShowTags ? _this.filterShowTags.indexOf(tag.id) > -1 : true);
-                const $sel = $('<input class="me-1" type="checkbox" />').attr('data-tag-id', tag.id).prop('checked', chk);
+                const $sel = $('<input class="me-1 tag-checkbox" type="checkbox" />')
+                    .attr('data-tag-id', tag.id)
+                    .prop('checked', chk);
                 $sel.insertBefore($titleSpan);
             }
         }
@@ -1588,12 +1763,12 @@ $.extend(window.ICCTagViewer, {
             const $selAllBtn = $('<button class="btn btn-primary j-selAll ms-2" />')
                 .html(_this._T("Select All"))
                 .off('click').on('click', function() {
-                    $summaryDiv.find('input[type="checkbox"]').prop('checked', true);
+                    $summaryDiv.find('.tag-checkbox').prop('checked', true);
                 });
             const $revSelAllBtn = $('<button class="btn btn-primary j-revSelAll ms-2" />')
                 .html(_this._T("Reverse All"))
                 .off('click').on('click', function() {
-                    const $checkBoxes = $summaryDiv.find('input[type="checkbox"]');
+                    const $checkBoxes = $summaryDiv.find('.tag-checkbox');
                     $checkBoxes.each(function (i, checkBox) {
                         $(checkBox).prop('checked', !$(checkBox).prop('checked'));
                     });
@@ -1612,10 +1787,23 @@ $.extend(window.ICCTagViewer, {
             });
         }
         summaryModal.toggle();
+        return $summaryModal;
     },
 
     showFilter: function() {
-        this.showSummary(true);
+        const _this = this;
+        const $filterModal = this.showSummary(true);
+        const $extraFiltersContainer = $('<div class="row" />');
+        const $extraFiltersDiv = $('<div class="col-12" />');
+
+        const $hasFieldCheckbox = $('<input type="checkbox" id="config-has-intent-field" data-tag-id="filter.hasIntentField" />');
+        $hasFieldCheckbox.prop('checked', _this.filterShowTags && _this.filterShowTags.indexOf('filter.hasIntentField') > -1);
+        const $hasFieldLabel = $('<label for="config-has-intent-field" class="ms-1" />')
+        $hasFieldLabel.html(_this._T("Show only edges with intent field"));
+        $extraFiltersDiv.append($hasFieldCheckbox).append($hasFieldLabel);
+
+        $extraFiltersContainer.append($extraFiltersDiv);
+        $filterModal.find('.modal-body').append($extraFiltersContainer);
     },
 
     applyFilter: function() {
@@ -1627,22 +1815,42 @@ $.extend(window.ICCTagViewer, {
             _this.filterShowTags.push($(elem).attr('data-tag-id'));
         });
         console.log('showTags', _this.filterShowTags);
+        if (_this.filterShowTags.length === 0) {
+            $('.filter-tip').hide();
+            return;
+        } else {
+            $('.filter-tip').show();
+        }
         $('.icc-flow').each(function(i, flowDiv) {
             const $flowDiv = $(flowDiv);
             let flag = false;
-            let flagTag = null;
-            _this.filterShowTags.some(function(tagId, i) {
-                if ($flowDiv.find('input[value="' + tagId + '"]:checked').length > 0) {
-                    flag = true;
-                    flagTag = tagId;
-                    return true;
-                }
-            });
+            let flagTag = [];
+
+            if (_this.filterShowTags.indexOf('filter.hasIntentField') !== -1 &&
+                    $flowDiv.find('.has-if-input-hidden[value="true"]').length === 0) {
+                flagTag.push('filter.hasIntentField');
+            }
+            if (flagTag.length < 1) {
+                _this.filterShowTags.some(function (tagId, i) {
+                    if (tagId === 'filter.hasIntentField' &&
+                        $flowDiv.find('.has-if-input-hidden[value="true"]').length > 0) {
+                        flag = true;
+                        flagTag.push(tagId);
+                        return true;
+                    } else if ($flowDiv.find('input[type="checkbox"][value="' + tagId + '"]:checked').length > 0) {
+                        flag = true;
+                        flagTag.push(tagId);
+                        return true;
+                    }
+                });
+            }
+            // console.log('flagTag', flagTag);
             !flag ? $flowDiv.hide() : $flowDiv.show();
         });
     },
 
     clearFilter: function() {
+        $('.filter-tip').hide();
         $('.icc-flow').show();
     },
 
