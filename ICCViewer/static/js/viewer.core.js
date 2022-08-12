@@ -464,7 +464,7 @@ $.extend(window.ICCTagViewer, {
 
         const $hasIFInputHidden = $('<input class="has-if-input-hidden" type="hidden" value="true" />')
         if (flowObj.intentFieldsIsICCBotNoResult) {
-            $innerDiv.find('.iccbot-no-res-tip').show();
+            // $innerDiv.find('.iccbot-no-res-tip').show();
         }
         if (Object.keys(flowObj.intentFields).length > 0) {
             $formDiv.append($hasIFInputHidden);
@@ -946,12 +946,6 @@ $.extend(window.ICCTagViewer, {
             }
         });
 
-        // Intent fields
-        const $intentFieldDiv = $('<div class="accordion" />');
-        $basicInfo.append($intentFieldDiv);
-        $intentFieldDiv.attr('id', idPrefix + '-intent-fields-accordion');
-        this.initIntentFieldDiv(idPrefix, $intentFieldDiv, flowObj);
-
         // Counter
         const $counterDiv = $('<div class="row align-items-center mt-2" />');
         const $counterCol = $('<div class="col-auto"></div>');
@@ -970,6 +964,12 @@ $.extend(window.ICCTagViewer, {
             this.initTagDiv(tag, idPrefix, $div);
         }
         $container.append($div);
+
+        // Intent fields
+        const $intentFieldDiv = $('<div class="accordion mt-2" />');
+        $container.append($intentFieldDiv);
+        $intentFieldDiv.attr('id', idPrefix + '-intent-fields-accordion');
+        this.initIntentFieldDiv(idPrefix, $intentFieldDiv, flowObj);
 
         // Comment Check
         const $commentCheckDiv = $('<div class="icc-tag-check-result row align-items-start mt-1 text-danger" />');
