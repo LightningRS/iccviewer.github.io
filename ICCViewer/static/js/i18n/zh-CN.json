@@ -1,4 +1,7 @@
 {
+    "Publication": "发行说明",
+    "Downloads": "下载",
+
     "zero": "零",
     "one": "一",
     "two": "两",
@@ -37,11 +40,15 @@
     "Async Invocation": "异步调用",
     "Listener Invocation": "监听回调",
     "Polymorphic": "多态",
-    "Intent Field Scope": "Intent 域类型",
+    "Intent Field Scope": "Intent 字段类型",
     "Static Value": "静态值",
     "String Operation": "字符串操作",
     "No Extra": "无 Extra 数据",
     "Context-related": "上下文相关",
+
+    "Intent Fields": "Intent 字段",
+    "Add Field": "添加字段",
+    "Clear Fields": "清除所有字段",
 
     "The official lifecycle methods provided by Android reference": "Android 官方文档给出的生命周期方法",
     "The callbacks that are registered in Android framework classes or libraries": "在 Android 框架或第三方库中注册的回调函数",
@@ -158,6 +165,7 @@
     "Checker of component type (mutual exclusion)": "互斥规则：组件类型",
     "Can only select one of the labels \"isExplicit\" and \"isImplicit\"": "标签 [isExplicit] 和 [isImplicit] 只能同时选择一个",
     "Checker of Intent type (mutual exclusion)": "互斥规则：Intent 类型",
+    "Checker of no extra": "检查规则：无 Extra 字段",
 
     "#labels: ": "#标签: ",
     "#callLines: ": "#调用行: ",

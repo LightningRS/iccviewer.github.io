@@ -55,10 +55,11 @@ $.extend(window.ICCTagViewer, {
     data: { flows: [] },
 
     _T: function(txt) {
+        const key = txt.trim();
         if (this.i18n) {
-            if (this.i18n.hasOwnProperty(txt)) return this.i18n[txt];
+            if (this.i18n.hasOwnProperty(key)) return this.i18n[key];
             else {
-                console.log('[WARN] i18n translation missed: {0}'.format(txt));
+                console.log('[WARN] i18n translation missed: {0}'.format(key));
                 return txt;
             }
         }
@@ -1093,7 +1094,9 @@ $.extend(window.ICCTagViewer, {
         const flowObj = {
             source: 'Source',
             dest: 'Destination',
-            method: 'xxx'
+            method: 'xxx',
+            comment: '',
+            intentFields: {},
         }
         _this.data.flows.push(flowObj);
         const $flowDiv = _this.initFlow(_this.data.flows.length - 1, flowObj);
@@ -1642,6 +1645,9 @@ $.extend(window.ICCTagViewer, {
             $('.j-add-flow').on('click', function() {
                 _this.addFlow();
             });
+            $('.j-about').on('click', function() {
+                _this.showAbout();
+            });
 
             _this.readLocal();
         });
@@ -1731,6 +1737,39 @@ $.extend(window.ICCTagViewer, {
                 $sel.insertBefore($titleSpan);
             }
         }
+    },
+
+    showAbout: function() {
+        const $modal = $('#commonModal');
+        const modal = new bootstrap.Modal($modal);
+        $modal.find('.modal-title-text').html(this._T('Publication'));
+
+        $modal.find('.modal-extra-buttons').html('');
+        $modal.find('.j-cancel').hide();
+
+        const aboutHtml = '<p>Technical details: '
+            + '<a href="/details-of-model&extraction.pdf">Details of model&extraction</a></p>'
+            + '<p>Contact us: '
+            + '<a class="ms-2" href="https://github.com/LightningRS/iccviewer.github.io">ICCViewer Home</a></p>'
+
+            + '<p>This page (ICCViewer) shows the dataset of Android ICC links constructed from 32 real-world and 5 benchmark Android applications. '
+            + 'Each ICC link provides detailed call path and the corresponding line number in the source code, while the code '
+            + 'charactistics involved are labeled as tags. The information of action, data, extra, and other fields of Intent '
+            + 'are also recorded in the "Intent Fields" block.</p>'
+
+            + '<p>ICCViewer is affiliated with the following research project, please cite the source for reproduction.</p>'
+
+            + '<p>Jiwei Yan, Shixin Zhang, Yepang Liu, Xi Deng, Jun Yan, Jian Zhang. <b>A Comprehensive Evaluation of Android ICC Resolution Techniques.</b>'
+            + '<i>The 37th IEEE/ACM International Conference on Automated Software Engineering, ASE 2022.</i> '
+            + '<a href="https://hanada31.github.io/pdf/ase22_ICCEvaluation.pdf">[pdf]</a> '
+            + '<a href="https://hanada31.github.io/bib/ase22_ICCEvaluation.txt">[bibTex]</a></p>';
+
+        $modal.find('.modal-body').html(aboutHtml);
+        $modal.find('.j-confirm').off('click').on('click', function() {
+            modal.toggle();
+        });
+        modal.toggle();
+        return $modal;
     },
 
     showSummary: function(isFilter = false) {
